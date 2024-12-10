@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1C6D9A6-2DF6-4F79-A9B4-0FF2E27A8C82}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Tech2019.Presentation</RootNamespace>
+    <AssemblyName>Tech2019.Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Customers\CustomerCustomerForms\FrmCustomerCityStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customers\CustomerCustomerForms\FrmCustomerCityStats.Designer.cs">
+      <DependentUpon>FrmCustomerCityStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customers\CustomerCustomerForms\FrmCustomerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customers\CustomerCustomerForms\FrmCustomerList.Designer.cs">
+      <DependentUpon>FrmCustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customers\CustomerCustomerForms\FrmNewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customers\CustomerCustomerForms\FrmNewCustomer.Designer.cs">
+      <DependentUpon>FrmNewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customers\CustomerSaleForms\FrmNewSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customers\CustomerSaleForms\FrmNewSale.Designer.cs">
+      <DependentUpon>FrmNewSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customers\CustomerSaleForms\FrmSaleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customers\CustomerSaleForms\FrmSaleList.Designer.cs">
+      <DependentUpon>FrmSaleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employees\DepartmentForms\FrmDepartmentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employees\DepartmentForms\FrmDepartmentList.Designer.cs">
+      <DependentUpon>FrmDepartmentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employees\DepartmentForms\FrmNewDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employees\DepartmentForms\FrmNewDepartment.Designer.cs">
+      <DependentUpon>FrmNewDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employees\EmployeeForms\FrmEmployeeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employees\EmployeeForms\FrmEmployeeList.Designer.cs">
+      <DependentUpon>FrmEmployeeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employees\EmployeeForms\FrmNewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Employees\EmployeeForms\FrmNewEmployee.Designer.cs">
+      <DependentUpon>FrmNewEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Products\ProductCategoryForms\FrmCategoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Products\ProductCategoryForms\FrmCategoryList.Designer.cs">
+      <DependentUpon>FrmCategoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Products\ProductCategoryForms\FrmNewCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Products\ProductCategoryForms\FrmNewCategory.Designer.cs">
+      <DependentUpon>FrmNewCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Products\ProductFaultryForms\FrmActionsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Products\ProductFaultryForms\FrmActionsList.Designer.cs">
+      <DependentUpon>FrmActionsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Products\ProductFaultryForms\FrmNewAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Products\ProductFaultryForms\FrmNewAction.Designer.cs">
+      <DependentUpon>FrmNewAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Products\ProductFaultryForms\FrmNewProductTrace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Products\ProductFaultryForms\FrmNewProductTrace.Designer.cs">
+      <DependentUpon>FrmNewProductTrace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Products\ProductFaultryForms\FrmProductTraceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Products\ProductFaultryForms\FrmProductTraceList.Designer.cs">
+      <DependentUpon>FrmProductTraceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Products\ProductProductForms\FrmNewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Products\ProductProductForms\FrmNewProduct.Designer.cs">
+      <DependentUpon>FrmNewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Products\ProductProductForms\FrmProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Products\ProductProductForms\FrmProductList.Designer.cs">
+      <DependentUpon>FrmProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Products\ProductStatisticForms\FrmBrandStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Products\ProductStatisticForms\FrmBrandStats.Designer.cs">
+      <DependentUpon>FrmBrandStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Products\ProductStatisticForms\FrmProductStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Products\ProductStatisticForms\FrmProductStats.Designer.cs">
+      <DependentUpon>FrmProductStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tools\FrmCurrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\FrmCurrency.Designer.cs">
+      <DependentUpon>FrmCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tools\FrmNoteList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\FrmNoteList.Designer.cs">
+      <DependentUpon>FrmNoteList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tools\FrmYoutube.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\FrmYoutube.Designer.cs">
+      <DependentUpon>FrmYoutube.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Customers\CustomerCustomerForms\FrmCustomerCityStats.resx">
+      <DependentUpon>FrmCustomerCityStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customers\CustomerCustomerForms\FrmCustomerList.resx">
+      <DependentUpon>FrmCustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customers\CustomerCustomerForms\FrmNewCustomer.resx">
+      <DependentUpon>FrmNewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customers\CustomerSaleForms\FrmNewSale.resx">
+      <DependentUpon>FrmNewSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customers\CustomerSaleForms\FrmSaleList.resx">
+      <DependentUpon>FrmSaleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employees\DepartmentForms\FrmDepartmentList.resx">
+      <DependentUpon>FrmDepartmentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employees\DepartmentForms\FrmNewDepartment.resx">
+      <DependentUpon>FrmNewDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employees\EmployeeForms\FrmEmployeeList.resx">
+      <DependentUpon>FrmEmployeeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employees\EmployeeForms\FrmNewEmployee.resx">
+      <DependentUpon>FrmNewEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\ProductCategoryForms\FrmCategoryList.resx">
+      <DependentUpon>FrmCategoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\ProductCategoryForms\FrmNewCategory.resx">
+      <DependentUpon>FrmNewCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\ProductFaultryForms\FrmActionsList.resx">
+      <DependentUpon>FrmActionsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\ProductFaultryForms\FrmNewAction.resx">
+      <DependentUpon>FrmNewAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\ProductFaultryForms\FrmNewProductTrace.resx">
+      <DependentUpon>FrmNewProductTrace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\ProductFaultryForms\FrmProductTraceList.resx">
+      <DependentUpon>FrmProductTraceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\ProductProductForms\FrmNewProduct.resx">
+      <DependentUpon>FrmNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\ProductProductForms\FrmProductList.resx">
+      <DependentUpon>FrmProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\ProductStatisticForms\FrmBrandStats.resx">
+      <DependentUpon>FrmBrandStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\ProductStatisticForms\FrmProductStats.resx">
+      <DependentUpon>FrmProductStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\FrmCurrency.resx">
+      <DependentUpon>FrmCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\FrmNoteList.resx">
+      <DependentUpon>FrmNoteList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\FrmYoutube.resx">
+      <DependentUpon>FrmYoutube.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\Bookmark.png" />
+    <Content Include="images\Document.png" />
+    <Content Include="images\dummy-logo-1.png" />
+    <Content Include="images\dummy-logo-2.png" />
+    <Content Include="images\dummy-logo-3.png" />
+    <Content Include="images\dummy-logo-4.png" />
+    <Content Include="images\dummy-logo-5.png" />
+    <Content Include="images\dummy-logo-6.png" />
+    <Content Include="images\dummy-logo-7.png" />
+    <Content Include="images\dummy-logo-8.png" />
+    <Content Include="images\Favorites.png" />
+    <Content Include="images\Menu.png" />
+    <Content Include="images\Puzzle.png" />
+    <Content Include="images\Refresh-Product.png" />
+    <Content Include="images\Scroll.png" />
+    <Content Include="images\Share.png" />
+    <Content Include="images\slider-1.png" />
+    <Content Include="images\slider-2.png" />
+    <Content Include="images\slider-3.png" />
+    <Content Include="images\slider-4.png" />
+    <Content Include="images\slider-5.png" />
+    <Content Include="images\Stats-Logo-1.png" />
+    <Content Include="images\Stats-Logo-10.png" />
+    <Content Include="images\Stats-Logo-11.png" />
+    <Content Include="images\Stats-Logo-12.png" />
+    <Content Include="images\Stats-Logo-13.png" />
+    <Content Include="images\Stats-Logo-14.png" />
+    <Content Include="images\Stats-Logo-15.png" />
+    <Content Include="images\Stats-Logo-16.png" />
+    <Content Include="images\Stats-Logo-17.png" />
+    <Content Include="images\Stats-Logo-18.png" />
+    <Content Include="images\Stats-Logo-19.png" />
+    <Content Include="images\Stats-Logo-2.png" />
+    <Content Include="images\Stats-Logo-20.png" />
+    <Content Include="images\Stats-Logo-21.png" />
+    <Content Include="images\Stats-Logo-22.png" />
+    <Content Include="images\Stats-Logo-23.png" />
+    <Content Include="images\Stats-Logo-2__.png" />
+    <Content Include="images\Stats-Logo-3.png" />
+    <Content Include="images\Stats-Logo-3__.png" />
+    <Content Include="images\Stats-Logo-4.png" />
+    <Content Include="images\Stats-Logo-5.png" />
+    <Content Include="images\Stats-Logo-6.png" />
+    <Content Include="images\Stats-Logo-7.png" />
+    <Content Include="images\Stats-Logo-8.png" />
+    <Content Include="images\Stats-Logo-9.png" />
+    <Content Include="images\Toolbox.png" />
+    <Content Include="images\Trash Can.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Contacts\" />
+    <Folder Include="Forms\Invoices\InvoiceInvoiceForms\" />
+    <Folder Include="Forms\Invoices\InvoiceMovementForms\" />
+    <Folder Include="Forms\Reports\" />
+    <Folder Include="Forms\Statistics\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccessLayer\Tech2019.DataAccessLayer\Tech2019.DataAccessLayer.csproj">
+      <Project>{d8ddaf64-2242-45b0-b2b3-93e83c2a5976}</Project>
+      <Name>Tech2019.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntityLayer\Tech2019.EntityLayer\Tech2019.EntityLayer.csproj">
+      <Project>{3f3ddbed-fc67-4d89-9816-c6e8b5e5c6a4}</Project>
+      <Name>Tech2019.EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+</Project>
