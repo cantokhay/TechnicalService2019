@@ -16,33 +16,37 @@ namespace Tech2019.DataAccessLayer.SeedData
             {
                 db.Database.Initialize(false);
 
-                byte maxCustomerCount = 100;
-                byte maxDepartmentCount = 10;
-                byte maxCategoryCount = 25;
-                byte maxNoteCount = 100;
-                short maxSaleCount = 500;
-                byte maxActionCount = 150;
+                byte maxCustomerCount = 40;
+                byte maxDepartmentCount = 6;
+                byte maxCategoryCount = 20;
+                byte maxNoteCount = 75;
+                ushort maxSaleCount = 150;
+                byte maxActionCount = 100;
                 byte maxProductTraceCount = maxActionCount;
+                ushort maxInvoiceCount = maxSaleCount;
 
-                if (db.Customers.Count() <= maxCustomerCount || db.Departments.Count() <= maxDepartmentCount || db.Categories.Count() <= maxCategoryCount || db.Notes.Count() <= maxNoteCount || db.Actions.Count() <= maxActionCount || db.Sales.Count() <= maxSaleCount || db.ProductTraces.Count() < maxActionCount)
+                if (db.Customers.Count() <= maxCustomerCount || db.Departments.Count() <= maxDepartmentCount || db.Categories.Count() <= maxCategoryCount || db.Notes.Count() <= maxNoteCount || db.Actions.Count() <= maxActionCount || db.Sales.Count() <= maxSaleCount || db.ProductTraces.Count() <= maxActionCount || db.Invoices.Count() <= maxInvoiceCount)
                 {
 
                     byte customerCountToGenerate = (byte)(maxCustomerCount - db.Customers.Count());
                     byte departmentCountToGenerate = (byte)(maxDepartmentCount - db.Departments.Count());
                     byte categoryCountToGenerate = (byte)(maxCategoryCount - db.Categories.Count());
                     byte noteCountToGenerate = (byte)(maxNoteCount - db.Notes.Count());
-                    short saleCountToGenerate = (short)(maxSaleCount - db.Sales.Count());
+                    ushort saleCountToGenerate = (ushort)(maxSaleCount - db.Sales.Count());
                     byte actionCountToGenerate = (byte)(maxActionCount - db.Actions.Count());
                     byte productTraceToGenerate = (byte)(maxProductTraceCount - db.ProductTraces.Count());
+                    ushort invoiceCountToGenerate = (ushort)(maxInvoiceCount - db.Invoices.Count());
 
                     GenerateCategoriesAndProducts(categoryCountToGenerate);
                     GenerateCustomers(customerCountToGenerate);
                     GenerateDepartmentsAndEmployees(departmentCountToGenerate);
                     GenerateNotes(noteCountToGenerate);
-
-                    var createdSales = GenerateSales(saleCountToGenerate);
-                    var createdActions = GenerateActions(actionCountToGenerate, createdSales);
+                    GenerateSales(saleCountToGenerate);
+                    var createdSales = db.Sales.ToList();
+                    GenerateActions(actionCountToGenerate, createdSales);
+                    var createdActions = db.Actions.ToList();
                     GenerateProductTraces(productTraceToGenerate, createdActions);
+                    GenerateInvoices(invoiceCountToGenerate);
 
                     await db.SaveChangesAsync();
                 }
@@ -70,11 +74,8 @@ namespace Tech2019.DataAccessLayer.SeedData
                     db.SaveChanges();
                 }
 
-                List<EntityLayer.Concrete.Action> GenerateActions(byte actionCountToGenerate, List<Sale> sales)
+                void GenerateActions(ushort actionCountToGenerate, List<Sale> sales)
                 {
-                    if (actionCountToGenerate <= 0)
-                        return new List<EntityLayer.Concrete.Action>();
-
                     var faker = new Faker();
                     var existingEmployees = db.Employees.Select(e => e.EmployeeId).ToList();
 
@@ -95,15 +96,12 @@ namespace Tech2019.DataAccessLayer.SeedData
                                 ProductSerialNumber = sale.ProductSerialNumber
                             };
 
-                            actions.Add(action);
                             db.Actions.Add(action);
                         }
                     }
 
                     db.SaveChanges();
-                    return actions;
                 }
-
 
                 void GenerateDepartmentsAndEmployees(byte departmentCountToGenerate)
                 {
@@ -298,7 +296,7 @@ namespace Tech2019.DataAccessLayer.SeedData
                     db.SaveChanges();
                 }
 
-                List<Sale> GenerateSales(short saleCountToGenerate)
+                void GenerateSales(ushort saleCountToGenerate)
                 {
                     var faker = new Faker();
                     var existingProducts = db.Products.Select(p => p.ProductId).ToList();
@@ -324,12 +322,42 @@ namespace Tech2019.DataAccessLayer.SeedData
                         };
 
                         db.Sales.Add(sale);
-                        sales.Add(sale);
                     }
                     db.SaveChanges();
-
-                    return sales;
                 }
+
+                void GenerateInvoices(ushort invoiceCountToGenerate)
+                {
+                    var faker = new Faker();
+
+                    var existingCustomers = db.Customers.Select(x => x.CustomerId).ToList();
+                    var existingEmployees = db.Employees.Select(x => x.EmployeeId).ToList();
+                    var serialSequencePairs = GenerateSerialSequenceDictionary(invoiceCountToGenerate);
+
+                    foreach (var pair in serialSequencePairs)
+                    {
+                        var selectedCustomer = faker.PickRandom(existingCustomers);
+                        var selectedEmployee = faker.PickRandom(existingEmployees);
+
+                        var invoiceDate = faker.Date.Between(DateTime.Now.AddMonths(-12), DateTime.Now);
+
+                        var invoice = new Invoice
+                        {
+                            InvoiceSerialCharacter = pair.Key,
+                            InvoiceSequenceNumber = pair.Value,
+                            InvoiceDate = invoiceDate,
+                            InvoiceHour = invoiceDate.ToString("HH:mm"),
+                            InvoiceTaxOffice = faker.Company.CompanyName(),
+                            Customer = selectedCustomer,
+                            Employee = selectedEmployee
+                        };
+
+                        db.Invoices.Add(invoice);
+                    }
+
+                    db.SaveChanges();
+                }
+
 
                 #region Helper Methods
 
@@ -360,6 +388,31 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                     return faker.PickRandom(avatarUrls); // Rastgele bir URL seç
                 }
+
+                List<KeyValuePair<string, string>> GenerateSerialSequenceDictionary(ushort count)
+                {
+                    var faker = new Faker();
+
+                    var serialSequencePairs = Enumerable.Range(0, count * 10)
+                        .Select(_ =>
+                        {
+                            var serialCharacter = faker.Random.String2(1, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+                            var sequenceNumber = faker.Random.Replace("######");
+                            return new KeyValuePair<string, string>(serialCharacter, sequenceNumber);
+                        })
+                        .Distinct()
+                        .Take(count)
+                        .ToList();
+
+                    if (serialSequencePairs.Count < count)
+                    {
+                        throw new InvalidOperationException("Unable to generate enough unique serial-sequence pairs.");
+                    }
+
+                    return serialSequencePairs;
+                }
+
+
 
                 #endregion
 

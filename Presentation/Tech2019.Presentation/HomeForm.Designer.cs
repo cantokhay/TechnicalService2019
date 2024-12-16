@@ -98,6 +98,7 @@ namespace Tech2019.Presentation
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage9 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btnInvoiceList = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -149,9 +150,10 @@ namespace Tech2019.Presentation
             this.btnNoteList,
             this.btnNewSale,
             this.btnSaleList,
-            this.btnProductTraceList});
+            this.btnProductTraceList,
+            this.btnInvoiceList});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 45;
+            this.ribbonControl1.MaxItemId = 46;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -292,6 +294,8 @@ namespace Tech2019.Presentation
             // 
             this.btnNewInvoice.Caption = "New Invoice";
             this.btnNewInvoice.Id = 18;
+            this.btnNewInvoice.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewInvoice.ImageOptions.Image")));
+            this.btnNewInvoice.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNewInvoice.ImageOptions.LargeImage")));
             this.btnNewInvoice.Name = "btnNewInvoice";
             // 
             // btnAddProductToInvoice
@@ -617,6 +621,7 @@ namespace Tech2019.Presentation
             // 
             // ribbonPageGroup14
             // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.btnInvoiceList);
             this.ribbonPageGroup14.ItemLinks.Add(this.btnNewInvoice);
             this.ribbonPageGroup14.ItemLinks.Add(this.btnAddProductToInvoice);
             this.ribbonPageGroup14.ItemLinks.Add(this.btnInvoiceDetailedSearch);
@@ -677,6 +682,15 @@ namespace Tech2019.Presentation
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // btnInvoiceList
+            // 
+            this.btnInvoiceList.Caption = "Invoice List";
+            this.btnInvoiceList.Id = 45;
+            this.btnInvoiceList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnInvoiceList.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnInvoiceList.Name = "btnInvoiceList";
+            this.btnInvoiceList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInvoiceList_ItemClick);
             // 
             // HomeForm
             // 
@@ -766,6 +780,7 @@ namespace Tech2019.Presentation
         private DevExpress.XtraBars.BarButtonItem btnSaleList;
         private DevExpress.XtraBars.BarButtonItem btnProductTraceList;
         private DevExpress.XtraBars.Ribbon.GalleryDropDown galleryDropDown1;
+        private DevExpress.XtraBars.BarButtonItem btnInvoiceList;
     }
 }
 

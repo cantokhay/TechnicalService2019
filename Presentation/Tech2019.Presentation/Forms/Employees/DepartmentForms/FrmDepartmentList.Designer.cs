@@ -125,7 +125,8 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(191, 42);
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
+            this.pictureEdit1.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
@@ -144,7 +145,7 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             this.lblTotalDepartmentStat.Appearance.Options.UseTextOptions = true;
             this.lblTotalDepartmentStat.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTotalDepartmentStat.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.lblTotalDepartmentStat.Location = new System.Drawing.Point(10, 43);
+            this.lblTotalDepartmentStat.Location = new System.Drawing.Point(12, 42);
             this.lblTotalDepartmentStat.Name = "lblTotalDepartmentStat";
             this.lblTotalDepartmentStat.Size = new System.Drawing.Size(96, 45);
             this.lblTotalDepartmentStat.TabIndex = 0;
@@ -175,7 +176,8 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             // 
             // pictureEdit2
             // 
-            this.pictureEdit2.Location = new System.Drawing.Point(191, 42);
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
+            this.pictureEdit2.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
@@ -194,7 +196,7 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             this.lblTotalEmployeeStat.Appearance.Options.UseTextOptions = true;
             this.lblTotalEmployeeStat.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblTotalEmployeeStat.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.lblTotalEmployeeStat.Location = new System.Drawing.Point(10, 43);
+            this.lblTotalEmployeeStat.Location = new System.Drawing.Point(12, 42);
             this.lblTotalEmployeeStat.Name = "lblTotalEmployeeStat";
             this.lblTotalEmployeeStat.Size = new System.Drawing.Size(96, 45);
             this.lblTotalEmployeeStat.TabIndex = 0;
@@ -225,7 +227,8 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             // 
             // pictureEdit3
             // 
-            this.pictureEdit3.Location = new System.Drawing.Point(191, 42);
+            this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
+            this.pictureEdit3.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit3.Properties.Appearance.Options.UseBackColor = true;
@@ -275,7 +278,8 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             // 
             // pictureEdit4
             // 
-            this.pictureEdit4.Location = new System.Drawing.Point(191, 42);
+            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
+            this.pictureEdit4.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit4.Properties.Appearance.Options.UseBackColor = true;

@@ -22,9 +22,11 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
                 City = z.Key,
                 Total = z.Count()
             }).ToList();
+
+            FillChartWithDatas();
         }
 
-        //TODO -- 1 pie chart will be planning to added here with the codes below : 
+        //DONE -- 1 pie chart will be planning to added here with the codes below : 
         /* 
             SqlConnection connection = new SqlConnection(@"Data Source=CAN-TOKHAY-MASA\CANTOKHAY;Initial Catalog=TeknikServisDB;Integrated Security=True");
             SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-OHO9G30\SQLEXPRESS;Initial Catalog=TeknikServisDB;Integrated Security=True");
@@ -37,5 +39,22 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             }
             connection.Close();
         */
+
+        private void FillChartWithDatas()
+        {
+            var cityStats = db.Customers
+                              .GroupBy(c => c.CustomerCity)
+                              .Select(g => new
+                              {
+                                  City = g.Key,
+                                  Total = g.Count()
+                              }).ToList();
+
+            foreach (var stat in cityStats)
+            {
+                cctCityStats.Series["Series 1"].Points.AddPoint(Convert.ToString(stat.City), int.Parse(stat.Total.ToString()));
+            }
+        }
+
     }
 }

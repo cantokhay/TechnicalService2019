@@ -108,7 +108,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.labelControl5.Location = new System.Drawing.Point(42, 171);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(33, 13);
-            this.labelControl5.TabIndex = 8;
+            this.labelControl5.TabIndex = 88;
             this.labelControl5.Text = "CITY : ";
             // 
             // labelControl4
@@ -116,7 +116,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.labelControl4.Location = new System.Drawing.Point(92, 141);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(40, 13);
-            this.labelControl4.TabIndex = 8;
+            this.labelControl4.TabIndex = 88;
             this.labelControl4.Text = "EMAIL : ";
             // 
             // txtEmail
@@ -131,7 +131,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.labelControl3.Location = new System.Drawing.Point(44, 111);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(88, 13);
-            this.labelControl3.TabIndex = 8;
+            this.labelControl3.TabIndex = 88;
             this.labelControl3.Text = "PHONE NUMBER : ";
             // 
             // txtPhoneNumber
@@ -148,7 +148,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.labelControl2.Location = new System.Drawing.Point(174, 81);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(62, 13);
-            this.labelControl2.TabIndex = 8;
+            this.labelControl2.TabIndex = 88;
             this.labelControl2.Text = "LAST NAME :";
             // 
             // txtCustomerLastName
@@ -164,7 +164,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.labelControl7.Location = new System.Drawing.Point(53, 51);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(79, 13);
-            this.labelControl7.TabIndex = 8;
+            this.labelControl7.TabIndex = 88;
             this.labelControl7.Text = "CUSTOMER ID : ";
             // 
             // labelControl1
@@ -172,7 +172,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.labelControl1.Location = new System.Drawing.Point(5, 81);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(70, 13);
-            this.labelControl1.TabIndex = 8;
+            this.labelControl1.TabIndex = 88;
             this.labelControl1.Text = "FIRST NAME : ";
             // 
             // txtCustomerId
@@ -236,7 +236,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.btnRefresh.Location = new System.Drawing.Point(34, 489);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(293, 39);
-            this.btnRefresh.TabIndex = 15;
+            this.btnRefresh.TabIndex = 16;
             this.btnRefresh.Text = "REFRESH LIST";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
@@ -248,7 +248,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.btnUpdate.Location = new System.Drawing.Point(34, 444);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(293, 39);
-            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -299,7 +299,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.labelControl12.Location = new System.Drawing.Point(79, 321);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(53, 13);
-            this.labelControl12.TabIndex = 8;
+            this.labelControl12.TabIndex = 88;
             this.labelControl12.Text = "ADDRESS :";
             // 
             // labelControl11
@@ -307,7 +307,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.labelControl11.Location = new System.Drawing.Point(87, 291);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(45, 13);
-            this.labelControl11.TabIndex = 8;
+            this.labelControl11.TabIndex = 88;
             this.labelControl11.Text = "STATUS :";
             // 
             // labelControl10
@@ -315,7 +315,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.labelControl10.Location = new System.Drawing.Point(59, 261);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(73, 13);
-            this.labelControl10.TabIndex = 8;
+            this.labelControl10.TabIndex = 88;
             this.labelControl10.Text = "TAX NUMBER : ";
             // 
             // labelControl9
@@ -323,7 +323,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.labelControl9.Location = new System.Drawing.Point(63, 231);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(69, 13);
-            this.labelControl9.TabIndex = 8;
+            this.labelControl9.TabIndex = 88;
             this.labelControl9.Text = "TAX OFFICE : ";
             // 
             // labelControl8
@@ -331,7 +331,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.labelControl8.Location = new System.Drawing.Point(96, 201);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(36, 13);
-            this.labelControl8.TabIndex = 8;
+            this.labelControl8.TabIndex = 88;
             this.labelControl8.Text = "BANK : ";
             // 
             // txtAddress
@@ -353,13 +353,15 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.labelControl6.Location = new System.Drawing.Point(181, 171);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(57, 13);
-            this.labelControl6.TabIndex = 8;
+            this.labelControl6.TabIndex = 88;
             this.labelControl6.Text = "DISTRICT : ";
             // 
             // txtTaxNumber
             // 
             this.txtTaxNumber.Location = new System.Drawing.Point(135, 258);
             this.txtTaxNumber.Name = "txtTaxNumber";
+            this.txtTaxNumber.Properties.Mask.EditMask = "\\d{0,9}";
+            this.txtTaxNumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtTaxNumber.Size = new System.Drawing.Size(194, 20);
             this.txtTaxNumber.TabIndex = 10;
             // 
@@ -383,7 +385,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.grcCustomerList.MainView = this.gvwCustomers;
             this.grcCustomerList.Name = "grcCustomerList";
             this.grcCustomerList.Size = new System.Drawing.Size(1018, 430);
-            this.grcCustomerList.TabIndex = 8;
+            this.grcCustomerList.TabIndex = 88;
             this.grcCustomerList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvwCustomers});
             // 
@@ -407,10 +409,11 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel1.Location = new System.Drawing.Point(3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 98);
-            this.panel1.TabIndex = 11;
+            this.panel1.TabIndex = 88;
             // 
             // pictureEdit1
             // 
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -457,10 +460,11 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel2.Location = new System.Drawing.Point(259, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 98);
-            this.panel2.TabIndex = 11;
+            this.panel2.TabIndex = 88;
             // 
             // pictureEdit2
             // 
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
             this.pictureEdit2.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -507,10 +511,11 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel3.Location = new System.Drawing.Point(515, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(250, 98);
-            this.panel3.TabIndex = 11;
+            this.panel3.TabIndex = 88;
             // 
             // pictureEdit3
             // 
+            this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
             this.pictureEdit3.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -557,10 +562,11 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel4.Location = new System.Drawing.Point(771, 4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(250, 98);
-            this.panel4.TabIndex = 11;
+            this.panel4.TabIndex = 88;
             // 
             // pictureEdit4
             // 
+            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
             this.pictureEdit4.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;

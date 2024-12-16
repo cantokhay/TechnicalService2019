@@ -223,6 +223,18 @@ namespace Tech2019.DataAccessLayer.Context
             modelBuilder.Entity<Invoice>()
                 .Property(i => i.InvoiceTaxOffice)
                 .HasMaxLength(50);
+
+            modelBuilder.Entity<Invoice>()
+                .HasRequired(i => i.CustomerNavigation)
+                .WithMany(c => c.Invoices)
+                .HasForeignKey(i => i.Customer)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Invoice>()
+                .HasRequired(i => i.EmployeeNavigation)
+                .WithMany(c => c.Invoices)
+                .HasForeignKey(i => i.Employee)
+                .WillCascadeOnDelete(false);
         }
 
         private void ConfigureInvoiceDetail(DbModelBuilder modelBuilder)
@@ -234,6 +246,12 @@ namespace Tech2019.DataAccessLayer.Context
                 .Property(id => id.ProductName)
                 .HasMaxLength(50)
                 .IsRequired();
+
+            modelBuilder.Entity<InvoiceDetail>()
+                .HasRequired(id => id.InvoiceNavigation)
+                .WithMany(i => i.InvoiceDetails)
+                .HasForeignKey(id => id.Invoice)
+                .WillCascadeOnDelete(false);
         }
 
         private void ConfigureAction(DbModelBuilder modelBuilder)

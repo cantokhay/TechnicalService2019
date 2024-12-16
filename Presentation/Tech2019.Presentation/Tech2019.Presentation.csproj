@@ -36,11 +36,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.Wizard, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -118,6 +123,12 @@
     </Compile>
     <Compile Include="Forms\Employees\EmployeeForms\FrmNewEmployee.Designer.cs">
       <DependentUpon>FrmNewEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Invoices\InvoiceInvoiceForms\FrmInvoiceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Invoices\InvoiceInvoiceForms\FrmInvoiceList.Designer.cs">
+      <DependentUpon>FrmInvoiceList.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Products\ProductCategoryForms\FrmCategoryList.cs">
       <SubType>Form</SubType>
@@ -232,6 +243,9 @@
     <EmbeddedResource Include="Forms\Employees\EmployeeForms\FrmNewEmployee.resx">
       <DependentUpon>FrmNewEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoices\InvoiceInvoiceForms\FrmInvoiceList.resx">
+      <DependentUpon>FrmInvoiceList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Products\ProductCategoryForms\FrmCategoryList.resx">
       <DependentUpon>FrmCategoryList.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,8 +313,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\Bookmark.png" />
-    <Content Include="images\Document.png" />
     <Content Include="images\dummy-logo-1.png" />
     <Content Include="images\dummy-logo-2.png" />
     <Content Include="images\dummy-logo-3.png" />
@@ -309,12 +321,10 @@
     <Content Include="images\dummy-logo-6.png" />
     <Content Include="images\dummy-logo-7.png" />
     <Content Include="images\dummy-logo-8.png" />
-    <Content Include="images\Favorites.png" />
-    <Content Include="images\Menu.png" />
-    <Content Include="images\Puzzle.png" />
-    <Content Include="images\Refresh-Product.png" />
-    <Content Include="images\Scroll.png" />
-    <Content Include="images\Share.png" />
+    <Content Include="images\NewEmployee-1.png" />
+    <Content Include="images\NewSale-1.png" />
+    <Content Include="images\NewCustomer-1.png" />
+    <Content Include="images\NewDepartment-1.png" />
     <Content Include="images\slider-1.png" />
     <Content Include="images\slider-2.png" />
     <Content Include="images\slider-3.png" />
@@ -345,12 +355,9 @@
     <Content Include="images\Stats-Logo-7.png" />
     <Content Include="images\Stats-Logo-8.png" />
     <Content Include="images\Stats-Logo-9.png" />
-    <Content Include="images\Toolbox.png" />
-    <Content Include="images\Trash Can.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\Contacts\" />
-    <Folder Include="Forms\Invoices\InvoiceInvoiceForms\" />
     <Folder Include="Forms\Invoices\InvoiceMovementForms\" />
     <Folder Include="Forms\Reports\" />
     <Folder Include="Forms\Statistics\" />

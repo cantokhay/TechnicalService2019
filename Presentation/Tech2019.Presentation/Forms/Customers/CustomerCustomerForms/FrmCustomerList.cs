@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tech2019.DataAccessLayer.Context;
 using Tech2019.EntityLayer.Concrete;
@@ -47,38 +41,60 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
 
         private void btnSave_Click(object sender, System.EventArgs e)
         {
+            if (!ValidateCustomerInfo())
+                return;
+
             Customer customer = new Customer();
             AssignCustomerInfo(customer);
             db.Customers.Add(customer);
             db.SaveChanges();
             MessageBox.Show("Customer Added Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            CustomerList();
             ClearCustomerInfo();
         }
 
         private void btnDelete_Click(object sender, System.EventArgs e)
         {
+            if (!ValidateCustomerId())
+                return;
+
             int id = int.Parse(txtCustomerId.Text);
             var customer = db.Customers.Find(id);
+
+            if (customer == null)
+            {
+                MessageBox.Show("Customer Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             db.Customers.Remove(customer);
             db.SaveChanges();
             MessageBox.Show("Customer Deleted", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            CustomerList();
             ClearCustomerInfo();
         }
 
         private void btnUpdate_Click(object sender, System.EventArgs e)
         {
+            if (!ValidateCustomerId())
+                return;
+
+            if (!ValidateCustomerInfo())
+                return;
+
             int id = int.Parse(txtCustomerId.Text);
             var customer = db.Customers.Find(id);
-            if (customer != null)
-            {
-                AssignCustomerInfo(customer);
-                db.SaveChanges();
-                MessageBox.Show("Customer Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
+
+            if (customer == null)
             {
                 MessageBox.Show("Customer Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            AssignCustomerInfo(customer);
+            db.SaveChanges();
+            MessageBox.Show("Customer Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            CustomerList();
             ClearCustomerInfo();
         }
 
@@ -118,7 +134,9 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
         private void FillLookUpEditCitiesandDistricts()
         {
             lueCustomerCity.Properties.DataSource = db.Customers.Select(c => c.CustomerCity).Distinct().ToList();
+            lueCustomerCity.Properties.NullText = "Please pick a value";
             lueCustomerDistrict.Properties.DataSource = db.Customers.Select(c => c.CustomerDistrict).Distinct().ToList();
+            lueCustomerDistrict.Properties.NullText = "Please pick a value";
             var districts = db.Customers.Select(c => c.CustomerDistrict).Distinct().ToList();
             lueCustomerDistrict.Properties.DataSource = districts;
         }
@@ -159,5 +177,85 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
         }
 
         #endregion
+
+        #region Validation Methods
+
+        private bool ValidateCustomerInfo()
+        {
+            if (string.IsNullOrWhiteSpace(txtCustomerFirstName.Text))
+            {
+                MessageBox.Show("First Name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtCustomerLastName.Text))
+            {
+                MessageBox.Show("Last Name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtPhoneNumber.Text))
+            {
+                MessageBox.Show("Phone Number cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                MessageBox.Show("Email cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (lueCustomerCity.EditValue == null)
+            {
+                MessageBox.Show("Please select a City.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (lueCustomerDistrict.EditValue == null)
+            {
+                MessageBox.Show("Please select a District.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtBank.Text))
+            {
+                MessageBox.Show("Bank cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtTaxOffice.Text))
+            {
+                MessageBox.Show("Tax Office cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtTaxNumber.Text))
+            {
+                MessageBox.Show("Tax Number cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtStatus.Text))
+            {
+                MessageBox.Show("Status cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtAddress.Text))
+            {
+                MessageBox.Show("Address cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        private bool ValidateCustomerId()
+        {
+            if (string.IsNullOrWhiteSpace(txtCustomerId.Text))
+            {
+                MessageBox.Show("Customer ID cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (!int.TryParse(txtCustomerId.Text, out _))
+            {
+                MessageBox.Show("Customer ID must be a valid number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        #endregion
+
     }
 }

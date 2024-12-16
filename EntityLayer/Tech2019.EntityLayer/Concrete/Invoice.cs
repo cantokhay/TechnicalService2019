@@ -18,5 +18,4 @@ namespace Tech2019.EntityLayer.Concrete
         public Employee EmployeeNavigation { get; set; }
         public ICollection<InvoiceDetail> InvoiceDetails { get; set; }
     }
-
 }

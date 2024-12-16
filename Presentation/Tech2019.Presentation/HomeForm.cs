@@ -176,5 +176,12 @@ namespace Tech2019.Presentation
             frmProductTraceList.MdiParent = this;
             frmProductTraceList.Show();
         }
+
+        private void btnInvoiceList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceList frmInvoiceList = new Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceList();
+            frmInvoiceList.MdiParent = this;
+            frmInvoiceList.Show();
+        }
     }
 }

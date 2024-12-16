@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tech2019.DataAccessLayer.Context;
 using Tech2019.EntityLayer.Concrete;
@@ -31,39 +27,54 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (!ValidateEmployeeInfo())
+                return;
+
             Employee employee = new Employee();
             AssignEmployeeInfo(employee);
             db.Employees.Add(employee);
             db.SaveChanges();
             MessageBox.Show("Employee Added Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            EmployeeList();
             ClearEmployeeInfo();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (!ValidateEmployeeId())
+                return;
+
             int id = int.Parse(txtEmployeeId.Text);
             var employee = db.Employees.Find(id);
+
             db.Employees.Remove(employee);
             db.SaveChanges();
             MessageBox.Show("Employee Deleted", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            EmployeeList();
             ClearEmployeeInfo();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (!ValidateEmployeeId())
+                return;
+
+            if (!ValidateEmployeeInfo())
+                return;
+
             int id = int.Parse(txtEmployeeId.Text);
             var employee = db.Employees.Find(id);
 
-            if (employee != null)
+            if (employee == null)
             {
-                AssignEmployeeInfo(employee);
-                db.SaveChanges();
-                MessageBox.Show("Employee Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Customer Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
-            {
-                MessageBox.Show("Employee Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            AssignEmployeeInfo(employee);
+            db.SaveChanges();
+            MessageBox.Show("Employee Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            EmployeeList();
             ClearEmployeeInfo();
         }
 
@@ -75,25 +86,14 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
 
         private void gvwEmployee_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (gvwEmployee.GetFocusedRowCellValue("EmployeeId") != null)
-            {
-                txtEmployeeId.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeId").ToString();
-                txtEmployeeFirstName.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeFirstName").ToString();
-                txtEmployeeLastName.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeLastName").ToString();
-                txtEmployeeEmail.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeMail").ToString();
-                txtEmployeePhoneNumber.Text = gvwEmployee.GetFocusedRowCellValue("EmployeePhoneNumber").ToString();
-                txtEmployeePhoto.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeProfilePhoto").ToString();
-
-                var departmentId = gvwEmployee.GetFocusedRowCellValue("DepartmentId");
-                if (departmentId != null)
-                {
-                    lueEmployeeDepartments.EditValue = Convert.ToInt32(departmentId);
-                }
-                else
-                {
-                    lueEmployeeDepartments.EditValue = null;
-                }
-            }
+            txtEmployeeId.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeId").ToString();
+            txtEmployeeFirstName.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeFirstName").ToString();
+            txtEmployeeLastName.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeLastName").ToString();
+            txtEmployeeEmail.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeMail").ToString();
+            txtEmployeePhoneNumber.Text = gvwEmployee.GetFocusedRowCellValue("EmployeePhoneNumber").ToString();
+            txtEmployeePhoto.Text = gvwEmployee.GetFocusedRowCellValue("EmployeeProfilePhoto").ToString();
+            var departmentId = gvwEmployee.GetFocusedRowCellValue("DepartmentId");
+            lueEmployeeDepartments.EditValue = departmentId;
         }
 
         #region ExtractedMethods
@@ -117,34 +117,35 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
                 x.DepartmentName
             }).ToList();
             lueEmployeeDepartments.Properties.DataSource = departmentsList;
+            lueEmployeeDepartments.Properties.NullText = "Please pick a value";
         }
 
         private void FillProfileCards()
         {
-            var employee1 = db.Employees.FirstOrDefault(x => x.DepartmentNavigation.DepartmentName == "HR");
-            var employee2 = db.Employees.FirstOrDefault(x => x.DepartmentNavigation.DepartmentName == "Sales");
-            var employee3 = db.Employees.FirstOrDefault(x => x.DepartmentNavigation.DepartmentName == "Marketing");
-            var employee4 = db.Employees.FirstOrDefault(x => x.DepartmentNavigation.DepartmentName == "Production");
+            var employee1 = db.Employees.FirstOrDefault(x => x.DepartmentNavigation.DepartmentId == 1);
+            var employee2 = db.Employees.FirstOrDefault(x => x.DepartmentNavigation.DepartmentId == 2);
+            var employee3 = db.Employees.FirstOrDefault(x => x.DepartmentNavigation.DepartmentId == 3);
+            var employee4 = db.Employees.FirstOrDefault(x => x.DepartmentNavigation.DepartmentId == 4);
 
-            lblEmployeeFullName1.Text = $"{employee1.EmployeeFirstName} {employee1.EmployeeLastName}";
+            lblEmployeeFullName1.Text = employee1.EmployeeFirstName + " " + employee1.EmployeeLastName;
             lblEmployeeMail1.Text = employee1.EmployeeMail;
             lblEmployeePhone1.Text = employee1.EmployeePhoneNumber;
             lblEmployeeDepartment1.Text = db.Departments.FirstOrDefault(x => x.DepartmentId == employee1.Department).DepartmentName;
             picEmployee1.Image = GetImageFromUrl(employee1.EmployeeProfilePhoto);
 
-            lblEmployeeFullName2.Text = $"{employee2.EmployeeFirstName} {employee2.EmployeeLastName}";
+            lblEmployeeFullName2.Text = employee2.EmployeeFirstName + " " + employee2.EmployeeLastName; ;
             lblEmployeeMail2.Text = employee2.EmployeeMail;
             lblEmployeePhone2.Text = employee2.EmployeePhoneNumber;
             lblEmployeeDepartment2.Text = db.Departments.FirstOrDefault(x => x.DepartmentId == employee2.Department).DepartmentName;
             picEmployee2.Image = GetImageFromUrl(employee2.EmployeeProfilePhoto);
 
-            lblEmployeeFullName3.Text = $"{employee3.EmployeeFirstName} {employee3.EmployeeLastName}";
+            lblEmployeeFullName3.Text = employee3.EmployeeFirstName + " " + employee3.EmployeeLastName; ;
             lblEmployeeMail3.Text = employee3.EmployeeMail;
             lblEmployeePhone3.Text = employee3.EmployeePhoneNumber;
             lblEmployeeDepartment3.Text = db.Departments.FirstOrDefault(x => x.DepartmentId == employee3.Department).DepartmentName;
             picEmployee3.Image = GetImageFromUrl(employee3.EmployeeProfilePhoto);
 
-            lblEmployeeFullName4.Text = $"{employee4.EmployeeFirstName} {employee4.EmployeeLastName}";
+            lblEmployeeFullName4.Text = employee4.EmployeeFirstName + " " + employee4.EmployeeLastName; ;
             lblEmployeeMail4.Text = employee4.EmployeeMail;
             lblEmployeePhone4.Text = employee4.EmployeePhoneNumber;
             lblEmployeeDepartment4.Text = db.Departments.FirstOrDefault(x => x.DepartmentId == employee4.Department).DepartmentName;
@@ -200,6 +201,60 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             employee.EmployeePhoneNumber = txtEmployeePhoneNumber.Text;
             employee.EmployeeProfilePhoto = txtEmployeePhoto.Text;
             employee.Department = byte.Parse(lueEmployeeDepartments.EditValue.ToString());
+        }
+
+        #endregion
+
+        #region Validation Methods
+
+        private bool ValidateEmployeeInfo()
+        {
+            if (string.IsNullOrWhiteSpace(txtEmployeeFirstName.Text))
+            {
+                MessageBox.Show("First Name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtEmployeeLastName.Text))
+            {
+                MessageBox.Show("Last Name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtEmployeePhoneNumber.Text))
+            {
+                MessageBox.Show("Phone Number cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtEmployeeEmail.Text))
+            {
+                MessageBox.Show("Email cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtEmployeePhoto.Text))
+            {
+                MessageBox.Show("Photo Link cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (lueEmployeeDepartments.EditValue == null)
+            {
+                MessageBox.Show("Please select a Department.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        private bool ValidateEmployeeId()
+        {
+            if (string.IsNullOrWhiteSpace(txtEmployeeId.Text))
+            {
+                MessageBox.Show("Employee ID cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (!int.TryParse(txtEmployeeId.Text, out _))
+            {
+                MessageBox.Show("Employee ID must be a valid number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
         }
 
         #endregion

@@ -135,7 +135,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel2.Location = new System.Drawing.Point(626, 179);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(220, 3);
-            this.panel2.TabIndex = 26;
+            this.panel2.TabIndex = 261;
             // 
             // txtCustomerLastName
             // 
@@ -156,6 +156,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // pictureEdit2
             // 
             this.pictureEdit2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
             this.pictureEdit2.Location = new System.Drawing.Point(589, 150);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -173,7 +174,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel6.Location = new System.Drawing.Point(626, 515);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(220, 3);
-            this.panel6.TabIndex = 19;
+            this.panel6.TabIndex = 191;
             // 
             // panel5
             // 
@@ -183,7 +184,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel5.Location = new System.Drawing.Point(626, 467);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(220, 3);
-            this.panel5.TabIndex = 18;
+            this.panel5.TabIndex = 181;
             // 
             // panel4
             // 
@@ -193,7 +194,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel4.Location = new System.Drawing.Point(626, 419);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(220, 3);
-            this.panel4.TabIndex = 21;
+            this.panel4.TabIndex = 211;
             // 
             // panel3
             // 
@@ -203,7 +204,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel3.Location = new System.Drawing.Point(626, 371);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(220, 3);
-            this.panel3.TabIndex = 16;
+            this.panel3.TabIndex = 161;
             // 
             // panel1
             // 
@@ -213,7 +214,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel1.Location = new System.Drawing.Point(626, 131);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 3);
-            this.panel1.TabIndex = 17;
+            this.panel1.TabIndex = 171;
             // 
             // txtCustomerTaxNumber
             // 
@@ -228,6 +229,8 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.txtCustomerTaxNumber.Properties.Appearance.Options.UseFont = true;
             this.txtCustomerTaxNumber.Properties.Appearance.Options.UseForeColor = true;
             this.txtCustomerTaxNumber.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtCustomerTaxNumber.Properties.Mask.EditMask = "\\d{0,9}";
+            this.txtCustomerTaxNumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtCustomerTaxNumber.Size = new System.Drawing.Size(124, 26);
             this.txtCustomerTaxNumber.TabIndex = 9;
             // 
@@ -282,6 +285,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // pictureEdit6
             // 
             this.pictureEdit6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
             this.pictureEdit6.Location = new System.Drawing.Point(589, 486);
             this.pictureEdit6.Name = "pictureEdit6";
             this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -294,6 +298,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // pictureEdit5
             // 
             this.pictureEdit5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureEdit5.EditValue = ((object)(resources.GetObject("pictureEdit5.EditValue")));
             this.pictureEdit5.Location = new System.Drawing.Point(589, 438);
             this.pictureEdit5.Name = "pictureEdit5";
             this.pictureEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -306,6 +311,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // pictureEdit4
             // 
             this.pictureEdit4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
             this.pictureEdit4.Location = new System.Drawing.Point(589, 390);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -318,6 +324,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // pictureEdit3
             // 
             this.pictureEdit3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
             this.pictureEdit3.Location = new System.Drawing.Point(589, 342);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -330,6 +337,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // pictureEdit7
             // 
             this.pictureEdit7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
             this.pictureEdit7.Location = new System.Drawing.Point(614, 12);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -342,6 +350,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // pictureEdit1
             // 
             this.pictureEdit1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(589, 102);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -354,6 +363,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // pictureEdit8
             // 
             this.pictureEdit8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureEdit8.EditValue = ((object)(resources.GetObject("pictureEdit8.EditValue")));
             this.pictureEdit8.Location = new System.Drawing.Point(589, 198);
             this.pictureEdit8.Name = "pictureEdit8";
             this.pictureEdit8.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -394,6 +404,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // pictureEdit9
             // 
             this.pictureEdit9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureEdit9.EditValue = ((object)(resources.GetObject("pictureEdit9.EditValue")));
             this.pictureEdit9.Location = new System.Drawing.Point(589, 246);
             this.pictureEdit9.Name = "pictureEdit9";
             this.pictureEdit9.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -432,6 +443,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // pictureEdit10
             // 
             this.pictureEdit10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureEdit10.EditValue = ((object)(resources.GetObject("pictureEdit10.EditValue")));
             this.pictureEdit10.Location = new System.Drawing.Point(589, 294);
             this.pictureEdit10.Name = "pictureEdit10";
             this.pictureEdit10.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -449,7 +461,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel9.Location = new System.Drawing.Point(626, 323);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(220, 3);
-            this.panel9.TabIndex = 16;
+            this.panel9.TabIndex = 161;
             // 
             // lueCustomerCity
             // 
@@ -468,6 +480,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // pictureEdit11
             // 
             this.pictureEdit11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureEdit11.EditValue = ((object)(resources.GetObject("pictureEdit11.EditValue")));
             this.pictureEdit11.Location = new System.Drawing.Point(589, 534);
             this.pictureEdit11.Name = "pictureEdit11";
             this.pictureEdit11.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -501,11 +514,12 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel10.Location = new System.Drawing.Point(626, 563);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(220, 3);
-            this.panel10.TabIndex = 19;
+            this.panel10.TabIndex = 191;
             // 
             // pictureEdit12
             // 
             this.pictureEdit12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureEdit12.EditValue = ((object)(resources.GetObject("pictureEdit12.EditValue")));
             this.pictureEdit12.Location = new System.Drawing.Point(589, 582);
             this.pictureEdit12.Name = "pictureEdit12";
             this.pictureEdit12.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -539,7 +553,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel11.Location = new System.Drawing.Point(626, 611);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(220, 3);
-            this.panel11.TabIndex = 19;
+            this.panel11.TabIndex = 191;
             // 
             // panelControl1
             // 
@@ -554,7 +568,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // 
             // imageSlider1
             // 
-            this.imageSlider1.AnimationTime = 900;
+            this.imageSlider1.AnimationTime = 250;
             this.imageSlider1.CurrentImageIndex = 0;
             this.imageSlider1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("imageSlider1.Images"))));
@@ -573,11 +587,11 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.btnNewQuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnNewQuit.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnNewQuit.Appearance.Options.UseFont = true;
-            this.btnNewQuit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewCustomerQuit.ImageOptions.Image")));
+            this.btnNewQuit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewQuit.ImageOptions.Image")));
             this.btnNewQuit.Location = new System.Drawing.Point(732, 649);
             this.btnNewQuit.Name = "btnNewQuit";
             this.btnNewQuit.Size = new System.Drawing.Size(120, 33);
-            this.btnNewQuit.TabIndex = 10;
+            this.btnNewQuit.TabIndex = 13;
             this.btnNewQuit.Text = "QUIT";
             this.btnNewQuit.Click += new System.EventHandler(this.btnNewQuit_Click);
             // 
@@ -587,11 +601,11 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnNewSave.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnNewSave.Appearance.Options.UseFont = true;
-            this.btnNewSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewCustomerSave.ImageOptions.Image")));
+            this.btnNewSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewSave.ImageOptions.Image")));
             this.btnNewSave.Location = new System.Drawing.Point(589, 649);
             this.btnNewSave.Name = "btnNewSave";
             this.btnNewSave.Size = new System.Drawing.Size(120, 33);
-            this.btnNewSave.TabIndex = 9;
+            this.btnNewSave.TabIndex = 12;
             this.btnNewSave.Text = "SAVE";
             this.btnNewSave.Click += new System.EventHandler(this.btnNewSave_Click);
             // 
@@ -643,7 +657,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.Name = "FrmNewCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNewCustomer";
-            this.Load += new System.EventHandler(this.FrmNewCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lueCustomerDistrict.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerLastName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
@@ -713,10 +726,11 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
         private DevExpress.XtraEditors.TextEdit txtCustomerAddress;
         private System.Windows.Forms.Panel panel11;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.Controls.ImageSlider imageSlider1;
         private DevExpress.XtraEditors.SimpleButton btnNewQuit;
         private DevExpress.XtraEditors.SimpleButton btnNewSave;
 
         #endregion
+
+        private DevExpress.XtraEditors.Controls.ImageSlider imageSlider1;
     }
 }

@@ -75,7 +75,7 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             // 
             // txtDepartmentName
             // 
-            this.txtDepartmentName.EditValue = "Department Name ";
+            this.txtDepartmentName.EditValue = "Department Name";
             this.txtDepartmentName.Location = new System.Drawing.Point(48, 102);
             this.txtDepartmentName.Name = "txtDepartmentName";
             this.txtDepartmentName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -86,10 +86,11 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             this.txtDepartmentName.Properties.Appearance.Options.UseForeColor = true;
             this.txtDepartmentName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtDepartmentName.Size = new System.Drawing.Size(143, 26);
-            this.txtDepartmentName.TabIndex = 33;
+            this.txtDepartmentName.TabIndex = 1;
             // 
             // pictureEdit7
             // 
+            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
             this.pictureEdit7.Location = new System.Drawing.Point(37, 12);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -101,6 +102,7 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             // 
             // pictureEdit1
             // 
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(12, 102);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -112,6 +114,7 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             // 
             // pictureEdit2
             // 
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
             this.pictureEdit2.Location = new System.Drawing.Point(12, 150);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -134,7 +137,7 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             this.txtDepartmentDescription.Properties.Appearance.Options.UseForeColor = true;
             this.txtDepartmentDescription.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtDepartmentDescription.Size = new System.Drawing.Size(124, 26);
-            this.txtDepartmentDescription.TabIndex = 33;
+            this.txtDepartmentDescription.TabIndex = 2;
             // 
             // panel2
             // 
@@ -154,7 +157,7 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             this.btnNewQuit.Location = new System.Drawing.Point(155, 213);
             this.btnNewQuit.Name = "btnNewQuit";
             this.btnNewQuit.Size = new System.Drawing.Size(120, 33);
-            this.btnNewQuit.TabIndex = 37;
+            this.btnNewQuit.TabIndex = 4;
             this.btnNewQuit.Text = "QUIT";
             this.btnNewQuit.Click += new System.EventHandler(this.btnNewQuit_Click);
             // 
@@ -168,7 +171,7 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             this.btnNewSave.Location = new System.Drawing.Point(12, 213);
             this.btnNewSave.Name = "btnNewSave";
             this.btnNewSave.Size = new System.Drawing.Size(120, 33);
-            this.btnNewSave.TabIndex = 36;
+            this.btnNewSave.TabIndex = 3;
             this.btnNewSave.Text = "SAVE";
             this.btnNewSave.Click += new System.EventHandler(this.btnNewSave_Click);
             // 

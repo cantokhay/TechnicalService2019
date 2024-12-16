@@ -86,6 +86,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             // 
             // pictureEdit8
             // 
+            this.pictureEdit8.EditValue = ((object)(resources.GetObject("pictureEdit8.EditValue")));
             this.pictureEdit8.Location = new System.Drawing.Point(12, 342);
             this.pictureEdit8.Name = "pictureEdit8";
             this.pictureEdit8.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -154,6 +155,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             // 
             // pictureEdit7
             // 
+            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
             this.pictureEdit7.Location = new System.Drawing.Point(37, 12);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -165,6 +167,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             // 
             // pictureEdit5
             // 
+            this.pictureEdit5.EditValue = ((object)(resources.GetObject("pictureEdit5.EditValue")));
             this.pictureEdit5.Location = new System.Drawing.Point(12, 294);
             this.pictureEdit5.Name = "pictureEdit5";
             this.pictureEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -176,6 +179,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             // 
             // pictureEdit4
             // 
+            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
             this.pictureEdit4.Location = new System.Drawing.Point(12, 246);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -187,6 +191,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             // 
             // pictureEdit3
             // 
+            this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
             this.pictureEdit3.Location = new System.Drawing.Point(12, 198);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -198,6 +203,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             // 
             // pictureEdit2
             // 
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
             this.pictureEdit2.Location = new System.Drawing.Point(12, 150);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -209,6 +215,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             // 
             // pictureEdit1
             // 
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(12, 102);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -270,12 +277,18 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             this.numSaleQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.numSaleQuantity.ForeColor = System.Drawing.Color.White;
             this.numSaleQuantity.Location = new System.Drawing.Point(51, 294);
+            this.numSaleQuantity.Maximum = new decimal(new int[] {
+            30000,
+            0,
+            0,
+            0});
             this.numSaleQuantity.Name = "numSaleQuantity";
-            this.numSaleQuantity.Size = new System.Drawing.Size(81, 25);
+            this.numSaleQuantity.Size = new System.Drawing.Size(93, 25);
             this.numSaleQuantity.TabIndex = 5;
             // 
             // pictureEdit6
             // 
+            this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
             this.pictureEdit6.Location = new System.Drawing.Point(12, 390);
             this.pictureEdit6.Name = "pictureEdit6";
             this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -350,7 +363,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             this.btnNewQuit.Location = new System.Drawing.Point(155, 453);
             this.btnNewQuit.Name = "btnNewQuit";
             this.btnNewQuit.Size = new System.Drawing.Size(120, 33);
-            this.btnNewQuit.TabIndex = 63;
+            this.btnNewQuit.TabIndex = 9;
             this.btnNewQuit.Text = "QUIT";
             this.btnNewQuit.Click += new System.EventHandler(this.btnNewQuit_Click);
             // 
@@ -364,7 +377,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             this.btnNewSave.Location = new System.Drawing.Point(12, 453);
             this.btnNewSave.Name = "btnNewSave";
             this.btnNewSave.Size = new System.Drawing.Size(120, 33);
-            this.btnNewSave.TabIndex = 62;
+            this.btnNewSave.TabIndex = 8;
             this.btnNewSave.Text = "SAVE";
             this.btnNewSave.Click += new System.EventHandler(this.btnNewSave_Click);
             // 

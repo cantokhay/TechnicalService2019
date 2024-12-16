@@ -93,7 +93,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             // 
             // txtEmployeeFirstName
             // 
-            this.txtEmployeeFirstName.EditValue = "First Name ";
+            this.txtEmployeeFirstName.EditValue = "First Name";
             this.txtEmployeeFirstName.Location = new System.Drawing.Point(48, 102);
             this.txtEmployeeFirstName.Name = "txtEmployeeFirstName";
             this.txtEmployeeFirstName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -108,6 +108,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             // 
             // pictureEdit7
             // 
+            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
             this.pictureEdit7.Location = new System.Drawing.Point(37, 12);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -119,6 +120,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             // 
             // pictureEdit1
             // 
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(12, 102);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -130,6 +132,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             // 
             // pictureEdit2
             // 
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
             this.pictureEdit2.Location = new System.Drawing.Point(12, 150);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -141,7 +144,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             // 
             // txtEmployeeLastName
             // 
-            this.txtEmployeeLastName.EditValue = "Last Name ";
+            this.txtEmployeeLastName.EditValue = "Last Name";
             this.txtEmployeeLastName.Location = new System.Drawing.Point(48, 150);
             this.txtEmployeeLastName.Name = "txtEmployeeLastName";
             this.txtEmployeeLastName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -165,6 +168,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             // 
             // pictureEdit3
             // 
+            this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
             this.pictureEdit3.Location = new System.Drawing.Point(12, 198);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -200,6 +204,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             // 
             // pictureEdit4
             // 
+            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
             this.pictureEdit4.Location = new System.Drawing.Point(12, 246);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -237,6 +242,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             // 
             // pictureEdit5
             // 
+            this.pictureEdit5.EditValue = ((object)(resources.GetObject("pictureEdit5.EditValue")));
             this.pictureEdit5.Location = new System.Drawing.Point(12, 294);
             this.pictureEdit5.Name = "pictureEdit5";
             this.pictureEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -272,6 +278,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             // 
             // pictureEdit8
             // 
+            this.pictureEdit8.EditValue = ((object)(resources.GetObject("pictureEdit8.EditValue")));
             this.pictureEdit8.Location = new System.Drawing.Point(12, 342);
             this.pictureEdit8.Name = "pictureEdit8";
             this.pictureEdit8.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -314,7 +321,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             this.btnNewQuit.Location = new System.Drawing.Point(155, 405);
             this.btnNewQuit.Name = "btnNewQuit";
             this.btnNewQuit.Size = new System.Drawing.Size(120, 33);
-            this.btnNewQuit.TabIndex = 41;
+            this.btnNewQuit.TabIndex = 8;
             this.btnNewQuit.Text = "QUIT";
             this.btnNewQuit.Click += new System.EventHandler(this.btnNewQuit_Click);
             // 
@@ -328,7 +335,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             this.btnNewSave.Location = new System.Drawing.Point(12, 405);
             this.btnNewSave.Name = "btnNewSave";
             this.btnNewSave.Size = new System.Drawing.Size(120, 33);
-            this.btnNewSave.TabIndex = 40;
+            this.btnNewSave.TabIndex = 7;
             this.btnNewSave.Text = "SAVE";
             this.btnNewSave.Click += new System.EventHandler(this.btnNewSave_Click);
             // 

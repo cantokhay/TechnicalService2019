@@ -55,14 +55,12 @@
                         InvoiceTaxOffice = c.String(maxLength: 50),
                         Customer = c.Int(nullable: false),
                         Employee = c.Short(nullable: false),
-                        CustomerNavigation_CustomerId = c.Int(),
-                        EmployeeNavigation_EmployeeId = c.Short(),
                     })
                 .PrimaryKey(t => t.InvoiceId)
-                .ForeignKey("dbo.Customers", t => t.CustomerNavigation_CustomerId)
-                .ForeignKey("dbo.Employees", t => t.EmployeeNavigation_EmployeeId)
-                .Index(t => t.CustomerNavigation_CustomerId)
-                .Index(t => t.EmployeeNavigation_EmployeeId);
+                .ForeignKey("dbo.Customers", t => t.Customer)
+                .ForeignKey("dbo.Employees", t => t.Employee)
+                .Index(t => t.Customer)
+                .Index(t => t.Employee);
             
             CreateTable(
                 "dbo.Employees",
@@ -147,11 +145,10 @@
                         ProductUnitPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         ProductTotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Invoice = c.Int(nullable: false),
-                        InvoiceNavigation_InvoiceId = c.Int(),
                     })
                 .PrimaryKey(t => t.InvoiceDetailId)
-                .ForeignKey("dbo.Invoices", t => t.InvoiceNavigation_InvoiceId)
-                .Index(t => t.InvoiceNavigation_InvoiceId);
+                .ForeignKey("dbo.Invoices", t => t.Invoice)
+                .Index(t => t.Invoice);
             
             CreateTable(
                 "dbo.Admins",
@@ -216,22 +213,22 @@
         {
             DropForeignKey("dbo.Actions", "Employee", "dbo.Employees");
             DropForeignKey("dbo.Actions", "Customer", "dbo.Customers");
-            DropForeignKey("dbo.InvoiceDetails", "InvoiceNavigation_InvoiceId", "dbo.Invoices");
+            DropForeignKey("dbo.InvoiceDetails", "Invoice", "dbo.Invoices");
+            DropForeignKey("dbo.Invoices", "Employee", "dbo.Employees");
             DropForeignKey("dbo.Sales", "Product", "dbo.Products");
             DropForeignKey("dbo.Products", "Category", "dbo.Categories");
             DropForeignKey("dbo.Sales", "Employee", "dbo.Employees");
             DropForeignKey("dbo.Sales", "Customer", "dbo.Customers");
-            DropForeignKey("dbo.Invoices", "EmployeeNavigation_EmployeeId", "dbo.Employees");
             DropForeignKey("dbo.Employees", "Department", "dbo.Departments");
-            DropForeignKey("dbo.Invoices", "CustomerNavigation_CustomerId", "dbo.Customers");
-            DropIndex("dbo.InvoiceDetails", new[] { "InvoiceNavigation_InvoiceId" });
+            DropForeignKey("dbo.Invoices", "Customer", "dbo.Customers");
+            DropIndex("dbo.InvoiceDetails", new[] { "Invoice" });
             DropIndex("dbo.Products", new[] { "Category" });
             DropIndex("dbo.Sales", new[] { "Employee" });
             DropIndex("dbo.Sales", new[] { "Customer" });
             DropIndex("dbo.Sales", new[] { "Product" });
             DropIndex("dbo.Employees", new[] { "Department" });
-            DropIndex("dbo.Invoices", new[] { "EmployeeNavigation_EmployeeId" });
-            DropIndex("dbo.Invoices", new[] { "CustomerNavigation_CustomerId" });
+            DropIndex("dbo.Invoices", new[] { "Employee" });
+            DropIndex("dbo.Invoices", new[] { "Customer" });
             DropIndex("dbo.Actions", new[] { "Employee" });
             DropIndex("dbo.Actions", new[] { "Customer" });
             DropTable("dbo.ProductTraces");
