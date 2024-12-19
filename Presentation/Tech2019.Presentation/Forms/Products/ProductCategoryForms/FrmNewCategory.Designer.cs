@@ -68,7 +68,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             // 
             // txtCategoryName
             // 
-            this.txtCategoryName.EditValue = "Category Name ";
+            this.txtCategoryName.EditValue = "Category Name";
             this.txtCategoryName.Location = new System.Drawing.Point(48, 102);
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -79,10 +79,11 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.txtCategoryName.Properties.Appearance.Options.UseForeColor = true;
             this.txtCategoryName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtCategoryName.Size = new System.Drawing.Size(124, 26);
-            this.txtCategoryName.TabIndex = 15;
+            this.txtCategoryName.TabIndex = 1;
             // 
             // pictureEdit7
             // 
+            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
             this.pictureEdit7.Location = new System.Drawing.Point(37, 12);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -90,10 +91,11 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.pictureEdit7.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit7.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit7.Size = new System.Drawing.Size(50, 50);
-            this.pictureEdit7.TabIndex = 10;
+            this.pictureEdit7.TabIndex = 108;
             // 
             // pictureEdit1
             // 
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(12, 102);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -101,7 +103,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Size = new System.Drawing.Size(32, 32);
-            this.pictureEdit1.TabIndex = 9;
+            this.pictureEdit1.TabIndex = 98;
             // 
             // btnNewQuit
             // 
@@ -112,7 +114,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.btnNewQuit.Location = new System.Drawing.Point(155, 165);
             this.btnNewQuit.Name = "btnNewQuit";
             this.btnNewQuit.Size = new System.Drawing.Size(120, 33);
-            this.btnNewQuit.TabIndex = 39;
+            this.btnNewQuit.TabIndex = 3;
             this.btnNewQuit.Text = "QUIT";
             this.btnNewQuit.Click += new System.EventHandler(this.btnNewQuit_Click);
             // 
@@ -126,7 +128,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.btnNewSave.Location = new System.Drawing.Point(12, 165);
             this.btnNewSave.Name = "btnNewSave";
             this.btnNewSave.Size = new System.Drawing.Size(120, 33);
-            this.btnNewSave.TabIndex = 38;
+            this.btnNewSave.TabIndex = 2;
             this.btnNewSave.Text = "SAVE";
             this.btnNewSave.Click += new System.EventHandler(this.btnNewSave_Click);
             // 

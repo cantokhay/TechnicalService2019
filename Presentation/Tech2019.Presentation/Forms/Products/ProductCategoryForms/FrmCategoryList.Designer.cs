@@ -95,7 +95,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.labelControl7.Location = new System.Drawing.Point(46, 204);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(78, 13);
-            this.labelControl7.TabIndex = 8;
+            this.labelControl7.TabIndex = 88;
             this.labelControl7.Text = "CATEGORY ID : ";
             // 
             // labelControl1
@@ -103,7 +103,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.labelControl1.Location = new System.Drawing.Point(29, 230);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(95, 13);
-            this.labelControl1.TabIndex = 8;
+            this.labelControl1.TabIndex = 88;
             this.labelControl1.Text = "CATEGORY NAME : ";
             // 
             // txtCategoryId
@@ -119,7 +119,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.txtCategoryName.Location = new System.Drawing.Point(126, 227);
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(194, 20);
-            this.txtCategoryName.TabIndex = 1;
+            this.txtCategoryName.TabIndex = 2;
             // 
             // groupControl1
             // 
@@ -136,7 +136,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.groupControl1.Location = new System.Drawing.Point(1025, 2);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(340, 536);
-            this.groupControl1.TabIndex = 9;
+            this.groupControl1.TabIndex = 98;
             this.groupControl1.Text = "CATEGORY OPERATIONS";
             // 
             // btnRefresh
@@ -147,7 +147,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.btnRefresh.Location = new System.Drawing.Point(34, 489);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(293, 39);
-            this.btnRefresh.TabIndex = 12;
+            this.btnRefresh.TabIndex = 6;
             this.btnRefresh.Text = "REFRESH LIST";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
@@ -159,7 +159,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.btnUpdate.Location = new System.Drawing.Point(34, 444);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(293, 39);
-            this.btnUpdate.TabIndex = 13;
+            this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -171,7 +171,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.btnDelete.Location = new System.Drawing.Point(34, 399);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(292, 39);
-            this.btnDelete.TabIndex = 11;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -183,7 +183,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.btnSave.Location = new System.Drawing.Point(34, 354);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(293, 39);
-            this.btnSave.TabIndex = 10;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "SAVE";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -193,7 +193,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.grcCategoryList.MainView = this.gvwCategories;
             this.grcCategoryList.Name = "grcCategoryList";
             this.grcCategoryList.Size = new System.Drawing.Size(1018, 258);
-            this.grcCategoryList.TabIndex = 8;
+            this.grcCategoryList.TabIndex = 88;
             this.grcCategoryList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvwCategories});
             // 
@@ -214,13 +214,14 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.groupControl2.Location = new System.Drawing.Point(6, 264);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(241, 132);
-            this.groupControl2.TabIndex = 10;
+            this.groupControl2.TabIndex = 108;
             this.groupControl2.Text = "Dummy Logo - 1";
             // 
             // pictureEdit1
             // 
             this.pictureEdit1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(2, 23);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -235,13 +236,14 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.groupControl3.Location = new System.Drawing.Point(262, 264);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(241, 132);
-            this.groupControl3.TabIndex = 11;
+            this.groupControl3.TabIndex = 118;
             this.groupControl3.Text = "Dummy Logo - 2";
             // 
             // pictureEdit2
             // 
             this.pictureEdit2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureEdit2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
             this.pictureEdit2.Location = new System.Drawing.Point(2, 23);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -256,13 +258,14 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.groupControl4.Location = new System.Drawing.Point(518, 264);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(241, 132);
-            this.groupControl4.TabIndex = 11;
+            this.groupControl4.TabIndex = 118;
             this.groupControl4.Text = "Dummy Logo - 3";
             // 
             // pictureEdit3
             // 
             this.pictureEdit3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureEdit3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
             this.pictureEdit3.Location = new System.Drawing.Point(2, 23);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -277,13 +280,14 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.groupControl5.Location = new System.Drawing.Point(774, 264);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.Size = new System.Drawing.Size(241, 132);
-            this.groupControl5.TabIndex = 11;
+            this.groupControl5.TabIndex = 118;
             this.groupControl5.Text = "Dummy Logo - 4";
             // 
             // pictureEdit4
             // 
             this.pictureEdit4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureEdit4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
             this.pictureEdit4.Location = new System.Drawing.Point(2, 23);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -298,13 +302,14 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.groupControl6.Location = new System.Drawing.Point(6, 406);
             this.groupControl6.Name = "groupControl6";
             this.groupControl6.Size = new System.Drawing.Size(241, 132);
-            this.groupControl6.TabIndex = 10;
+            this.groupControl6.TabIndex = 108;
             this.groupControl6.Text = "Dummy Logo - 5";
             // 
             // pictureEdit5
             // 
             this.pictureEdit5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureEdit5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit5.EditValue = ((object)(resources.GetObject("pictureEdit5.EditValue")));
             this.pictureEdit5.Location = new System.Drawing.Point(2, 23);
             this.pictureEdit5.Name = "pictureEdit5";
             this.pictureEdit5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -319,13 +324,14 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.groupControl7.Location = new System.Drawing.Point(518, 406);
             this.groupControl7.Name = "groupControl7";
             this.groupControl7.Size = new System.Drawing.Size(241, 132);
-            this.groupControl7.TabIndex = 11;
+            this.groupControl7.TabIndex = 118;
             this.groupControl7.Text = "Dummy Logo - 7";
             // 
             // pictureEdit7
             // 
             this.pictureEdit7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureEdit7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
             this.pictureEdit7.Location = new System.Drawing.Point(2, 23);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -340,13 +346,14 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.groupControl8.Location = new System.Drawing.Point(774, 406);
             this.groupControl8.Name = "groupControl8";
             this.groupControl8.Size = new System.Drawing.Size(241, 132);
-            this.groupControl8.TabIndex = 11;
+            this.groupControl8.TabIndex = 118;
             this.groupControl8.Text = "Dummy Logo - 8";
             // 
             // pictureEdit8
             // 
             this.pictureEdit8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureEdit8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit8.EditValue = ((object)(resources.GetObject("pictureEdit8.EditValue")));
             this.pictureEdit8.Location = new System.Drawing.Point(2, 23);
             this.pictureEdit8.Name = "pictureEdit8";
             this.pictureEdit8.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -361,13 +368,14 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.groupControl9.Location = new System.Drawing.Point(262, 406);
             this.groupControl9.Name = "groupControl9";
             this.groupControl9.Size = new System.Drawing.Size(241, 132);
-            this.groupControl9.TabIndex = 11;
+            this.groupControl9.TabIndex = 118;
             this.groupControl9.Text = "Dummy Logo - 6";
             // 
             // pictureEdit6
             // 
             this.pictureEdit6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureEdit6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
             this.pictureEdit6.Location = new System.Drawing.Point(2, 23);
             this.pictureEdit6.Name = "pictureEdit6";
             this.pictureEdit6.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;

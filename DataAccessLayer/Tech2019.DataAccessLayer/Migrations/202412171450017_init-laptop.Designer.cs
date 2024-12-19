@@ -7,13 +7,13 @@ namespace Tech2019.DataAccessLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class initPC : IMigrationMetadata
+    public sealed partial class initlaptop : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initPC));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initlaptop));
         
         string IMigrationMetadata.Id
         {
-            get { return "202412111952566_init-PC"; }
+            get { return "202412171450017_init-laptop"; }
         }
         
         string IMigrationMetadata.Source

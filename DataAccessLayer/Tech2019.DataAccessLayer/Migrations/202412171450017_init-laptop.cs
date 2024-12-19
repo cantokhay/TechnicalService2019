@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initPC : DbMigration
+    public partial class initlaptop : DbMigration
     {
         public override void Up()
         {

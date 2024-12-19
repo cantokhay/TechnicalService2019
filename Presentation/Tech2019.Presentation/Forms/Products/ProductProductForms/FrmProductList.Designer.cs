@@ -89,7 +89,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.groupControl1.Location = new System.Drawing.Point(1025, 2);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(340, 536);
-            this.groupControl1.TabIndex = 7;
+            this.groupControl1.TabIndex = 78;
             this.groupControl1.Text = "PRODUCT OPERATIONS";
             // 
             // btnRefresh
@@ -145,7 +145,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.labelControl6.Location = new System.Drawing.Point(60, 261);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(64, 13);
-            this.labelControl6.TabIndex = 10;
+            this.labelControl6.TabIndex = 108;
             this.labelControl6.Text = "CATEGORY : ";
             // 
             // lueProductCategories
@@ -164,7 +164,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.labelControl5.Location = new System.Drawing.Point(81, 231);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(43, 13);
-            this.labelControl5.TabIndex = 8;
+            this.labelControl5.TabIndex = 88;
             this.labelControl5.Text = "STOCK : ";
             // 
             // txtStock
@@ -179,7 +179,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.labelControl4.Location = new System.Drawing.Point(57, 201);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(67, 13);
-            this.labelControl4.TabIndex = 8;
+            this.labelControl4.TabIndex = 88;
             this.labelControl4.Text = "SALE PRICE : ";
             // 
             // txtSalePrice
@@ -194,7 +194,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.labelControl3.Location = new System.Drawing.Point(28, 171);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(96, 13);
-            this.labelControl3.TabIndex = 8;
+            this.labelControl3.TabIndex = 88;
             this.labelControl3.Text = "PURCHASE PRICE : ";
             // 
             // txtPurchasePrice
@@ -209,7 +209,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.labelControl2.Location = new System.Drawing.Point(29, 141);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(95, 13);
-            this.labelControl2.TabIndex = 8;
+            this.labelControl2.TabIndex = 88;
             this.labelControl2.Text = "PRODUCT BRAND : ";
             // 
             // txtProductBrand
@@ -225,7 +225,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.labelControl7.Location = new System.Drawing.Point(52, 85);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(72, 13);
-            this.labelControl7.TabIndex = 8;
+            this.labelControl7.TabIndex = 88;
             this.labelControl7.Text = "PRODUCT ID : ";
             // 
             // labelControl1
@@ -233,7 +233,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.labelControl1.Location = new System.Drawing.Point(35, 111);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(89, 13);
-            this.labelControl1.TabIndex = 8;
+            this.labelControl1.TabIndex = 88;
             this.labelControl1.Text = "PRODUCT NAME : ";
             // 
             // txtProductId
@@ -242,7 +242,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.txtProductId.Location = new System.Drawing.Point(127, 82);
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.Size = new System.Drawing.Size(194, 20);
-            this.txtProductId.TabIndex = 1;
+            this.txtProductId.TabIndex = 0;
             // 
             // txtProductName
             // 

@@ -18,6 +18,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         private void FrmActionsList_Load(object sender, EventArgs e)
         {
             ActionsList();
+            FillChartWithActionData();
         }
 
         #region Extracted Methods
@@ -36,8 +37,34 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             grcActionsList.DataSource = values;
         }
 
+        private void FillChartWithActionData()
+        {
+            var data = db.Actions
+                .Join(db.Sales,
+                      action => action.ProductSerialNumber,
+                      sale => sale.ProductSerialNumber,
+                      (action, sale) => new
+                      {
+                          ProductBrand = sale.ProductNavigation.ProductBrand,
+                          ActionId = action.ActionId
+                      })
+                .GroupBy(x => x.ProductBrand)
+                .Select(g => new
+                {
+                    Brand = g.Key,
+            ActionCount = g.Count()
+        })
+                .ToList();
+
+            chartControl1.Series[0].Points.Clear();
+            foreach (var item in data)
+            {
+                chartControl1.Series[0].Points.AddPoint(item.Brand, item.ActionCount);
+            }
+        }
+
+
         #endregion
 
-        //TODO: One doughnut chart is expected to be in here
     }
 }

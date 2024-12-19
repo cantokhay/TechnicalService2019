@@ -30,6 +30,10 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmActionsList));
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.StackedLineSeriesView stackedLineSeriesView1 = new DevExpress.XtraCharts.StackedLineSeriesView();
             this.pictureEdit5 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.grcActionsList = new DevExpress.XtraGrid.GridControl();
@@ -39,6 +43,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             this.lblTotalFaultyProductLabel = new DevExpress.XtraEditors.LabelControl();
             this.lblTotalFaultyProductStat = new DevExpress.XtraEditors.LabelControl();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
@@ -68,6 +73,10 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             this.panel4.SuspendLayout();
@@ -84,6 +93,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             // pictureEdit5
             // 
+            this.pictureEdit5.EditValue = ((object)(resources.GetObject("pictureEdit5.EditValue")));
             this.pictureEdit5.Location = new System.Drawing.Point(7, 6);
             this.pictureEdit5.Name = "pictureEdit5";
             this.pictureEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -136,6 +146,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             // pictureEdit2
             // 
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
             this.pictureEdit2.Location = new System.Drawing.Point(190, 41);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -175,6 +186,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.chartControl1);
             this.panel5.Controls.Add(this.pictureEdit1);
             this.panel5.Controls.Add(this.pictureEdit5);
             this.panel5.Controls.Add(this.labelControl2);
@@ -184,8 +196,31 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             this.panel5.Size = new System.Drawing.Size(760, 334);
             this.panel5.TabIndex = 22;
             // 
+            // chartControl1
+            // 
+            this.chartControl1.AppearanceNameSerializable = "Pastel Kit";
+            this.chartControl1.BackColor = System.Drawing.Color.Transparent;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl1.Diagram = xyDiagram1;
+            this.chartControl1.Legend.BackColor = System.Drawing.Color.Transparent;
+            this.chartControl1.Legend.Font = new System.Drawing.Font("SansSerif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.chartControl1.Legend.Name = "Default Legend";
+            this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            this.chartControl1.Location = new System.Drawing.Point(7, 108);
+            this.chartControl1.Name = "chartControl1";
+            this.chartControl1.PaletteName = "Pastel Kit";
+            series1.LegendTextPattern = "{A}";
+            series1.Name = "Total Products in Service";
+            series1.View = stackedLineSeriesView1;
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartControl1.Size = new System.Drawing.Size(746, 220);
+            this.chartControl1.TabIndex = 45;
+            // 
             // pictureEdit1
             // 
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(657, 6);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -208,6 +243,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             // pictureEdit3
             // 
+            this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
             this.pictureEdit3.Location = new System.Drawing.Point(190, 41);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -243,6 +279,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             // pictureEdit4
             // 
+            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
             this.pictureEdit4.Location = new System.Drawing.Point(190, 41);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -319,6 +356,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             // pictureEdit6
             // 
+            this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
             this.pictureEdit6.Location = new System.Drawing.Point(190, 41);
             this.pictureEdit6.Name = "pictureEdit6";
             this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -369,6 +407,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             // pictureEdit7
             // 
+            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
             this.pictureEdit7.Location = new System.Drawing.Point(190, 41);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -419,6 +458,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             // pictureEdit8
             // 
+            this.pictureEdit8.EditValue = ((object)(resources.GetObject("pictureEdit8.EditValue")));
             this.pictureEdit8.Location = new System.Drawing.Point(190, 41);
             this.pictureEdit8.Name = "pictureEdit8";
             this.pictureEdit8.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -481,6 +521,10 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -536,5 +580,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
 
         #endregion
+
+        private DevExpress.XtraCharts.ChartControl chartControl1;
     }
 }

@@ -9,10 +9,14 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
         public FrmNewCategory()
         {
             InitializeComponent();
+            InitializePlaceholderEvents();
         }
 
         private void btnNewSave_Click(object sender, System.EventArgs e)
         {
+            if (!ValidateCategoryInfo())
+                return;
+
             TechDBContext db = new TechDBContext();
             Category category = new Category();
             AssignCategoryInfo(category);
@@ -27,6 +31,40 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
         }
 
         #region Extracted Methods
+
+        private bool ValidateCategoryInfo()
+        {
+            if (string.IsNullOrWhiteSpace(txtCategoryName.Text) || txtCategoryName.Text == "Category Name")
+            {
+                MessageBox.Show("Category Name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        private void InitializePlaceholderEvents()
+        {
+            AddPlaceholderEvents(txtCategoryName, "Category Name");
+        }
+
+        private void AddPlaceholderEvents(DevExpress.XtraEditors.TextEdit textEdit, string placeholder)
+        {
+            textEdit.GotFocus += (sender, e) =>
+            {
+                if (textEdit.Text == placeholder)
+                {
+                    textEdit.Text = string.Empty;
+                }
+            };
+
+            textEdit.LostFocus += (sender, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textEdit.Text))
+                {
+                    textEdit.Text = placeholder;
+                }
+            };
+        }
 
         private void AssignCategoryInfo(Category category)
         {

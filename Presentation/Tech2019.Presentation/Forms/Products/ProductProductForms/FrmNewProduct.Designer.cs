@@ -72,6 +72,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             // 
             // pictureEdit1
             // 
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(12, 102);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -83,7 +84,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             // 
             // txtProductName
             // 
-            this.txtProductName.EditValue = "Product Name ";
+            this.txtProductName.EditValue = "Product Name";
             this.txtProductName.Location = new System.Drawing.Point(48, 102);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -103,7 +104,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.panel1.Location = new System.Drawing.Point(49, 131);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 3);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 26;
             // 
             // panel2
             // 
@@ -112,7 +113,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.panel2.Location = new System.Drawing.Point(49, 179);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(220, 3);
-            this.panel2.TabIndex = 5;
+            this.panel2.TabIndex = 56;
             // 
             // txtProductBrand
             // 
@@ -131,6 +132,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             // 
             // pictureEdit2
             // 
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
             this.pictureEdit2.Location = new System.Drawing.Point(12, 150);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -138,10 +140,11 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit2.Size = new System.Drawing.Size(32, 32);
-            this.pictureEdit2.TabIndex = 3;
+            this.pictureEdit2.TabIndex = 36;
             // 
             // pictureEdit3
             // 
+            this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
             this.pictureEdit3.Location = new System.Drawing.Point(12, 198);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -158,10 +161,11 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.panel3.Location = new System.Drawing.Point(49, 227);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(220, 3);
-            this.panel3.TabIndex = 2;
+            this.panel3.TabIndex = 26;
             // 
             // pictureEdit4
             // 
+            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
             this.pictureEdit4.Location = new System.Drawing.Point(12, 246);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -193,10 +197,11 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.panel4.Location = new System.Drawing.Point(49, 275);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(220, 3);
-            this.panel4.TabIndex = 2;
+            this.panel4.TabIndex = 26;
             // 
             // pictureEdit5
             // 
+            this.pictureEdit5.EditValue = ((object)(resources.GetObject("pictureEdit5.EditValue")));
             this.pictureEdit5.Location = new System.Drawing.Point(12, 294);
             this.pictureEdit5.Name = "pictureEdit5";
             this.pictureEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -228,10 +233,11 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.panel5.Location = new System.Drawing.Point(49, 323);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(220, 3);
-            this.panel5.TabIndex = 2;
+            this.panel5.TabIndex = 26;
             // 
             // pictureEdit6
             // 
+            this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
             this.pictureEdit6.Location = new System.Drawing.Point(12, 342);
             this.pictureEdit6.Name = "pictureEdit6";
             this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -263,10 +269,11 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.panel6.Location = new System.Drawing.Point(49, 371);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(220, 3);
-            this.panel6.TabIndex = 2;
+            this.panel6.TabIndex = 26;
             // 
             // pictureEdit7
             // 
+            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
             this.pictureEdit7.Location = new System.Drawing.Point(37, 12);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -285,7 +292,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.label1.Location = new System.Drawing.Point(93, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 25);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 67;
             this.label1.Text = "ADD A PRODUCT";
             // 
             // btnNewProductSave

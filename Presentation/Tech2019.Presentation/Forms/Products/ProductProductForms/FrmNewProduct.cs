@@ -13,10 +13,13 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
         {
             InitializeComponent();
             FillLookUpEditCategories();
+            InitializePlaceholderEvents();
         }
 
         private void btnNewProductSave_Click(object sender, EventArgs e)
         {
+            if (!ValidateProductInfo())
+                return;
             TechDBContext db = new TechDBContext();
             Product product = new Product();
             AssignProductInfo(product);
@@ -33,6 +36,70 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
         }
 
         #region Exracted Methods
+
+        private bool ValidateProductInfo()
+        {
+            if (string.IsNullOrWhiteSpace(txtProductName.Text) || txtProductName.Text == "Product Name")
+            {
+                MessageBox.Show("Product Name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtProductBrand.Text) || txtProductBrand.Text == "Product Brand")
+            {
+                MessageBox.Show("Product Brand cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (lueProductCategories.EditValue == null)
+            {
+                MessageBox.Show("Please select a category.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtSalePrice.Text) || !decimal.TryParse(txtSalePrice.Text, out _) || txtSalePrice.Text == "Sale Price")
+            {
+                MessageBox.Show("Please provide a valid sale price.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtPurchasePrice.Text) || !decimal.TryParse(txtPurchasePrice.Text, out _) || txtPurchasePrice.Text == "Purchase Price")
+            {
+                MessageBox.Show("Please provide a valid purchase price.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtStock.Text) || !short.TryParse(txtStock.Text, out _) || txtStock.Text == "Stock Quantity")
+            {
+                MessageBox.Show("Please provide a valid stock quantity.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            
+            return true;
+        }
+
+        private void InitializePlaceholderEvents()
+        {
+            AddPlaceholderEvents(txtProductName, "Product Name");
+            AddPlaceholderEvents(txtProductBrand, "Product Brand");
+            AddPlaceholderEvents(txtPurchasePrice, "Purchase Price");
+            AddPlaceholderEvents(txtSalePrice, "Sale Price");
+            AddPlaceholderEvents(txtStock, "Stock Quantity");
+        }
+
+        private void AddPlaceholderEvents(DevExpress.XtraEditors.TextEdit textEdit, string placeholder)
+        {
+            textEdit.GotFocus += (sender, e) =>
+            {
+                if (textEdit.Text == placeholder)
+                {
+                    textEdit.Text = string.Empty;
+                }
+            };
+
+            textEdit.LostFocus += (sender, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textEdit.Text))
+                {
+                    textEdit.Text = placeholder;
+                }
+            };
+        }
 
         private void AssignProductInfo(Product product)
         {
@@ -54,6 +121,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
                                      c.CategoryName
                                  }; //TODO : This comes with categoryid but categoryid should be hidden and only name should be shown.
             lueProductCategories.Properties.DataSource = categoriesList.ToList();
+            lueProductCategories.Properties.NullText = "Please pick a value";
         }
 
         #endregion

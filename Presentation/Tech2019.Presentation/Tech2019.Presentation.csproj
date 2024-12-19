@@ -313,6 +313,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\NewProduct-1.png" />
+    <Content Include="images\NewCategory-1.png" />
     <Content Include="images\dummy-logo-1.png" />
     <Content Include="images\dummy-logo-2.png" />
     <Content Include="images\dummy-logo-3.png" />
@@ -355,6 +357,7 @@
     <Content Include="images\Stats-Logo-7.png" />
     <Content Include="images\Stats-Logo-8.png" />
     <Content Include="images\Stats-Logo-9.png" />
+    <Content Include="images\NewAction-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\Contacts\" />
