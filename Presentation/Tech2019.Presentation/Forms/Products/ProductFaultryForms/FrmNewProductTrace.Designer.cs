@@ -29,6 +29,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNewProductTrace));
             this.txtProductSerialNumber = new DevExpress.XtraEditors.TextEdit();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -44,12 +45,14 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             this.btnValidSerialNumber = new DevExpress.XtraEditors.SimpleButton();
             this.btnNewQuit = new DevExpress.XtraEditors.SimpleButton();
             this.btnNewSave = new DevExpress.XtraEditors.SimpleButton();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtProductSerialNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductTraceDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtProductSerialNumber
@@ -78,6 +81,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             // pictureEdit6
             // 
+            this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
             this.pictureEdit6.Location = new System.Drawing.Point(12, 228);
             this.pictureEdit6.Name = "pictureEdit6";
             this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -114,6 +118,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             // pictureEdit1
             // 
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(12, 150);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -125,6 +130,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             // pictureEdit4
             // 
+            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
             this.pictureEdit4.Location = new System.Drawing.Point(12, 102);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -162,6 +168,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             // pictureEdit7
             // 
+            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
             this.pictureEdit7.Location = new System.Drawing.Point(37, 12);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -195,6 +202,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             this.btnValidSerialNumber.Size = new System.Drawing.Size(83, 32);
             this.btnValidSerialNumber.TabIndex = 4;
             this.btnValidSerialNumber.Text = "Valid Serial?";
+            this.btnValidSerialNumber.Click += new System.EventHandler(this.btnValidSerialNumber_Click);
             // 
             // btnNewQuit
             // 
@@ -253,6 +261,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductTraceDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +284,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
 
         #endregion
 
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }

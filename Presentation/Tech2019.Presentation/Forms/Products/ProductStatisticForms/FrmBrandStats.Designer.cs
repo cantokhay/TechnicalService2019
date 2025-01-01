@@ -29,6 +29,12 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBrandStats));
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.DoughnutSeriesView doughnutSeriesView1 = new DevExpress.XtraCharts.DoughnutSeriesView();
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
             this.grcBrandsList = new DevExpress.XtraGrid.GridControl();
             this.gvwBrands = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -68,6 +74,8 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             this.pictureEdit8 = new DevExpress.XtraEditors.PictureEdit();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
             ((System.ComponentModel.ISupportInitialize)(this.grcBrandsList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwBrands)).BeginInit();
             this.panel1.SuspendLayout();
@@ -95,6 +103,13 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
             this.SuspendLayout();
             // 
             // grcBrandsList
@@ -130,6 +145,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit1
             // 
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -180,6 +196,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit2
             // 
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
             this.pictureEdit2.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -230,6 +247,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit3
             // 
+            this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
             this.pictureEdit3.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -280,6 +298,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit4
             // 
+            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
             this.pictureEdit4.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -319,6 +338,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.chartControl1);
             this.panel5.Controls.Add(this.pictureEdit5);
             this.panel5.Controls.Add(this.labelControl2);
             this.panel5.Controls.Add(this.labelControl1);
@@ -363,6 +383,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.chartControl2);
             this.panel6.Controls.Add(this.pictureEdit6);
             this.panel6.Controls.Add(this.labelControl4);
             this.panel6.Controls.Add(this.labelControl3);
@@ -429,6 +450,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit12
             // 
+            this.pictureEdit12.EditValue = ((object)(resources.GetObject("pictureEdit12.EditValue")));
             this.pictureEdit12.Location = new System.Drawing.Point(11, 11);
             this.pictureEdit12.Name = "pictureEdit12";
             this.pictureEdit12.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -452,6 +474,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit11
             // 
+            this.pictureEdit11.EditValue = ((object)(resources.GetObject("pictureEdit11.EditValue")));
             this.pictureEdit11.Location = new System.Drawing.Point(11, 11);
             this.pictureEdit11.Name = "pictureEdit11";
             this.pictureEdit11.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -475,6 +498,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit10
             // 
+            this.pictureEdit10.EditValue = ((object)(resources.GetObject("pictureEdit10.EditValue")));
             this.pictureEdit10.Location = new System.Drawing.Point(11, 11);
             this.pictureEdit10.Name = "pictureEdit10";
             this.pictureEdit10.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -498,6 +522,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit9
             // 
+            this.pictureEdit9.EditValue = ((object)(resources.GetObject("pictureEdit9.EditValue")));
             this.pictureEdit9.Location = new System.Drawing.Point(11, 11);
             this.pictureEdit9.Name = "pictureEdit9";
             this.pictureEdit9.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -521,6 +546,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit8
             // 
+            this.pictureEdit8.EditValue = ((object)(resources.GetObject("pictureEdit8.EditValue")));
             this.pictureEdit8.Location = new System.Drawing.Point(11, 11);
             this.pictureEdit8.Name = "pictureEdit8";
             this.pictureEdit8.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -544,6 +570,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit7
             // 
+            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
             this.pictureEdit7.Location = new System.Drawing.Point(11, 11);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -555,6 +582,39 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             this.pictureEdit7.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit7.Size = new System.Drawing.Size(60, 60);
             this.pictureEdit7.TabIndex = 3;
+            // 
+            // chartControl1
+            // 
+            this.chartControl1.BackColor = System.Drawing.Color.Transparent;
+            this.chartControl1.Legend.BackColor = System.Drawing.Color.Transparent;
+            this.chartControl1.Legend.Name = "Default Legend";
+            this.chartControl1.Location = new System.Drawing.Point(3, 99);
+            this.chartControl1.Name = "chartControl1";
+            series1.LegendTextPattern = "{A}";
+            series1.Name = "Series 1";
+            series1.View = doughnutSeriesView1;
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartControl1.Size = new System.Drawing.Size(438, 327);
+            this.chartControl1.TabIndex = 4;
+            // 
+            // chartControl2
+            // 
+            this.chartControl2.BackColor = System.Drawing.Color.Transparent;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl2.Diagram = xyDiagram1;
+            this.chartControl2.Legend.BackColor = System.Drawing.Color.Transparent;
+            this.chartControl2.Legend.Name = "Default Legend";
+            this.chartControl2.Location = new System.Drawing.Point(3, 99);
+            this.chartControl2.Name = "chartControl2";
+            series2.LegendTextPattern = "{A}";
+            series2.Name = "Series 1";
+            series2.View = lineSeriesView1;
+            this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series2};
+            this.chartControl2.Size = new System.Drawing.Size(550, 217);
+            this.chartControl2.TabIndex = 4;
             // 
             // FrmBrandStats
             // 
@@ -606,6 +666,13 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).EndInit();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -653,5 +720,8 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
         private DevExpress.XtraEditors.PictureEdit pictureEdit8;
 
         #endregion
+
+        private DevExpress.XtraCharts.ChartControl chartControl1;
+        private DevExpress.XtraCharts.ChartControl chartControl2;
     }
 }

@@ -65,7 +65,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
                                 $"Customer ID: {sale.Customer}\n" +
                                 $"Customer Name: {sale.CustomerFirstName} {sale.CustomerLastName}\n" +
                                 $"Sale Date: {sale.SaleDate.ToShortDateString()}\n",
-                                "Information",
+                                "Valid Serial Number",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
             }
@@ -112,7 +112,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
                 txtProductSerialNumber.Focus();
                 return false;
             }
-
             return true;
         }
 

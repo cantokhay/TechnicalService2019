@@ -9,7 +9,6 @@ namespace Tech2019.EntityLayer.Concrete
         public string InvoiceSerialCharacter { get; set; }
         public string InvoiceSequenceNumber { get; set; }
         public DateTime InvoiceDate { get; set; }
-        public string InvoiceHour { get; set; }
         public string InvoiceTaxOffice { get; set; }
         public int Customer { get; set; }
         public short Employee { get; set; } 

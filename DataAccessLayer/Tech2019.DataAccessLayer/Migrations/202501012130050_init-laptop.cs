@@ -51,7 +51,6 @@
                         InvoiceSerialCharacter = c.String(maxLength: 1),
                         InvoiceSequenceNumber = c.String(nullable: false, maxLength: 6),
                         InvoiceDate = c.DateTime(nullable: false),
-                        InvoiceHour = c.String(),
                         InvoiceTaxOffice = c.String(maxLength: 50),
                         Customer = c.Int(nullable: false),
                         Employee = c.Short(nullable: false),

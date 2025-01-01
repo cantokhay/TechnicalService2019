@@ -29,6 +29,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductStats));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.lblTotalProductStat = new DevExpress.XtraEditors.LabelControl();
@@ -164,6 +165,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit1
             // 
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -214,6 +216,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit2
             // 
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
             this.pictureEdit2.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -264,6 +267,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit3
             // 
+            this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
             this.pictureEdit3.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -314,6 +318,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit4
             // 
+            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
             this.pictureEdit4.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -364,6 +369,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit5
             // 
+            this.pictureEdit5.EditValue = ((object)(resources.GetObject("pictureEdit5.EditValue")));
             this.pictureEdit5.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit5.Name = "pictureEdit5";
             this.pictureEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -414,6 +420,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit6
             // 
+            this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
             this.pictureEdit6.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit6.Name = "pictureEdit6";
             this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -464,6 +471,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit7
             // 
+            this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
             this.pictureEdit7.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -514,6 +522,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit8
             // 
+            this.pictureEdit8.EditValue = ((object)(resources.GetObject("pictureEdit8.EditValue")));
             this.pictureEdit8.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit8.Name = "pictureEdit8";
             this.pictureEdit8.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -564,6 +573,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit9
             // 
+            this.pictureEdit9.EditValue = ((object)(resources.GetObject("pictureEdit9.EditValue")));
             this.pictureEdit9.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit9.Name = "pictureEdit9";
             this.pictureEdit9.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -614,6 +624,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit10
             // 
+            this.pictureEdit10.EditValue = ((object)(resources.GetObject("pictureEdit10.EditValue")));
             this.pictureEdit10.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit10.Name = "pictureEdit10";
             this.pictureEdit10.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -664,6 +675,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit11
             // 
+            this.pictureEdit11.EditValue = ((object)(resources.GetObject("pictureEdit11.EditValue")));
             this.pictureEdit11.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit11.Name = "pictureEdit11";
             this.pictureEdit11.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -714,6 +726,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit12
             // 
+            this.pictureEdit12.EditValue = ((object)(resources.GetObject("pictureEdit12.EditValue")));
             this.pictureEdit12.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit12.Name = "pictureEdit12";
             this.pictureEdit12.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -764,6 +777,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit13
             // 
+            this.pictureEdit13.EditValue = ((object)(resources.GetObject("pictureEdit13.EditValue")));
             this.pictureEdit13.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit13.Name = "pictureEdit13";
             this.pictureEdit13.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -814,6 +828,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit14
             // 
+            this.pictureEdit14.EditValue = ((object)(resources.GetObject("pictureEdit14.EditValue")));
             this.pictureEdit14.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit14.Name = "pictureEdit14";
             this.pictureEdit14.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -864,6 +879,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit15
             // 
+            this.pictureEdit15.EditValue = ((object)(resources.GetObject("pictureEdit15.EditValue")));
             this.pictureEdit15.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit15.Name = "pictureEdit15";
             this.pictureEdit15.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -914,6 +930,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit16
             // 
+            this.pictureEdit16.EditValue = ((object)(resources.GetObject("pictureEdit16.EditValue")));
             this.pictureEdit16.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit16.Name = "pictureEdit16";
             this.pictureEdit16.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -964,6 +981,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit17
             // 
+            this.pictureEdit17.EditValue = ((object)(resources.GetObject("pictureEdit17.EditValue")));
             this.pictureEdit17.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit17.Name = "pictureEdit17";
             this.pictureEdit17.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -1014,6 +1032,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit18
             // 
+            this.pictureEdit18.EditValue = ((object)(resources.GetObject("pictureEdit18.EditValue")));
             this.pictureEdit18.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit18.Name = "pictureEdit18";
             this.pictureEdit18.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -1064,6 +1083,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit19
             // 
+            this.pictureEdit19.EditValue = ((object)(resources.GetObject("pictureEdit19.EditValue")));
             this.pictureEdit19.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit19.Name = "pictureEdit19";
             this.pictureEdit19.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -1114,6 +1134,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit20
             // 
+            this.pictureEdit20.EditValue = ((object)(resources.GetObject("pictureEdit20.EditValue")));
             this.pictureEdit20.Location = new System.Drawing.Point(193, 41);
             this.pictureEdit20.Name = "pictureEdit20";
             this.pictureEdit20.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;

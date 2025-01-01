@@ -55,9 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\TechDBContext.cs" />
-    <Compile Include="Migrations\202412171450017_init-laptop.cs" />
-    <Compile Include="Migrations\202412171450017_init-laptop.designer.cs">
-      <DependentUpon>202412171450017_init-laptop.cs</DependentUpon>
+    <Compile Include="Migrations\202501012130050_init-laptop.cs" />
+    <Compile Include="Migrations\202501012130050_init-laptop.designer.cs">
+      <DependentUpon>202501012130050_init-laptop.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,8 +74,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202412171450017_init-laptop.resx">
-      <DependentUpon>202412171450017_init-laptop.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202501012130050_init-laptop.resx">
+      <DependentUpon>202501012130050_init-laptop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

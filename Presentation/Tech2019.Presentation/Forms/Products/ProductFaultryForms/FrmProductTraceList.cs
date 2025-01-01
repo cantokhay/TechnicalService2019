@@ -49,10 +49,10 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
                        .Select(s => db.Employees.Where(e => e.EmployeeId == s.Employee)
                        .Select(e => e.EmployeeFirstName + " " + e.EmployeeLastName).FirstOrDefault())
                        .FirstOrDefault(),
-                   Action = db.Actions
-                       .Where(a => a.ProductSerialNumber == pt.ProductSerialNumber)
-                       .Select(a => a.ActionId)
-                       .FirstOrDefault()
+                   //Action = db.Actions
+                   //    .Where(a => a.ProductSerialNumber == pt.ProductSerialNumber)
+                   //    .Select(a => a.ActionId)
+                   //    .FirstOrDefault()
                })
                .ToList();
 

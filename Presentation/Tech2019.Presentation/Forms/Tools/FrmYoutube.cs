@@ -12,7 +12,7 @@ namespace Tech2019.Presentation.Forms.Tools
 
         private void FrmYoutube_Load(object sender, EventArgs e)
         {
-            webYoutube.Navigate("https://www.youtube.com/");
+            webYoutube.Source = new Uri("https://www.youtube.com");
         }
     }
 }

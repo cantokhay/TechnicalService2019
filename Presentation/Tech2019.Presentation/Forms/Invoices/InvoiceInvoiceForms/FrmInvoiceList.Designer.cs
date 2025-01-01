@@ -38,33 +38,33 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             this.txtInvoiceSequence = new DevExpress.XtraEditors.TextEdit();
             this.txtInvoiceId = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtInvoiceTaxOffice = new DevExpress.XtraEditors.TextEdit();
+            this.txtInvoiceHour = new DevExpress.XtraEditors.TextEdit();
+            this.txtInvoiceDate = new DevExpress.XtraEditors.TextEdit();
+            this.lueInvoiceEmployee = new DevExpress.XtraEditors.LookUpEdit();
+            this.lueInvoiceCustomer = new DevExpress.XtraEditors.LookUpEdit();
+            this.lueInvoiceSerial = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.grcInvoiceList = new DevExpress.XtraGrid.GridControl();
             this.gvwInvoices = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.lueInvoiceSerial = new DevExpress.XtraEditors.LookUpEdit();
-            this.txtInvoiceDate = new DevExpress.XtraEditors.TextEdit();
-            this.txtInvoiceHour = new DevExpress.XtraEditors.TextEdit();
-            this.lueInvoiceCustomer = new DevExpress.XtraEditors.LookUpEdit();
-            this.lueInvoiceEmployee = new DevExpress.XtraEditors.LookUpEdit();
-            this.txtInvoiceTaxOffice = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceSequence.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceTaxOffice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceHour.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueInvoiceEmployee.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueInvoiceCustomer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueInvoiceSerial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcInvoiceList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwInvoices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueInvoiceSerial.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceHour.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueInvoiceCustomer.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueInvoiceEmployee.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceTaxOffice.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRefresh
@@ -170,6 +170,99 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             this.groupControl1.TabIndex = 19;
             this.groupControl1.Text = "INVOICE OPERATIONS";
             // 
+            // txtInvoiceTaxOffice
+            // 
+            this.txtInvoiceTaxOffice.Location = new System.Drawing.Point(135, 224);
+            this.txtInvoiceTaxOffice.Name = "txtInvoiceTaxOffice";
+            this.txtInvoiceTaxOffice.Properties.Mask.EditMask = "t";
+            this.txtInvoiceTaxOffice.Size = new System.Drawing.Size(190, 20);
+            this.txtInvoiceTaxOffice.TabIndex = 6;
+            // 
+            // txtInvoiceHour
+            // 
+            this.txtInvoiceHour.Location = new System.Drawing.Point(135, 194);
+            this.txtInvoiceHour.Name = "txtInvoiceHour";
+            this.txtInvoiceHour.Properties.Mask.EditMask = "t";
+            this.txtInvoiceHour.Size = new System.Drawing.Size(190, 20);
+            this.txtInvoiceHour.TabIndex = 5;
+            this.txtInvoiceHour.EnabledChanged += new System.EventHandler(this.txtInvoiceHour_LostFocus);
+            // 
+            // txtInvoiceDate
+            // 
+            this.txtInvoiceDate.Location = new System.Drawing.Point(135, 164);
+            this.txtInvoiceDate.Name = "txtInvoiceDate";
+            this.txtInvoiceDate.Properties.Mask.EditMask = "d";
+            this.txtInvoiceDate.Size = new System.Drawing.Size(190, 20);
+            this.txtInvoiceDate.TabIndex = 4;
+            this.txtInvoiceDate.EnabledChanged += new System.EventHandler(this.txtInvoiceDate_LostFocus);
+            // 
+            // lueInvoiceEmployee
+            // 
+            this.lueInvoiceEmployee.Location = new System.Drawing.Point(135, 284);
+            this.lueInvoiceEmployee.Name = "lueInvoiceEmployee";
+            this.lueInvoiceEmployee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueInvoiceEmployee.Size = new System.Drawing.Size(190, 20);
+            this.lueInvoiceEmployee.TabIndex = 8;
+            // 
+            // lueInvoiceCustomer
+            // 
+            this.lueInvoiceCustomer.Location = new System.Drawing.Point(135, 254);
+            this.lueInvoiceCustomer.Name = "lueInvoiceCustomer";
+            this.lueInvoiceCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueInvoiceCustomer.Size = new System.Drawing.Size(190, 20);
+            this.lueInvoiceCustomer.TabIndex = 7;
+            // 
+            // lueInvoiceSerial
+            // 
+            this.lueInvoiceSerial.Location = new System.Drawing.Point(135, 104);
+            this.lueInvoiceSerial.Name = "lueInvoiceSerial";
+            this.lueInvoiceSerial.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueInvoiceSerial.Size = new System.Drawing.Size(190, 20);
+            this.lueInvoiceSerial.TabIndex = 2;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(74, 287);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(58, 13);
+            this.labelControl5.TabIndex = 33;
+            this.labelControl5.Text = "EMPLOYEE :";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(70, 257);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(62, 13);
+            this.labelControl4.TabIndex = 33;
+            this.labelControl4.Text = "CUSTOMER :";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(66, 227);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(66, 13);
+            this.labelControl3.TabIndex = 33;
+            this.labelControl3.Text = "TAX OFFICE :";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(51, 197);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(81, 13);
+            this.labelControl2.TabIndex = 33;
+            this.labelControl2.Text = "INVOICE HOUR :";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(54, 167);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(78, 13);
+            this.labelControl1.TabIndex = 33;
+            this.labelControl1.Text = "INVOICE DATE :";
+            // 
             // labelControl11
             // 
             this.labelControl11.Location = new System.Drawing.Point(26, 107);
@@ -208,99 +301,6 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             this.gvwInvoices.OptionsView.ShowGroupPanel = false;
             this.gvwInvoices.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvwInvoices_FocusedRowChanged);
             // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(54, 167);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(78, 13);
-            this.labelControl1.TabIndex = 33;
-            this.labelControl1.Text = "INVOICE DATE :";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(51, 197);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(81, 13);
-            this.labelControl2.TabIndex = 33;
-            this.labelControl2.Text = "INVOICE HOUR :";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(66, 227);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(66, 13);
-            this.labelControl3.TabIndex = 33;
-            this.labelControl3.Text = "TAX OFFICE :";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(70, 257);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(62, 13);
-            this.labelControl4.TabIndex = 33;
-            this.labelControl4.Text = "CUSTOMER :";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(74, 287);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(58, 13);
-            this.labelControl5.TabIndex = 33;
-            this.labelControl5.Text = "EMPLOYEE :";
-            // 
-            // lueInvoiceSerial
-            // 
-            this.lueInvoiceSerial.Location = new System.Drawing.Point(135, 104);
-            this.lueInvoiceSerial.Name = "lueInvoiceSerial";
-            this.lueInvoiceSerial.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueInvoiceSerial.Size = new System.Drawing.Size(190, 20);
-            this.lueInvoiceSerial.TabIndex = 2;
-            // 
-            // txtInvoiceDate
-            // 
-            this.txtInvoiceDate.Location = new System.Drawing.Point(135, 164);
-            this.txtInvoiceDate.Name = "txtInvoiceDate";
-            this.txtInvoiceDate.Properties.Mask.EditMask = "d";
-            this.txtInvoiceDate.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
-            this.txtInvoiceDate.Size = new System.Drawing.Size(190, 20);
-            this.txtInvoiceDate.TabIndex = 4;
-            // 
-            // txtInvoiceHour
-            // 
-            this.txtInvoiceHour.Location = new System.Drawing.Point(135, 194);
-            this.txtInvoiceHour.Name = "txtInvoiceHour";
-            this.txtInvoiceHour.Properties.Mask.EditMask = "t";
-            this.txtInvoiceHour.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
-            this.txtInvoiceHour.Size = new System.Drawing.Size(190, 20);
-            this.txtInvoiceHour.TabIndex = 5;
-            // 
-            // lueInvoiceCustomer
-            // 
-            this.lueInvoiceCustomer.Location = new System.Drawing.Point(135, 254);
-            this.lueInvoiceCustomer.Name = "lueInvoiceCustomer";
-            this.lueInvoiceCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueInvoiceCustomer.Size = new System.Drawing.Size(190, 20);
-            this.lueInvoiceCustomer.TabIndex = 7;
-            // 
-            // lueInvoiceEmployee
-            // 
-            this.lueInvoiceEmployee.Location = new System.Drawing.Point(135, 284);
-            this.lueInvoiceEmployee.Name = "lueInvoiceEmployee";
-            this.lueInvoiceEmployee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueInvoiceEmployee.Size = new System.Drawing.Size(190, 20);
-            this.lueInvoiceEmployee.TabIndex = 8;
-            // 
-            // txtInvoiceTaxOffice
-            // 
-            this.txtInvoiceTaxOffice.Location = new System.Drawing.Point(135, 224);
-            this.txtInvoiceTaxOffice.Name = "txtInvoiceTaxOffice";
-            this.txtInvoiceTaxOffice.Properties.Mask.EditMask = "t";
-            this.txtInvoiceTaxOffice.Size = new System.Drawing.Size(190, 20);
-            this.txtInvoiceTaxOffice.TabIndex = 6;
-            // 
             // FrmInvoiceList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,14 +317,14 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceTaxOffice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceHour.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueInvoiceEmployee.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueInvoiceCustomer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueInvoiceSerial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcInvoiceList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwInvoices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueInvoiceSerial.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceHour.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueInvoiceCustomer.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueInvoiceEmployee.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtInvoiceTaxOffice.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

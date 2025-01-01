@@ -346,7 +346,6 @@ namespace Tech2019.DataAccessLayer.SeedData
                             InvoiceSerialCharacter = pair.Key,
                             InvoiceSequenceNumber = pair.Value,
                             InvoiceDate = invoiceDate,
-                            InvoiceHour = invoiceDate.ToString("HH:mm"),
                             InvoiceTaxOffice = faker.Company.CompanyName(),
                             Customer = selectedCustomer,
                             Employee = selectedEmployee

@@ -19,30 +19,52 @@ namespace Tech2019.Presentation.Forms.Tools
         {
             NoteList();
             ClearNoteInfo();
+
+            // Unread Notes GridView
+            gvwUnreadNotes.Columns["NoteStatus"].OptionsColumn.AllowEdit = false;
+            gvwUnreadNotes.Columns["NoteStatus"].OptionsColumn.AllowFocus = false;
+
+            // Read Notes GridView
+            gvwReadNotes.Columns["NoteStatus"].OptionsColumn.AllowEdit = false;
+            gvwReadNotes.Columns["NoteStatus"].OptionsColumn.AllowFocus = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (!ValidateNoteInfo())
+                return;
+
             EntityLayer.Concrete.Note note = new EntityLayer.Concrete.Note();
             AssignNoteInfo(note);
             db.Notes.Add(note);
             db.SaveChanges();
             MessageBox.Show("Note Added Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            NoteList();
             ClearNoteInfo();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (!ValidateNoteId())
+                return;
+
             int id = int.Parse(txtNoteId.Text);
             var note = db.Notes.Find(id);
             db.Notes.Remove(note);
             db.SaveChanges();
             MessageBox.Show("Note Deleted", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            NoteList();
             ClearNoteInfo();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (!ValidateNoteId())
+                return;
+
+            if (!ValidateNoteInfo())
+                return;
+
             int id = int.Parse(txtNoteId.Text);
             var note = db.Notes.Find(id);
 
@@ -56,6 +78,7 @@ namespace Tech2019.Presentation.Forms.Tools
             {
                 MessageBox.Show("Note Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            NoteList();
             ClearNoteInfo();
         }
 
@@ -67,31 +90,56 @@ namespace Tech2019.Presentation.Forms.Tools
 
         private void gvwReadNotes_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            txtNoteId.Text = gvwReadNotes.GetFocusedRowCellValue("NoteId").ToString();
-            txtNoteDescription.Text = gvwReadNotes.GetFocusedRowCellValue("NoteDescription").ToString();
-            txtNoteTitle.Text = gvwReadNotes.GetFocusedRowCellValue("NoteTitle").ToString();
-            chkNoteStatus.CheckState = (bool)gvwReadNotes.GetFocusedRowCellValue("NoteStatus")
-                ? CheckState.Checked
-                : CheckState.Unchecked;
+            if (gvwReadNotes.GetFocusedRowCellValue("NoteStatus") != null)
+            {
+                chkNoteStatus.CheckState = gvwReadNotes.GetFocusedRowCellValue("NoteStatus").ToString() == "Read"
+                    ? CheckState.Checked
+                    : CheckState.Unchecked;
+            }
+            txtNoteId.Text = gvwReadNotes.GetFocusedRowCellValue("NoteId")?.ToString();
+            txtNoteTitle.Text = gvwReadNotes.GetFocusedRowCellValue("NoteTitle")?.ToString();
+            txtNoteDescription.Text = gvwReadNotes.GetFocusedRowCellValue("NoteDescription")?.ToString();
         }
 
         private void gvwUnreadNotes_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            txtNoteId.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteId").ToString();
-            txtNoteDescription.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteDescription").ToString();
-            txtNoteTitle.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteTitle").ToString();
-            chkNoteStatus.CheckState = (bool)gvwUnreadNotes.GetFocusedRowCellValue("NoteStatus")
-                ? CheckState.Checked
-                : CheckState.Unchecked;
+            if (gvwUnreadNotes.GetFocusedRowCellValue("NoteStatus") != null)
+            {
+                chkNoteStatus.CheckState = gvwUnreadNotes.GetFocusedRowCellValue("NoteStatus").ToString() == "Read"
+                    ? CheckState.Checked
+                    : CheckState.Unchecked;
+            }
+            txtNoteId.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteId")?.ToString();
+            txtNoteTitle.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteTitle")?.ToString();
+            txtNoteDescription.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteDescription")?.ToString();
         }
+
 
         #region Extracted Methods
 
         private void NoteList()
         {
-            grcUnreadNotesList.DataSource = db.Notes.Where(x => x.NoteStatus == false).ToList();
-            grcReadNotesList.DataSource = db.Notes.Where(x => x.NoteStatus == true).ToList();
+            grcUnreadNotesList.DataSource = db.Notes
+                .Where(x => x.NoteStatus == false)
+                .Select(x => new
+                {
+                    x.NoteId,
+                    x.NoteTitle,
+                    x.NoteDescription,
+                    NoteStatus = x.NoteStatus ? "Read" : "Unread"
+                }).ToList();
+
+            grcReadNotesList.DataSource = db.Notes
+                .Where(x => x.NoteStatus == true)
+                .Select(x => new
+                {
+                    x.NoteId,
+                    x.NoteTitle,
+                    x.NoteDescription,
+                    NoteStatus = x.NoteStatus ? "Read" : "Unread"
+                }).ToList();
         }
+
 
         private void AssignNoteInfo(EntityLayer.Concrete.Note note)
         {
@@ -105,6 +153,36 @@ namespace Tech2019.Presentation.Forms.Tools
             txtNoteTitle.Text = string.Empty;
             txtNoteDescription.Text = string.Empty;
             chkNoteStatus.CheckState = CheckState.Unchecked;
+        }
+
+        private bool ValidateNoteInfo()
+        {
+            if (string.IsNullOrWhiteSpace(txtNoteTitle.Text))
+            {
+                MessageBox.Show("Note title cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtNoteDescription.Text))
+            {
+                MessageBox.Show("Note description cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        private bool ValidateNoteId()
+        {
+            if (string.IsNullOrWhiteSpace(txtNoteId.Text))
+            {
+                MessageBox.Show("Note ID cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (!int.TryParse(txtNoteId.Text, out _))
+            {
+                MessageBox.Show("Note ID must be a valid number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
         }
 
         #endregion

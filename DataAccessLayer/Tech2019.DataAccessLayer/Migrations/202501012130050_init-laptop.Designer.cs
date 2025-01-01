@@ -13,7 +13,7 @@ namespace Tech2019.DataAccessLayer.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202412171450017_init-laptop"; }
+            get { return "202501012130050_init-laptop"; }
         }
         
         string IMigrationMetadata.Source
