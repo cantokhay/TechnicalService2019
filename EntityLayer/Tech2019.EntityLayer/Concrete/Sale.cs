@@ -1,8 +1,10 @@
 ﻿using System;
+using Tech2019.EntityLayer.Abstract;
+using Tech2019.EntityLayer.Enum;
 
 namespace Tech2019.EntityLayer.Concrete
 {
-    public class Sale
+    public class Sale : IGenericEntity
     {
         public int SaleId { get; set; }
         public int Product { get; set; }
@@ -16,5 +18,10 @@ namespace Tech2019.EntityLayer.Concrete
         public Product ProductNavigation { get; set; }
         public Customer CustomerNavigation { get; set; }
         public Employee EmployeeNavigation { get; set; }
+
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? ModifiedDate { get; set; }
+        public DateTime? DeletedDate { get; set; }
+        public DataStatus DataStatus { get; set; }
     }
 }

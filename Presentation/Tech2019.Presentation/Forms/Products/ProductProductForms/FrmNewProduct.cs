@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Tech2019.DataAccessLayer.Context;
 using Tech2019.EntityLayer.Concrete;
+using Tech2019.EntityLayer.Enum;
 
 namespace Tech2019.Presentation.Forms.Products.ProductProductForms
 {
@@ -23,7 +24,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             TechDBContext db = new TechDBContext();
             Product product = new Product();
             AssignProductInfo(product);
-            product.ProductStatus = false;
+            product.ProductStatus = ProductStatus.ActivelySold;
             db.Products.Add(product);
             db.SaveChanges();
             MessageBox.Show("Product added successfully");

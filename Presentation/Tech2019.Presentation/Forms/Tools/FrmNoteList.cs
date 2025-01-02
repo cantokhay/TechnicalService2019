@@ -3,6 +3,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using Tech2019.DataAccessLayer.Context;
+using Tech2019.EntityLayer.Enum;
 
 namespace Tech2019.Presentation.Forms.Tools
 {
@@ -120,23 +121,23 @@ namespace Tech2019.Presentation.Forms.Tools
         private void NoteList()
         {
             grcUnreadNotesList.DataSource = db.Notes
-                .Where(x => x.NoteStatus == false)
+                .Where(x => x.NoteStatus == NoteStatus.Unread)
                 .Select(x => new
                 {
                     x.NoteId,
                     x.NoteTitle,
                     x.NoteDescription,
-                    NoteStatus = x.NoteStatus ? "Read" : "Unread"
+                    //NoteStatus = x.NoteStatus ? x.NoteStatus == NoteStatus.Read : x.NoteStatus == NoteStatus.Unread
                 }).ToList();
 
             grcReadNotesList.DataSource = db.Notes
-                .Where(x => x.NoteStatus == true)
+                .Where(x => x.NoteStatus == NoteStatus.Read)
                 .Select(x => new
                 {
                     x.NoteId,
                     x.NoteTitle,
                     x.NoteDescription,
-                    NoteStatus = x.NoteStatus ? "Read" : "Unread"
+                    //NoteStatus = x.NoteStatus ? "Read" : "Unread"
                 }).ToList();
         }
 
@@ -145,7 +146,7 @@ namespace Tech2019.Presentation.Forms.Tools
         {
             note.NoteTitle = txtNoteTitle.Text;
             note.NoteDescription = txtNoteDescription.Text;
-            note.NoteStatus = chkNoteStatus.CheckState == CheckState.Checked;
+            //note.NoteStatus = chkNoteStatus.CheckState == CheckState.Checked;
         }
 
         private void ClearNoteInfo()

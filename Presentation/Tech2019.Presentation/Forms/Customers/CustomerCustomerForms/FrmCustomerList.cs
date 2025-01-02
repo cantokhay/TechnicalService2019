@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Tech2019.DataAccessLayer.Context;
 using Tech2019.EntityLayer.Concrete;
+using Tech2019.EntityLayer.Enum;
 
 namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
 {
@@ -110,7 +111,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
         private void ShowStatsByLinq()
         {
             lblTotalProductStat.Text = db.Customers.Count().ToString();
-            lblActiveCustomerStat.Text = db.Customers.Where(c => c.CustomerStatus == "True").Count().ToString();
+            lblActiveCustomerStat.Text = db.Customers.Where(c => c.CustomerStatus == CustomerStatus.ActiveBuyer).Count().ToString();
             lblMostCustomerByCityStat.Text = db.Customers.GroupBy(c => c.CustomerCity).OrderByDescending(c => c.Count()).Select(c => c.Key).FirstOrDefault();
             lblTotalCitiesStat.Text = db.Customers.Select(c => c.CustomerCity).Distinct().Count().ToString();
         }
@@ -168,7 +169,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             customer.CustomerEmail = txtEmail.Text;
             customer.CustomerPhoneNumber = txtPhoneNumber.Text;
             customer.CustomerAddress = txtAddress.Text;
-            customer.CustomerStatus = txtStatus.Text;
+            //customer.CustomerStatus = txtStatus.Text;
             customer.CustomerTaxNumber = txtTaxNumber.Text;
             customer.CustomerTaxOffice = txtTaxOffice.Text;
             customer.CustomerBank = txtBank.Text;

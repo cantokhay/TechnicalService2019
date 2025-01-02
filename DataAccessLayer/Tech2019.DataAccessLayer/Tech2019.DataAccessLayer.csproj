@@ -54,16 +54,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractDAL\IActionDal.cs" />
+    <Compile Include="AbstractDAL\IAdminDal.cs" />
+    <Compile Include="AbstractDAL\ICategoryDal.cs" />
+    <Compile Include="AbstractDAL\ICustomerDal.cs" />
+    <Compile Include="AbstractDAL\IDepartmentDal.cs" />
+    <Compile Include="AbstractDAL\IEmployeeDal.cs" />
+    <Compile Include="AbstractDAL\IExpenseDal.cs" />
+    <Compile Include="AbstractDAL\IFaultDetailDal.cs" />
+    <Compile Include="AbstractDAL\IGenericDal.cs" />
+    <Compile Include="AbstractDAL\IInvoiceDal.cs" />
+    <Compile Include="AbstractDAL\IInvoiceDetailDal.cs" />
+    <Compile Include="AbstractDAL\INoteDal.cs" />
+    <Compile Include="AbstractDAL\IProductDal.cs" />
+    <Compile Include="AbstractDAL\IProductTraceDal.cs" />
+    <Compile Include="AbstractDAL\ISaleDal.cs" />
     <Compile Include="Context\TechDBContext.cs" />
-    <Compile Include="Migrations\202501012130050_init-laptop.cs" />
-    <Compile Include="Migrations\202501012130050_init-laptop.designer.cs">
-      <DependentUpon>202501012130050_init-laptop.cs</DependentUpon>
+    <Compile Include="EFConcreteDAL\EFActionDal.cs" />
+    <Compile Include="EFConcreteDAL\EFAdminDal.cs" />
+    <Compile Include="EFConcreteDAL\EFCategoryDal.cs" />
+    <Compile Include="EFConcreteDAL\EFCustomerDal.cs" />
+    <Compile Include="EFConcreteDAL\EFDepartmentDal.cs" />
+    <Compile Include="EFConcreteDAL\EFEmployeeDal.cs" />
+    <Compile Include="EFConcreteDAL\EFExpenseDal.cs" />
+    <Compile Include="EFConcreteDAL\EFFaultDetailDal.cs" />
+    <Compile Include="EFConcreteDAL\EFGenericDal.cs" />
+    <Compile Include="EFConcreteDAL\EFInvoiceDal.cs" />
+    <Compile Include="EFConcreteDAL\EFInvoiceDetail.cs" />
+    <Compile Include="EFConcreteDAL\EFNoteDal.cs" />
+    <Compile Include="EFConcreteDAL\EFProductDal.cs" />
+    <Compile Include="EFConcreteDAL\EFProductTraceDal.cs" />
+    <Compile Include="EFConcreteDAL\EFSaleDal.cs" />
+    <Compile Include="Migrations\202501021307569_init.cs" />
+    <Compile Include="Migrations\202501021307569_init.designer.cs">
+      <DependentUpon>202501021307569_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeedData\SeedDataGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\DTOLayer\Tech2019.DTOLayer\Tech2019.DTOLayer.csproj">
+      <Project>{66008318-0458-4f3f-874c-7666ce04a68f}</Project>
+      <Name>Tech2019.DTOLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\EntityLayer\Tech2019.EntityLayer\Tech2019.EntityLayer.csproj">
       <Project>{3f3ddbed-fc67-4d89-9816-c6e8b5e5c6a4}</Project>
       <Name>Tech2019.EntityLayer</Name>
@@ -74,8 +108,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202501012130050_init-laptop.resx">
-      <DependentUpon>202501012130050_init-laptop.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202501021307569_init.resx">
+      <DependentUpon>202501021307569_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

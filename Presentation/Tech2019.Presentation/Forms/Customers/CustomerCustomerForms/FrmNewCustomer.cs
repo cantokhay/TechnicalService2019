@@ -53,7 +53,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             customer.CustomerEmail = txtCustomerEmail.Text;
             customer.CustomerPhoneNumber = txtCustomerPhone.Text;
             customer.CustomerAddress = txtCustomerAddress.Text;
-            customer.CustomerStatus = txtCustomerStatus.Text;
+            //customer.CustomerStatus = txtCustomerStatus.Text;
             customer.CustomerTaxNumber = txtCustomerTaxNumber.Text;
             customer.CustomerTaxOffice = txtCustomerTaxOffice.Text;
             customer.CustomerBank = txtCustomerBank.Text;

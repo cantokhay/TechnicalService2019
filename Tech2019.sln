@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tech2019.DataAccessLayer", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tech2019.Presentation", "Presentation\Tech2019.Presentation\Tech2019.Presentation.csproj", "{C1C6D9A6-2DF6-4F79-A9B4-0FF2E27A8C82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tech2019.BusinessLayer", "BusinessLayer\Tech2019.BusinessLayer\Tech2019.BusinessLayer.csproj", "{CD64EC26-333F-447C-B8B7-E289F6C108BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tech2019.DTOLayer", "DTOLayer\Tech2019.DTOLayer\Tech2019.DTOLayer.csproj", "{66008318-0458-4F3F-874C-7666CE04A68F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{C1C6D9A6-2DF6-4F79-A9B4-0FF2E27A8C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1C6D9A6-2DF6-4F79-A9B4-0FF2E27A8C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1C6D9A6-2DF6-4F79-A9B4-0FF2E27A8C82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD64EC26-333F-447C-B8B7-E289F6C108BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD64EC26-333F-447C-B8B7-E289F6C108BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD64EC26-333F-447C-B8B7-E289F6C108BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD64EC26-333F-447C-B8B7-E289F6C108BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66008318-0458-4F3F-874C-7666CE04A68F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66008318-0458-4F3F-874C-7666CE04A68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66008318-0458-4F3F-874C-7666CE04A68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66008318-0458-4F3F-874C-7666CE04A68F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

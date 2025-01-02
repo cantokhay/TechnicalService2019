@@ -1,23 +1,85 @@
-﻿using System.Windows.Forms;
+﻿using System;
 using System.Linq;
-using Tech2019.DataAccessLayer.Context;
+using System.Windows.Forms;
+using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
+using Tech2019.EntityLayer.Enum;
 
 namespace Tech2019.Presentation.Forms.Products.ProductProductForms
 {
     public partial class FrmProductList : Form
     {
-        public FrmProductList()
+        private readonly IProductService _productService;
+        private readonly ICategoryService _categoryService;
+
+        public FrmProductList(IProductService productService, ICategoryService categoryService)
         {
             InitializeComponent();
+            _productService = productService;
+            _categoryService = categoryService;
         }
 
-        TechDBContext db = new TechDBContext(); //TODO: This should be come with dependency injection.
 
-        private void FrmProductList_Load(object sender, System.EventArgs e)
+        private void FrmProductList_Load(object sender, EventArgs e)
         {
-            ProductList();
-            FillLookUpEditCategories();
+            LoadProductList();
+            FillLookUpEditCategoriesAndProductStatus();
+            ClearProductInfo();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!ValidateProductInfo()) return;
+
+            var product = new Product
+            {
+                ProductName = txtProductName.Text,
+                ProductBrand = txtProductBrand.Text,
+                ProductSalePrice = decimal.Parse(txtSalePrice.Text),
+                ProductPurchasePrice = decimal.Parse(txtPurchasePrice.Text),
+                Stock = short.Parse(txtStock.Text),
+                Category = byte.Parse(lueProductCategories.EditValue.ToString())
+            };
+            _productService.Create(product);
+            MessageBox.Show("Product Added Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoadProductList();
+            ClearProductInfo();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (!ValidateProductId()) return;
+
+            int id = int.Parse(txtProductId.Text);
+            var product = _productService.GetById(id);
+            _productService.Delete(product);
+            MessageBox.Show("Product Deleted Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            LoadProductList();
+            ClearProductInfo();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (!ValidateProductId() || !ValidateProductInfo()) return;
+
+            int id = int.Parse(txtProductId.Text);
+            var product = _productService.GetById(id);
+            product.ProductName = txtProductName.Text;
+            product.ProductBrand = txtProductBrand.Text;
+            product.ProductSalePrice = decimal.Parse(txtSalePrice.Text);
+            product.ProductPurchasePrice = decimal.Parse(txtPurchasePrice.Text);
+            product.Stock = short.Parse(txtStock.Text);
+            product.Category = byte.Parse(lueProductCategories.EditValue.ToString());
+            product.ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), lueProductStatus.EditValue.ToString());
+            _productService.Update(product);
+            MessageBox.Show("Product Updated Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            LoadProductList();
+            ClearProductInfo();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadProductList();
             ClearProductInfo();
         }
 
@@ -30,74 +92,46 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             txtPurchasePrice.Text = gvwProducts.GetFocusedRowCellValue("ProductPurchasePrice").ToString();
             txtStock.Text = gvwProducts.GetFocusedRowCellValue("Stock").ToString();
             lueProductCategories.EditValue = gvwProducts.GetFocusedRowCellValue("CategoryId");
+            var productStatusValue = gvwProducts.GetFocusedRowCellValue("ProductStatus");
+            lueProductStatus.EditValue = (int)Enum.Parse(typeof(ProductStatus), productStatusValue.ToString());
         }
 
-        private void btnSave_Click(object sender, System.EventArgs e)
+        private void FillLookUpEditCategoriesAndProductStatus()
         {
-            if (!ValidateProductInfo())
-                return;
+            var categoryList = _categoryService.GetAll()
+                .Select(c => new
+                {
+                    c.CategoryId,
+                    c.CategoryName
+                })
+                .ToList();
 
-            Product product = new Product(); //TODO: This should be come with dependency injection.
-            AssignProductInfo(product); //TODO: This method should check for existing product with the same name and other properties.
-            product.ProductStatus = false;
-            db.Products.Add(product);
-            db.SaveChanges();
-            MessageBox.Show("Product Added Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ProductList();
-            ClearProductInfo();
+            lueProductCategories.Properties.DataSource = categoryList;
+            lueProductCategories.Properties.DisplayMember = "CategoryName";
+            lueProductCategories.Properties.ValueMember = "CategoryId";
+            lueProductCategories.Properties.NullText = "Please pick a value";
+
+            var productStatusList = Enum.GetValues(typeof(ProductStatus))
+                .Cast<ProductStatus>()
+                .Select(status => new
+                {
+                    StatusValues = (int)status,
+                    StatusDisplays = status.ToString()
+                })
+                .ToList();
+
+            lueProductStatus.Properties.DataSource = productStatusList;
+            lueProductStatus.Properties.DisplayMember = "StatusDisplays";
+            lueProductStatus.Properties.ValueMember = "StatusValues";
+            lueProductStatus.Properties.NullText = "Please pick a value";
         }
 
-        private void btnDelete_Click(object sender, System.EventArgs e)
+        private void LoadProductList()
         {
-            if (!ValidateProductId())
-                return;
+            var productList = _productService.GetProductsWithCategories();
 
-            int id = int.Parse(txtProductId.Text);
-            var product = db.Products.Find(id);
-
-            if (product == null)
-            {
-                MessageBox.Show("Product Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            db.Products.Remove(product);
-            db.SaveChanges();
-            MessageBox.Show("Product Deleted", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            ProductList();
-            ClearProductInfo();
+            grcProductList.DataSource = productList;
         }
-
-        private void btnUpdate_Click(object sender, System.EventArgs e)
-        {
-            if (!ValidateProductId())
-                return;
-
-            if (!ValidateProductInfo())
-                return;
-
-            int id = int.Parse(txtProductId.Text);
-            var product = db.Products.Find(id);
-
-            if (product == null)
-            {
-                MessageBox.Show("Product not found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            AssignProductInfo(product);
-            db.SaveChanges();
-            MessageBox.Show("Product Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            ProductList();
-            ClearProductInfo();
-        }
-
-        private void btnRefresh_Click(object sender, System.EventArgs e)
-        {
-            ProductList();
-            ClearProductInfo();
-        }
-
-        #region Extracted Methods
 
         private void ClearProductInfo()
         {
@@ -108,49 +142,8 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             txtPurchasePrice.Text = string.Empty;
             txtStock.Text = string.Empty;
             lueProductCategories.EditValue = null;
+            lueProductStatus.EditValue = null;
         }
-
-        private void FillLookUpEditCategories()
-        {
-            var categoriesList = from c in db.Categories
-                                 select new
-                                 {
-                                     c.CategoryId,
-                                     c.CategoryName
-                                 }; //TODO : This comes with categoryid but categoryid should be hidden and only name should be shown.
-            lueProductCategories.Properties.DataSource = categoriesList.ToList();
-            lueProductCategories.Properties.NullText = "Please pick a value";
-        }
-
-        private void ProductList()
-        {
-            var productsList = from p in db.Products
-                               join c in db.Categories on p.Category equals c.CategoryId
-                               select new
-                               {
-                                   p.ProductId,
-                                   p.ProductName,
-                                   p.ProductBrand,
-                                   p.ProductSalePrice,
-                                   p.ProductPurchasePrice,
-                                   p.Stock,
-                                   c.CategoryName,
-                                   c.CategoryId
-                               };//TODO : This comes with categoryid but categoryid should be hidden and only name should be shown.
-            grcProductList.DataSource = productsList.ToList();
-        }
-
-        private void AssignProductInfo(Product product)
-        {
-            product.ProductName = txtProductName.Text;
-            product.ProductBrand = txtProductBrand.Text;
-            product.ProductSalePrice = decimal.Parse(txtSalePrice.Text);
-            product.ProductPurchasePrice = decimal.Parse(txtPurchasePrice.Text);
-            product.Stock = short.Parse(txtStock.Text);
-            product.Category = byte.Parse(lueProductCategories.EditValue.ToString());
-        }
-
-        #endregion
 
         #region Validation Methods
 
@@ -186,6 +179,11 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
                 MessageBox.Show("Please select a category.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+            if (lueProductStatus.EditValue == null)
+            {
+                MessageBox.Show("Please select a status for this product.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             return true;
         }
 
@@ -196,7 +194,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
                 MessageBox.Show("Product ID cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (!byte.TryParse(txtProductId.Text, out _))
+            if (!int.TryParse(txtProductId.Text, out _))
             {
                 MessageBox.Show("Product ID must be a valid number.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -205,5 +203,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
         }
 
         #endregion
+
     }
 }

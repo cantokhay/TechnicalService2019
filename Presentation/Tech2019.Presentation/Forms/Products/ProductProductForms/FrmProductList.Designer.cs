@@ -51,6 +51,8 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.txtProductName = new DevExpress.XtraEditors.TextEdit();
             this.grcProductList = new DevExpress.XtraGrid.GridControl();
             this.gvwProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.lueProductStatus = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueProductCategories.Properties)).BeginInit();
@@ -62,6 +64,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             ((System.ComponentModel.ISupportInitialize)(this.txtProductName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcProductList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueProductStatus.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -72,7 +75,9 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.groupControl1.Controls.Add(this.btnUpdate);
             this.groupControl1.Controls.Add(this.btnDelete);
             this.groupControl1.Controls.Add(this.btnSave);
+            this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.labelControl6);
+            this.groupControl1.Controls.Add(this.lueProductStatus);
             this.groupControl1.Controls.Add(this.lueProductCategories);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.txtStock);
@@ -100,7 +105,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.btnRefresh.Location = new System.Drawing.Point(34, 489);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(293, 39);
-            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.TabIndex = 11;
             this.btnRefresh.Text = "REFRESH LIST";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
@@ -112,7 +117,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.btnUpdate.Location = new System.Drawing.Point(34, 444);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(293, 39);
-            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -124,7 +129,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.btnDelete.Location = new System.Drawing.Point(34, 399);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(292, 39);
-            this.btnDelete.TabIndex = 8;
+            this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -136,7 +141,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.btnSave.Location = new System.Drawing.Point(34, 354);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(293, 39);
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "SAVE";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -155,6 +160,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.lueProductCategories.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueProductCategories.Properties.DisplayMember = "CategoryName";
+            this.lueProductCategories.Properties.DropDownRows = 12;
             this.lueProductCategories.Properties.ValueMember = "CategoryId";
             this.lueProductCategories.Size = new System.Drawing.Size(194, 20);
             this.lueProductCategories.TabIndex = 6;
@@ -272,6 +278,24 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.gvwProducts.OptionsView.ShowGroupPanel = false;
             this.gvwProducts.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvwProducts_FocusedRowChanged);
             // 
+            // lueProductStatus
+            // 
+            this.lueProductStatus.Location = new System.Drawing.Point(127, 288);
+            this.lueProductStatus.Name = "lueProductStatus";
+            this.lueProductStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueProductStatus.Properties.DropDownRows = 3;
+            this.lueProductStatus.Size = new System.Drawing.Size(194, 20);
+            this.lueProductStatus.TabIndex = 7;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(25, 291);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(99, 13);
+            this.labelControl8.TabIndex = 108;
+            this.labelControl8.Text = "PRODUCT STATUS : ";
+            // 
             // FrmProductList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +319,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             ((System.ComponentModel.ISupportInitialize)(this.txtProductName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcProductList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueProductStatus.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -322,5 +347,8 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
         private DevExpress.XtraEditors.TextEdit txtProductId;
 
         #endregion
+
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.LookUpEdit lueProductStatus;
     }
 }

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initlaptop : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
@@ -17,6 +17,10 @@
                         AcceptedDate = c.DateTime(nullable: false),
                         CompletedDate = c.DateTime(),
                         ProductSerialNumber = c.String(maxLength: 5),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ActionId)
                 .ForeignKey("dbo.Customers", t => t.Customer)
@@ -39,7 +43,11 @@
                         CustomerBank = c.String(maxLength: 50),
                         CustomerTaxNumber = c.String(maxLength: 50),
                         CustomerTaxOffice = c.String(maxLength: 50),
-                        CustomerStatus = c.String(),
+                        CustomerStatus = c.Int(nullable: false),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.CustomerId);
             
@@ -54,6 +62,10 @@
                         InvoiceTaxOffice = c.String(maxLength: 50),
                         Customer = c.Int(nullable: false),
                         Employee = c.Short(nullable: false),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.InvoiceId)
                 .ForeignKey("dbo.Customers", t => t.Customer)
@@ -72,6 +84,10 @@
                         EmployeeProfilePhoto = c.String(),
                         EmployeeMail = c.String(maxLength: 100),
                         EmployeePhoneNumber = c.String(maxLength: 50),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.EmployeeId)
                 .ForeignKey("dbo.Departments", t => t.Department)
@@ -84,6 +100,10 @@
                         DepartmentId = c.Byte(nullable: false, identity: true),
                         DepartmentName = c.String(nullable: false, maxLength: 50),
                         DepartmentDescription = c.String(maxLength: 100),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.DepartmentId);
             
@@ -99,6 +119,10 @@
                         SaleQuantity = c.Short(nullable: false),
                         SaleTotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         ProductSerialNumber = c.String(maxLength: 5),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.SaleId)
                 .ForeignKey("dbo.Customers", t => t.Customer)
@@ -118,8 +142,12 @@
                         ProductPurchasePrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         ProductSalePrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Stock = c.Short(nullable: false),
-                        ProductStatus = c.Boolean(nullable: false),
+                        ProductStatus = c.Int(nullable: false),
                         Category = c.Byte(nullable: false),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ProductId)
                 .ForeignKey("dbo.Categories", t => t.Category)
@@ -131,6 +159,10 @@
                     {
                         CategoryId = c.Byte(nullable: false, identity: true),
                         CategoryName = c.String(nullable: false, maxLength: 50),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.CategoryId);
             
@@ -144,6 +176,10 @@
                         ProductUnitPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         ProductTotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Invoice = c.Int(nullable: false),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.InvoiceDetailId)
                 .ForeignKey("dbo.Invoices", t => t.Invoice)
@@ -156,6 +192,10 @@
                         AdminId = c.Byte(nullable: false),
                         AdminUsername = c.String(),
                         AdminPassword = c.String(),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.AdminId);
             
@@ -167,6 +207,10 @@
                         ExpenseDescription = c.String(),
                         ExpenseDate = c.DateTime(nullable: false),
                         ExpenseTotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ExpenseId);
             
@@ -181,6 +225,10 @@
                         FaultPrePrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         FaultNetPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         FaultOperation = c.String(),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.FaultDetailId);
             
@@ -191,7 +239,11 @@
                         NoteId = c.Int(nullable: false, identity: true),
                         NoteTitle = c.String(),
                         NoteDescription = c.String(),
-                        NoteStatus = c.Boolean(nullable: false),
+                        NoteStatus = c.Int(nullable: false),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.NoteId);
             
@@ -203,6 +255,10 @@
                         ProductTraceDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                         ProductSerialNumber = c.String(maxLength: 5),
                         ProductTraceInformation = c.String(maxLength: 250),
+                        CreatedDate = c.DateTime(),
+                        ModifiedDate = c.DateTime(),
+                        DeletedDate = c.DateTime(),
+                        DataStatus = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ProductTraceId);
             

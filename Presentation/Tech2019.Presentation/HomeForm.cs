@@ -1,17 +1,23 @@
 ﻿using System.Windows.Forms;
+using Tech2019.BusinessLayer.AbstractServices;
 
 namespace Tech2019.Presentation
 {
     public partial class HomeForm : Form
     {
-        public HomeForm()
+        private readonly IProductService _productService;
+        private readonly ICategoryService _categoryService;
+
+        public HomeForm(IProductService productService, ICategoryService categoryService)
         {
             InitializeComponent();
+            _productService = productService;
+            _categoryService = categoryService;
         }
 
         private void btnProductListForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductProductForms.FrmProductList frmProductList = new Forms.Products.ProductProductForms.FrmProductList();
+            Forms.Products.ProductProductForms.FrmProductList frmProductList = new Forms.Products.ProductProductForms.FrmProductList(_productService, _categoryService);
             frmProductList.MdiParent = this;
             frmProductList.Show();
         }

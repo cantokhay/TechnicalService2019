@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IGenericEntity.cs" />
     <Compile Include="Concrete\Action.cs" />
     <Compile Include="Concrete\Admin.cs" />
     <Compile Include="Concrete\Category.cs" />
@@ -55,6 +56,10 @@
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\ProductTrace.cs" />
     <Compile Include="Concrete\Sale.cs" />
+    <Compile Include="Enum\CustomerStatus.cs" />
+    <Compile Include="Enum\DataStatus.cs" />
+    <Compile Include="Enum\NoteStatus.cs" />
+    <Compile Include="Enum\ProductStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

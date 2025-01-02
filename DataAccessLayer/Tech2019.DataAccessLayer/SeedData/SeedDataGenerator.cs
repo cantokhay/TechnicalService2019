@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Tech2019.DataAccessLayer.Context;
+using Tech2019.EntityLayer.Abstract;
 using Tech2019.EntityLayer.Concrete;
+using Tech2019.EntityLayer.Enum;
 
 namespace Tech2019.DataAccessLayer.SeedData
 {
@@ -68,6 +70,7 @@ namespace Tech2019.DataAccessLayer.SeedData
                                 ProductTraceInformation = EnsureMaxLength(faker.Lorem.Sentence(), 250)
                             };
 
+                            AssignEntityDatesAndDataStatus(productTrace);
                             db.ProductTraces.Add(productTrace);
                         }
                     }
@@ -81,21 +84,26 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                     var selectedSales = sales.OrderBy(x => faker.Random.Number()).Take(actionCountToGenerate).ToList();
 
-                    var actions = new List<EntityLayer.Concrete.Action>();
-
                     foreach (var sale in selectedSales)
                     {
                         if (!db.Actions.Any(a => a.ProductSerialNumber == sale.ProductSerialNumber))
                         {
+                            var acceptedDate = sale.SaleDate.AddDays(faker.Random.Number(1, 30));
+                            var completedDate = sale.SaleDate.AddDays(faker.Random.Number(31, 60));
+
+                            acceptedDate = acceptedDate < new DateTime(1753, 1, 1) ? new DateTime(1753, 1, 1) : acceptedDate;
+                            completedDate = completedDate < new DateTime(1753, 1, 1) ? new DateTime(1753, 1, 1) : completedDate;
+
                             var action = new EntityLayer.Concrete.Action
                             {
                                 Customer = sale.Customer,
                                 Employee = faker.PickRandom(existingEmployees),
-                                AcceptedDate = sale.SaleDate.AddDays(faker.Random.Number(1, 30)),
-                                CompletedDate = sale.SaleDate.AddDays(faker.Random.Number(31, 60)),
+                                AcceptedDate = acceptedDate,
+                                CompletedDate = completedDate,
                                 ProductSerialNumber = sale.ProductSerialNumber
                             };
 
+                            AssignEntityDatesAndDataStatus(action);
                             db.Actions.Add(action);
                         }
                     }
@@ -126,6 +134,7 @@ namespace Tech2019.DataAccessLayer.SeedData
                             DepartmentDescription = EnsureMaxLength(faker.Lorem.Sentence(), 100)
                         };
 
+                        AssignEntityDatesAndDataStatus(department);
                         db.Departments.Add(department);
                         db.SaveChanges();
 
@@ -142,7 +151,7 @@ namespace Tech2019.DataAccessLayer.SeedData
                                 EmployeeMail = EnsureMaxLength(faker.Internet.Email(), 50),
                                 EmployeePhoneNumber = GeneratePhoneNumber()
                             };
-
+                            AssignEntityDatesAndDataStatus(employee);
                             db.Employees.Add(employee);
                         }
                     }
@@ -171,6 +180,8 @@ namespace Tech2019.DataAccessLayer.SeedData
                     var bankNames = new[] { "Akbank", "Yapı Kredi", "Garanti", "Ziraat", "Vakıfbank",
                                                     "Halkbank", "TEB", "ING", "Şekerbank", "QNB Finansbank" };
 
+                    var customerStatus = new[] { CustomerStatus.ActiveBuyer, CustomerStatus.PassiveAccount, CustomerStatus.DeletedAccount };
+
                     for (byte i = 0; i < customerCountToGenerate; i++)
                     {
                         var pickedCity = faker.PickRandom(cityDistrictMap.Keys.ToList());
@@ -188,10 +199,11 @@ namespace Tech2019.DataAccessLayer.SeedData
                             CustomerDistrict = EnsureMaxLength(pickedDistrict, 50),
                             CustomerTaxNumber = faker.Random.Number(100000000, 999999999).ToString(),
                             CustomerTaxOffice = EnsureMaxLength(faker.Company.CompanyName(), 50),
-                            CustomerStatus = faker.Random.Bool().ToString(),
+                            CustomerStatus = faker.PickRandom(customerStatus),
                             CustomerBank = EnsureMaxLength(pickedBank, 50)
                         };
 
+                        AssignEntityDatesAndDataStatus(customer);
                         db.Customers.Add(customer);
                     }
 
@@ -240,6 +252,7 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                     var existingCategories = db.Categories.Select(c => c.CategoryName).ToList();
                     var remainingCategories = categoryProducts.Keys.Except(existingCategories).ToList();
+                    var productStatus = new[] { ProductStatus.ActivelySold, ProductStatus.NotAvailableToPurchase, ProductStatus.NotInStock };
 
                     byte missingCategories = Math.Max(categoryCountToGenerate, (byte)0);
 
@@ -249,6 +262,7 @@ namespace Tech2019.DataAccessLayer.SeedData
                         {
                             CategoryName = EnsureMaxLength(categoryName, 50)
                         };
+                        AssignEntityDatesAndDataStatus(category);
                         db.Categories.Add(category);
                         db.SaveChanges();
 
@@ -267,10 +281,10 @@ namespace Tech2019.DataAccessLayer.SeedData
                                     ProductPurchasePrice = decimal.Parse(faker.Commerce.Price(100, 1000)),
                                     ProductSalePrice = decimal.Parse(faker.Commerce.Price(1000, 2000)),
                                     Stock = (short)faker.Random.Number(1, 100),
-                                    ProductStatus = faker.Random.Bool(),
+                                    ProductStatus = faker.PickRandom(productStatus),
                                     Category = category.CategoryId
                                 };
-
+                                AssignEntityDatesAndDataStatus(product);
                                 db.Products.Add(product);
                             }
                         }
@@ -283,14 +297,16 @@ namespace Tech2019.DataAccessLayer.SeedData
                 {
                     var faker = new Faker();
                     var existingNotes = db.Notes.Select(n => n.NoteTitle).ToList();
+                    var noteStatus = new[] { NoteStatus.Read, NoteStatus.Unread };
                     for (byte i = 0; i < noteCountToGenerate; i++)
                     {
                         var note = new Note
                         {
                             NoteTitle = EnsureMaxLength(faker.Lorem.Word(), 50),
                             NoteDescription = EnsureMaxLength(faker.Lorem.Sentences(2, "\n"), 500),
-                            NoteStatus = faker.Random.Bool()
+                            NoteStatus = faker.PickRandom(noteStatus)
                         };
+                        AssignEntityDatesAndDataStatus(note);
                         db.Notes.Add(note);
                     }
                     db.SaveChanges();
@@ -320,7 +336,7 @@ namespace Tech2019.DataAccessLayer.SeedData
                             SaleTotalPrice = decimal.Parse(faker.Commerce.Price(100, 10000)),
                             ProductSerialNumber = productSerialNumber
                         };
-
+                        AssignEntityDatesAndDataStatus(sale);
                         db.Sales.Add(sale);
                     }
                     db.SaveChanges();
@@ -350,13 +366,12 @@ namespace Tech2019.DataAccessLayer.SeedData
                             Customer = selectedCustomer,
                             Employee = selectedEmployee
                         };
-
+                        AssignEntityDatesAndDataStatus(invoice);
                         db.Invoices.Add(invoice);
                     }
 
                     db.SaveChanges();
                 }
-
 
                 #region Helper Methods
 
@@ -403,15 +418,38 @@ namespace Tech2019.DataAccessLayer.SeedData
                         .Take(count)
                         .ToList();
 
-                    if (serialSequencePairs.Count < count)
-                    {
-                        throw new InvalidOperationException("Unable to generate enough unique serial-sequence pairs.");
-                    }
-
                     return serialSequencePairs;
                 }
 
+                void AssignEntityDatesAndDataStatus<T>(T entity) where T : class, IGenericEntity
+                {
+                    var faker = new Faker();
+                    var currentDate = DateTime.Now;
 
+                    var dataStatus = new[] { DataStatus.Deleted, DataStatus.Active, DataStatus.Modified };
+
+                    entity.DataStatus = faker.PickRandom(dataStatus);
+
+                    if (entity.DataStatus == DataStatus.Active)
+                    {
+                        entity.CreatedDate = currentDate.AddDays(-(faker.Random.Number(21, 30)));
+
+                        entity.ModifiedDate = null;
+                        entity.DeletedDate = null;
+                    }
+                    else if(entity.DataStatus == DataStatus.Modified)
+                    {
+                        entity.CreatedDate = currentDate.AddDays(-(faker.Random.Number(21, 30)));
+                        entity.ModifiedDate = currentDate.AddDays(-(faker.Random.Number(11, 20)));
+                        entity.DeletedDate = null;
+                    }
+                    else if (entity.DataStatus == DataStatus.Deleted)
+                    {
+                        entity.CreatedDate = currentDate.AddDays(-(faker.Random.Number(21, 30)));
+                        entity.ModifiedDate = currentDate.AddDays(-(faker.Random.Number(11, 20)));
+                        entity.DeletedDate = currentDate.AddDays(-(faker.Random.Number(1, 10)));
+                    }
+                }
 
                 #endregion
 

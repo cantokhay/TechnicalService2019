@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD64EC26-333F-447C-B8B7-E289F6C108BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tech2019.BusinessLayer</RootNamespace>
+    <AssemblyName>Tech2019.BusinessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractServices\IActionService.cs" />
+    <Compile Include="AbstractServices\IAdminService.cs" />
+    <Compile Include="AbstractServices\ICategoryService.cs" />
+    <Compile Include="AbstractServices\ICustomerService.cs" />
+    <Compile Include="AbstractServices\IDepartmentService.cs" />
+    <Compile Include="AbstractServices\IEmployeeService.cs" />
+    <Compile Include="AbstractServices\IExpenseService.cs" />
+    <Compile Include="AbstractServices\IFaultDetailService.cs" />
+    <Compile Include="AbstractServices\IGenericService.cs" />
+    <Compile Include="AbstractServices\IInvoiceDetailService.cs" />
+    <Compile Include="AbstractServices\IInvoiceService.cs" />
+    <Compile Include="AbstractServices\INoteService.cs" />
+    <Compile Include="AbstractServices\ISaleService.cs" />
+    <Compile Include="AbstractServices\IProductService.cs" />
+    <Compile Include="AbstractServices\IProductTraceService.cs" />
+    <Compile Include="ConcreteManagers\ActionManager.cs" />
+    <Compile Include="ConcreteManagers\AdminManager.cs" />
+    <Compile Include="ConcreteManagers\CategoryManager.cs" />
+    <Compile Include="ConcreteManagers\CustomerManager.cs" />
+    <Compile Include="ConcreteManagers\DepartmentManager.cs" />
+    <Compile Include="ConcreteManagers\EmployeeManager.cs" />
+    <Compile Include="ConcreteManagers\ExpenseManager.cs" />
+    <Compile Include="ConcreteManagers\FaultDetailManager.cs" />
+    <Compile Include="ConcreteManagers\InvoiceDetailManager.cs" />
+    <Compile Include="ConcreteManagers\InvoiceManager.cs" />
+    <Compile Include="ConcreteManagers\NoteManager.cs" />
+    <Compile Include="ConcreteManagers\ProductManager.cs" />
+    <Compile Include="ConcreteManagers\ProductTraceManager.cs" />
+    <Compile Include="ConcreteManagers\SaleManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccessLayer\Tech2019.DataAccessLayer\Tech2019.DataAccessLayer.csproj">
+      <Project>{d8ddaf64-2242-45b0-b2b3-93e83c2a5976}</Project>
+      <Name>Tech2019.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DTOLayer\Tech2019.DTOLayer\Tech2019.DTOLayer.csproj">
+      <Project>{66008318-0458-4f3f-874c-7666ce04a68f}</Project>
+      <Name>Tech2019.DTOLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntityLayer\Tech2019.EntityLayer\Tech2019.EntityLayer.csproj">
+      <Project>{3f3ddbed-fc67-4d89-9816-c6e8b5e5c6a4}</Project>
+      <Name>Tech2019.EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+</Project>
