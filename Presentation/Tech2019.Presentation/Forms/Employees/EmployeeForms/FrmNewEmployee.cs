@@ -2,21 +2,28 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
 
 namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
 {
     public partial class FrmNewEmployee : Form
     {
-        public FrmNewEmployee()
+        private readonly IEmployeeService _employeeService;
+        private readonly IDepartmentService _departmentService;
+
+        public FrmNewEmployee(IEmployeeService employeeService, IDepartmentService departmentService)
         {
+            _employeeService = employeeService;
+            _departmentService = departmentService;
             InitializeComponent();
+        }
+
+        private void FrmNewEmployee_Load(object sender, EventArgs e)
+        {
             FillLookUpEditDepartments();
             InitializePlaceholderEvents();
         }
-
-        TechDBContext db = new TechDBContext();
 
         private void btnNewSave_Click(object sender, EventArgs e)
         {
@@ -25,8 +32,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
 
             Employee employee = new Employee();
             AssignEmployeeInfo(employee);
-            db.Employees.Add(employee);
-            db.SaveChanges();
+            _employeeService.Create(employee);
             MessageBox.Show("Employee added successfully");
             this.Close();
         }
@@ -40,11 +46,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
 
         private void FillLookUpEditDepartments()
         {
-            var departmentsList = db.Departments.Select(x => new
-            {
-                x.DepartmentId,
-                x.DepartmentName
-            }).ToList();
+            var departmentsList = _departmentService.GetDepartments();
             lueEmployeeDepartments.Properties.DataSource = departmentsList;
             lueEmployeeDepartments.Properties.NullText = "Please pick a value";
         }
@@ -100,7 +102,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             AddPlaceholderEvents(txtEmployeeLastName, "Last Name");
             AddPlaceholderEvents(txtEmployeeEmail, "Mail");
             AddPlaceholderEvents(txtEmployeePhoneNumber, "Phone Number");
-            AddPlaceholderEvents(txtEmployeePhoneNumber, "Profile Photo Link");
+            AddPlaceholderEvents(txtEmployeePhoto, "Profile Photo Link");
         }
 
         private void AddPlaceholderEvents(DevExpress.XtraEditors.TextEdit textEdit, string placeholder)
@@ -123,5 +125,6 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
         }
 
         #endregion
+
     }
 }

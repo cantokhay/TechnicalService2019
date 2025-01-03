@@ -371,6 +371,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             this.Name = "FrmNewEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNewEmployee";
+            this.Load += new System.EventHandler(this.FrmNewEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtEmployeeFirstName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();

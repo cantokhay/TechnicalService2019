@@ -1,7 +1,7 @@
-﻿using System.Data;
+﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
 using Tech2019.EntityLayer.Enum;
 
@@ -9,17 +9,18 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
 {
     public partial class FrmCustomerList : Form
     {
-        public FrmCustomerList()
+        private readonly ICustomerService _customerService;
+
+        public FrmCustomerList(ICustomerService customerService)
         {
+            _customerService = customerService;
             InitializeComponent();
         }
 
-        TechDBContext db = new TechDBContext();
-
         private void FrmCustomerList_Load(object sender, System.EventArgs e)
         {
-            CustomerList();
-            FillLookUpEditCitiesandDistricts();
+            LoadCustomerList();
+            FillLookUpEditCustomerStatusCitiesandDistricts();
             ClearCustomerInfo();
             ShowStatsByLinq();
         }
@@ -32,7 +33,8 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             txtEmail.Text = gvwCustomers.GetFocusedRowCellValue("CustomerEmail").ToString();
             txtPhoneNumber.Text = gvwCustomers.GetFocusedRowCellValue("CustomerPhoneNumber").ToString();
             txtAddress.Text = gvwCustomers.GetFocusedRowCellValue("CustomerAddress").ToString();
-            txtStatus.Text = gvwCustomers.GetFocusedRowCellValue("CustomerStatus").ToString();
+            var customerStatusValue = gvwCustomers.GetFocusedRowCellValue("CustomerStatus");
+            lueCustomerStatus.EditValue = (int)Enum.Parse(typeof(CustomerStatus), customerStatusValue.ToString());
             txtTaxNumber.Text = gvwCustomers.GetFocusedRowCellValue("CustomerTaxNumber").ToString();
             txtTaxOffice.Text = gvwCustomers.GetFocusedRowCellValue("CustomerTaxOffice").ToString();
             txtBank.Text = gvwCustomers.GetFocusedRowCellValue("CustomerBank").ToString();
@@ -47,10 +49,9 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
 
             Customer customer = new Customer();
             AssignCustomerInfo(customer);
-            db.Customers.Add(customer);
-            db.SaveChanges();
+            _customerService.Create(customer);
             MessageBox.Show("Customer Added Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            CustomerList();
+            LoadCustomerList();
             ClearCustomerInfo();
         }
 
@@ -60,18 +61,10 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
                 return;
 
             int id = int.Parse(txtCustomerId.Text);
-            var customer = db.Customers.Find(id);
-
-            if (customer == null)
-            {
-                MessageBox.Show("Customer Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            db.Customers.Remove(customer);
-            db.SaveChanges();
+            var customer = _customerService.GetById(id);
+            _customerService.Delete(customer);
             MessageBox.Show("Customer Deleted", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            CustomerList();
+            LoadCustomerList();
             ClearCustomerInfo();
         }
 
@@ -84,37 +77,22 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
                 return;
 
             int id = int.Parse(txtCustomerId.Text);
-            var customer = db.Customers.Find(id);
-
-            if (customer == null)
-            {
-                MessageBox.Show("Customer Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
+            var customer = _customerService.GetById(id);
             AssignCustomerInfo(customer);
-            db.SaveChanges();
+            _customerService.Update(customer);
             MessageBox.Show("Customer Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            CustomerList();
+            LoadCustomerList();
             ClearCustomerInfo();
         }
 
         private void btnRefresh_Click(object sender, System.EventArgs e)
         {
-            CustomerList();
+            LoadCustomerList();
             ClearCustomerInfo();
             ShowStatsByLinq();
         }
 
         #region Extracted Methods
-
-        private void ShowStatsByLinq()
-        {
-            lblTotalProductStat.Text = db.Customers.Count().ToString();
-            lblActiveCustomerStat.Text = db.Customers.Where(c => c.CustomerStatus == CustomerStatus.ActiveBuyer).Count().ToString();
-            lblMostCustomerByCityStat.Text = db.Customers.GroupBy(c => c.CustomerCity).OrderByDescending(c => c.Count()).Select(c => c.Key).FirstOrDefault();
-            lblTotalCitiesStat.Text = db.Customers.Select(c => c.CustomerCity).Distinct().Count().ToString();
-        }
 
         private void ClearCustomerInfo()
         {
@@ -124,7 +102,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             txtEmail.Text = string.Empty;
             txtAddress.Text = string.Empty;
             txtPhoneNumber.Text = string.Empty;
-            txtStatus.Text = string.Empty;
+            lueCustomerStatus.EditValue = null;
             txtTaxNumber.Text = string.Empty;
             txtTaxOffice.Text = string.Empty;
             txtBank.Text = string.Empty;
@@ -132,33 +110,39 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             lueCustomerDistrict.EditValue = null;
         }
 
-        private void FillLookUpEditCitiesandDistricts()
+        private void ShowStatsByLinq()
         {
-            lueCustomerCity.Properties.DataSource = db.Customers.Select(c => c.CustomerCity).Distinct().ToList();
-            lueCustomerCity.Properties.NullText = "Please pick a value";
-            lueCustomerDistrict.Properties.DataSource = db.Customers.Select(c => c.CustomerDistrict).Distinct().ToList();
-            lueCustomerDistrict.Properties.NullText = "Please pick a value";
-            var districts = db.Customers.Select(c => c.CustomerDistrict).Distinct().ToList();
-            lueCustomerDistrict.Properties.DataSource = districts;
+            lblTotalCustomerStat.Text = _customerService.GetTotalCustomerCount().ToString();
+            lblActiveCustomerStat.Text = _customerService.GetTotalActiveBuyerCount().ToString();
+            lblMostCustomerByCityStat.Text = _customerService.GetMostCustomerCityName();
+            lblTotalCitiesStat.Text = _customerService.GetTotalDistinctCityCount().ToString();
         }
 
-        private void CustomerList()
+        private void FillLookUpEditCustomerStatusCitiesandDistricts()
         {
-            var customerList = db.Customers.Select(c => new
-            {
-                c.CustomerId,
-                c.CustomerFirstName,
-                c.CustomerLastName,
-                c.CustomerEmail,
-                c.CustomerPhoneNumber,
-                c.CustomerAddress,
-                c.CustomerStatus,
-                c.CustomerTaxNumber,
-                c.CustomerTaxOffice,
-                c.CustomerBank,
-                c.CustomerCity,
-                c.CustomerDistrict
-            }).ToList();
+            lueCustomerCity.Properties.DataSource = _customerService.GetDistinctCityList();
+            lueCustomerCity.Properties.NullText = "Please pick a value";
+            lueCustomerDistrict.Properties.DataSource = _customerService.GetDistinctDistrictList();
+            lueCustomerDistrict.Properties.NullText = "Please pick a value";
+
+            var customerStatusList = Enum.GetValues(typeof(CustomerStatus))
+                .Cast<CustomerStatus>()
+                .Select(status => new
+                {
+                    StatusValues = (int)status,
+                    StatusDisplays = status.ToString()
+                })
+                .ToList();
+
+            lueCustomerStatus.Properties.DataSource = customerStatusList;
+            lueCustomerStatus.Properties.DisplayMember = "StatusDisplays";
+            lueCustomerStatus.Properties.ValueMember = "StatusValues";
+            lueCustomerStatus.Properties.NullText = "Please pick a value";
+        }
+
+        private void LoadCustomerList()
+        {
+            var customerList = _customerService.GetCustomers();
             grcCustomerList.DataSource = customerList;
         }
 
@@ -169,7 +153,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             customer.CustomerEmail = txtEmail.Text;
             customer.CustomerPhoneNumber = txtPhoneNumber.Text;
             customer.CustomerAddress = txtAddress.Text;
-            //customer.CustomerStatus = txtStatus.Text;
+            customer.CustomerStatus = (CustomerStatus)Enum.Parse(typeof(CustomerStatus), lueCustomerStatus.EditValue.ToString());
             customer.CustomerTaxNumber = txtTaxNumber.Text;
             customer.CustomerTaxOffice = txtTaxOffice.Text;
             customer.CustomerBank = txtBank.Text;
@@ -228,9 +212,9 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
                 MessageBox.Show("Tax Number cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(txtStatus.Text))
+            if (lueCustomerStatus.EditValue == null)
             {
-                MessageBox.Show("Status cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a status for this customer.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (string.IsNullOrWhiteSpace(txtAddress.Text))

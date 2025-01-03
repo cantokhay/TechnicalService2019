@@ -8,5 +8,6 @@ namespace Tech2019.BusinessLayer.AbstractServices
     {
         List<ResultDepartmentDTO> GetDepartments();
         int GetDepartmentCount();
+        string GetDepartmentNameByDepartmentId(byte departmentId);
     }
 }

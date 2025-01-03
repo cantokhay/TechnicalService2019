@@ -16,6 +16,62 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
             _context = context;
         }
 
+        public string TGetCheapestProduct()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).OrderBy(x => x.ProductSalePrice).Select(y => y.ProductName).FirstOrDefault();
+        }
+
+        public string TGetMaxStockedProduct()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).OrderByDescending(x => x.Stock).Select(y => y.ProductName).FirstOrDefault();
+        }
+
+        public string TGetMinStockedProduct()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).OrderBy(x => x.Stock).Select(y => y.ProductName).FirstOrDefault();
+        }
+
+        public string TGetMostExpensiveProduct()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).OrderByDescending(x => x.ProductSalePrice).Select(y => y.ProductName).FirstOrDefault();
+        }
+
+        public string TGetMostStockedBrand()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).GroupBy(x => x.ProductBrand).OrderByDescending(y => y.Count()).Select(z => z.Key).FirstOrDefault();
+        }
+
+        public List<ProductBrandDTO> TGetProductBrandStats()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).OrderBy(x => x.ProductBrand)
+                .GroupBy(y => y.ProductBrand)
+                .Select(z => new ProductBrandDTO
+                {
+                    Brand = z.Key,
+                    Total = z.Count()
+                }).ToList();
+        }
+
+        public int TGetProductCountWithCategoryNameAppliance()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Where(x => x.CategoryNavigation.CategoryName == "Appliance").Sum(x => x.Stock);
+        }
+
+        public int TGetProductCountWithCategoryNameComputer()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Where(x => x.CategoryNavigation.CategoryName == "Computer").Sum(x => x.Stock);
+        }
+
+        public int TGetProductCountWithCategoryNameGaming()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Where(x => x.CategoryNavigation.CategoryName == "Gaming").Sum(x => x.Stock);
+        }
+
+        public int TGetProductsOnCriticalStockLevel()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Count(x => x.Stock <= 20);
+        }
+
         public List<ProductWithCategoryDTO> TGetProductsWithCategories()
         {
             var products = _context.Products
@@ -26,7 +82,7 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                                      .Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
                                      .ToList();
 
-            var productList = products
+            return products
                 .Join(categories,
                       product => product.Category,
                       category => category.CategoryId,
@@ -43,8 +99,21 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                           ProductStatus = product.ProductStatus.ToString()
                       })
                 .ToList();
+        }
 
-            return productList;
+        public int TGetTotalBrandCount()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => x.ProductBrand).Distinct().Count();
+        }
+
+        public int TGetTotalProductCount()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Count();
+        }
+
+        public int TGetTotalProductInStock()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Sum(x => x.Stock);
         }
     }
 }

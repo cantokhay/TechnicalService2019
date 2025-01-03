@@ -46,6 +46,16 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
             return _categoryDal.TGetCategories();
         }
 
+        public string GetCategoryWithMostProduct()
+        {
+            return _categoryDal.TGetCategoryWithMostProduct();
+        }
+
+        public int GetTotalCategoryCount()
+        {
+            return _categoryDal.TGetTotalCategoryCount();
+        }
+
         public void Update(Category entity)
         {
             entity.ModifiedDate = DateTime.Now;

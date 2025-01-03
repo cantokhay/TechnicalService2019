@@ -62,7 +62,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel9 = new System.Windows.Forms.Panel();
             this.lueCustomerCity = new DevExpress.XtraEditors.LookUpEdit();
             this.pictureEdit11 = new DevExpress.XtraEditors.PictureEdit();
-            this.txtCustomerStatus = new DevExpress.XtraEditors.TextEdit();
             this.panel10 = new System.Windows.Forms.Panel();
             this.pictureEdit12 = new DevExpress.XtraEditors.PictureEdit();
             this.txtCustomerAddress = new DevExpress.XtraEditors.TextEdit();
@@ -71,6 +70,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.imageSlider1 = new DevExpress.XtraEditors.Controls.ImageSlider();
             this.btnNewQuit = new DevExpress.XtraEditors.SimpleButton();
             this.btnNewSave = new DevExpress.XtraEditors.SimpleButton();
+            this.lueCustomerStatus = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCustomerDistrict.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerLastName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
@@ -92,12 +92,12 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit10.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCustomerCity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit11.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit12.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCustomerStatus.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lueCustomerDistrict
@@ -490,22 +490,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.pictureEdit11.Size = new System.Drawing.Size(32, 32);
             this.pictureEdit11.TabIndex = 142;
             // 
-            // txtCustomerStatus
-            // 
-            this.txtCustomerStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCustomerStatus.EditValue = "Status";
-            this.txtCustomerStatus.Location = new System.Drawing.Point(625, 534);
-            this.txtCustomerStatus.Name = "txtCustomerStatus";
-            this.txtCustomerStatus.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.txtCustomerStatus.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtCustomerStatus.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txtCustomerStatus.Properties.Appearance.Options.UseBackColor = true;
-            this.txtCustomerStatus.Properties.Appearance.Options.UseFont = true;
-            this.txtCustomerStatus.Properties.Appearance.Options.UseForeColor = true;
-            this.txtCustomerStatus.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtCustomerStatus.Size = new System.Drawing.Size(124, 26);
-            this.txtCustomerStatus.TabIndex = 10;
-            // 
             // panel10
             // 
             this.panel10.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -609,6 +593,20 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.btnNewSave.Text = "SAVE";
             this.btnNewSave.Click += new System.EventHandler(this.btnNewSave_Click);
             // 
+            // lueCustomerStatus
+            // 
+            this.lueCustomerStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lueCustomerStatus.Location = new System.Drawing.Point(628, 537);
+            this.lueCustomerStatus.Name = "lueCustomerStatus";
+            this.lueCustomerStatus.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lueCustomerStatus.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lueCustomerStatus.Properties.Appearance.Options.UseBackColor = true;
+            this.lueCustomerStatus.Properties.Appearance.Options.UseForeColor = true;
+            this.lueCustomerStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCustomerStatus.Size = new System.Drawing.Size(219, 20);
+            this.lueCustomerStatus.TabIndex = 10;
+            // 
             // FrmNewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -618,6 +616,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.Controls.Add(this.btnNewQuit);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.btnNewSave);
+            this.Controls.Add(this.lueCustomerStatus);
             this.Controls.Add(this.lueCustomerCity);
             this.Controls.Add(this.lueCustomerDistrict);
             this.Controls.Add(this.label1);
@@ -639,7 +638,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtCustomerAddress);
-            this.Controls.Add(this.txtCustomerStatus);
             this.Controls.Add(this.txtCustomerTaxNumber);
             this.Controls.Add(this.txtCustomerTaxOffice);
             this.Controls.Add(this.txtCustomerBank);
@@ -657,6 +655,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.Name = "FrmNewCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNewCustomer";
+            this.Load += new System.EventHandler(this.FrmNewCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lueCustomerDistrict.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerLastName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
@@ -678,12 +677,12 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit10.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCustomerCity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit11.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCustomerStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit12.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageSlider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCustomerStatus.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -720,7 +719,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
         private System.Windows.Forms.Panel panel9;
         private DevExpress.XtraEditors.LookUpEdit lueCustomerCity;
         private DevExpress.XtraEditors.PictureEdit pictureEdit11;
-        private DevExpress.XtraEditors.TextEdit txtCustomerStatus;
         private System.Windows.Forms.Panel panel10;
         private DevExpress.XtraEditors.PictureEdit pictureEdit12;
         private DevExpress.XtraEditors.TextEdit txtCustomerAddress;
@@ -732,5 +730,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
         #endregion
 
         private DevExpress.XtraEditors.Controls.ImageSlider imageSlider1;
+        private DevExpress.XtraEditors.LookUpEdit lueCustomerStatus;
     }
 }

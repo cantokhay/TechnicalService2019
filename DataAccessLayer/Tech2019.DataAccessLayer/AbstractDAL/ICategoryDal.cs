@@ -7,5 +7,7 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
     public interface ICategoryDal : IGenericDal<Category>
     {
         List<ResultCategoryDTO> TGetCategories();
+        int TGetTotalCategoryCount();
+        string TGetCategoryWithMostProduct();
     }
 }

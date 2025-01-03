@@ -34,5 +34,13 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                 .Where(d => d.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
                 .Count();
         }
+
+        public string TGetDepartmentNameByDepartmentId(byte departmentId)
+        {
+            return _context.Departments
+                .Where(d => d.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
+                .FirstOrDefault(x => x.DepartmentId == departmentId).DepartmentName
+                .ToString();
+        }
     }
 }

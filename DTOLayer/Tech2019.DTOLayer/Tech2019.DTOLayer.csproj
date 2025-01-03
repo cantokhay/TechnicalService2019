@@ -42,11 +42,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryDTOs\ResultCategoryDTO.cs" />
+    <Compile Include="CustomerDTO\CustomerCityDTO.cs" />
+    <Compile Include="CustomerDTO\ResultCustomerDTO.cs" />
     <Compile Include="DepartmentDTOs\ResultDepartmentDTO.cs" />
     <Compile Include="EmployeeDTOs\EmployeeWithDepartmentDTO.cs" />
+    <Compile Include="ProductDTOs\ProductBrandDTO.cs" />
     <Compile Include="ProductDTOs\ProductWithCategoryDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\EntityLayer\Tech2019.EntityLayer\Tech2019.EntityLayer.csproj">
+      <Project>{3F3DDBED-FC67-4D89-9816-C6E8B5E5C6A4}</Project>
+      <Name>Tech2019.EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

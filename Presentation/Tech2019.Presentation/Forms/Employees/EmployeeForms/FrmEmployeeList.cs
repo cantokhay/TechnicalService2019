@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
@@ -13,8 +11,10 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
         private readonly IEmployeeService _employeeService;
         private readonly IDepartmentService _departmentService;
 
-        public FrmEmployeeList()
+        public FrmEmployeeList(IEmployeeService employeeService, IDepartmentService departmentService)
         {
+            _employeeService = employeeService;
+            _departmentService = departmentService;
             InitializeComponent();
         }
 
@@ -109,33 +109,33 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
 
         private void FillProfileCards()
         {
-            var employee1 = db.Employees.FirstOrDefault(x => x.DepartmentNavigation.DepartmentId == 1);
-            var employee2 = db.Employees.FirstOrDefault(x => x.DepartmentNavigation.DepartmentId == 2);
-            var employee3 = db.Employees.FirstOrDefault(x => x.DepartmentNavigation.DepartmentId == 3);
-            var employee4 = db.Employees.FirstOrDefault(x => x.DepartmentNavigation.DepartmentId == 4);
+            var employee1 = _employeeService.GetFirstEmployeeByDepartmentId(1);
+            var employee2 = _employeeService.GetFirstEmployeeByDepartmentId(2);
+            var employee3 = _employeeService.GetFirstEmployeeByDepartmentId(3);
+            var employee4 = _employeeService.GetFirstEmployeeByDepartmentId(4);
 
             lblEmployeeFullName1.Text = employee1.EmployeeFirstName + " " + employee1.EmployeeLastName;
             lblEmployeeMail1.Text = employee1.EmployeeMail;
             lblEmployeePhone1.Text = employee1.EmployeePhoneNumber;
-            lblEmployeeDepartment1.Text = db.Departments.FirstOrDefault(x => x.DepartmentId == employee1.Department).DepartmentName;
+            lblEmployeeDepartment1.Text = _departmentService.GetDepartmentNameByDepartmentId(1);
             picEmployee1.Image = GetImageFromUrl(employee1.EmployeeProfilePhoto);
 
             lblEmployeeFullName2.Text = employee2.EmployeeFirstName + " " + employee2.EmployeeLastName; ;
             lblEmployeeMail2.Text = employee2.EmployeeMail;
             lblEmployeePhone2.Text = employee2.EmployeePhoneNumber;
-            lblEmployeeDepartment2.Text = db.Departments.FirstOrDefault(x => x.DepartmentId == employee2.Department).DepartmentName;
+            lblEmployeeDepartment2.Text = _departmentService.GetDepartmentNameByDepartmentId(2);
             picEmployee2.Image = GetImageFromUrl(employee2.EmployeeProfilePhoto);
 
             lblEmployeeFullName3.Text = employee3.EmployeeFirstName + " " + employee3.EmployeeLastName; ;
             lblEmployeeMail3.Text = employee3.EmployeeMail;
             lblEmployeePhone3.Text = employee3.EmployeePhoneNumber;
-            lblEmployeeDepartment3.Text = db.Departments.FirstOrDefault(x => x.DepartmentId == employee3.Department).DepartmentName;
+            lblEmployeeDepartment3.Text = _departmentService.GetDepartmentNameByDepartmentId(3);
             picEmployee3.Image = GetImageFromUrl(employee3.EmployeeProfilePhoto);
 
             lblEmployeeFullName4.Text = employee4.EmployeeFirstName + " " + employee4.EmployeeLastName; ;
             lblEmployeeMail4.Text = employee4.EmployeeMail;
             lblEmployeePhone4.Text = employee4.EmployeePhoneNumber;
-            lblEmployeeDepartment4.Text = db.Departments.FirstOrDefault(x => x.DepartmentId == employee4.Department).DepartmentName;
+            lblEmployeeDepartment4.Text = _departmentService.GetDepartmentNameByDepartmentId(4);
             picEmployee4.Image = GetImageFromUrl(employee4.EmployeeProfilePhoto);
         }
 
@@ -165,17 +165,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
 
         private void LoadEmployeeList()
         {
-            var employeeList = db.Employees.Select(x => new
-            {
-                x.EmployeeId,
-                x.EmployeeFirstName,
-                x.EmployeeLastName,
-                x.EmployeeMail,
-                x.EmployeePhoneNumber,
-                x.EmployeeProfilePhoto,
-                DepartmentName = x.DepartmentNavigation.DepartmentName,
-                DepartmentId = x.Department
-            }).ToList();
+            var employeeList = _employeeService.GetEmployeesByDepartments();
 
             grcEmployeeList.DataSource = employeeList;
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.DataAccessLayer.AbstractDAL;
+using Tech2019.DTOLayer.EmployeeDTOs;
 using Tech2019.EntityLayer.Concrete;
 
 namespace Tech2019.BusinessLayer.ConcreteManagers
@@ -55,11 +56,21 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
             return _employeeDal.TGetMinEmployeeDepartment();
         }
 
+        public Employee GetFirstEmployeeByDepartmentId(byte departmentId)
+        {
+            return _employeeDal.TGetFirstEmployeeByDepartmentId(departmentId);
+        }
+
         public void Update(Employee entity)
         {
             entity.ModifiedDate = DateTime.Now;
             entity.DataStatus = EntityLayer.Enum.DataStatus.Modified;
             _employeeDal.TUpdate(entity);
+        }
+
+        public List<EmployeeWithDepartmentDTO> GetEmployeesByDepartments()
+        {
+            return _employeeDal.TGetEmployeesByDepartments();
         }
     }
 }

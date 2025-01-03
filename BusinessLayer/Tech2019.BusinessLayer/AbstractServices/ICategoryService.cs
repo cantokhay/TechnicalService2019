@@ -6,6 +6,8 @@ namespace Tech2019.BusinessLayer.AbstractServices
 {
     public interface ICategoryService : IGenericService<Category>
     {
-        List<ResultCategoryDTO> GetCategories();
+        List<ResultCategoryDTO> GetCategories(); 
+        int GetTotalCategoryCount();
+        string GetCategoryWithMostProduct();
     }
 }

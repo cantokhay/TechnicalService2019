@@ -9,14 +9,16 @@ namespace Tech2019.Presentation
         private readonly ICategoryService _categoryService; 
         private readonly IDepartmentService _departmentService;
         private readonly IEmployeeService _employeeService;
+        private readonly ICustomerService _customerService;
 
-        public HomeForm(IProductService productService, ICategoryService categoryService, IDepartmentService departmentService, IEmployeeService employeeService)
+        public HomeForm(IProductService productService, ICategoryService categoryService, IDepartmentService departmentService, IEmployeeService employeeService, ICustomerService customerService)
         {
             InitializeComponent();
             _productService = productService;
             _categoryService = categoryService;
             _departmentService = departmentService;
             _employeeService = employeeService;
+            _customerService = customerService;
         }
 
         private void btnProductListForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -41,34 +43,34 @@ namespace Tech2019.Presentation
 
         private void btnProductStats_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductStatisticForms.FrmProductStats frmProductStats = new Forms.Products.ProductStatisticForms.FrmProductStats();
+            Forms.Products.ProductStatisticForms.FrmProductStats frmProductStats = new Forms.Products.ProductStatisticForms.FrmProductStats(_productService, _categoryService);
             frmProductStats.MdiParent = this;
             frmProductStats.Show();
         }
 
         private void btnBrandStats_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductStatisticForms.FrmBrandStats frmBrandStats = new Forms.Products.ProductStatisticForms.FrmBrandStats();
+            Forms.Products.ProductStatisticForms.FrmBrandStats frmBrandStats = new Forms.Products.ProductStatisticForms.FrmBrandStats(_productService);
             frmBrandStats.MdiParent = this;
             frmBrandStats.Show();
         }
 
         private void btnCustomerList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Customers.CustomerCustomerForms.FrmCustomerList frmCustomerList = new Forms.Customers.CustomerCustomerForms.FrmCustomerList();
+            Forms.Customers.CustomerCustomerForms.FrmCustomerList frmCustomerList = new Forms.Customers.CustomerCustomerForms.FrmCustomerList(_customerService);
             frmCustomerList.MdiParent = this;
             frmCustomerList.Show();
         }
 
         private void btnNewCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Customers.CustomerCustomerForms.FrmNewCustomer frmNewCustomer = new Forms.Customers.CustomerCustomerForms.FrmNewCustomer();
+            Forms.Customers.CustomerCustomerForms.FrmNewCustomer frmNewCustomer = new Forms.Customers.CustomerCustomerForms.FrmNewCustomer(_customerService);
             frmNewCustomer.Show();
         }
 
         private void btnCustomerCityStats_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Customers.CustomerCustomerForms.FrmCustomerCityStats frmCustomerCityStats = new Forms.Customers.CustomerCustomerForms.FrmCustomerCityStats();
+            Forms.Customers.CustomerCustomerForms.FrmCustomerCityStats frmCustomerCityStats = new Forms.Customers.CustomerCustomerForms.FrmCustomerCityStats(_customerService);
             frmCustomerCityStats.MdiParent = this;
             frmCustomerCityStats.Show();
         }
@@ -94,14 +96,14 @@ namespace Tech2019.Presentation
 
         private void btnEmployeeList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Employees.EmployeeForms.FrmEmployeeList frmEmployeeList = new Forms.Employees.EmployeeForms.FrmEmployeeList();
+            Forms.Employees.EmployeeForms.FrmEmployeeList frmEmployeeList = new Forms.Employees.EmployeeForms.FrmEmployeeList(_employeeService, _departmentService);
             frmEmployeeList.MdiParent = this;
             frmEmployeeList.Show();
         }
 
         private void btnNewEmployee_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Employees.EmployeeForms.FrmNewEmployee frmNewEmployee = new Forms.Employees.EmployeeForms.FrmNewEmployee();
+            Forms.Employees.EmployeeForms.FrmNewEmployee frmNewEmployee = new Forms.Employees.EmployeeForms.FrmNewEmployee(_employeeService, _departmentService);
             frmNewEmployee.Show();
         }
 

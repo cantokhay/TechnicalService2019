@@ -2,17 +2,23 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
+using Tech2019.EntityLayer.Enum;
 
 namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
 {
     public partial class FrmNewCustomer : Form
     {
-        public FrmNewCustomer()
+        private readonly ICustomerService _customerService;
+        public FrmNewCustomer(ICustomerService customerService)
         {
+            _customerService = customerService;
             InitializeComponent();
-            FillLookUpEditCitiesAndDistricts();
+        }
+        private void FrmNewCustomer_Load(object sender, EventArgs e)
+        {
+            FillLookUpEditCustomerStatusCitiesandDistricts();
             InitializePlaceholderEvents();
         }
 
@@ -26,24 +32,35 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             if (!ValidateCustomerInfo())
                 return;
 
-            TechDBContext db = new TechDBContext();
             Customer customer = new Customer();
             AssignCustomerInfo(customer);
-            db.Customers.Add(customer);
-            db.SaveChanges();
+            _customerService.Create(customer);
             MessageBox.Show("Customer added successfully");
             this.Close();
         }
 
         #region Extracted Methods
 
-        private void FillLookUpEditCitiesAndDistricts()
+        private void FillLookUpEditCustomerStatusCitiesandDistricts()
         {
-            TechDBContext db = new TechDBContext();
-            lueCustomerCity.Properties.DataSource = db.Customers.Select(c => c.CustomerCity).Distinct().ToList();
+            lueCustomerCity.Properties.DataSource = _customerService.GetDistinctCityList();
             lueCustomerCity.Properties.NullText = "Please pick a value";
-            lueCustomerDistrict.Properties.DataSource = db.Customers.Select(c => c.CustomerDistrict).Distinct().ToList();
+            lueCustomerDistrict.Properties.DataSource = _customerService.GetDistinctDistrictList();
             lueCustomerDistrict.Properties.NullText = "Please pick a value";
+
+            var customerStatusList = Enum.GetValues(typeof(CustomerStatus))
+                .Cast<CustomerStatus>()
+                .Select(status => new
+                {
+                    StatusValues = (int)status,
+                    StatusDisplays = status.ToString()
+                })
+                .ToList();
+
+            lueCustomerStatus.Properties.DataSource = customerStatusList;
+            lueCustomerStatus.Properties.DisplayMember = "StatusDisplays";
+            lueCustomerStatus.Properties.ValueMember = "StatusValues";
+            lueCustomerStatus.Properties.NullText = "Please pick a value";
         }
 
         private void AssignCustomerInfo(Customer customer)
@@ -53,7 +70,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             customer.CustomerEmail = txtCustomerEmail.Text;
             customer.CustomerPhoneNumber = txtCustomerPhone.Text;
             customer.CustomerAddress = txtCustomerAddress.Text;
-            //customer.CustomerStatus = txtCustomerStatus.Text;
+            customer.CustomerStatus = (CustomerStatus)Enum.Parse(typeof(CustomerStatus), lueCustomerStatus.EditValue.ToString());
             customer.CustomerTaxNumber = txtCustomerTaxNumber.Text;
             customer.CustomerTaxOffice = txtCustomerTaxOffice.Text;
             customer.CustomerBank = txtCustomerBank.Text;
@@ -108,9 +125,9 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
                 MessageBox.Show("Tax Number cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(txtCustomerStatus.Text) || txtCustomerStatus.Text == "Status")
+            if (lueCustomerStatus.EditValue == null)
             {
-                MessageBox.Show("Status cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a status for this customer.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (string.IsNullOrWhiteSpace(txtCustomerAddress.Text) || txtCustomerAddress.Text == "Address")
@@ -130,7 +147,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             AddPlaceholderEvents(txtCustomerBank, "Bank");
             AddPlaceholderEvents(txtCustomerTaxOffice, "Tax Office");
             AddPlaceholderEvents(txtCustomerTaxNumber, "Tax Number");
-            AddPlaceholderEvents(txtCustomerStatus, "Status");
             AddPlaceholderEvents(txtCustomerAddress, "Address");
         }
 
@@ -153,7 +169,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             };
         }
 
-
         #endregion
+
     }
 }

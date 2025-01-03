@@ -8,5 +8,6 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
     {
         List<ResultDepartmentDTO> TGetDepartments();
         int TGetDepartmentCount();
+        string TGetDepartmentNameByDepartmentId(byte departmentId);
     }
 }

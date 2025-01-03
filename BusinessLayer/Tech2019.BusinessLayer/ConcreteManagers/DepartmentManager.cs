@@ -46,6 +46,11 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
             return _departmentDal.TGetDepartmentCount();
         }
 
+        public string GetDepartmentNameByDepartmentId(byte departmentId)
+        {
+            return _departmentDal.TGetDepartmentNameByDepartmentId(departmentId);
+        }
+
         public List<ResultDepartmentDTO> GetDepartments()
         {
             return _departmentDal.TGetDepartments();

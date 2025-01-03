@@ -1,4 +1,6 @@
-﻿using Tech2019.EntityLayer.Concrete;
+﻿using System.Collections.Generic;
+using Tech2019.DTOLayer.EmployeeDTOs;
+using Tech2019.EntityLayer.Concrete;
 
 namespace Tech2019.DataAccessLayer.AbstractDAL
 {
@@ -7,5 +9,7 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
         int TGetEmployeeCount();
         string TGetMaxEmployeeDepartment();
         string TGetMinEmployeeDepartment();
+        Employee TGetFirstEmployeeByDepartmentId(byte departmentId);
+        List<EmployeeWithDepartmentDTO> TGetEmployeesByDepartments();
     }
 }

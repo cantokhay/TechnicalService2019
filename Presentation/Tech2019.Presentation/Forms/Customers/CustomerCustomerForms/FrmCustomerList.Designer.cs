@@ -54,7 +54,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.txtAddress = new DevExpress.XtraEditors.TextEdit();
-            this.txtStatus = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtTaxNumber = new DevExpress.XtraEditors.TextEdit();
             this.txtTaxOffice = new DevExpress.XtraEditors.TextEdit();
@@ -63,8 +62,8 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.gvwCustomers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.lblTotalProductStat = new DevExpress.XtraEditors.LabelControl();
-            this.lblTotalProductLabel = new DevExpress.XtraEditors.LabelControl();
+            this.lblTotalCustomerStat = new DevExpress.XtraEditors.LabelControl();
+            this.lblTotalCustomerLabel = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.lblActiveCustomerStat = new DevExpress.XtraEditors.LabelControl();
@@ -77,6 +76,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
             this.lblMostCustomerByCityStat = new DevExpress.XtraEditors.LabelControl();
             this.lblMostCustomerByCityLabel = new DevExpress.XtraEditors.LabelControl();
+            this.lueCustomerStatus = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhoneNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerLastName.Properties)).BeginInit();
@@ -87,7 +87,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             ((System.ComponentModel.ISupportInitialize)(this.lueCustomerDistrict.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCustomerCity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaxNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaxOffice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBank.Properties)).BeginInit();
@@ -101,6 +100,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCustomerStatus.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl5
@@ -198,6 +198,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.groupControl1.Controls.Add(this.btnUpdate);
             this.groupControl1.Controls.Add(this.btnDelete);
             this.groupControl1.Controls.Add(this.btnSave);
+            this.groupControl1.Controls.Add(this.lueCustomerStatus);
             this.groupControl1.Controls.Add(this.lueCustomerDistrict);
             this.groupControl1.Controls.Add(this.lueCustomerCity);
             this.groupControl1.Controls.Add(this.labelControl12);
@@ -206,7 +207,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.groupControl1.Controls.Add(this.labelControl9);
             this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.txtAddress);
-            this.groupControl1.Controls.Add(this.txtStatus);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.txtTaxNumber);
             this.groupControl1.Controls.Add(this.txtTaxOffice);
@@ -341,13 +341,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.txtAddress.Size = new System.Drawing.Size(194, 20);
             this.txtAddress.TabIndex = 12;
             // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(135, 288);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(194, 20);
-            this.txtStatus.TabIndex = 11;
-            // 
             // labelControl6
             // 
             this.labelControl6.Location = new System.Drawing.Point(181, 171);
@@ -404,8 +397,8 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(178)))), ((int)(((byte)(0)))));
             this.panel1.Controls.Add(this.pictureEdit1);
-            this.panel1.Controls.Add(this.lblTotalProductStat);
-            this.panel1.Controls.Add(this.lblTotalProductLabel);
+            this.panel1.Controls.Add(this.lblTotalCustomerStat);
+            this.panel1.Controls.Add(this.lblTotalCustomerLabel);
             this.panel1.Location = new System.Drawing.Point(3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 98);
@@ -424,32 +417,32 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.pictureEdit1.Size = new System.Drawing.Size(50, 50);
             this.pictureEdit1.TabIndex = 2;
             // 
-            // lblTotalProductStat
+            // lblTotalCustomerStat
             // 
-            this.lblTotalProductStat.Appearance.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalProductStat.Appearance.ForeColor = System.Drawing.Color.White;
-            this.lblTotalProductStat.Appearance.Options.UseFont = true;
-            this.lblTotalProductStat.Appearance.Options.UseForeColor = true;
-            this.lblTotalProductStat.Appearance.Options.UseTextOptions = true;
-            this.lblTotalProductStat.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lblTotalProductStat.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.lblTotalProductStat.Location = new System.Drawing.Point(12, 42);
-            this.lblTotalProductStat.Name = "lblTotalProductStat";
-            this.lblTotalProductStat.Size = new System.Drawing.Size(96, 45);
-            this.lblTotalProductStat.TabIndex = 0;
-            this.lblTotalProductStat.Text = "588???";
+            this.lblTotalCustomerStat.Appearance.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTotalCustomerStat.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblTotalCustomerStat.Appearance.Options.UseFont = true;
+            this.lblTotalCustomerStat.Appearance.Options.UseForeColor = true;
+            this.lblTotalCustomerStat.Appearance.Options.UseTextOptions = true;
+            this.lblTotalCustomerStat.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblTotalCustomerStat.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblTotalCustomerStat.Location = new System.Drawing.Point(12, 42);
+            this.lblTotalCustomerStat.Name = "lblTotalCustomerStat";
+            this.lblTotalCustomerStat.Size = new System.Drawing.Size(96, 45);
+            this.lblTotalCustomerStat.TabIndex = 0;
+            this.lblTotalCustomerStat.Text = "588???";
             // 
-            // lblTotalProductLabel
+            // lblTotalCustomerLabel
             // 
-            this.lblTotalProductLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTotalProductLabel.Appearance.ForeColor = System.Drawing.Color.White;
-            this.lblTotalProductLabel.Appearance.Options.UseFont = true;
-            this.lblTotalProductLabel.Appearance.Options.UseForeColor = true;
-            this.lblTotalProductLabel.Location = new System.Drawing.Point(70, 12);
-            this.lblTotalProductLabel.Name = "lblTotalProductLabel";
-            this.lblTotalProductLabel.Size = new System.Drawing.Size(107, 20);
-            this.lblTotalProductLabel.TabIndex = 0;
-            this.lblTotalProductLabel.Text = "Total Customers";
+            this.lblTotalCustomerLabel.Appearance.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTotalCustomerLabel.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblTotalCustomerLabel.Appearance.Options.UseFont = true;
+            this.lblTotalCustomerLabel.Appearance.Options.UseForeColor = true;
+            this.lblTotalCustomerLabel.Location = new System.Drawing.Point(70, 12);
+            this.lblTotalCustomerLabel.Name = "lblTotalCustomerLabel";
+            this.lblTotalCustomerLabel.Size = new System.Drawing.Size(107, 20);
+            this.lblTotalCustomerLabel.TabIndex = 0;
+            this.lblTotalCustomerLabel.Text = "Total Customers";
             // 
             // panel2
             // 
@@ -604,6 +597,15 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.lblMostCustomerByCityLabel.TabIndex = 0;
             this.lblMostCustomerByCityLabel.Text = "Most Customers in City";
             // 
+            // lueCustomerStatus
+            // 
+            this.lueCustomerStatus.Location = new System.Drawing.Point(135, 288);
+            this.lueCustomerStatus.Name = "lueCustomerStatus";
+            this.lueCustomerStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCustomerStatus.Size = new System.Drawing.Size(194, 20);
+            this.lueCustomerStatus.TabIndex = 11;
+            // 
             // FrmCustomerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -630,7 +632,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             ((System.ComponentModel.ISupportInitialize)(this.lueCustomerDistrict.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCustomerCity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAddress.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaxNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaxOffice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBank.Properties)).EndInit();
@@ -648,6 +649,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueCustomerStatus.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -673,15 +675,14 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
         private DevExpress.XtraEditors.TextEdit txtTaxOffice;
         private DevExpress.XtraEditors.TextEdit txtBank;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.TextEdit txtStatus;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.TextEdit txtAddress;
         private DevExpress.XtraEditors.LookUpEdit lueCustomerDistrict;
         private DevExpress.XtraEditors.LookUpEdit lueCustomerCity;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraEditors.LabelControl lblTotalProductStat;
-        private DevExpress.XtraEditors.LabelControl lblTotalProductLabel;
+        private DevExpress.XtraEditors.LabelControl lblTotalCustomerStat;
+        private DevExpress.XtraEditors.LabelControl lblTotalCustomerLabel;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private DevExpress.XtraEditors.LabelControl lblActiveCustomerStat;
@@ -700,5 +701,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
         private DevExpress.XtraEditors.SimpleButton btnSave;
 
         #endregion
+
+        private DevExpress.XtraEditors.LookUpEdit lueCustomerStatus;
     }
 }

@@ -54,10 +54,12 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             this.lblMostPricedProductBrandStat = new DevExpress.XtraEditors.LabelControl();
             this.lblMostPricedProductBrandLabel = new DevExpress.XtraEditors.LabelControl();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.pictureEdit5 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -74,8 +76,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             this.pictureEdit8 = new DevExpress.XtraEditors.PictureEdit();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
-            this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
             ((System.ComponentModel.ISupportInitialize)(this.grcBrandsList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwBrands)).BeginInit();
             this.panel1.SuspendLayout();
@@ -87,8 +87,15 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -103,13 +110,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
             this.SuspendLayout();
             // 
             // grcBrandsList
@@ -347,6 +347,21 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             this.panel5.Size = new System.Drawing.Size(444, 429);
             this.panel5.TabIndex = 14;
             // 
+            // chartControl1
+            // 
+            this.chartControl1.BackColor = System.Drawing.Color.Transparent;
+            this.chartControl1.Legend.BackColor = System.Drawing.Color.Transparent;
+            this.chartControl1.Legend.Name = "Default Legend";
+            this.chartControl1.Location = new System.Drawing.Point(3, 99);
+            this.chartControl1.Name = "chartControl1";
+            series1.LegendTextPattern = "{A}";
+            series1.Name = "Series 1";
+            series1.View = doughnutSeriesView1;
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartControl1.Size = new System.Drawing.Size(438, 327);
+            this.chartControl1.TabIndex = 4;
+            // 
             // pictureEdit5
             // 
             this.pictureEdit5.Location = new System.Drawing.Point(10, 6);
@@ -391,6 +406,24 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(556, 319);
             this.panel6.TabIndex = 14;
+            // 
+            // chartControl2
+            // 
+            this.chartControl2.BackColor = System.Drawing.Color.Transparent;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl2.Diagram = xyDiagram1;
+            this.chartControl2.Legend.BackColor = System.Drawing.Color.Transparent;
+            this.chartControl2.Legend.Name = "Default Legend";
+            this.chartControl2.Location = new System.Drawing.Point(3, 99);
+            this.chartControl2.Name = "chartControl2";
+            series2.LegendTextPattern = "{A}";
+            series2.Name = "Series 1";
+            series2.View = lineSeriesView1;
+            this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series2};
+            this.chartControl2.Size = new System.Drawing.Size(550, 217);
+            this.chartControl2.TabIndex = 4;
             // 
             // pictureEdit6
             // 
@@ -583,39 +616,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             this.pictureEdit7.Size = new System.Drawing.Size(60, 60);
             this.pictureEdit7.TabIndex = 3;
             // 
-            // chartControl1
-            // 
-            this.chartControl1.BackColor = System.Drawing.Color.Transparent;
-            this.chartControl1.Legend.BackColor = System.Drawing.Color.Transparent;
-            this.chartControl1.Legend.Name = "Default Legend";
-            this.chartControl1.Location = new System.Drawing.Point(3, 99);
-            this.chartControl1.Name = "chartControl1";
-            series1.LegendTextPattern = "{A}";
-            series1.Name = "Series 1";
-            series1.View = doughnutSeriesView1;
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartControl1.Size = new System.Drawing.Size(438, 327);
-            this.chartControl1.TabIndex = 4;
-            // 
-            // chartControl2
-            // 
-            this.chartControl2.BackColor = System.Drawing.Color.Transparent;
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl2.Diagram = xyDiagram1;
-            this.chartControl2.Legend.BackColor = System.Drawing.Color.Transparent;
-            this.chartControl2.Legend.Name = "Default Legend";
-            this.chartControl2.Location = new System.Drawing.Point(3, 99);
-            this.chartControl2.Name = "chartControl2";
-            series2.LegendTextPattern = "{A}";
-            series2.Name = "Series 1";
-            series2.View = lineSeriesView1;
-            this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
-            this.chartControl2.Size = new System.Drawing.Size(550, 217);
-            this.chartControl2.TabIndex = 4;
-            // 
             // FrmBrandStats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -649,9 +649,16 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
@@ -666,13 +673,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).EndInit();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             this.ResumeLayout(false);
 
         }
