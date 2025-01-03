@@ -3,23 +3,24 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
 
 namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
 {
     public partial class FrmEmployeeList : Form
     {
+        private readonly IEmployeeService _employeeService;
+        private readonly IDepartmentService _departmentService;
+
         public FrmEmployeeList()
         {
             InitializeComponent();
         }
 
-        TechDBContext db = new TechDBContext();
-
         private void FrmEmployeeList_Load(object sender, EventArgs e)
         {
-            EmployeeList();
+            LoadEmployeeList();
             FillLookUpEditDepartments();
             FillProfileCards();
             ClearEmployeeInfo();
@@ -32,10 +33,9 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
 
             Employee employee = new Employee();
             AssignEmployeeInfo(employee);
-            db.Employees.Add(employee);
-            db.SaveChanges();
+            _employeeService.Create(employee);
             MessageBox.Show("Employee Added Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            EmployeeList();
+            LoadEmployeeList();
             ClearEmployeeInfo();
         }
 
@@ -45,12 +45,10 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
                 return;
 
             int id = int.Parse(txtEmployeeId.Text);
-            var employee = db.Employees.Find(id);
-
-            db.Employees.Remove(employee);
-            db.SaveChanges();
+            var employee = _employeeService.GetById(id);
+            _employeeService.Delete(employee);
             MessageBox.Show("Employee Deleted", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            EmployeeList();
+            LoadEmployeeList();
             ClearEmployeeInfo();
         }
 
@@ -63,24 +61,17 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
                 return;
 
             int id = int.Parse(txtEmployeeId.Text);
-            var employee = db.Employees.Find(id);
-
-            if (employee == null)
-            {
-                MessageBox.Show("Customer Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
+            var employee = _employeeService.GetById(id);
             AssignEmployeeInfo(employee);
-            db.SaveChanges();
+            _employeeService.Update(employee);
             MessageBox.Show("Employee Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            EmployeeList();
+            LoadEmployeeList();
             ClearEmployeeInfo();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            EmployeeList();
+            LoadEmployeeList();
             ClearEmployeeInfo();
         }
 
@@ -111,11 +102,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
 
         private void FillLookUpEditDepartments()
         {
-            var departmentsList = db.Departments.Select(x => new
-            {
-                x.DepartmentId,
-                x.DepartmentName
-            }).ToList();
+            var departmentsList = _departmentService.GetDepartments();
             lueEmployeeDepartments.Properties.DataSource = departmentsList;
             lueEmployeeDepartments.Properties.NullText = "Please pick a value";
         }
@@ -176,7 +163,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             }
         }
 
-        private void EmployeeList()
+        private void LoadEmployeeList()
         {
             var employeeList = db.Employees.Select(x => new
             {

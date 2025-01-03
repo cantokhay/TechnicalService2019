@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryDTOs\ResultCategoryDTO.cs" />
+    <Compile Include="DepartmentDTOs\ResultDepartmentDTO.cs" />
+    <Compile Include="EmployeeDTOs\EmployeeWithDepartmentDTO.cs" />
     <Compile Include="ProductDTOs\ProductWithCategoryDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,24 +1,23 @@
 ﻿using System;
-using System.Data;
-using System.Linq;
 using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
 
 namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
 {
     public partial class FrmCategoryList : Form
     {
-        public FrmCategoryList()
+        private readonly ICategoryService _categoryService;
+
+        public FrmCategoryList(ICategoryService categoryService)
         {
             InitializeComponent();
+            _categoryService = categoryService;
         }
-
-        TechDBContext db = new TechDBContext(); //TODO: This should be come with dependency injection.
 
         private void FrmCategoryList_Load(object sender, EventArgs e)
         {
-            CategoryList();
+            LoadCategoryList();
             ClearCategoryInfo();
         }
 
@@ -30,7 +29,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            CategoryList();
+            LoadCategoryList();
             ClearCategoryInfo();
         }
 
@@ -41,10 +40,9 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
 
             Category category = new Category();
             AssignCategoryInfo(category);
-            db.Categories.Add(category);
-            db.SaveChanges();
+            _categoryService.Create(category);
             MessageBox.Show("Category Added Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            CategoryList();
+            LoadCategoryList();
             ClearCategoryInfo();
         }
 
@@ -54,55 +52,33 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
                 return;
 
             int id = int.Parse(txtCategoryId.Text);
-            var category = db.Categories.Find(id);
-
-            if (category == null)
-            {
-                MessageBox.Show("Category Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            db.Categories.Remove(category);
-            db.SaveChanges();
+            var category = _categoryService.GetById(id);
+            _categoryService.Delete(category);
             MessageBox.Show("Category Deleted", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            CategoryList();
+            LoadCategoryList();
             ClearCategoryInfo();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!ValidateCategoryId())
-                return;
-
-            if (!ValidateCategoryInfo())
-                return;
+            if (!ValidateCategoryId() || !ValidateCategoryInfo()) return;
 
             int id = int.Parse(txtCategoryId.Text);
-            var category = db.Categories.Find(id);
-
-            if (category == null)
-            {
-                MessageBox.Show("Category Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+            var category = _categoryService.GetById(id);
             AssignCategoryInfo(category);
-            db.SaveChanges();
+            _categoryService.Update(category);
             MessageBox.Show("Category Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            CategoryList();
+            LoadCategoryList();
             ClearCategoryInfo();
         }
 
         #region Extracted Methods
 
-        private void CategoryList()
+        private void LoadCategoryList()
         {
-            var values = from x in db.Categories
-                         select new
-                         {
-                             x.CategoryId,
-                             x.CategoryName
-                         };
-            grcCategoryList.DataSource = values.ToList();
+            var categoriesList = _categoryService.GetCategories();
+
+            grcCategoryList.DataSource = categoriesList;
         }
 
         private void ClearCategoryInfo()

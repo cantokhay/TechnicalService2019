@@ -31,15 +31,8 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
         {
             if (!ValidateProductInfo()) return;
 
-            var product = new Product
-            {
-                ProductName = txtProductName.Text,
-                ProductBrand = txtProductBrand.Text,
-                ProductSalePrice = decimal.Parse(txtSalePrice.Text),
-                ProductPurchasePrice = decimal.Parse(txtPurchasePrice.Text),
-                Stock = short.Parse(txtStock.Text),
-                Category = byte.Parse(lueProductCategories.EditValue.ToString())
-            };
+            var product = new Product();
+            AssignProductInfo(product);
             _productService.Create(product);
             MessageBox.Show("Product Added Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadProductList();
@@ -64,13 +57,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
 
             int id = int.Parse(txtProductId.Text);
             var product = _productService.GetById(id);
-            product.ProductName = txtProductName.Text;
-            product.ProductBrand = txtProductBrand.Text;
-            product.ProductSalePrice = decimal.Parse(txtSalePrice.Text);
-            product.ProductPurchasePrice = decimal.Parse(txtPurchasePrice.Text);
-            product.Stock = short.Parse(txtStock.Text);
-            product.Category = byte.Parse(lueProductCategories.EditValue.ToString());
-            product.ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), lueProductStatus.EditValue.ToString());
+            AssignProductInfo(product);
             _productService.Update(product);
             MessageBox.Show("Product Updated Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             LoadProductList();
@@ -96,15 +83,11 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             lueProductStatus.EditValue = (int)Enum.Parse(typeof(ProductStatus), productStatusValue.ToString());
         }
 
+        #region Exracted Methods
+
         private void FillLookUpEditCategoriesAndProductStatus()
         {
-            var categoryList = _categoryService.GetAll()
-                .Select(c => new
-                {
-                    c.CategoryId,
-                    c.CategoryName
-                })
-                .ToList();
+            var categoryList = _categoryService.GetCategories();
 
             lueProductCategories.Properties.DataSource = categoryList;
             lueProductCategories.Properties.DisplayMember = "CategoryName";
@@ -124,6 +107,17 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             lueProductStatus.Properties.DisplayMember = "StatusDisplays";
             lueProductStatus.Properties.ValueMember = "StatusValues";
             lueProductStatus.Properties.NullText = "Please pick a value";
+        }
+
+        private void AssignProductInfo(Product product)
+        {
+            product.ProductName = txtProductName.Text;
+            product.ProductBrand = txtProductBrand.Text;
+            product.ProductSalePrice = decimal.Parse(txtSalePrice.Text);
+            product.ProductPurchasePrice = decimal.Parse(txtPurchasePrice.Text);
+            product.Stock = short.Parse(txtStock.Text);
+            product.Category = byte.Parse(lueProductCategories.EditValue.ToString());
+            product.ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), lueProductStatus.EditValue.ToString());
         }
 
         private void LoadProductList()
@@ -204,5 +198,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
 
         #endregion
 
+        #endregion
     }
 }

@@ -2,7 +2,7 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
 using Tech2019.EntityLayer.Enum;
 
@@ -10,10 +10,20 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
 {
     public partial class FrmNewProduct : Form
     {
-        public FrmNewProduct()
+        private readonly IProductService _productService;
+        private readonly ICategoryService _categoryService;
+
+        public FrmNewProduct(IProductService productService, ICategoryService categoryService)
         {
             InitializeComponent();
-            FillLookUpEditCategories();
+            _productService = productService;
+            _categoryService = categoryService;
+        }
+
+
+        private void FrmNewProduct_Load(object sender, EventArgs e)
+        {
+            FillLookUpEditCategoriesAndProductStatus();
             InitializePlaceholderEvents();
         }
 
@@ -21,13 +31,10 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
         {
             if (!ValidateProductInfo())
                 return;
-            TechDBContext db = new TechDBContext();
-            Product product = new Product();
+            var product = new Product();
             AssignProductInfo(product);
-            product.ProductStatus = ProductStatus.ActivelySold;
-            db.Products.Add(product);
-            db.SaveChanges();
-            MessageBox.Show("Product added successfully");
+            _productService.Create(product);
+            MessageBox.Show("Product Added Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
@@ -70,7 +77,11 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
                 MessageBox.Show("Please provide a valid stock quantity.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            
+            if (lueProductStatus.EditValue == null)
+            {
+                MessageBox.Show("Please select a status for this product.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             return true;
         }
 
@@ -110,19 +121,37 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             product.ProductPurchasePrice = decimal.Parse(txtPurchasePrice.Text);
             product.Stock = short.Parse(txtStock.Text);
             product.Category = byte.Parse(lueProductCategories.EditValue.ToString());
+            product.ProductStatus = (ProductStatus)Enum.Parse(typeof(ProductStatus), lueProductStatus.EditValue.ToString());
         }
 
-        private void FillLookUpEditCategories()
+        private void FillLookUpEditCategoriesAndProductStatus()
         {
-            TechDBContext db = new TechDBContext();
-            var categoriesList = from c in db.Categories
-                                 select new
-                                 {
-                                     c.CategoryId,
-                                     c.CategoryName
-                                 }; //TODO : This comes with categoryid but categoryid should be hidden and only name should be shown.
-            lueProductCategories.Properties.DataSource = categoriesList.ToList();
+            var categoryList = _categoryService.GetAll()
+                            .Select(c => new
+                            {
+                                c.CategoryId,
+                                c.CategoryName
+                            })
+                            .ToList();
+
+            lueProductCategories.Properties.DataSource = categoryList;
+            lueProductCategories.Properties.DisplayMember = "CategoryName";
+            lueProductCategories.Properties.ValueMember = "CategoryId";
             lueProductCategories.Properties.NullText = "Please pick a value";
+
+            var productStatusList = Enum.GetValues(typeof(ProductStatus))
+                .Cast<ProductStatus>()
+                .Select(status => new
+                {
+                    StatusValues = (int)status,
+                    StatusDisplays = status.ToString()
+                })
+                .ToList();
+
+            lueProductStatus.Properties.DataSource = productStatusList;
+            lueProductStatus.Properties.DisplayMember = "StatusDisplays";
+            lueProductStatus.Properties.ValueMember = "StatusValues";
+            lueProductStatus.Properties.NullText = "Please pick a value";
         }
 
         #endregion

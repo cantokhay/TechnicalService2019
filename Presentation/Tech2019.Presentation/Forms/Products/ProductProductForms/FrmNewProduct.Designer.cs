@@ -54,6 +54,9 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.btnNewProductSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnNewProductQuit = new DevExpress.XtraEditors.SimpleButton();
             this.lueProductCategories = new DevExpress.XtraEditors.LookUpEdit();
+            this.pictureEdit8 = new DevExpress.XtraEditors.PictureEdit();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lueProductStatus = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductBrand.Properties)).BeginInit();
@@ -68,6 +71,8 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             ((System.ComponentModel.ISupportInitialize)(this.txtStock.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueProductCategories.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueProductStatus.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureEdit1
@@ -302,10 +307,10 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.btnNewProductSave.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnNewProductSave.Appearance.Options.UseFont = true;
             this.btnNewProductSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewProductSave.ImageOptions.Image")));
-            this.btnNewProductSave.Location = new System.Drawing.Point(12, 405);
+            this.btnNewProductSave.Location = new System.Drawing.Point(12, 453);
             this.btnNewProductSave.Name = "btnNewProductSave";
             this.btnNewProductSave.Size = new System.Drawing.Size(120, 33);
-            this.btnNewProductSave.TabIndex = 7;
+            this.btnNewProductSave.TabIndex = 8;
             this.btnNewProductSave.Text = "SAVE";
             this.btnNewProductSave.Click += new System.EventHandler(this.btnNewProductSave_Click);
             // 
@@ -315,10 +320,10 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.btnNewProductQuit.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnNewProductQuit.Appearance.Options.UseFont = true;
             this.btnNewProductQuit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewProductQuit.ImageOptions.Image")));
-            this.btnNewProductQuit.Location = new System.Drawing.Point(155, 405);
+            this.btnNewProductQuit.Location = new System.Drawing.Point(155, 453);
             this.btnNewProductQuit.Name = "btnNewProductQuit";
             this.btnNewProductQuit.Size = new System.Drawing.Size(120, 33);
-            this.btnNewProductQuit.TabIndex = 8;
+            this.btnNewProductQuit.TabIndex = 9;
             this.btnNewProductQuit.Text = "QUIT";
             this.btnNewProductQuit.Click += new System.EventHandler(this.btnNewProductQuit_Click);
             // 
@@ -337,12 +342,49 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.lueProductCategories.Size = new System.Drawing.Size(219, 20);
             this.lueProductCategories.TabIndex = 3;
             // 
+            // pictureEdit8
+            // 
+            this.pictureEdit8.EditValue = ((object)(resources.GetObject("pictureEdit8.EditValue")));
+            this.pictureEdit8.Location = new System.Drawing.Point(12, 390);
+            this.pictureEdit8.Name = "pictureEdit8";
+            this.pictureEdit8.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit8.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit8.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit8.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit8.Size = new System.Drawing.Size(32, 32);
+            this.pictureEdit8.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Location = new System.Drawing.Point(49, 419);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(220, 3);
+            this.panel7.TabIndex = 26;
+            // 
+            // lueProductStatus
+            // 
+            this.lueProductStatus.Location = new System.Drawing.Point(50, 393);
+            this.lueProductStatus.Name = "lueProductStatus";
+            this.lueProductStatus.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lueProductStatus.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lueProductStatus.Properties.Appearance.Options.UseBackColor = true;
+            this.lueProductStatus.Properties.Appearance.Options.UseForeColor = true;
+            this.lueProductStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueProductStatus.Properties.DisplayMember = "CategoryName";
+            this.lueProductStatus.Properties.ValueMember = "CategoryId";
+            this.lueProductStatus.Size = new System.Drawing.Size(219, 20);
+            this.lueProductStatus.TabIndex = 7;
+            // 
             // FrmNewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(287, 450);
+            this.ClientSize = new System.Drawing.Size(287, 498);
+            this.Controls.Add(this.lueProductStatus);
             this.Controls.Add(this.lueProductCategories);
             this.Controls.Add(this.btnNewProductQuit);
             this.Controls.Add(this.btnNewProductSave);
@@ -350,6 +392,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtProductBrand);
             this.Controls.Add(this.pictureEdit2);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -359,6 +402,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.Controls.Add(this.txtSalePrice);
             this.Controls.Add(this.txtPurchasePrice);
             this.Controls.Add(this.txtProductName);
+            this.Controls.Add(this.pictureEdit8);
             this.Controls.Add(this.pictureEdit6);
             this.Controls.Add(this.pictureEdit5);
             this.Controls.Add(this.pictureEdit4);
@@ -370,6 +414,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             this.Name = "FrmNewProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNewProduct";
+            this.Load += new System.EventHandler(this.FrmNewProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductBrand.Properties)).EndInit();
@@ -384,6 +429,8 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             ((System.ComponentModel.ISupportInitialize)(this.txtStock.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueProductCategories.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueProductStatus.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,5 +461,9 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
         private DevExpress.XtraEditors.LookUpEdit lueProductCategories;
 
         #endregion
+
+        private DevExpress.XtraEditors.PictureEdit pictureEdit8;
+        private System.Windows.Forms.Panel panel7;
+        private DevExpress.XtraEditors.LookUpEdit lueProductStatus;
     }
 }

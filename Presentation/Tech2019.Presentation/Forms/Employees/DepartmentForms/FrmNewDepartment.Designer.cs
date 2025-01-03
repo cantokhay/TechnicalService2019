@@ -195,6 +195,7 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             this.Name = "FrmNewDepartment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNewDepartment";
+            this.Load += new System.EventHandler(this.FrmNewDepartment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDepartmentName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();

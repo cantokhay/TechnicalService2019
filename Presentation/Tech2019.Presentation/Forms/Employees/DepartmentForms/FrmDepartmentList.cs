@@ -1,24 +1,25 @@
 ﻿using System;
-using System.Data;
-using System.Linq;
 using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
 
 namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
 {
     public partial class FrmDepartmentList : Form
     {
-        public FrmDepartmentList()
+        private readonly IDepartmentService _departmentService;
+        private readonly IEmployeeService _employeeService;
+
+        public FrmDepartmentList(IDepartmentService departmentService, IEmployeeService employeeService)
         {
             InitializeComponent();
+            _departmentService = departmentService;
+            _employeeService = employeeService;
         }
-
-        TechDBContext db = new TechDBContext();
 
         private void FrmDepartmentList_Load(object sender, EventArgs e)
         {
-            DepartmentList();
+            LoadDepartmentList();
             ClearDepartmentInfo();
             ShowDepartmentListStatsByLinq();
         }
@@ -31,7 +32,7 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            DepartmentList();
+            LoadDepartmentList();
             ClearDepartmentInfo();
         }
 
@@ -42,10 +43,9 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
 
             Department department = new Department();
             AssignDepartmentInfo(department);
-            db.Departments.Add(department);
-            db.SaveChanges();
+            _departmentService.Create(department);
             MessageBox.Show("Department Added Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DepartmentList();
+            LoadDepartmentList();
             ClearDepartmentInfo();
         }
 
@@ -55,18 +55,10 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
                 return;
 
             int id = int.Parse(txtDepartmentId.Text);
-            var department = db.Departments.Find(id);
-
-            if (department == null)
-            {
-                MessageBox.Show("Department Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            db.Departments.Remove(department);
-            db.SaveChanges();
+            var department = _departmentService.GetById(id);
+            _departmentService.Delete(department);
             MessageBox.Show("Department Deleted", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            DepartmentList();
+            LoadDepartmentList();
             ClearDepartmentInfo();
         }
 
@@ -79,18 +71,11 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
                 return;
 
             int id = int.Parse(txtDepartmentId.Text);
-            var department = db.Departments.Find(id);
-
-            if (department == null)
-            {
-                MessageBox.Show("Department Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
+            var department = _departmentService.GetById(id);
             AssignDepartmentInfo(department);
-            db.SaveChanges();
+            _departmentService.Update(department);
             MessageBox.Show("Department Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DepartmentList();
+            LoadDepartmentList();
             ClearDepartmentInfo();
         }
 
@@ -98,19 +83,10 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
 
         private void ShowDepartmentListStatsByLinq()
         {
-            lblTotalDepartmentStat.Text = db.Departments.Count().ToString();
-            lblTotalEmployeeStat.Text = db.Employees.Count().ToString();
-            lblMaxEmployeeDepartmentStat.Text = db.Employees
-                .GroupBy(x => x.DepartmentNavigation.DepartmentId)
-                .OrderByDescending(x => x.Count())
-                .Select(x => x.FirstOrDefault().DepartmentNavigation.DepartmentName)
-                .FirstOrDefault();
-
-            lblMinEmployeeDepartmentStat.Text = db.Employees
-                .GroupBy(x => x.DepartmentNavigation.DepartmentId)
-                .OrderBy(x => x.Count())
-                .Select(x => x.FirstOrDefault().DepartmentNavigation.DepartmentName)
-                .FirstOrDefault();
+            lblTotalDepartmentStat.Text = _departmentService.GetDepartmentCount().ToString();
+            lblTotalEmployeeStat.Text = _employeeService.GetEmployeeCount().ToString();
+            lblMaxEmployeeDepartmentStat.Text = _employeeService.GetMaxEmployeeDepartment();
+            lblMinEmployeeDepartmentStat.Text = _employeeService.GetMinEmployeeDepartment();
         }
 
         private void ClearDepartmentInfo()
@@ -120,16 +96,10 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             txtDepartmentName.Text = string.Empty;
         }
 
-        private void DepartmentList()
+        private void LoadDepartmentList()
         {
-            var values = from d in db.Departments
-                         select new
-                         {
-                             d.DepartmentId,
-                             d.DepartmentName,
-                             d.DepartmentDescription
-                         };
-            grcDepartmentList.DataSource = values.ToList();
+            var values = _departmentService.GetDepartments();
+            grcDepartmentList.DataSource = values;
         }
 
         private void AssignDepartmentInfo(Department departmant)

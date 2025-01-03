@@ -20,10 +20,12 @@ namespace Tech2019.Presentation
             var serviceProvider = ConfigureServices();
             var productService = serviceProvider.GetRequiredService<IProductService>();
             var categoryService = serviceProvider.GetRequiredService<ICategoryService>();
+            var departmentService = serviceProvider.GetRequiredService<IDepartmentService>();
+            var employeeService = serviceProvider.GetRequiredService<IEmployeeService>();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeForm(productService, categoryService));
+            Application.Run(new HomeForm(productService, categoryService, departmentService, employeeService));
         }
 
         private static Microsoft.Extensions.DependencyInjection.ServiceProvider ConfigureServices()
@@ -34,9 +36,13 @@ namespace Tech2019.Presentation
 
             services.AddScoped<IProductDal, EFProductDal>();
             services.AddScoped<ICategoryDal, EFCategoryDal>();
+            services.AddScoped<IDepartmentDal, EFDepartmentDal>();
+            services.AddScoped<IEmployeeDal, EFEmployeeDal>();
 
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<IDepartmentService, DepartmentManager>();
+            services.AddScoped<IEmployeeService, EmployeeManager>();
 
             return services.BuildServiceProvider();
         }

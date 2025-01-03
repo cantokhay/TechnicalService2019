@@ -1,27 +1,30 @@
 ﻿using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
 
 namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
 {
     public partial class FrmNewCategory : Form
     {
-        public FrmNewCategory()
+        private readonly ICategoryService _categoryService;
+        public FrmNewCategory(ICategoryService categoryService)
         {
             InitializeComponent();
-            InitializePlaceholderEvents();
+            _categoryService = categoryService;
         }
 
+        private void FrmNewCategory_Load(object sender, System.EventArgs e)
+        {
+            InitializePlaceholderEvents();
+        }
         private void btnNewSave_Click(object sender, System.EventArgs e)
         {
             if (!ValidateCategoryInfo())
                 return;
 
-            TechDBContext db = new TechDBContext();
             Category category = new Category();
             AssignCategoryInfo(category);
-            db.Categories.Add(category);
-            db.SaveChanges();
+            _categoryService.Create(category);
             MessageBox.Show("Category added succesfully");
             this.Close();
         }
@@ -72,5 +75,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
         }
 
         #endregion
+
     }
 }

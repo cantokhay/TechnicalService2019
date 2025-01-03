@@ -6,13 +6,17 @@ namespace Tech2019.Presentation
     public partial class HomeForm : Form
     {
         private readonly IProductService _productService;
-        private readonly ICategoryService _categoryService;
+        private readonly ICategoryService _categoryService; 
+        private readonly IDepartmentService _departmentService;
+        private readonly IEmployeeService _employeeService;
 
-        public HomeForm(IProductService productService, ICategoryService categoryService)
+        public HomeForm(IProductService productService, ICategoryService categoryService, IDepartmentService departmentService, IEmployeeService employeeService)
         {
             InitializeComponent();
             _productService = productService;
             _categoryService = categoryService;
+            _departmentService = departmentService;
+            _employeeService = employeeService;
         }
 
         private void btnProductListForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -24,14 +28,14 @@ namespace Tech2019.Presentation
 
         private void btnCategoryListForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductCategoryForms.FrmCategoryList frmCategoryList = new Forms.Products.ProductCategoryForms.FrmCategoryList();
+            Forms.Products.ProductCategoryForms.FrmCategoryList frmCategoryList = new Forms.Products.ProductCategoryForms.FrmCategoryList(_categoryService);
             frmCategoryList.MdiParent = this;
             frmCategoryList.Show();
         }
 
         private void btnNewProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductProductForms.FrmNewProduct frmNewProduct = new Forms.Products.ProductProductForms.FrmNewProduct();
+            Forms.Products.ProductProductForms.FrmNewProduct frmNewProduct = new Forms.Products.ProductProductForms.FrmNewProduct(_productService, _categoryService);
             frmNewProduct.Show();
         }
 
@@ -71,20 +75,20 @@ namespace Tech2019.Presentation
 
         private void btnDepartmentList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Employees.DepartmentForms.FrmDepartmentList frmDepartmentList = new Forms.Employees.DepartmentForms.FrmDepartmentList();
+            Forms.Employees.DepartmentForms.FrmDepartmentList frmDepartmentList = new Forms.Employees.DepartmentForms.FrmDepartmentList(_departmentService, _employeeService);
             frmDepartmentList.MdiParent = this;
             frmDepartmentList.Show();
         }
 
         private void btnNewDepartment_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Employees.DepartmentForms.FrmNewDepartment frmNewDepartment = new Forms.Employees.DepartmentForms.FrmNewDepartment();
+            Forms.Employees.DepartmentForms.FrmNewDepartment frmNewDepartment = new Forms.Employees.DepartmentForms.FrmNewDepartment(_departmentService);
             frmNewDepartment.Show();
         }
 
         private void btnNewCategory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductCategoryForms.FrmNewCategory frmNewCategory = new Forms.Products.ProductCategoryForms.FrmNewCategory();
+            Forms.Products.ProductCategoryForms.FrmNewCategory frmNewCategory = new Forms.Products.ProductCategoryForms.FrmNewCategory(_categoryService);
             frmNewCategory.Show();
         }
 

@@ -1,14 +1,20 @@
 ﻿using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
 
 namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
 {
     public partial class FrmNewDepartment : Form
     {
-        public FrmNewDepartment()
+        private readonly IDepartmentService _departmentService;
+        public FrmNewDepartment(IDepartmentService departmentService)
         {
             InitializeComponent();
+            _departmentService = departmentService;
+        }
+
+        private void FrmNewDepartment_Load(object sender, System.EventArgs e)
+        {
             InitializePlaceholderEvents();
         }
 
@@ -17,11 +23,9 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             if (!ValidateDepartmentInfo())
                 return;
 
-            TechDBContext db = new TechDBContext();
             Department department = new Department();
             AssignDepartmentInfo(department);
-            db.Departments.Add(department);
-            db.SaveChanges();
+            _departmentService.Create(department);
             MessageBox.Show("Department added succesfully");
             this.Close();
         }

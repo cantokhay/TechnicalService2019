@@ -149,6 +149,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
             this.Name = "FrmNewCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNewCategory";
+            this.Load += new System.EventHandler(this.FrmNewCategory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtCategoryName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
