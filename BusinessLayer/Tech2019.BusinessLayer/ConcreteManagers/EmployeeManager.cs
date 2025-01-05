@@ -12,9 +12,9 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
     {
         private readonly IEmployeeDal _employeeDal;
 
-        public EmployeeManager(IEmployeeDal context)
+        public EmployeeManager(IEmployeeDal employeeDal)
         {
-            _employeeDal = context;
+            _employeeDal = employeeDal;
         }
 
         public void Create(Employee entity)
@@ -76,6 +76,11 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
         public List<EmployeeToSaleDTO> GetEmployeesToSale()
         {
             return _employeeDal.TGetEmployeesToSale();
+        }
+
+        public List<EmployeeToInvoiceDTO> GetEmployeesToInvoice()
+        {
+            return _employeeDal.TGetEmployeesToInvoice();
         }
     }
 }

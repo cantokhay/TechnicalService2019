@@ -9,42 +9,42 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
 {
     public class InvoiceDetailManager : IInvoiceDetailService
     {
-        private readonly IInvoiceDetailDal _context;
+        private readonly IInvoiceDetailDal _invoiceDetailDal;
 
-        public InvoiceDetailManager(IInvoiceDetailDal context)
+        public InvoiceDetailManager(IInvoiceDetailDal invoiceDetailDal)
         {
-            _context = context;
+            _invoiceDetailDal = invoiceDetailDal;
         }
 
         public void Create(InvoiceDetail entity)
         {
             entity.CreatedDate = DateTime.Now;
             entity.DataStatus = EntityLayer.Enum.DataStatus.Active;
-            _context.TCreate(entity);
+            _invoiceDetailDal.TCreate(entity);
         }
 
         public void Delete(InvoiceDetail entity)
         {
             entity.DeletedDate = DateTime.Now;
             entity.DataStatus = EntityLayer.Enum.DataStatus.Deleted;
-            _context.TDelete(entity);
+            _invoiceDetailDal.TDelete(entity);
         }
 
         public IEnumerable<InvoiceDetail> GetAll()
         {
-            return _context.TGetAll().Where(x => x.DataStatus != EntityLayer.Enum.DataStatus.Deleted);
+            return _invoiceDetailDal.TGetAll().Where(x => x.DataStatus != EntityLayer.Enum.DataStatus.Deleted);
         }
 
         public InvoiceDetail GetById(int id)
         {
-            return _context.TGetById(id);
+            return _invoiceDetailDal.TGetById(id);
         }
 
         public void Update(InvoiceDetail entity)
         {
             entity.ModifiedDate = DateTime.Now;
             entity.DataStatus = EntityLayer.Enum.DataStatus.Modified;
-            _context.TUpdate(entity);
+            _invoiceDetailDal.TUpdate(entity);
         }
     }
 }

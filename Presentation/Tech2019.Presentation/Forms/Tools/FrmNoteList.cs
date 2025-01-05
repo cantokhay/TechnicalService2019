@@ -81,7 +81,6 @@ namespace Tech2019.Presentation.Forms.Tools
             txtNoteId.Text = gvwReadNotes.GetFocusedRowCellValue("NoteId")?.ToString();
             txtNoteTitle.Text = gvwReadNotes.GetFocusedRowCellValue("NoteTitle")?.ToString();
             txtNoteDescription.Text = gvwReadNotes.GetFocusedRowCellValue("NoteDescription")?.ToString();
-
             chkNoteStatus.CheckState = gvwReadNotes.GetFocusedRowCellValue("NoteStatus")?.ToString() == "Read"
                 ? CheckState.Checked
                 : CheckState.Unchecked;
@@ -92,7 +91,6 @@ namespace Tech2019.Presentation.Forms.Tools
             txtNoteId.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteId")?.ToString();
             txtNoteTitle.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteTitle")?.ToString();
             txtNoteDescription.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteDescription")?.ToString();
-
             chkNoteStatus.CheckState = gvwUnreadNotes.GetFocusedRowCellValue("NoteStatus")?.ToString() == "Read"
                 ? CheckState.Checked
                 : CheckState.Unchecked;
@@ -103,7 +101,6 @@ namespace Tech2019.Presentation.Forms.Tools
         private void LoadNoteList()
         {
             grcUnreadNotesList.DataSource = _noteService.GetUnreadNotes();
-
             grcReadNotesList.DataSource = _noteService.GetReadNotes();
         }
 

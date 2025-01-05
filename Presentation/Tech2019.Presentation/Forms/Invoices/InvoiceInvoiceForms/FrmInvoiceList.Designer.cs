@@ -185,7 +185,7 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             this.txtInvoiceHour.Properties.Mask.EditMask = "t";
             this.txtInvoiceHour.Size = new System.Drawing.Size(190, 20);
             this.txtInvoiceHour.TabIndex = 5;
-            this.txtInvoiceHour.EnabledChanged += new System.EventHandler(this.txtInvoiceHour_LostFocus);
+            //this.txtInvoiceHour.EnabledChanged += new System.EventHandler(this.txtInvoiceHour_LostFocus);
             // 
             // txtInvoiceDate
             // 
@@ -194,7 +194,7 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             this.txtInvoiceDate.Properties.Mask.EditMask = "d";
             this.txtInvoiceDate.Size = new System.Drawing.Size(190, 20);
             this.txtInvoiceDate.TabIndex = 4;
-            this.txtInvoiceDate.EnabledChanged += new System.EventHandler(this.txtInvoiceDate_LostFocus);
+            //this.txtInvoiceDate.EnabledChanged += new System.EventHandler(this.txtInvoiceDate_LostFocus);
             // 
             // lueInvoiceEmployee
             // 

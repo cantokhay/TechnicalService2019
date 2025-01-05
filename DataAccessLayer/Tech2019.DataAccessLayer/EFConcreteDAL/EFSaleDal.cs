@@ -9,7 +9,7 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 {
     public class EFSaleDal : EFGenericDal<Sale>, ISaleDal
     {
-        TechDBContext _context;
+        private readonly TechDBContext _context;
         public EFSaleDal(TechDBContext context) : base(context)
         {
             _context = context;
@@ -18,6 +18,7 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
         public List<ResultSaleDTO> TGetSales()
         {
             return _context.Sales
+                .Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
                 .Join(_context.Products,
                       sale => sale.Product,
                       product => product.ProductId,

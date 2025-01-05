@@ -11,6 +11,7 @@ namespace Tech2019.BusinessLayer.AbstractServices
         string GetMinEmployeeDepartment();
         Employee GetFirstEmployeeByDepartmentId(byte departmentId);
         List<EmployeeToSaleDTO> GetEmployeesToSale();
+        List<EmployeeToInvoiceDTO> GetEmployeesToInvoice();
         List<EmployeeWithDepartmentDTO> GetEmployeesByDepartments();
     }
 }

@@ -1,21 +1,28 @@
 ﻿using System;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
 
 namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
 {
     public partial class FrmNewAction : Form
     {
-        public FrmNewAction()
+        private readonly IActionService _actionService;
+        private readonly ICustomerService _customerService;
+        private readonly IEmployeeService _employeeService;
+        public FrmNewAction(IActionService actionService, ICustomerService customerService, IEmployeeService employeeService)
         {
+            _actionService = actionService;
+            _customerService = customerService;
+            _employeeService = employeeService;
             InitializeComponent();
+        }
+
+        private void FrmNewAction_Load(object sender, EventArgs e)
+        {
             InitializePlaceholderEvents();
             FillLookUpEditCustomerEmployee();
         }
-
-        TechDBContext db = new TechDBContext();
 
         private void btnNewSave_Click(object sender, EventArgs e)
         {
@@ -24,8 +31,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
 
             EntityLayer.Concrete.Action action = new EntityLayer.Concrete.Action();
             AssignActionInfo(action);
-            db.Actions.Add(action);
-            db.SaveChanges();
+            _actionService.Create(action);
             MessageBox.Show("Action added successfully");
             this.Close();
         }
@@ -48,23 +54,14 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
                 return;
             }
 
-            var sale = (from s in db.Sales
-                        join c in db.Customers on s.Customer equals c.CustomerId
-                        where s.ProductSerialNumber == txtProductSerialNumber.Text
-                        select new
-                        {
-                            s.Customer,
-                            c.CustomerFirstName,
-                            c.CustomerLastName,
-                            s.SaleDate
-                        }).FirstOrDefault();
+            var resultCustomerBySerial = _actionService.GetCustomerInfoBySerial(txtProductSerialNumber.Text);
 
-            if (sale != null)
+            if (resultCustomerBySerial != null)
             {
                 MessageBox.Show($"Customer information retrieved successfully:\n\n" +
-                                $"Customer ID: {sale.Customer}\n" +
-                                $"Customer Name: {sale.CustomerFirstName} {sale.CustomerLastName}\n" +
-                                $"Sale Date: {sale.SaleDate.ToShortDateString()}\n",
+                                $"Customer ID: {resultCustomerBySerial.CustomerId}\n" +
+                                $"Customer Name: {resultCustomerBySerial.CustomerFirstName} {resultCustomerBySerial.CustomerLastName}\n" +
+                                $"Sale Date: {resultCustomerBySerial.SaleDate.ToShortDateString()}\n",
                                 "Valid Serial Number",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
@@ -77,7 +74,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
                                 MessageBoxIcon.Warning);
             }
         }
-
 
         #region Extracted Methods
         private bool ValidateActionInfo()
@@ -117,21 +113,17 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
 
         private void FillLookUpEditCustomerEmployee()
         {
-            var customersList = db.Customers.Select(x => new
-            {
-                x.CustomerId,
-                Customer = x.CustomerFirstName + " " + x.CustomerLastName,
-            }).ToList();
+            var customersList = _customerService.GetCustomersToSale();
             lueCustomers.Properties.DataSource = customersList;
-            lueCustomers.Properties.NullText = "Please pick a value";
+            lueCustomers.Properties.DisplayMember = "CustomerFullName";
+            lueCustomers.Properties.ValueMember = "CustomerId";
+            lueCustomers.Properties.NullText = "Please pick a customer";
 
-            var employeesList = db.Employees.Select(x => new
-            {
-                x.EmployeeId,
-                Employee = x.EmployeeFirstName + " " + x.EmployeeLastName
-            }).ToList();
+            var employeesList = _employeeService.GetEmployeesToSale();
             lueEmployees.Properties.DataSource = employeesList;
-            lueEmployees.Properties.NullText = "Please pick a value";
+            lueEmployees.Properties.DisplayMember = "EmployeeFullName";
+            lueEmployees.Properties.ValueMember = "EmployeeId";
+            lueEmployees.Properties.NullText = "Please pick an employee";
         }
 
         private void AssignActionInfo(EntityLayer.Concrete.Action action)
@@ -173,5 +165,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         }
 
         #endregion
+
     }
 }

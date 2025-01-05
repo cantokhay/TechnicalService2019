@@ -9,42 +9,42 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
 {
     public class AdminManager : IAdminService
     {
-        private readonly IAdminDal _context;
+        private readonly IAdminDal _adminDal;
 
-        public AdminManager(IAdminDal context)
+        public AdminManager(IAdminDal adminDal)
         {
-            _context = context;
+            _adminDal = adminDal;
         }
 
         public void Create(Admin entity)
         {
             entity.CreatedDate = DateTime.Now;
             entity.DataStatus = EntityLayer.Enum.DataStatus.Active;
-            _context.TCreate(entity);
+            _adminDal.TCreate(entity);
         }
 
         public void Delete(Admin entity)
         {
             entity.DeletedDate = DateTime.Now;
             entity.DataStatus = EntityLayer.Enum.DataStatus.Deleted;
-            _context.TDelete(entity);
+            _adminDal.TDelete(entity);
         }
 
         public IEnumerable<Admin> GetAll()
         {
-            return _context.TGetAll().Where(x => x.DataStatus != EntityLayer.Enum.DataStatus.Deleted);
+            return _adminDal.TGetAll().Where(x => x.DataStatus != EntityLayer.Enum.DataStatus.Deleted);
         }
 
         public Admin GetById(int id)
         {
-            return _context.TGetById(id);
+            return _adminDal.TGetById(id);
         }
 
         public void Update(Admin entity)
         {
             entity.ModifiedDate = DateTime.Now;
             entity.DataStatus = EntityLayer.Enum.DataStatus.Modified;
-            _context.TUpdate(entity);
+            _adminDal.TUpdate(entity);
         }
     }
 }

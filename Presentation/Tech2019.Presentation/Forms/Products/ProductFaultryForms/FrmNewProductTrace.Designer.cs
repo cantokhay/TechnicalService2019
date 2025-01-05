@@ -255,6 +255,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             this.Name = "FrmNewProductTrace";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNewFaultDetail";
+            this.Load += new System.EventHandler(this.FrmNewProductTrace_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtProductSerialNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();

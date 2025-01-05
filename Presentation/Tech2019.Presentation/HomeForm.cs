@@ -12,8 +12,11 @@ namespace Tech2019.Presentation
         private readonly ICustomerService _customerService;
         private readonly INoteService _noteService;
         private readonly ISaleService _saleService;
+        private readonly IActionService _actionService;
+        private readonly IProductTraceService _productTraceService;
+        private readonly IInvoiceService _invoiceService;
 
-        public HomeForm(IProductService productService, ICategoryService categoryService, IDepartmentService departmentService, IEmployeeService employeeService, ICustomerService customerService, INoteService noteService, ISaleService saleService)
+        public HomeForm(IProductService productService, ICategoryService categoryService, IDepartmentService departmentService, IEmployeeService employeeService, ICustomerService customerService, INoteService noteService, ISaleService saleService, IActionService actionService, IProductTraceService productTraceService, IInvoiceService invoiceService)
         {
             InitializeComponent();
             _productService = productService;
@@ -23,6 +26,9 @@ namespace Tech2019.Presentation
             _customerService = customerService;
             _noteService = noteService;
             _saleService = saleService;
+            _actionService = actionService;
+            _productTraceService = productTraceService;
+            _invoiceService = invoiceService;
         }
 
         private void btnProductListForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -149,7 +155,7 @@ namespace Tech2019.Presentation
 
         private void btnFaultyProductList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductFaultryForms.FrmActionsList frmActionsList = new Forms.Products.ProductFaultryForms.FrmActionsList();
+            Forms.Products.ProductFaultryForms.FrmActionsList frmActionsList = new Forms.Products.ProductFaultryForms.FrmActionsList(_actionService);
             frmActionsList.MdiParent = this;
             frmActionsList.Show();
         }
@@ -176,26 +182,26 @@ namespace Tech2019.Presentation
 
         private void btnNewFaultyProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductFaultryForms.FrmNewAction frmNewAction = new Forms.Products.ProductFaultryForms.FrmNewAction();
+            Forms.Products.ProductFaultryForms.FrmNewAction frmNewAction = new Forms.Products.ProductFaultryForms.FrmNewAction(_actionService, _customerService, _employeeService);
             frmNewAction.Show();
         }
 
         private void btnNewProductTrace_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductFaultryForms.FrmNewProductTrace frmNewProductTrace = new Forms.Products.ProductFaultryForms.FrmNewProductTrace();
+            Forms.Products.ProductFaultryForms.FrmNewProductTrace frmNewProductTrace = new Forms.Products.ProductFaultryForms.FrmNewProductTrace(_productTraceService, _actionService);
             frmNewProductTrace.Show();
         }
 
         private void btnProductTraceList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductFaultryForms.FrmProductTraceList frmProductTraceList = new Forms.Products.ProductFaultryForms.FrmProductTraceList();
+            Forms.Products.ProductFaultryForms.FrmProductTraceList frmProductTraceList = new Forms.Products.ProductFaultryForms.FrmProductTraceList(_productTraceService);
             frmProductTraceList.MdiParent = this;
             frmProductTraceList.Show();
         }
 
         private void btnInvoiceList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceList frmInvoiceList = new Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceList();
+            Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceList frmInvoiceList = new Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceList(_invoiceService, _employeeService, _customerService);
             frmInvoiceList.MdiParent = this;
             frmInvoiceList.Show();
         }

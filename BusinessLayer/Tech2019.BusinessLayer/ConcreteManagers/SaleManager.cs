@@ -12,9 +12,9 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
     {
         private readonly ISaleDal _saleDal;
 
-        public SaleManager(ISaleDal context)
+        public SaleManager(ISaleDal saleDal)
         {
-            _saleDal = context;
+            _saleDal = saleDal;
         }
 
         public void Create(Sale entity)

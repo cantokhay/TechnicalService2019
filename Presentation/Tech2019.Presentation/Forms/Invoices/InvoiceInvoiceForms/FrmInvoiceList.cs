@@ -1,23 +1,28 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
 
 namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
 {
     public partial class FrmInvoiceList : Form
     {
-        TechDBContext db = new TechDBContext();
+        private readonly IInvoiceService _invoiceService;
+        private readonly IEmployeeService _employeeService;
+        private readonly ICustomerService _customerService;
 
-        public FrmInvoiceList()
+        public FrmInvoiceList(IInvoiceService invoiceService, IEmployeeService employeeService, ICustomerService customerService)
         {
+            _invoiceService = invoiceService;
+            _employeeService = employeeService;
+            _customerService = customerService;
             InitializeComponent();
         }
 
         private void FrmInvoiceList_Load(object sender, EventArgs e)
         {
-            InvoiceList();
+            LoadInvoiceList();
             FillLookUpEditSerialCharsEmployeesAndCustomers();
             ClearInvoiceInfo();
         }
@@ -41,11 +46,9 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             }
 
             AssignInvoiceInfo(invoice);
-            db.Invoices.Add(invoice);
-            db.SaveChanges();
-
+            _invoiceService.Create(invoice);
             MessageBox.Show("Invoice Added Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            InvoiceList();
+            LoadInvoiceList();
             ClearInvoiceInfo();
         }
 
@@ -55,20 +58,10 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
                 return;
 
             int id = int.Parse(txtInvoiceId.Text);
-            var invoice = db.Invoices.Find(id);
-
-            if (invoice != null)
-            {
-                db.Invoices.Remove(invoice);
-                db.SaveChanges();
-                MessageBox.Show("Invoice Deleted", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-            else
-            {
-                MessageBox.Show("Invoice Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            InvoiceList();
+            var invoice = _invoiceService.GetById(id);
+            _invoiceService.Delete(invoice);
+            MessageBox.Show("Invoice Deleted", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            LoadInvoiceList();
             ClearInvoiceInfo();
         }
 
@@ -81,26 +74,17 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
                 return;
 
             int id = int.Parse(txtInvoiceId.Text);
-            var invoice = db.Invoices.Find(id);
-
-            if (invoice != null)
-            {
-                AssignInvoiceInfo(invoice);
-                db.SaveChanges();
-                MessageBox.Show("Invoice Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                MessageBox.Show("Invoice Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            InvoiceList();
+            var invoice = _invoiceService.GetById(id);
+            AssignInvoiceInfo(invoice);
+            _invoiceService.Update(invoice);
+            MessageBox.Show("Invoice Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            LoadInvoiceList();
             ClearInvoiceInfo();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            InvoiceList();
+            LoadInvoiceList();
             ClearInvoiceInfo();
         }
 
@@ -116,53 +100,21 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             lueInvoiceEmployee.EditValue = gvwInvoices.GetFocusedRowCellValue("EmployeeId");
         }
 
-        private void txtInvoiceDate_LostFocus(object sender, EventArgs e)
-        {
-            if (!DateTime.TryParse(txtInvoiceDate.Text, out DateTime result))
-            {
-                MessageBox.Show("Invalid date format. Please use dd-MM-yyyy.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtInvoiceDate.Text = string.Empty;
-            }
-        }
-
-        private void txtInvoiceHour_LostFocus(object sender, EventArgs e)
-        {
-            if (!TimeSpan.TryParse(txtInvoiceHour.Text, out TimeSpan result))
-            {
-                MessageBox.Show("Invalid hour format. Please use HH:mm.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtInvoiceHour.Text = string.Empty;
-            }
-            else
-            {
-                txtInvoiceHour.Text = result.ToString(@"hh\:mm");
-            }
-        }
-
         #region Extracted Methods
 
         private void FillLookUpEditSerialCharsEmployeesAndCustomers()
         {
-            var customersList = db.Customers.Select(x => new
-            {
-                x.CustomerId,
-                CustomerFullName = x.CustomerFirstName + " " + x.CustomerLastName,
-            }).ToList();
-
-            lueInvoiceCustomer.Properties.ValueMember = "CustomerId";
-            lueInvoiceCustomer.Properties.DisplayMember = "CustomerFullName";
+            var customersList = _customerService.GetCustomersToInvoice();
             lueInvoiceCustomer.Properties.DataSource = customersList;
-            lueInvoiceCustomer.Properties.NullText = "Please Pick a Customer";
+            lueInvoiceCustomer.Properties.DisplayMember = "CustomerFullName";
+            lueInvoiceCustomer.Properties.ValueMember = "CustomerId";
+            lueInvoiceCustomer.Properties.NullText = "Please pick a customer";
 
-            var employeesList = db.Employees.Select(x => new
-            {
-                x.EmployeeId,
-                EmployeeFullName = x.EmployeeFirstName + " " + x.EmployeeLastName
-            }).ToList();
-
-            lueInvoiceEmployee.Properties.ValueMember = "EmployeeId";
-            lueInvoiceEmployee.Properties.DisplayMember = "EmployeeFullName";
+            var employeesList = _employeeService.GetEmployeesToInvoice();
             lueInvoiceEmployee.Properties.DataSource = employeesList;
-            lueInvoiceEmployee.Properties.NullText = "Please Pick an Employee";
+            lueInvoiceEmployee.Properties.DisplayMember = "EmployeeFullName";
+            lueInvoiceEmployee.Properties.ValueMember = "EmployeeId";
+            lueInvoiceEmployee.Properties.NullText = "Please pick an employee";
 
             var charList = Enumerable.Range('A', 26).Select(c => new
             {
@@ -187,35 +139,9 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             lueInvoiceSerial.EditValue = null;
         }
 
-        private void InvoiceList()
+        private void LoadInvoiceList()
         {
-            var invoiceList = db.Invoices
-                .Select(i => new
-                {
-                    i.InvoiceId,
-                    i.InvoiceSequenceNumber,
-                    i.InvoiceSerialCharacter,
-                    InvoiceDate = i.InvoiceDate,
-                    i.InvoiceTaxOffice,
-                    CustomerId = i.Customer,
-                    CustomerFullName = i.CustomerNavigation.CustomerFirstName + " " + i.CustomerNavigation.CustomerLastName,
-                    EmployeeId = i.Employee,
-                    EmployeeFullName = i.EmployeeNavigation.EmployeeFirstName + " " + i.EmployeeNavigation.EmployeeLastName
-                })
-                .ToList()
-                .Select(i => new
-                {
-                    i.InvoiceId,
-                    i.InvoiceSequenceNumber,
-                    i.InvoiceSerialCharacter,
-                    Date = i.InvoiceDate.ToString("dd-MM-yyyy"),
-                    Hour = i.InvoiceDate.ToString("HH:mm"),
-                    i.InvoiceTaxOffice,
-                    i.CustomerId,
-                    i.CustomerFullName,
-                    i.EmployeeId,
-                    i.EmployeeFullName
-                }).ToList();
+            var invoiceList = _invoiceService.GetInvoiceList();
 
             grcInvoiceList.DataSource = invoiceList;
         }

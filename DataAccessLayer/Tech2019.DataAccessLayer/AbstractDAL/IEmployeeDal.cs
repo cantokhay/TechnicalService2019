@@ -11,6 +11,7 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
         string TGetMinEmployeeDepartment();
         Employee TGetFirstEmployeeByDepartmentId(byte departmentId);
         List<EmployeeWithDepartmentDTO> TGetEmployeesByDepartments();
+        List<EmployeeToInvoiceDTO> TGetEmployeesToInvoice();
         List<EmployeeToSaleDTO> TGetEmployeesToSale();
     }
 }

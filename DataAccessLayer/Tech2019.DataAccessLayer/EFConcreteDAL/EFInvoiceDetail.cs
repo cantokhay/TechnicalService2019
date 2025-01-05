@@ -6,8 +6,11 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 {
     public class EFInvoiceDetailDal : EFGenericDal<InvoiceDetail>, IInvoiceDetailDal
     {
+        private readonly TechDBContext _context;
+
         public EFInvoiceDetailDal(TechDBContext context) : base(context)
         {
+            _context = context;
         }
     }
 }

@@ -12,9 +12,9 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
     {
         private readonly IDepartmentDal _departmentDal;
 
-        public DepartmentManager(IDepartmentDal context)
+        public DepartmentManager(IDepartmentDal departmentDal)
         {
-            _departmentDal = context;
+            _departmentDal = departmentDal;
         }
 
         public void Create(Department entity)

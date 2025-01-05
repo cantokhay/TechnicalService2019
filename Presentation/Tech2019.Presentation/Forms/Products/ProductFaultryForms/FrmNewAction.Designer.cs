@@ -86,8 +86,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             this.lueEmployees.Properties.Appearance.Options.UseForeColor = true;
             this.lueEmployees.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueEmployees.Properties.DisplayMember = "Employee";
-            this.lueEmployees.Properties.ValueMember = "EmployeeId";
             this.lueEmployees.Size = new System.Drawing.Size(219, 20);
             this.lueEmployees.TabIndex = 2;
             // 
@@ -101,8 +99,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             this.lueCustomers.Properties.Appearance.Options.UseForeColor = true;
             this.lueCustomers.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueCustomers.Properties.DisplayMember = "Customer";
-            this.lueCustomers.Properties.ValueMember = "CustomerId";
             this.lueCustomers.Size = new System.Drawing.Size(219, 20);
             this.lueCustomers.TabIndex = 1;
             // 
@@ -300,6 +296,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             this.Name = "FrmNewAction";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNewFaultyProduct";
+            this.Load += new System.EventHandler(this.FrmNewAction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtProductSerialNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueEmployees.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCustomers.Properties)).EndInit();

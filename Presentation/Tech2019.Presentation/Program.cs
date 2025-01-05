@@ -25,10 +25,13 @@ namespace Tech2019.Presentation
             var customerService = serviceProvider.GetRequiredService<ICustomerService>();
             var noteService = serviceProvider.GetRequiredService<INoteService>();
             var saleService = serviceProvider.GetRequiredService<ISaleService>();
+            var actionService = serviceProvider.GetRequiredService<IActionService>();
+            var productTraceService = serviceProvider.GetRequiredService<IProductTraceService>();
+            var invoiceService = serviceProvider.GetRequiredService<IInvoiceService>();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeForm(productService, categoryService, departmentService, employeeService, customerService, noteService, saleService));
+            Application.Run(new HomeForm(productService, categoryService, departmentService, employeeService, customerService, noteService, saleService, actionService, productTraceService, invoiceService));
         }
 
         private static Microsoft.Extensions.DependencyInjection.ServiceProvider ConfigureServices()
@@ -44,6 +47,9 @@ namespace Tech2019.Presentation
             services.AddScoped<ICustomerDal, EFCustomerDal>();
             services.AddScoped<INoteDal, EFNoteDal>();
             services.AddScoped<ISaleDal, EFSaleDal>();
+            services.AddScoped<IActionDal, EFActionDal>();
+            services.AddScoped<IProductTraceDal, EFProductTraceDal>();
+            services.AddScoped<IInvoiceDal, EFInvoiceDal>();
 
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
@@ -52,6 +58,9 @@ namespace Tech2019.Presentation
             services.AddScoped<ICustomerService, CustomerManager>();
             services.AddScoped<INoteService, NoteManager>();
             services.AddScoped<ISaleService, SaleManager>();
+            services.AddScoped<IActionService, ActionManager>();
+            services.AddScoped<IProductTraceService, ProductTraceManager>();
+            services.AddScoped<IInvoiceService, InvoiceManager>();
 
             return services.BuildServiceProvider();
         }

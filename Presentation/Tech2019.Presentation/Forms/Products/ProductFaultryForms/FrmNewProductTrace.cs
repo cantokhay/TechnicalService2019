@@ -1,20 +1,27 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
 
 namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
 {
     public partial class FrmNewProductTrace : Form
     {
-        public FrmNewProductTrace()
+        private readonly IProductTraceService _productTraceService;
+        private readonly IActionService _actionService;
+
+        public FrmNewProductTrace(IProductTraceService productTraceService, IActionService actionService)
         {
+            _productTraceService = productTraceService;
+            _actionService = actionService;
             InitializeComponent();
-            InitializePlaceholderEvents();
         }
 
-        TechDBContext db = new TechDBContext();
+        private void FrmNewProductTrace_Load(object sender, EventArgs e)
+        {
+            InitializePlaceholderEvents();
+        }
 
         private void btnNewSave_Click(object sender, EventArgs e)
         {
@@ -28,8 +35,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
                 ProductTraceInformation = txtProductTraceInformation.Text
             };
 
-            db.ProductTraces.Add(productTrace);
-            db.SaveChanges();
+            _productTraceService.Create(productTrace);
             MessageBox.Show("Product trace added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
@@ -49,19 +55,12 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
                 return;
             }
 
-            var serialDetails = (from s in db.Sales
-                                 join c in db.Customers on s.Customer equals c.CustomerId
-                                 where s.ProductSerialNumber == serialNumber
-                                 select new
-                                 {
-                                     CustomerName = c.CustomerFirstName + " " + c.CustomerLastName,
-                                     SaleDate = s.SaleDate
-                                 }).FirstOrDefault();
+            var serialDetails = _productTraceService.GetCustomerInfoBySerial(serialNumber);
 
             if (serialDetails != null)
             {
                 MessageBox.Show($"Valid Serial Number:\n\n" +
-                         $"Customer Name: {serialDetails.CustomerName}\n" +
+                         $"Customer Name: {serialDetails.CustomerFirstName} {serialDetails.CustomerLastName}\n" +
                          $"Sale Date: {serialDetails.SaleDate.ToShortDateString()}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -81,7 +80,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
                 return false;
             }
 
-            if (!db.Actions.Any(a => a.ProductSerialNumber == txtProductSerialNumber.Text))
+            if (!_actionService.IsAnyActionBySerial(txtProductSerialNumber.Text))
             {
                 MessageBox.Show("The entered product serial number is not associated with any action in the system.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -149,5 +148,6 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         }
 
         #endregion
+
     }
 }

@@ -6,8 +6,11 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 {
     public class EFExpenseDal : EFGenericDal<Expense>, IExpenseDal
     {
+        private readonly TechDBContext _context;
+
         public EFExpenseDal(TechDBContext context) : base(context)
         {
+            _context = context;
         }
     }
 }

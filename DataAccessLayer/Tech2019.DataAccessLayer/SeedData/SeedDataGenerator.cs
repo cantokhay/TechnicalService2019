@@ -117,9 +117,9 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                     var departmentNames = new[]
                     {
-                    "IT", "HR", "Finance", "Sales", "Marketing",
-                    "Logistics", "Production", "R&D", "Customer Service", "Quality Assurance"
-                };
+                        "IT", "HR", "Finance", "Sales", "Marketing",
+                        "Logistics", "Production", "R&D", "Customer Service", "Quality Assurance"
+                    };
 
                     var existingDepartments = db.Departments.Select(d => d.DepartmentName).ToList();
                     var remainingDepartments = departmentNames.Except(existingDepartments).ToList();
@@ -437,7 +437,7 @@ namespace Tech2019.DataAccessLayer.SeedData
                         entity.ModifiedDate = null;
                         entity.DeletedDate = null;
                     }
-                    else if(entity.DataStatus == DataStatus.Modified)
+                    else if (entity.DataStatus == DataStatus.Modified)
                     {
                         entity.CreatedDate = currentDate.AddDays(-(faker.Random.Number(21, 30)));
                         entity.ModifiedDate = currentDate.AddDays(-(faker.Random.Number(11, 20)));

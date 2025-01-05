@@ -41,18 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionDTOs\ResultActionDTO.cs" />
+    <Compile Include="ActionDTOs\ResultActionToChartDTO.cs" />
     <Compile Include="CategoryDTOs\ResultCategoryDTO.cs" />
     <Compile Include="CustomerDTO\CustomerCityDTO.cs" />
+    <Compile Include="CustomerDTO\CustomerToInvoiceDTO.cs" />
     <Compile Include="CustomerDTO\CustomerToSaleDTO.cs" />
     <Compile Include="CustomerDTO\ResultCustomerDTO.cs" />
+    <Compile Include="CustomerDTO\ResultCustomerInfoBySerialDTO.cs" />
     <Compile Include="DepartmentDTOs\ResultDepartmentDTO.cs" />
+    <Compile Include="EmployeeDTOs\EmployeeToInvoiceDTO.cs" />
     <Compile Include="EmployeeDTOs\EmployeeToSaleDTO.cs" />
     <Compile Include="EmployeeDTOs\EmployeeWithDepartmentDTO.cs" />
+    <Compile Include="InvoiceDTOs\ResultInvoiceDTO.cs" />
     <Compile Include="NoteDTOs\ResultReadNoteDTO.cs" />
     <Compile Include="NoteDTOs\ResultUnreadNoteDTO.cs" />
     <Compile Include="ProductDTOs\ProductBrandDTO.cs" />
     <Compile Include="ProductDTOs\ProductToSaleDTO.cs" />
     <Compile Include="ProductDTOs\ProductWithCategoryDTO.cs" />
+    <Compile Include="ProductTraceDTOs\ResultProductTraceDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaleDTOs\ResultSaleDTO.cs" />
   </ItemGroup>

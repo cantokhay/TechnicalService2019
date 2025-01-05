@@ -9,7 +9,7 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 {
     public class EFNoteDal : EFGenericDal<Note>, INoteDal
     {
-        TechDBContext _context;
+        private readonly TechDBContext _context;
         public EFNoteDal(TechDBContext context) : base(context)
         {
             _context = context;

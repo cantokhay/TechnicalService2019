@@ -6,8 +6,11 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 {
     public class EFAdminDal : EFGenericDal<Admin>, IAdminDal
     {
+        private readonly TechDBContext _context;
+
         public EFAdminDal(TechDBContext context) : base(context)
         {
+            _context = context;
         }
     }
 }

@@ -12,9 +12,9 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
     {
         private readonly INoteDal _noteDal;
 
-        public NoteManager(INoteDal context)
+        public NoteManager(INoteDal noteDal)
         {
-            _noteDal = context;
+            _noteDal = noteDal;
         }
 
         public void Create(Note entity)

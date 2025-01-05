@@ -20,18 +20,20 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
         public List<CustomerCityDTO> TGetCustomerCityStat()
         {
             return _context.Customers
-                    .OrderBy(x => x.CustomerCity)
-                    .GroupBy(y => y.CustomerCity)
-                    .Select(z => new CustomerCityDTO
-                    {
-                        City = z.Key,
-                        Total = z.Count()
-                    }).ToList();
+                .Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
+                .OrderBy(x => x.CustomerCity)
+                .GroupBy(y => y.CustomerCity)
+                .Select(z => new CustomerCityDTO
+                {
+                    City = z.Key,
+                    Total = z.Count()
+                }).ToList();
         }
 
         public List<CustomerCityDTO> TFillChartWithCityDatas()
         {
             return _context.Customers
+                .Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
                 .GroupBy(c => c.CustomerCity)
                 .Select(g => new CustomerCityDTO
                 {
@@ -42,7 +44,7 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 
         public List<ResultCustomerDTO> TGetCustomers()
         {
-            return _context.Customers.Select(c => new ResultCustomerDTO
+            return _context.Customers.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(c => new ResultCustomerDTO
             {
                 CustomerId = c.CustomerId,
                 CustomerFirstName = c.CustomerFirstName,
@@ -61,17 +63,18 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 
         public List<string> TGetDistinctCityList()
         {
-            return _context.Customers.Select(c => c.CustomerCity).Distinct().ToList();
+            return _context.Customers.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(c => c.CustomerCity).Distinct().ToList();
         }
 
         public List<string> TGetDistinctDistrictList()
         {
-            return _context.Customers.Select(c => c.CustomerDistrict).Distinct().ToList();
+            return _context.Customers.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(c => c.CustomerDistrict).Distinct().ToList();
         }
 
         public string TGetMostCustomerCityName()
         {
             return _context.Customers
+                .Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
                 .GroupBy(c => c.CustomerCity)
                 .OrderByDescending(c => c.Count())
                 .Select(c => c.Key)
@@ -80,22 +83,32 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 
         public int TGetTotalActiveBuyerCount()
         {
-            return _context.Customers.Count(c => c.CustomerStatus == EntityLayer.Enum.CustomerStatus.ActiveBuyer);
+            return _context.Customers.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Count(c => c.CustomerStatus == EntityLayer.Enum.CustomerStatus.ActiveBuyer);
         }
 
         public int TGetTotalCustomerCount()
         {
-            return _context.Customers.Count();
+            return _context.Customers.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Count();
         }
 
         public int TGetTotalDistinctCityCount()
         {
-            return _context.Customers.Select(c => c.CustomerCity).Distinct().Count();
+            return _context.Customers.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(c => c.CustomerCity).Distinct().Count();
         }
 
         public List<CustomerToSaleDTO> TGetCustomersToSale()
         {
             return _context.Customers.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => new CustomerToSaleDTO
+            {
+                CustomerId = x.CustomerId,
+                CustomerFirstName = x.CustomerFirstName,
+                CustomerLastName = x.CustomerLastName
+            }).ToList();
+        }
+
+        public List<CustomerToInvoiceDTO> TGetCustomersToInvoice()
+        {
+            return _context.Customers.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => new CustomerToInvoiceDTO
             {
                 CustomerId = x.CustomerId,
                 CustomerFirstName = x.CustomerFirstName,

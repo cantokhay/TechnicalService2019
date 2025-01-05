@@ -9,7 +9,7 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 {
     public class EFEmployeeDal : EFGenericDal<Employee>, IEmployeeDal
     {
-        TechDBContext _context;
+        private readonly TechDBContext _context;
         public EFEmployeeDal(TechDBContext context) : base(context)
         {
             _context = context;
@@ -17,21 +17,21 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 
         public Employee TGetFirstEmployeeByDepartmentId(byte departmentId)
         {
-            return _context.Employees
+            return _context.Employees.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
                 .Where(e => e.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
                 .FirstOrDefault(e => e.Department == departmentId);
         }
 
         public int TGetEmployeeCount()
         {
-            return _context.Employees
+            return _context.Employees.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
                 .Where(e => e.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
                 .Count();
         }
 
         public string TGetMaxEmployeeDepartment()
         {
-            return _context.Employees
+            return _context.Employees.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
                 .GroupBy(e => e.DepartmentNavigation.DepartmentId)
                 .OrderByDescending(g => g.Count())
                 .Select(g => g.FirstOrDefault().DepartmentNavigation.DepartmentName)
@@ -40,7 +40,7 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 
         public string TGetMinEmployeeDepartment()
         {
-            return _context.Employees
+            return _context.Employees.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
                 .GroupBy(e => e.DepartmentNavigation.DepartmentId)
                 .OrderBy(g => g.Count())
                 .Select(g => g.FirstOrDefault().DepartmentNavigation.DepartmentName)
@@ -77,6 +77,16 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
         public List<EmployeeToSaleDTO> TGetEmployeesToSale()
         {
             return _context.Employees.Where(e => e.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => new EmployeeToSaleDTO
+            {
+                EmployeeId = x.EmployeeId,
+                EmployeeFirstName = x.EmployeeFirstName,
+                EmployeeLastName = x.EmployeeLastName
+            }).ToList();
+        }
+
+        public List<EmployeeToInvoiceDTO> TGetEmployeesToInvoice()
+        {
+            return _context.Employees.Where(e => e.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => new EmployeeToInvoiceDTO
             {
                 EmployeeId = x.EmployeeId,
                 EmployeeFirstName = x.EmployeeFirstName,
