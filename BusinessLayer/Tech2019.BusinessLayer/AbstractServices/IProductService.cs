@@ -19,6 +19,7 @@ namespace Tech2019.BusinessLayer.AbstractServices
         int GetProductCountWithCategoryNameAppliance();
         int GetProductCountWithCategoryNameComputer();
         int GetProductCountWithCategoryNameGaming(); 
+        List<ProductToSaleDTO> GetProductsToSale();
         List<ProductBrandDTO> GetProductBrandStats();
     }
 }

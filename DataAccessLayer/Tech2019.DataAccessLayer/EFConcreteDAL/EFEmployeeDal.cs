@@ -73,5 +73,15 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 
             return employeeList;
         }
+
+        public List<EmployeeToSaleDTO> TGetEmployeesToSale()
+        {
+            return _context.Employees.Where(e => e.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => new EmployeeToSaleDTO
+            {
+                EmployeeId = x.EmployeeId,
+                EmployeeFirstName = x.EmployeeFirstName,
+                EmployeeLastName = x.EmployeeLastName
+            }).ToList();
+        }
     }
 }

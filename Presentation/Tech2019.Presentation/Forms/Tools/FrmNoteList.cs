@@ -1,31 +1,28 @@
 ﻿using System;
-using System.Data;
-using System.Linq;
 using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
+using Tech2019.EntityLayer.Concrete;
 using Tech2019.EntityLayer.Enum;
 
 namespace Tech2019.Presentation.Forms.Tools
 {
     public partial class FrmNoteList : Form
     {
-        public FrmNoteList()
+        private readonly INoteService _noteService;
+        public FrmNoteList(INoteService noteService)
         {
+            _noteService = noteService;
             InitializeComponent();
         }
 
-        TechDBContext db = new TechDBContext();
-
         private void FrmNoteList_Load(object sender, EventArgs e)
         {
-            NoteList();
+            LoadNoteList();
             ClearNoteInfo();
 
-            // Unread Notes GridView
             gvwUnreadNotes.Columns["NoteStatus"].OptionsColumn.AllowEdit = false;
             gvwUnreadNotes.Columns["NoteStatus"].OptionsColumn.AllowFocus = false;
 
-            // Read Notes GridView
             gvwReadNotes.Columns["NoteStatus"].OptionsColumn.AllowEdit = false;
             gvwReadNotes.Columns["NoteStatus"].OptionsColumn.AllowFocus = false;
         }
@@ -35,12 +32,11 @@ namespace Tech2019.Presentation.Forms.Tools
             if (!ValidateNoteInfo())
                 return;
 
-            EntityLayer.Concrete.Note note = new EntityLayer.Concrete.Note();
+            Note note = new Note();
             AssignNoteInfo(note);
-            db.Notes.Add(note);
-            db.SaveChanges();
+            _noteService.Create(note);
             MessageBox.Show("Note Added Successfully", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            NoteList();
+            LoadNoteList();
             ClearNoteInfo();
         }
 
@@ -50,11 +46,10 @@ namespace Tech2019.Presentation.Forms.Tools
                 return;
 
             int id = int.Parse(txtNoteId.Text);
-            var note = db.Notes.Find(id);
-            db.Notes.Remove(note);
-            db.SaveChanges();
+            var note = _noteService.GetById(id);
+            _noteService.Delete(note);
             MessageBox.Show("Note Deleted", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            NoteList();
+            LoadNoteList();
             ClearNoteInfo();
         }
 
@@ -67,90 +62,61 @@ namespace Tech2019.Presentation.Forms.Tools
                 return;
 
             int id = int.Parse(txtNoteId.Text);
-            var note = db.Notes.Find(id);
-
-            if (note != null)
-            {
-                AssignNoteInfo(note);
-                db.SaveChanges();
-                MessageBox.Show("Note Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Note Not Found", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            NoteList();
+            var note = _noteService.GetById(id);
+            AssignNoteInfo(note);
+            _noteService.Update(note);
+            MessageBox.Show("Note Updated", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoadNoteList();
             ClearNoteInfo();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            NoteList();
+            LoadNoteList();
             ClearNoteInfo();
         }
 
         private void gvwReadNotes_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (gvwReadNotes.GetFocusedRowCellValue("NoteStatus") != null)
-            {
-                chkNoteStatus.CheckState = gvwReadNotes.GetFocusedRowCellValue("NoteStatus").ToString() == "Read"
-                    ? CheckState.Checked
-                    : CheckState.Unchecked;
-            }
             txtNoteId.Text = gvwReadNotes.GetFocusedRowCellValue("NoteId")?.ToString();
             txtNoteTitle.Text = gvwReadNotes.GetFocusedRowCellValue("NoteTitle")?.ToString();
             txtNoteDescription.Text = gvwReadNotes.GetFocusedRowCellValue("NoteDescription")?.ToString();
+
+            chkNoteStatus.CheckState = gvwReadNotes.GetFocusedRowCellValue("NoteStatus")?.ToString() == "Read"
+                ? CheckState.Checked
+                : CheckState.Unchecked;
         }
 
         private void gvwUnreadNotes_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (gvwUnreadNotes.GetFocusedRowCellValue("NoteStatus") != null)
-            {
-                chkNoteStatus.CheckState = gvwUnreadNotes.GetFocusedRowCellValue("NoteStatus").ToString() == "Read"
-                    ? CheckState.Checked
-                    : CheckState.Unchecked;
-            }
             txtNoteId.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteId")?.ToString();
             txtNoteTitle.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteTitle")?.ToString();
             txtNoteDescription.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteDescription")?.ToString();
-        }
 
+            chkNoteStatus.CheckState = gvwUnreadNotes.GetFocusedRowCellValue("NoteStatus")?.ToString() == "Read"
+                ? CheckState.Checked
+                : CheckState.Unchecked;
+        }
 
         #region Extracted Methods
 
-        private void NoteList()
+        private void LoadNoteList()
         {
-            grcUnreadNotesList.DataSource = db.Notes
-                .Where(x => x.NoteStatus == NoteStatus.Unread)
-                .Select(x => new
-                {
-                    x.NoteId,
-                    x.NoteTitle,
-                    x.NoteDescription,
-                    //NoteStatus = x.NoteStatus ? x.NoteStatus == NoteStatus.Read : x.NoteStatus == NoteStatus.Unread
-                }).ToList();
+            grcUnreadNotesList.DataSource = _noteService.GetUnreadNotes();
 
-            grcReadNotesList.DataSource = db.Notes
-                .Where(x => x.NoteStatus == NoteStatus.Read)
-                .Select(x => new
-                {
-                    x.NoteId,
-                    x.NoteTitle,
-                    x.NoteDescription,
-                    //NoteStatus = x.NoteStatus ? "Read" : "Unread"
-                }).ToList();
+            grcReadNotesList.DataSource = _noteService.GetReadNotes();
         }
 
-
-        private void AssignNoteInfo(EntityLayer.Concrete.Note note)
+        private void AssignNoteInfo(Note note)
         {
             note.NoteTitle = txtNoteTitle.Text;
             note.NoteDescription = txtNoteDescription.Text;
-            //note.NoteStatus = chkNoteStatus.CheckState == CheckState.Checked;
+            note.NoteStatus = chkNoteStatus.CheckState == CheckState.Checked ? NoteStatus.Read : NoteStatus.Unread;
         }
 
         private void ClearNoteInfo()
         {
+            txtNoteId.Text = string.Empty;
             txtNoteTitle.Text = string.Empty;
             txtNoteDescription.Text = string.Empty;
             chkNoteStatus.CheckState = CheckState.Unchecked;

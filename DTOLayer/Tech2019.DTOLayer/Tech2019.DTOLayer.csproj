@@ -43,12 +43,18 @@
   <ItemGroup>
     <Compile Include="CategoryDTOs\ResultCategoryDTO.cs" />
     <Compile Include="CustomerDTO\CustomerCityDTO.cs" />
+    <Compile Include="CustomerDTO\CustomerToSaleDTO.cs" />
     <Compile Include="CustomerDTO\ResultCustomerDTO.cs" />
     <Compile Include="DepartmentDTOs\ResultDepartmentDTO.cs" />
+    <Compile Include="EmployeeDTOs\EmployeeToSaleDTO.cs" />
     <Compile Include="EmployeeDTOs\EmployeeWithDepartmentDTO.cs" />
+    <Compile Include="NoteDTOs\ResultReadNoteDTO.cs" />
+    <Compile Include="NoteDTOs\ResultUnreadNoteDTO.cs" />
     <Compile Include="ProductDTOs\ProductBrandDTO.cs" />
+    <Compile Include="ProductDTOs\ProductToSaleDTO.cs" />
     <Compile Include="ProductDTOs\ProductWithCategoryDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaleDTOs\ResultSaleDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\EntityLayer\Tech2019.EntityLayer\Tech2019.EntityLayer.csproj">
@@ -56,5 +62,6 @@
       <Name>Tech2019.EntityLayer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

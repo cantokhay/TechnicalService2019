@@ -91,6 +91,11 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
             return _productDal.TGetProductsOnCriticalStockLevel();
         }
 
+        public List<ProductToSaleDTO> GetProductsToSale()
+        {
+            return _productDal.TGetProductsToSale();
+        }
+
         public List<ProductWithCategoryDTO> GetProductsWithCategories()
         {
             return _productDal.TGetProductsWithCategories();

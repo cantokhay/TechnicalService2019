@@ -23,10 +23,12 @@ namespace Tech2019.Presentation
             var departmentService = serviceProvider.GetRequiredService<IDepartmentService>();
             var employeeService = serviceProvider.GetRequiredService<IEmployeeService>();
             var customerService = serviceProvider.GetRequiredService<ICustomerService>();
+            var noteService = serviceProvider.GetRequiredService<INoteService>();
+            var saleService = serviceProvider.GetRequiredService<ISaleService>();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeForm(productService, categoryService, departmentService, employeeService, customerService));
+            Application.Run(new HomeForm(productService, categoryService, departmentService, employeeService, customerService, noteService, saleService));
         }
 
         private static Microsoft.Extensions.DependencyInjection.ServiceProvider ConfigureServices()
@@ -40,12 +42,16 @@ namespace Tech2019.Presentation
             services.AddScoped<IDepartmentDal, EFDepartmentDal>();
             services.AddScoped<IEmployeeDal, EFEmployeeDal>();
             services.AddScoped<ICustomerDal, EFCustomerDal>();
+            services.AddScoped<INoteDal, EFNoteDal>();
+            services.AddScoped<ISaleDal, EFSaleDal>();
 
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<IDepartmentService, DepartmentManager>();
             services.AddScoped<IEmployeeService, EmployeeManager>();
             services.AddScoped<ICustomerService, CustomerManager>();
+            services.AddScoped<INoteService, NoteManager>();
+            services.AddScoped<ISaleService, SaleManager>();
 
             return services.BuildServiceProvider();
         }

@@ -3,48 +3,54 @@ using System.Collections.Generic;
 using System.Linq;
 using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.DataAccessLayer.AbstractDAL;
+using Tech2019.DTOLayer.SaleDTOs;
 using Tech2019.EntityLayer.Concrete;
 
 namespace Tech2019.BusinessLayer.ConcreteManagers
 {
     public class SaleManager : ISaleService
     {
-        private readonly ISaleDal _context;
+        private readonly ISaleDal _saleDal;
 
         public SaleManager(ISaleDal context)
         {
-            _context = context;
+            _saleDal = context;
         }
 
         public void Create(Sale entity)
         {
             entity.CreatedDate = DateTime.Now;
             entity.DataStatus = EntityLayer.Enum.DataStatus.Active;
-            _context.TCreate(entity);
+            _saleDal.TCreate(entity);
         }
 
         public void Delete(Sale entity)
         {
             entity.DeletedDate = DateTime.Now;
             entity.DataStatus = EntityLayer.Enum.DataStatus.Deleted;
-            _context.TDelete(entity);
+            _saleDal.TDelete(entity);
         }
 
         public IEnumerable<Sale> GetAll()
         {
-            return _context.TGetAll().Where(x => x.DataStatus != EntityLayer.Enum.DataStatus.Deleted);
+            return _saleDal.TGetAll().Where(x => x.DataStatus != EntityLayer.Enum.DataStatus.Deleted);
         }
 
         public Sale GetById(int id)
         {
-            return _context.TGetById(id);
+            return _saleDal.TGetById(id);
+        }
+
+        public List<ResultSaleDTO> GetSales()
+        {
+            return _saleDal.TGetSales();
         }
 
         public void Update(Sale entity)
         {
             entity.ModifiedDate = DateTime.Now;
             entity.DataStatus = EntityLayer.Enum.DataStatus.Modified;
-            _context.TUpdate(entity);
+            _saleDal.TUpdate(entity);
         }
     }
 }

@@ -72,6 +72,15 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
             return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Count(x => x.Stock <= 20);
         }
 
+        public List<ProductToSaleDTO> TGetProductsToSale()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => new ProductToSaleDTO
+            {
+                ProductId = x.ProductId,
+                ProductName = x.ProductName
+            }).ToList();
+        }
+
         public List<ProductWithCategoryDTO> TGetProductsWithCategories()
         {
             var products = _context.Products

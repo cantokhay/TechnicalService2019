@@ -20,5 +20,6 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
         int TGetProductCountWithCategoryNameComputer();
         int TGetProductCountWithCategoryNameGaming();
         List<ProductBrandDTO> TGetProductBrandStats();
+        List<ProductToSaleDTO> TGetProductsToSale();
     }
 }

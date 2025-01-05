@@ -10,6 +10,7 @@ namespace Tech2019.BusinessLayer.AbstractServices
         string GetMaxEmployeeDepartment();
         string GetMinEmployeeDepartment();
         Employee GetFirstEmployeeByDepartmentId(byte departmentId);
+        List<EmployeeToSaleDTO> GetEmployeesToSale();
         List<EmployeeWithDepartmentDTO> GetEmployeesByDepartments();
     }
 }

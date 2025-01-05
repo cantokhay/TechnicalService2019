@@ -15,5 +15,6 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
         int TGetTotalDistinctCityCount();
         List<CustomerCityDTO> TGetCustomerCityStat();
         List<CustomerCityDTO> TFillChartWithCityDatas();
+        List<CustomerToSaleDTO> TGetCustomersToSale();
     }
 }

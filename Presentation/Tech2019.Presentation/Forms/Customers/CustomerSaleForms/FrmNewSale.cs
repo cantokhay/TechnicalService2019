@@ -1,22 +1,31 @@
 ﻿using System;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using Tech2019.DataAccessLayer.Context;
+using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.EntityLayer.Concrete;
 
 namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
 {
     public partial class FrmNewSale : Form
     {
-        public FrmNewSale()
+        private readonly ISaleService _saleService;
+        private readonly ICustomerService _customerService;
+        private readonly IEmployeeService _employeeService;
+        private readonly IProductService _productService;
+
+        public FrmNewSale(ISaleService saleService, ICustomerService customerService, IEmployeeService employeeService, IProductService productService)
         {
+            _saleService = saleService;
+            _customerService = customerService;
+            _employeeService = employeeService;
+            _productService = productService;
             InitializeComponent();
+        }
+        private void FrmNewSale_Load(object sender, EventArgs e)
+        {
             FillLookUpEditProductCustomerEmployee();
             InitializePlaceholderEvents();
         }
-
-        TechDBContext db = new TechDBContext();
 
         private void btnNewSave_Click(object sender, EventArgs e)
         {
@@ -25,8 +34,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
 
             Sale sale = new Sale();
             AssignSaleInfo(sale);
-            db.Sales.Add(sale);
-            db.SaveChanges();
+            _saleService.Create(sale);
             MessageBox.Show("Sale added successfully");
             this.Close();
         }
@@ -40,30 +48,25 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
 
         private void FillLookUpEditProductCustomerEmployee()
         {
-            var productsList = db.Products.Select(x => new
-            {
-                x.ProductId,
-                x.ProductName
-            }).ToList();
-            lueProducts.Properties.DataSource = productsList;
-            lueProducts.Properties.NullText = "Please pick a value";
+            var products = _productService.GetProductsToSale();
+            lueProducts.Properties.DataSource = products;
+            lueProducts.Properties.DisplayMember = "ProductName";
+            lueProducts.Properties.ValueMember = "ProductId"; 
+            lueProducts.Properties.NullText = "Please pick a product";
 
-            var customersList = db.Customers.Select(x => new
-            {
-                x.CustomerId,
-                Customer = x.CustomerFirstName + " " + x.CustomerLastName,
-            }).ToList();
-            lueCustomers.Properties.DataSource = customersList;
-            lueCustomers.Properties.NullText = "Please pick a value";
+            var customers = _customerService.GetCustomersToSale();
+            lueCustomers.Properties.DataSource = customers;
+            lueCustomers.Properties.DisplayMember = "CustomerFullName";
+            lueCustomers.Properties.ValueMember = "CustomerId";
+            lueCustomers.Properties.NullText = "Please pick a customer";
 
-            var employeesList = db.Employees.Select(x => new
-            {
-                x.EmployeeId,
-                Employee = x.EmployeeFirstName + " " + x.EmployeeLastName
-            }).ToList();
-            lueEmployees.Properties.DataSource = employeesList;
-            lueEmployees.Properties.NullText = "Please pick a value";
+            var employees = _employeeService.GetEmployeesToSale();
+            lueEmployees.Properties.DataSource = employees;
+            lueEmployees.Properties.DisplayMember = "EmployeeFullName";
+            lueEmployees.Properties.ValueMember = "EmployeeId";
+            lueEmployees.Properties.NullText = "Please pick an employee";
         }
+
 
         private void AssignSaleInfo(Sale sale)
         {
@@ -165,5 +168,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
         }
 
         #endregion
+
     }
 }

@@ -72,5 +72,10 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
         {
             return _employeeDal.TGetEmployeesByDepartments();
         }
+
+        public List<EmployeeToSaleDTO> GetEmployeesToSale()
+        {
+            return _employeeDal.TGetEmployeesToSale();
+        }
     }
 }

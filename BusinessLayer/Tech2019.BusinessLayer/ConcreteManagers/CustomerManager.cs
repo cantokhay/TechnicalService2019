@@ -56,6 +56,11 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
             return _customerDal.TGetCustomers();
         }
 
+        public List<CustomerToSaleDTO> GetCustomersToSale()
+        {
+            return _customerDal.TGetCustomersToSale();
+        }
+
         public List<string> GetDistinctCityList()
         {
             return _customerDal.TGetDistinctCityList();

@@ -92,5 +92,15 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
         {
             return _context.Customers.Select(c => c.CustomerCity).Distinct().Count();
         }
+
+        public List<CustomerToSaleDTO> TGetCustomersToSale()
+        {
+            return _context.Customers.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => new CustomerToSaleDTO
+            {
+                CustomerId = x.CustomerId,
+                CustomerFirstName = x.CustomerFirstName,
+                CustomerLastName = x.CustomerLastName
+            }).ToList();
+        }
     }
 }

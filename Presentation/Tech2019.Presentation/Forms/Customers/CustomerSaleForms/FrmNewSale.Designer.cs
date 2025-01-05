@@ -235,8 +235,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             this.lueProducts.Properties.Appearance.Options.UseForeColor = true;
             this.lueProducts.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueProducts.Properties.DisplayMember = "ProductName";
-            this.lueProducts.Properties.ValueMember = "ProductId";
             this.lueProducts.Size = new System.Drawing.Size(219, 20);
             this.lueProducts.TabIndex = 1;
             // 
@@ -250,8 +248,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             this.lueCustomers.Properties.Appearance.Options.UseForeColor = true;
             this.lueCustomers.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueCustomers.Properties.DisplayMember = "Customer";
-            this.lueCustomers.Properties.ValueMember = "CustomerId";
             this.lueCustomers.Size = new System.Drawing.Size(219, 20);
             this.lueCustomers.TabIndex = 2;
             // 
@@ -265,8 +261,6 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             this.lueEmployees.Properties.Appearance.Options.UseForeColor = true;
             this.lueEmployees.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueEmployees.Properties.DisplayMember = "Employee";
-            this.lueEmployees.Properties.ValueMember = "EmployeeId";
             this.lueEmployees.Size = new System.Drawing.Size(219, 20);
             this.lueEmployees.TabIndex = 3;
             // 
@@ -416,6 +410,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             this.Name = "FrmNewSale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNewSale";
+            this.Load += new System.EventHandler(this.FrmNewSale_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit8.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();

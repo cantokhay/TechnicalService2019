@@ -10,8 +10,10 @@ namespace Tech2019.Presentation
         private readonly IDepartmentService _departmentService;
         private readonly IEmployeeService _employeeService;
         private readonly ICustomerService _customerService;
+        private readonly INoteService _noteService;
+        private readonly ISaleService _saleService;
 
-        public HomeForm(IProductService productService, ICategoryService categoryService, IDepartmentService departmentService, IEmployeeService employeeService, ICustomerService customerService)
+        public HomeForm(IProductService productService, ICategoryService categoryService, IDepartmentService departmentService, IEmployeeService employeeService, ICustomerService customerService, INoteService noteService, ISaleService saleService)
         {
             InitializeComponent();
             _productService = productService;
@@ -19,6 +21,8 @@ namespace Tech2019.Presentation
             _departmentService = departmentService;
             _employeeService = employeeService;
             _customerService = customerService;
+            _noteService = noteService;
+            _saleService = saleService;
         }
 
         private void btnProductListForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -138,7 +142,7 @@ namespace Tech2019.Presentation
 
         private void btnNoteList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Tools.FrmNoteList frmNoteList = new Forms.Tools.FrmNoteList();
+            Forms.Tools.FrmNoteList frmNoteList = new Forms.Tools.FrmNoteList(_noteService);
             frmNoteList.MdiParent = this;
             frmNoteList.Show();
         }
@@ -152,20 +156,20 @@ namespace Tech2019.Presentation
 
         private void btnNewSale_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Customers.CustomerSaleForms.FrmNewSale frmNewSale = new Forms.Customers.CustomerSaleForms.FrmNewSale();
+            Forms.Customers.CustomerSaleForms.FrmNewSale frmNewSale = new Forms.Customers.CustomerSaleForms.FrmNewSale(_saleService, _customerService, _employeeService, _productService);
             frmNewSale.Show();
         }
 
         private void btnSaleList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Customers.CustomerSaleForms.FrmSaleList frmSaleList = new Forms.Customers.CustomerSaleForms.FrmSaleList();
+            Forms.Customers.CustomerSaleForms.FrmSaleList frmSaleList = new Forms.Customers.CustomerSaleForms.FrmSaleList(_saleService);
             frmSaleList.MdiParent = this;
             frmSaleList.Show();
         }
 
         private void btnCustomerMovements_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Customers.CustomerSaleForms.FrmSaleList frmSaleList = new Forms.Customers.CustomerSaleForms.FrmSaleList();
+            Forms.Customers.CustomerSaleForms.FrmSaleList frmSaleList = new Forms.Customers.CustomerSaleForms.FrmSaleList(_saleService);
             frmSaleList.MdiParent = this;
             frmSaleList.Show();
         }

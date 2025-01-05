@@ -14,6 +14,7 @@ namespace Tech2019.BusinessLayer.AbstractServices
         string GetMostCustomerCityName();
         int GetTotalDistinctCityCount();
         List<CustomerCityDTO> GetCustomerCityStat();
+        List<CustomerToSaleDTO> GetCustomersToSale();
         List<CustomerCityDTO> FillChartWithCityDatas();
     }
 }
