@@ -76,7 +76,7 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 
         public List<EmployeeToSaleDTO> TGetEmployeesToSale()
         {
-            return _context.Employees.Where(e => e.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => new EmployeeToSaleDTO
+            return _context.Employees.Select(x => new EmployeeToSaleDTO
             {
                 EmployeeId = x.EmployeeId,
                 EmployeeFirstName = x.EmployeeFirstName,
@@ -86,7 +86,7 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 
         public List<EmployeeToInvoiceDTO> TGetEmployeesToInvoice()
         {
-            return _context.Employees.Where(e => e.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => new EmployeeToInvoiceDTO
+            return _context.Employees.Select(x => new EmployeeToInvoiceDTO
             {
                 EmployeeId = x.EmployeeId,
                 EmployeeFirstName = x.EmployeeFirstName,

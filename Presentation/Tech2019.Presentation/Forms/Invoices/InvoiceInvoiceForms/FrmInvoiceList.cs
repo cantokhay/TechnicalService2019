@@ -93,8 +93,8 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             txtInvoiceId.Text = gvwInvoices.GetFocusedRowCellValue("InvoiceId")?.ToString();
             lueInvoiceSerial.EditValue = gvwInvoices.GetFocusedRowCellValue("InvoiceSerialCharacter")?.ToString();
             txtInvoiceSequence.Text = gvwInvoices.GetFocusedRowCellValue("InvoiceSequenceNumber")?.ToString();
-            txtInvoiceDate.Text = gvwInvoices.GetFocusedRowCellValue("Date")?.ToString();
-            txtInvoiceHour.Text = gvwInvoices.GetFocusedRowCellValue("Hour")?.ToString();
+            txtInvoiceDate.Text = gvwInvoices.GetFocusedRowCellValue("InvoiceDate")?.ToString();
+            txtInvoiceHour.Text = gvwInvoices.GetFocusedRowCellValue("InvoiceHour")?.ToString();
             txtInvoiceTaxOffice.Text = gvwInvoices.GetFocusedRowCellValue("InvoiceTaxOffice")?.ToString();
             lueInvoiceCustomer.EditValue = gvwInvoices.GetFocusedRowCellValue("CustomerId");
             lueInvoiceEmployee.EditValue = gvwInvoices.GetFocusedRowCellValue("EmployeeId");

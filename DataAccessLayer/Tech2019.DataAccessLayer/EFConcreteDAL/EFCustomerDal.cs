@@ -98,7 +98,7 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 
         public List<CustomerToSaleDTO> TGetCustomersToSale()
         {
-            return _context.Customers.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => new CustomerToSaleDTO
+            return _context.Customers.Select(x => new CustomerToSaleDTO
             {
                 CustomerId = x.CustomerId,
                 CustomerFirstName = x.CustomerFirstName,
@@ -108,7 +108,7 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
 
         public List<CustomerToInvoiceDTO> TGetCustomersToInvoice()
         {
-            return _context.Customers.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => new CustomerToInvoiceDTO
+            return _context.Customers.Select(x => new CustomerToInvoiceDTO
             {
                 CustomerId = x.CustomerId,
                 CustomerFirstName = x.CustomerFirstName,
