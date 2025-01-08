@@ -85,9 +85,9 @@
     <Compile Include="EFConcreteDAL\EFProductDal.cs" />
     <Compile Include="EFConcreteDAL\EFProductTraceDal.cs" />
     <Compile Include="EFConcreteDAL\EFSaleDal.cs" />
-    <Compile Include="Migrations\202501031756448_init.cs" />
-    <Compile Include="Migrations\202501031756448_init.designer.cs">
-      <DependentUpon>202501031756448_init.cs</DependentUpon>
+    <Compile Include="Migrations\202501081304444_init.cs" />
+    <Compile Include="Migrations\202501081304444_init.designer.cs">
+      <DependentUpon>202501081304444_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,8 +108,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202501031756448_init.resx">
-      <DependentUpon>202501031756448_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202501081304444_init.resx">
+      <DependentUpon>202501081304444_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

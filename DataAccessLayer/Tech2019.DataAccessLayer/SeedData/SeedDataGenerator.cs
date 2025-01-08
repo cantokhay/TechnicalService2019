@@ -18,6 +18,65 @@ namespace Tech2019.DataAccessLayer.SeedData
             {
                 db.Database.Initialize(false);
 
+                #region Helper Data
+                var departmentNames = new[]
+{
+                        "IT", "HR", "Finance", "Sales", "Marketing",
+                        "Logistics", "Production", "R&D", "Customer Service", "Quality Assurance"
+                    };
+
+                var cityDistrictMap = new Dictionary<string, List<string>>
+                    {
+                        { "Istanbul", new List<string> { "Kadikoy", "Besiktas", "Sisli", "Uskudar", "Maltepe" } },
+                        { "Ankara", new List<string> { "Cankaya", "Keçiören", "Mamak", "Yenimahalle", "Altındağ" } },
+                        { "Izmir", new List<string> { "Bornova", "Karşıyaka", "Buca", "Balçova", "Konak" } },
+                        { "Bursa", new List<string> { "Altıparmak", "Nilüfer", "Osmangazi", "Yıldırım", "Görükle" } },
+                        { "Antalya", new List<string> { "Muratpaşa", "Konyaaltı", "Kepez", "Aksu", "Döşemealtı" } },
+                        { "Adana", new List<string> { "Seyhan", "Çukurova", "Yüreğir", "Sarıçam", "Ceyhan" } },
+                        { "Gaziantep", new List<string> { "Şahinbey", "Şehitkamil", "Oğuzeli", "Araban", "Karkamış" } },
+                        { "Konya", new List<string> { "Selçuklu", "Karatay", "Meram", "Beyşehir", "Ereğli" } },
+                        { "Diyarbakir", new List<string> { "Bağlar", "Kayapınar", "Sur", "Yenişehir", "Bismil" } },
+                        { "Eskisehir", new List<string> { "Odunpazarı", "Tepebaşı", "Çifteler", "Sivrihisar", "Alpu" } }
+                    };
+
+                var bankNames = new[] { "Akbank", "Yapı Kredi", "Garanti", "Ziraat", "Vakıfbank",
+                                                    "Halkbank", "TEB", "ING", "Şekerbank", "QNB Finansbank" };
+                var productBrands = new[]
+{
+                    "Apple", "Samsung", "Sony", "LG Electronics", "Microsoft", "Dell", "Lenovo", "HP", "Asus", "Acer",
+                    "Panasonic", "Philips", "Bosch", "Siemens", "Arçelik", "Beko", "Whirlpool", "General Electric",
+                    "Xiaomi", "Huawei", "Toshiba", "Nokia", "Casio", "Temu", "Canon"
+                };
+
+                var categoryProducts = new Dictionary<string, string[]>
+                {
+                    { "Computer", new[] { "Laptop", "Desktop", "Gaming PC", "Workstation", "Server" } },
+                    { "Phone", new[] { "Smartphone", "Feature Phone", "Tablet", "Smartwatch" } },
+                    { "Appliance", new[] { "Washing Machine", "Refrigerator", "Microwave", "Dishwasher" } },
+                    { "Furniture", new[] { "Chair", "Table", "Sofa", "Bed", "Cabinet" } },
+                    { "Electronics", new[] { "TV", "Speaker", "Headphones", "Camera", "Monitor" } },
+                    { "Sports", new[] { "Football", "Tennis Racket", "Yoga Mat", "Dumbbells", "Basketball" } },
+                    { "Toys", new[] { "Action Figure", "Board Game", "Doll", "Puzzle", "Toy Car" } },
+                    { "Clothing", new[] { "T-Shirt", "Jeans", "Jacket", "Hat", "Sunglasses" } },
+                    { "Books", new[] { "Novel", "Textbook", "Magazine", "Comic Book", "Biography" } },
+                    { "Music", new[] { "Guitar", "Piano", "Drums", "Microphone", "Keyboard" } },
+                    { "Automotive", new[] { "Car Battery", "Tire", "Engine Oil", "Brake Pads", "Car Wash Kit" } },
+                    { "Garden", new[] { "Lawn Mower", "Shovel", "Hose", "Seeds", "Fertilizer" } },
+                    { "Health", new[] { "Vitamins", "First Aid Kit", "Face Mask", "Thermometer", "Gloves" } },
+                    { "Kitchen", new[] { "Blender", "Knife Set", "Frying Pan", "Toaster", "Kettle" } },
+                    { "Office", new[] { "Notebook", "Pen", "Desk", "Chair", "Lamp" } },
+                    { "Beauty", new[] { "Lipstick", "Foundation", "Eyeliner", "Perfume", "Nail Polish" } },
+                    { "Travel", new[] { "Suitcase", "Backpack", "Travel Pillow", "Map", "Camera" } },
+                    { "Fitness", new[] { "Treadmill", "Bicycle", "Rowing Machine", "Weights", "Resistance Bands" } },
+                    { "Gaming", new[] { "Console", "Controller", "Headset", "Game Disk", "Mouse" } },
+                    { "Pets", new[] { "Dog Food", "Cat Food", "Pet Bed", "Collar", "Aquarium" } },
+                    { "Jewelry", new[] { "Ring", "Bracelet", "Necklace", "Earrings", "Watch" } },
+                    { "Outdoors", new[] { "Tent", "Sleeping Bag", "Hiking Boots", "Compass", "Flashlight" } },
+                    { "Baby", new[] { "Stroller", "Diapers", "Baby Bottle", "Baby Toy", "Crib" } },
+                    { "Tools", new[] { "Hammer", "Drill", "Wrench", "Saw", "Screwdriver" } },
+                    { "Art", new[] { "Paint", "Canvas", "Brush", "Easel", "Sketchbook" } }
+                };
+
                 byte maxCustomerCount = 40;
                 byte maxDepartmentCount = 6;
                 byte maxCategoryCount = 20;
@@ -26,6 +85,8 @@ namespace Tech2019.DataAccessLayer.SeedData
                 byte maxActionCount = 100;
                 byte maxProductTraceCount = maxActionCount;
                 ushort maxInvoiceCount = maxSaleCount;
+
+                #endregion
 
                 if (db.Customers.Count() <= maxCustomerCount || db.Departments.Count() <= maxDepartmentCount || db.Categories.Count() <= maxCategoryCount || db.Notes.Count() <= maxNoteCount || db.Actions.Count() <= maxActionCount || db.Sales.Count() <= maxSaleCount || db.ProductTraces.Count() <= maxActionCount || db.Invoices.Count() <= maxInvoiceCount)
                 {
@@ -49,11 +110,52 @@ namespace Tech2019.DataAccessLayer.SeedData
                     var createdActions = db.Actions.ToList();
                     GenerateProductTraces(productTraceToGenerate, createdActions);
                     GenerateInvoices(invoiceCountToGenerate);
+                    GenerateInvoiceDetails();
 
                     await db.SaveChangesAsync();
                 }
 
                 #region Faker Generation Methods
+
+                void GenerateInvoiceDetails()
+                {
+                    int existingInvoiceDetailCount = db.InvoiceDetails.Count();
+                    if (existingInvoiceDetailCount >= 1000)
+                    {
+                        return;
+                    }
+
+                    var faker = new Faker();
+                    var existingInvoices = db.Invoices.Select(i => i.InvoiceId).ToList();
+                    var existingProducts = db.Products.Select(p => p.ProductId).ToList();
+
+                    foreach (var invoiceId in existingInvoices)
+                    {
+                        var numberOfDetails = faker.Random.Number(5, 10);
+
+                        for (int i = 0; i < numberOfDetails; i++)
+                        {
+                            var product = faker.PickRandom(existingProducts);
+                            var quantity = faker.Random.Number(1, 100);
+                            var unitPrice = db.Products.Where(p => p.ProductId == product).Select(p => p.ProductSalePrice).FirstOrDefault();
+                            var totalPrice = quantity * unitPrice;
+
+                            var invoiceDetail = new InvoiceDetail
+                            {
+                                ProductName = db.Products.Where(p => p.ProductId == product).Select(p => p.ProductName).FirstOrDefault(),
+                                ProductSaleQuantity = (short)quantity,
+                                ProductUnitPrice = unitPrice,
+                                ProductTotalPrice = totalPrice,
+                                Invoice = invoiceId
+                            };
+
+                            AssignEntityDatesAndDataStatus(invoiceDetail);
+                            db.InvoiceDetails.Add(invoiceDetail);
+                        }
+                    }
+
+                    db.SaveChanges();
+                }
 
                 void GenerateProductTraces(byte productTraceToGenerate, List<EntityLayer.Concrete.Action> actions)
                 {
@@ -115,11 +217,7 @@ namespace Tech2019.DataAccessLayer.SeedData
                 {
                     var faker = new Faker();
 
-                    var departmentNames = new[]
-                    {
-                        "IT", "HR", "Finance", "Sales", "Marketing",
-                        "Logistics", "Production", "R&D", "Customer Service", "Quality Assurance"
-                    };
+
 
                     var existingDepartments = db.Departments.Select(d => d.DepartmentName).ToList();
                     var remainingDepartments = departmentNames.Except(existingDepartments).ToList();
@@ -163,23 +261,6 @@ namespace Tech2019.DataAccessLayer.SeedData
                 {
                     var faker = new Faker();
 
-                    var cityDistrictMap = new Dictionary<string, List<string>>
-                    {
-                        { "Istanbul", new List<string> { "Kadikoy", "Besiktas", "Sisli", "Uskudar", "Maltepe" } },
-                        { "Ankara", new List<string> { "Cankaya", "Keçiören", "Mamak", "Yenimahalle", "Altındağ" } },
-                        { "Izmir", new List<string> { "Bornova", "Karşıyaka", "Buca", "Balçova", "Konak" } },
-                        { "Bursa", new List<string> { "Altıparmak", "Nilüfer", "Osmangazi", "Yıldırım", "Görükle" } },
-                        { "Antalya", new List<string> { "Muratpaşa", "Konyaaltı", "Kepez", "Aksu", "Döşemealtı" } },
-                        { "Adana", new List<string> { "Seyhan", "Çukurova", "Yüreğir", "Sarıçam", "Ceyhan" } },
-                        { "Gaziantep", new List<string> { "Şahinbey", "Şehitkamil", "Oğuzeli", "Araban", "Karkamış" } },
-                        { "Konya", new List<string> { "Selçuklu", "Karatay", "Meram", "Beyşehir", "Ereğli" } },
-                        { "Diyarbakir", new List<string> { "Bağlar", "Kayapınar", "Sur", "Yenişehir", "Bismil" } },
-                        { "Eskisehir", new List<string> { "Odunpazarı", "Tepebaşı", "Çifteler", "Sivrihisar", "Alpu" } }
-                    };
-
-                    var bankNames = new[] { "Akbank", "Yapı Kredi", "Garanti", "Ziraat", "Vakıfbank",
-                                                    "Halkbank", "TEB", "ING", "Şekerbank", "QNB Finansbank" };
-
                     var customerStatus = new[] { CustomerStatus.ActiveBuyer, CustomerStatus.PassiveAccount, CustomerStatus.DeletedAccount };
 
                     for (byte i = 0; i < customerCountToGenerate; i++)
@@ -210,45 +291,11 @@ namespace Tech2019.DataAccessLayer.SeedData
                     db.SaveChanges();
                 }
 
+
+
                 void GenerateCategoriesAndProducts(byte categoryCountToGenerate)
                 {
                     var faker = new Faker();
-
-                    var productBrands = new[]
-                    {
-                    "Apple", "Samsung", "Sony", "LG Electronics", "Microsoft", "Dell", "Lenovo", "HP", "Asus", "Acer",
-                    "Panasonic", "Philips", "Bosch", "Siemens", "Arçelik", "Beko", "Whirlpool", "General Electric",
-                    "Xiaomi", "Huawei", "Toshiba", "Nokia", "Casio", "Temu", "Canon"
-                };
-
-                    var categoryProducts = new Dictionary<string, string[]>
-                {
-                    { "Computer", new[] { "Laptop", "Desktop", "Gaming PC", "Workstation", "Server" } },
-                    { "Phone", new[] { "Smartphone", "Feature Phone", "Tablet", "Smartwatch" } },
-                    { "Appliance", new[] { "Washing Machine", "Refrigerator", "Microwave", "Dishwasher" } },
-                    { "Furniture", new[] { "Chair", "Table", "Sofa", "Bed", "Cabinet" } },
-                    { "Electronics", new[] { "TV", "Speaker", "Headphones", "Camera", "Monitor" } },
-                    { "Sports", new[] { "Football", "Tennis Racket", "Yoga Mat", "Dumbbells", "Basketball" } },
-                    { "Toys", new[] { "Action Figure", "Board Game", "Doll", "Puzzle", "Toy Car" } },
-                    { "Clothing", new[] { "T-Shirt", "Jeans", "Jacket", "Hat", "Sunglasses" } },
-                    { "Books", new[] { "Novel", "Textbook", "Magazine", "Comic Book", "Biography" } },
-                    { "Music", new[] { "Guitar", "Piano", "Drums", "Microphone", "Keyboard" } },
-                    { "Automotive", new[] { "Car Battery", "Tire", "Engine Oil", "Brake Pads", "Car Wash Kit" } },
-                    { "Garden", new[] { "Lawn Mower", "Shovel", "Hose", "Seeds", "Fertilizer" } },
-                    { "Health", new[] { "Vitamins", "First Aid Kit", "Face Mask", "Thermometer", "Gloves" } },
-                    { "Kitchen", new[] { "Blender", "Knife Set", "Frying Pan", "Toaster", "Kettle" } },
-                    { "Office", new[] { "Notebook", "Pen", "Desk", "Chair", "Lamp" } },
-                    { "Beauty", new[] { "Lipstick", "Foundation", "Eyeliner", "Perfume", "Nail Polish" } },
-                    { "Travel", new[] { "Suitcase", "Backpack", "Travel Pillow", "Map", "Camera" } },
-                    { "Fitness", new[] { "Treadmill", "Bicycle", "Rowing Machine", "Weights", "Resistance Bands" } },
-                    { "Gaming", new[] { "Console", "Controller", "Headset", "Game Disk", "Mouse" } },
-                    { "Pets", new[] { "Dog Food", "Cat Food", "Pet Bed", "Collar", "Aquarium" } },
-                    { "Jewelry", new[] { "Ring", "Bracelet", "Necklace", "Earrings", "Watch" } },
-                    { "Outdoors", new[] { "Tent", "Sleeping Bag", "Hiking Boots", "Compass", "Flashlight" } },
-                    { "Baby", new[] { "Stroller", "Diapers", "Baby Bottle", "Baby Toy", "Crib" } },
-                    { "Tools", new[] { "Hammer", "Drill", "Wrench", "Saw", "Screwdriver" } },
-                    { "Art", new[] { "Paint", "Canvas", "Brush", "Easel", "Sketchbook" } }
-                };
 
                     var existingCategories = db.Categories.Select(c => c.CategoryName).ToList();
                     var remainingCategories = categoryProducts.Keys.Except(existingCategories).ToList();
