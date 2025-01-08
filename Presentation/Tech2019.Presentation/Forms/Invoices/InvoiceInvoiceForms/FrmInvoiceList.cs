@@ -131,12 +131,12 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
         {
             txtInvoiceId.Text = string.Empty;
             txtInvoiceSequence.Text = string.Empty;
+            lueInvoiceSerial.EditValue = null;
             txtInvoiceDate.Text = string.Empty;
             txtInvoiceHour.Text = string.Empty;
             txtInvoiceTaxOffice.Text = string.Empty;
             lueInvoiceCustomer.EditValue = null;
             lueInvoiceEmployee.EditValue = null;
-            lueInvoiceSerial.EditValue = null;
         }
 
         private void LoadInvoiceList()

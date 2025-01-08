@@ -7,5 +7,9 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
     public interface IInvoiceDetailDal : IGenericDal<InvoiceDetail>
     {
         List<ResultInvoiceDetailDTO> TGetInvoiceDetailList();
+
+        List<ResultInvoiceDetailDTO> TGetInvoiceDetailListByInvoiceId(int invoiceId);
+
+        List<ResultInvoiceDetailDTO> TGetInvoiceDetailsBySerialAndSequence(string invoiceSerial, string invoiceSequence);
     }
 }

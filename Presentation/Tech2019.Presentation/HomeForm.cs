@@ -214,5 +214,12 @@ namespace Tech2019.Presentation
             frmInvoiceProduct.MdiParent = this;
             frmInvoiceProduct.Show();
         }
+
+        private void btnInvoiceDetailedSearch_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceDetailedSearch frmInvoiceDetailedSearch = new Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceDetailedSearch(_invoiceDetailService);
+            frmInvoiceDetailedSearch.MdiParent = this;
+            frmInvoiceDetailedSearch.Show();
+        }
     }
 }

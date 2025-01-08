@@ -46,6 +46,16 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
             return _invoiceDetailDal.TGetInvoiceDetailList();
         }
 
+        public List<ResultInvoiceDetailDTO> GetInvoiceDetailListByInvoiceId(int invoiceId)
+        {
+            return _invoiceDetailDal.TGetInvoiceDetailListByInvoiceId(invoiceId);
+        }
+
+        public List<ResultInvoiceDetailDTO> GetInvoiceDetailListByInvoiceSerialAndSequence(string invoiceSerial, string invoiceSequence)
+        {
+            return _invoiceDetailDal.TGetInvoiceDetailsBySerialAndSequence(invoiceSerial,invoiceSequence);
+        }
+
         public void Update(InvoiceDetail entity)
         {
             entity.ModifiedDate = DateTime.Now;

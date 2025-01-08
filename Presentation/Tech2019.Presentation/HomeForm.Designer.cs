@@ -311,7 +311,10 @@ namespace Tech2019.Presentation
             // 
             this.btnInvoiceDetailedSearch.Caption = "Invoice Detailed Search";
             this.btnInvoiceDetailedSearch.Id = 20;
+            this.btnInvoiceDetailedSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInvoiceDetailedSearch.ImageOptions.Image")));
+            this.btnInvoiceDetailedSearch.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnInvoiceDetailedSearch.ImageOptions.LargeImage")));
             this.btnInvoiceDetailedSearch.Name = "btnInvoiceDetailedSearch";
+            this.btnInvoiceDetailedSearch.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInvoiceDetailedSearch_ItemClick);
             // 
             // btnInvoicePDF
             // 
