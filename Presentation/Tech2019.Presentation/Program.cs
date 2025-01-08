@@ -28,10 +28,11 @@ namespace Tech2019.Presentation
             var actionService = serviceProvider.GetRequiredService<IActionService>();
             var productTraceService = serviceProvider.GetRequiredService<IProductTraceService>();
             var invoiceService = serviceProvider.GetRequiredService<IInvoiceService>();
+            var invoiceDetailService = serviceProvider.GetRequiredService<IInvoiceDetailService>();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeForm(productService, categoryService, departmentService, employeeService, customerService, noteService, saleService, actionService, productTraceService, invoiceService));
+            Application.Run(new HomeForm(productService, categoryService, departmentService, employeeService, customerService, noteService, saleService, actionService, productTraceService, invoiceService, invoiceDetailService));
         }
 
         private static Microsoft.Extensions.DependencyInjection.ServiceProvider ConfigureServices()
@@ -50,6 +51,7 @@ namespace Tech2019.Presentation
             services.AddScoped<IActionDal, EFActionDal>();
             services.AddScoped<IProductTraceDal, EFProductTraceDal>();
             services.AddScoped<IInvoiceDal, EFInvoiceDal>();
+            services.AddScoped<IInvoiceDetailDal, EFInvoiceDetailDal>();
 
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
@@ -61,6 +63,7 @@ namespace Tech2019.Presentation
             services.AddScoped<IActionService, ActionManager>();
             services.AddScoped<IProductTraceService, ProductTraceManager>();
             services.AddScoped<IInvoiceService, InvoiceManager>();
+            services.AddScoped<IInvoiceDetailService, InvoiceDetailManager>();
 
             return services.BuildServiceProvider();
         }

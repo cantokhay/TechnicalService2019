@@ -48,5 +48,17 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                 })
                 .ToList();
         }
+
+        public List<ResultInvoiceToInvoiceDetailDTO> TGetInvoiceListToInvoiceDetail()
+        {
+            return _context.Invoices.Where(i => i.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
+                .Select(i => new ResultInvoiceToInvoiceDetailDTO
+                {
+                    InvoiceId = i.InvoiceId,
+                    InvoiceSerialCharacter = i.InvoiceSerialCharacter,
+                    InvoiceSequenceNumber = i.InvoiceSequenceNumber,
+                    InvoiceNumber = i.InvoiceSerialCharacter + i.InvoiceSequenceNumber,
+                }).ToList();
+        }
     }
 }

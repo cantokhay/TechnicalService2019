@@ -7,5 +7,7 @@ namespace Tech2019.BusinessLayer.AbstractServices
     public interface IInvoiceService : IGenericService<Invoice>
     {
         List<ResultInvoiceDTO> GetInvoiceList();
+        List<ResultInvoiceToInvoiceDetailDTO> GetInvoiceListToInvoiceDetail();
+
     }
 }

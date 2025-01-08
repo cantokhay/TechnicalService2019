@@ -15,8 +15,9 @@ namespace Tech2019.Presentation
         private readonly IActionService _actionService;
         private readonly IProductTraceService _productTraceService;
         private readonly IInvoiceService _invoiceService;
+        private readonly IInvoiceDetailService _invoiceDetailService;
 
-        public HomeForm(IProductService productService, ICategoryService categoryService, IDepartmentService departmentService, IEmployeeService employeeService, ICustomerService customerService, INoteService noteService, ISaleService saleService, IActionService actionService, IProductTraceService productTraceService, IInvoiceService invoiceService)
+        public HomeForm(IProductService productService, ICategoryService categoryService, IDepartmentService departmentService, IEmployeeService employeeService, ICustomerService customerService, INoteService noteService, ISaleService saleService, IActionService actionService, IProductTraceService productTraceService, IInvoiceService invoiceService, IInvoiceDetailService invoiceDetailService)
         {
             InitializeComponent();
             _productService = productService;
@@ -29,6 +30,7 @@ namespace Tech2019.Presentation
             _actionService = actionService;
             _productTraceService = productTraceService;
             _invoiceService = invoiceService;
+            _invoiceDetailService = invoiceDetailService;
         }
 
         private void btnProductListForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -204,6 +206,13 @@ namespace Tech2019.Presentation
             Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceList frmInvoiceList = new Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceList(_invoiceService, _employeeService, _customerService);
             frmInvoiceList.MdiParent = this;
             frmInvoiceList.Show();
+        }
+
+        private void btnAddProductToInvoice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceProduct frmInvoiceProduct = new Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceProduct(_invoiceDetailService, _invoiceService);
+            frmInvoiceProduct.MdiParent = this;
+            frmInvoiceProduct.Show();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Tech2019.BusinessLayer.AbstractServices;
 using Tech2019.DataAccessLayer.AbstractDAL;
+using Tech2019.DTOLayer.InvoiceDetailDTOs;
 using Tech2019.EntityLayer.Concrete;
 
 namespace Tech2019.BusinessLayer.ConcreteManagers
@@ -38,6 +39,11 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
         public InvoiceDetail GetById(int id)
         {
             return _invoiceDetailDal.TGetById(id);
+        }
+
+        public List<ResultInvoiceDetailDTO> GetInvoiceDetailList()
+        {
+            return _invoiceDetailDal.TGetInvoiceDetailList();
         }
 
         public void Update(InvoiceDetail entity)
