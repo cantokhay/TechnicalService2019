@@ -67,5 +67,10 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                       })
                 .FirstOrDefault();
         }
+
+        public List<ProductTrace> TGetProductTracesBySerial(string productSerialNumber)
+        {
+            return _context.ProductTraces.Where(x => x.ProductSerialNumber == productSerialNumber).ToList();
+        }
     }
 }

@@ -8,6 +8,7 @@ namespace Tech2019.BusinessLayer.AbstractServices
     public interface IProductTraceService : IGenericService<ProductTrace>
     {
         List<ResultProductTraceDTO> GetProductTraceList();
-        ResultCustomerInfoBySerialDTO GetCustomerInfoBySerial(string serialNumber);
+        ResultCustomerInfoBySerialDTO GetCustomerInfoBySerial(string serialNumber); 
+        List<ProductTrace> GetProductTracesBySerial(string productSerialNumber);
     }
 }

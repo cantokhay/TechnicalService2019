@@ -52,6 +52,11 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
             return _productTraceDal.TGetProductTraceList();
         }
 
+        public List<ProductTrace> GetProductTracesBySerial(string productSerialNumber)
+        {
+            return _productTraceDal.TGetProductTracesBySerial(productSerialNumber);
+        }
+
         public void Update(ProductTrace entity)
         {
             entity.ModifiedDate = DateTime.Now;

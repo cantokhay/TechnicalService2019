@@ -53,7 +53,6 @@
     <Compile Include="EmployeeDTOs\EmployeeToInvoiceDTO.cs" />
     <Compile Include="EmployeeDTOs\EmployeeToSaleDTO.cs" />
     <Compile Include="EmployeeDTOs\EmployeeWithDepartmentDTO.cs" />
-    <Compile Include="InvoiceDetailDTOs\ResultInvoiceDetailBySerialAndSequenceDTO.cs" />
     <Compile Include="InvoiceDetailDTOs\ResultInvoiceDetailDTO.cs" />
     <Compile Include="InvoiceDTOs\ResultInvoiceDTO.cs" />
     <Compile Include="InvoiceDTOs\ResultInvoiceToInvoiceDetailDTO.cs" />

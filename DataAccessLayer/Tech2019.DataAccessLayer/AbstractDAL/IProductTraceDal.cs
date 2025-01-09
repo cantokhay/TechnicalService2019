@@ -9,5 +9,6 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
     {
         List<ResultProductTraceDTO> TGetProductTraceList();
         ResultCustomerInfoBySerialDTO TGetCustomerInfoBySerial(string serialNumber);
+        List<ProductTrace> TGetProductTracesBySerial(string productSerialNumber);
     }
 }
