@@ -29,7 +29,7 @@
 
     <table class="table table-bordered" style="margin-top: 30px">
         <tr>
-            <th>ÜÜRÜN TAKİP DETAYI</th>
+            <th>ÜRÜN TAKİP DETAYI</th>
             <th>TAKİP TARİHİ</th>
         </tr>
         <asp:Repeater ID="Repeater1" runat="server">

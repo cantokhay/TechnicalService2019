@@ -65,6 +65,7 @@
     <Compile Include="AbstractDAL\IGenericDal.cs" />
     <Compile Include="AbstractDAL\IInvoiceDal.cs" />
     <Compile Include="AbstractDAL\IInvoiceDetailDal.cs" />
+    <Compile Include="AbstractDAL\IMessageDal.cs" />
     <Compile Include="AbstractDAL\INoteDal.cs" />
     <Compile Include="AbstractDAL\IProductDal.cs" />
     <Compile Include="AbstractDAL\IProductTraceDal.cs" />
@@ -81,13 +82,22 @@
     <Compile Include="EFConcreteDAL\EFGenericDal.cs" />
     <Compile Include="EFConcreteDAL\EFInvoiceDal.cs" />
     <Compile Include="EFConcreteDAL\EFInvoiceDetail.cs" />
+    <Compile Include="EFConcreteDAL\EFMessageDal.cs" />
     <Compile Include="EFConcreteDAL\EFNoteDal.cs" />
     <Compile Include="EFConcreteDAL\EFProductDal.cs" />
     <Compile Include="EFConcreteDAL\EFProductTraceDal.cs" />
     <Compile Include="EFConcreteDAL\EFSaleDal.cs" />
-    <Compile Include="Migrations\202501091017251_first.cs" />
-    <Compile Include="Migrations\202501091017251_first.designer.cs">
-      <DependentUpon>202501091017251_first.cs</DependentUpon>
+    <Compile Include="Migrations\202501151737401_birinci.cs" />
+    <Compile Include="Migrations\202501151737401_birinci.designer.cs">
+      <DependentUpon>202501151737401_birinci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202501151921207_ikinci.cs" />
+    <Compile Include="Migrations\202501151921207_ikinci.designer.cs">
+      <DependentUpon>202501151921207_ikinci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202501151928313_ucuncu.cs" />
+    <Compile Include="Migrations\202501151928313_ucuncu.designer.cs">
+      <DependentUpon>202501151928313_ucuncu.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,8 +118,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202501091017251_first.resx">
-      <DependentUpon>202501091017251_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202501151737401_birinci.resx">
+      <DependentUpon>202501151737401_birinci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202501151921207_ikinci.resx">
+      <DependentUpon>202501151921207_ikinci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202501151928313_ucuncu.resx">
+      <DependentUpon>202501151928313_ucuncu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

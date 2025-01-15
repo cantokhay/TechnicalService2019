@@ -21,6 +21,7 @@ namespace Tech2019.DataAccessLayer.Context
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<FaultDetail> FaultDetails { get; set; }
         public DbSet<Note> Notes { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -34,6 +35,7 @@ namespace Tech2019.DataAccessLayer.Context
             ConfigureInvoiceDetail(modelBuilder);
             ConfigureAction(modelBuilder);
             ConfigureProductTrace(modelBuilder);
+            ConfigureMessage(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
         }
@@ -204,6 +206,37 @@ namespace Tech2019.DataAccessLayer.Context
             modelBuilder.Entity<Department>()
                 .Property(d => d.DepartmentDescription)
                 .HasMaxLength(100);
+        }
+
+        private void ConfigureMessage(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Message>()
+                .HasKey(d => d.MessageId);
+
+            modelBuilder.Entity<Message>()
+                .Property(d => d.MessageId)
+                .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+
+
+            modelBuilder.Entity<Message>()
+                .Property(d => d.SenderName)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Message>()
+                .Property(d => d.SenderMail)
+                .HasMaxLength(100)
+                .IsRequired();
+
+            modelBuilder.Entity<Message>()
+                .Property(d => d.MessageTitle)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Message>()
+                .Property(d => d.MessageContent)
+                .HasMaxLength(500)
+                .IsRequired();
         }
 
         private void ConfigureInvoice(DbModelBuilder modelBuilder)

@@ -7,13 +7,13 @@ namespace Tech2019.DataAccessLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class first : IMigrationMetadata
+    public sealed partial class ikinci : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(first));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ikinci));
         
         string IMigrationMetadata.Id
         {
-            get { return "202501091017251_first"; }
+            get { return "202501151921207_ikinci"; }
         }
         
         string IMigrationMetadata.Source

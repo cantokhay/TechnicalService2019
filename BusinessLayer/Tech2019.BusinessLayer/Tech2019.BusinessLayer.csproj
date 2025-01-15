@@ -62,6 +62,7 @@
     <Compile Include="AbstractServices\IGenericService.cs" />
     <Compile Include="AbstractServices\IInvoiceDetailService.cs" />
     <Compile Include="AbstractServices\IInvoiceService.cs" />
+    <Compile Include="AbstractServices\IMessageService.cs" />
     <Compile Include="AbstractServices\INoteService.cs" />
     <Compile Include="AbstractServices\ISaleService.cs" />
     <Compile Include="AbstractServices\IProductService.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="ConcreteManagers\FaultDetailManager.cs" />
     <Compile Include="ConcreteManagers\InvoiceDetailManager.cs" />
     <Compile Include="ConcreteManagers\InvoiceManager.cs" />
+    <Compile Include="ConcreteManagers\MessageManager.cs" />
     <Compile Include="ConcreteManagers\NoteManager.cs" />
     <Compile Include="ConcreteManagers\ProductManager.cs" />
     <Compile Include="ConcreteManagers\ProductTraceManager.cs" />

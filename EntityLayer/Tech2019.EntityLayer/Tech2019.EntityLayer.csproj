@@ -52,6 +52,7 @@
     <Compile Include="Concrete\FaultDetail.cs" />
     <Compile Include="Concrete\Invoice.cs" />
     <Compile Include="Concrete\InvoiceDetail.cs" />
+    <Compile Include="Concrete\Message.cs" />
     <Compile Include="Concrete\Note.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\ProductTrace.cs" />

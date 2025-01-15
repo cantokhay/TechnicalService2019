@@ -12,8 +12,12 @@ public static class DependencyInjectionConfig
         services.AddScoped<TechDBContext>();
 
         services.AddScoped<IProductTraceDal, EFProductTraceDal>();
+        services.AddScoped<IProductDal, EFProductDal>();
+        services.AddScoped<IMessageDal, EFMessageDal>();
 
         services.AddScoped<IProductTraceService, ProductTraceManager>();
+        services.AddScoped<IProductService, ProductManager>();
+        services.AddScoped<IMessageService, MessageManager>();
 
         return services;
     }

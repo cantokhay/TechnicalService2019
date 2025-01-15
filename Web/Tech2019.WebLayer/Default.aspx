@@ -55,7 +55,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle page-scroll" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ÜRÜN İŞLEMLERİ</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#productTrace"><span class="item-text">ÜRÜN TAKİP</span></a>
+                        <a class="dropdown-item" href="Tech2019.WebFormContent.aspx"><span class="item-text">ÜRÜN TAKİP</span></a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#products"><span class="item-text">ÜRÜNLER</span></a>
                     </div>
@@ -86,8 +86,8 @@
                             <span id="clock"></span>
                         </div>
                         <h1>Tech2019'a Hoş Geldiniz</h1>
-                        <p class="p-large">Buradan satıştaki ürünlerimize göz atabilir, servise bıraktığınız ürünlerin seri numaraları ile takibini yapabilirsiniz.</p>
-                        <a class="btn-outline-lg page-scroll" href="#productTrace">ÜRÜN TAKİP</a>
+                        <p class="p-large">Buradaki linkten satıştaki ürünlerimize göz atabilir, servise bıraktığınız ürünlerin seri numaraları ile takibini yapabilirsiniz.</p>
+                        <a class="btn-outline-lg page-scroll" href="Tech2019.WebFormContent.aspx">ÜRÜN TAKİP</a>
                         <a class="btn-solid-lg page-scroll" href="#products">ÜRÜNLER</a>
                     </div>
                     <!-- end of text-container -->
@@ -140,7 +140,6 @@
 
     </header>
     <!-- end of main -->
-    <!-- end of main -->
 
     <!-- ProductTrace -->
     <div id="productTrace" class="form-1">
@@ -167,58 +166,57 @@
                     </div>
                     <!-- end of text-container -->
                 </div>
-                <!-- end of col -->
-
-                <!-- Product Trace Form -->
+                <!-- end of col-6 -->
 
                 <div class="col-lg-6">
-
-                    <%-- TODO : 1 label 1 textbox 1 button ile ilgili ürünün seri numarası ile takip edilebileceği küçük bir groupbox yapılsın --%>
+                    <img class="img-fluid" src="web/images/Nature_1.png" alt="alternative">
                 </div>
-                <!-- end of col -->
+
+                <!-- end of col-6 -->
             </div>
             <!-- end of row -->
         </div>
         <!-- end of container -->
     </div>
-    <!-- end of form-1 -->
     <!-- end of productTrace -->
 
     <!-- Products -->
     <div id="products" class="basic-1">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <%--<div class="col-lg-6">
                     <img class="img-fluid" src="web/images/Nature_1.png" alt="alternative">
-                </div>
+                </div>--%>
                 <!-- end of col -->
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="text-container">
                         <h2>Ürünlerimize Göz Atın</h2>
 
                         <table class="table table-bordered">
                             <tr>
+                                <th>ÜRÜN ID</th>
                                 <th>ÜRÜN ADI</th>
                                 <th>MARKA</th>
                                 <th>SATIŞ FİYATI</th>
                             </tr>
-                            <tr>
-                                <td>ürün1</td>
-                                <td>marka1</td>
-                                <td>123,33 ₺</td>
-                            </tr>
-                            <tr>
-                                <td>ürün2</td>
-                                <td>marka2</td>
-                                <td>12369,33 ₺</td>
-                            </tr>
+
+                            <asp:Repeater ID="ProductRepeater" runat="server">
+                                <ItemTemplate>
+                                    <tr>
+                                        <td><%#Eval("ProductId") %></td>
+                                        <td><%#Eval("ProductName") %></td>
+                                        <td><%#Eval("ProductBrand") %></td>
+                                        <td><%#Eval("ProductSalePrice") %> ₺</td>
+                                    </tr>
+                                </ItemTemplate>
+                            </asp:Repeater>
                         </table>
 
                     </div>
                     <!-- end of text-container -->
                     <h6>Daha fazlasını mağazamızda bulabilirsiniz...</h6>
                 </div>
-                <!-- end of col -->
+                <!-- end of col-6 -->
             </div>
             <!-- end of row -->
         </div>
@@ -315,9 +313,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <h2>Contact Details</h2>
-                        <p>For registration questions please get in touch using the contact details below. For any questions use the form.</p>
-                        <h3>Main Office Location</h3>
+                        <h2>Bize Ulaşın</h2>
+                        <p>Yandaki formu doldurarak bize düşüncelerini, önerilerinizi, sorularınızı iletebilirsiniz. Size yetkili birimler tarafından en kısa sürede dönüş yapılacaktır.</p>
+                        <h3>Mağazamızın Konumu</h3>
                         <ul class="list-unstyled li-space-lg">
                             <li class="media">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -325,25 +323,50 @@
                             </li>
                             <li class="media">
                                 <i class="fas fa-mobile-alt"></i>
-                                <div class="media-body">+44 68 554 332, &nbsp;&nbsp;<i class="fas fa-mobile-alt"></i>&nbsp; +44 31 276 112</div>
+                                <div class="media-body">+90 968 554 33 32, &nbsp;&nbsp;<i class="fas fa-mobile-alt"></i>&nbsp; +90 968 554 33 34</div>
                             </li>
                             <li class="media">
-                                <i class="fas fa-envelope"></i>
-                                <div class="media-body"><a class="light-gray" href="mailto:contact@zigo.com">contact@zigo.com</a> <i class="fas fa-globe"></i><a class="light-gray" href="#your-link">www.zigo.com</a></div>
+                                <i class="fas fa-handshake"></i>
+                                <div class="media-body"><a class="light-gray">Mağazamızda sizi ağırlayalım.</a> <i class="fas fa-globe"></i><a class="light-gray" href="#your-link">Teknik Servis</a></div>
                             </li>
                         </ul>
                     </div>
                     <!-- end of text-container -->
                 </div>
-                <!-- end of col -->
+                <!-- end of col-6 -->
+
                 <div class="col-lg-6">
 
                     <!-- Contact Form -->
-                     <%-- TODO : Mesajlar bölümü ile birlikte tasarım ve işlevsel olarak benzer uygulamalar yapılacak --%>
+                    <form action="#" method="post" data-toggle="validator" data-focus="false" runat="server">
+                        <div class="form-group">
+                            <asp:TextBox ID="txtSenderName" CssClass="form-control-input" runat="server"></asp:TextBox>
+                            <label class="label-control" for="cname">Adınız</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="txtSenderEmail" CssClass="form-control-input" runat="server"></asp:TextBox>
+                            <label class="label-control" for="cemail">Email</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="txtMessageTitle" CssClass="form-control-input" runat="server"></asp:TextBox>
+                            <label class="label-control" for="cmessage">Konu</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="txtMessageContent" CssClass="form-control-input" runat="server" TextMode="MultiLine" Height="50"></asp:TextBox>
+                            <label class="label-control" for="cmessage">Mesajınız</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <asp:Button ID="btnSend" CssClass="form-control-submit-button" runat="server" Text="GÖNDER" OnClick="btnSend_Click" />
+                        </div>
+                    </form>
                     <!-- end of contact form -->
 
                 </div>
-                <!-- end of col -->
+                <!-- end of col-6 -->
             </div>
             <!-- end of row -->
         </div>

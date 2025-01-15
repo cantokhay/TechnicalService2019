@@ -85,10 +85,11 @@ namespace Tech2019.DataAccessLayer.SeedData
                 byte maxActionCount = 100;
                 byte maxProductTraceCount = maxActionCount;
                 ushort maxInvoiceCount = maxSaleCount;
+                byte maxMessageCount = maxActionCount;
 
                 #endregion
 
-                if (db.Customers.Count() <= maxCustomerCount || db.Departments.Count() <= maxDepartmentCount || db.Categories.Count() <= maxCategoryCount || db.Notes.Count() <= maxNoteCount || db.Actions.Count() <= maxActionCount || db.Sales.Count() <= maxSaleCount || db.ProductTraces.Count() <= maxActionCount || db.Invoices.Count() <= maxInvoiceCount)
+                if (db.Customers.Count() <= maxCustomerCount || db.Departments.Count() <= maxDepartmentCount || db.Categories.Count() <= maxCategoryCount || db.Notes.Count() <= maxNoteCount || db.Actions.Count() <= maxActionCount || db.Sales.Count() <= maxSaleCount || db.ProductTraces.Count() <= maxActionCount || db.Invoices.Count() <= maxInvoiceCount || db.Messages.Count() < maxMessageCount)
                 {
 
                     byte customerCountToGenerate = (byte)(maxCustomerCount - db.Customers.Count());
@@ -99,6 +100,7 @@ namespace Tech2019.DataAccessLayer.SeedData
                     byte actionCountToGenerate = (byte)(maxActionCount - db.Actions.Count());
                     byte productTraceToGenerate = (byte)(maxProductTraceCount - db.ProductTraces.Count());
                     ushort invoiceCountToGenerate = (ushort)(maxInvoiceCount - db.Invoices.Count());
+                    byte messageToGenerate = (byte)(maxMessageCount - db.Messages.Count());
 
                     GenerateCategoriesAndProducts(categoryCountToGenerate);
                     GenerateCustomers(customerCountToGenerate);
@@ -111,6 +113,7 @@ namespace Tech2019.DataAccessLayer.SeedData
                     GenerateProductTraces(productTraceToGenerate, createdActions);
                     GenerateInvoices(invoiceCountToGenerate);
                     GenerateInvoiceDetails();
+                    GenerateMessages(messageToGenerate);
 
                     await db.SaveChangesAsync();
                 }
@@ -292,7 +295,6 @@ namespace Tech2019.DataAccessLayer.SeedData
                 }
 
 
-
                 void GenerateCategoriesAndProducts(byte categoryCountToGenerate)
                 {
                     var faker = new Faker();
@@ -415,6 +417,31 @@ namespace Tech2019.DataAccessLayer.SeedData
                         };
                         AssignEntityDatesAndDataStatus(invoice);
                         db.Invoices.Add(invoice);
+                    }
+
+                    db.SaveChanges();
+                }
+
+                void GenerateMessages(int messageCountToGenerate)
+                {
+                    var faker = new Faker();
+
+                    for (int i = 0; i < messageCountToGenerate; i++)
+                    {
+                        var message = new Message
+                        {
+                            SenderName = EnsureMaxLength(faker.Name.FullName(), 50),
+                            SenderMail = EnsureMaxLength(faker.Internet.Email(), 100),
+                            MessageTitle = EnsureMaxLength(faker.Lorem.Sentence(5), 50),
+                            MessageContent = EnsureMaxLength(faker.Lorem.Paragraph(3), 500),
+                            CreatedDate = faker.Date.Past(1),
+                            ModifiedDate = faker.Random.Bool() ? faker.Date.Recent(30) : (DateTime?)null,
+                            DeletedDate = faker.Random.Bool(0.1f) ? faker.Date.Recent(7) : (DateTime?)null,
+                            DataStatus = faker.PickRandom<DataStatus>()
+                        };
+
+                        AssignEntityDatesAndDataStatus(message);
+                        db.Messages.Add(message);
                     }
 
                     db.SaveChanges();
