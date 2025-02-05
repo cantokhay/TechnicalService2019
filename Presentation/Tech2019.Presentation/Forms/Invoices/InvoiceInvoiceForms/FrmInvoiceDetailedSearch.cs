@@ -70,7 +70,6 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             grcInvoiceDetailList.DataSource = invoiceDetailList;
         }
 
-
         private void FillLookUpEditSerialChars()
         {
             var charList = Enumerable.Range('A', 26).Select(c => new

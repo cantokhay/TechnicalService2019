@@ -7,13 +7,13 @@ namespace Tech2019.DataAccessLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class ikinci : IMigrationMetadata
+    public sealed partial class fourthonlaptop : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ikinci));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(fourthonlaptop));
         
         string IMigrationMetadata.Id
         {
-            get { return "202501151921207_ikinci"; }
+            get { return "202502051008573_fourth-on-laptop"; }
         }
         
         string IMigrationMetadata.Source

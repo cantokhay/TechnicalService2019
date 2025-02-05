@@ -39,6 +39,7 @@
     <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Map.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -47,8 +48,11 @@
     <Reference Include="DevExpress.XtraCharts.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v20.1.Wizard, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Win, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraMap.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
@@ -228,11 +232,23 @@
     <Compile Include="Forms\Products\ProductStatisticForms\FrmProductStats.Designer.cs">
       <DependentUpon>FrmProductStats.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Tools\FrmGauges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\FrmGauges.Designer.cs">
+      <DependentUpon>FrmGauges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Tools\FrmCurrency.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Tools\FrmCurrency.Designer.cs">
       <DependentUpon>FrmCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tools\FrmMaps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tools\FrmMaps.Designer.cs">
+      <DependentUpon>FrmMaps.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tools\FrmNoteList.cs">
       <SubType>Form</SubType>
@@ -320,8 +336,14 @@
     <EmbeddedResource Include="Forms\Products\ProductStatisticForms\FrmProductStats.resx">
       <DependentUpon>FrmProductStats.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\FrmGauges.resx">
+      <DependentUpon>FrmGauges.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\FrmCurrency.resx">
       <DependentUpon>FrmCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tools\FrmMaps.resx">
+      <DependentUpon>FrmMaps.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tools\FrmNoteList.resx">
       <DependentUpon>FrmNoteList.cs</DependentUpon>

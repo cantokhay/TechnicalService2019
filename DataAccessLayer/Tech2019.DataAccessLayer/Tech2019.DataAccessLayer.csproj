@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractDAL\IAboutDal.cs" />
     <Compile Include="AbstractDAL\IActionDal.cs" />
     <Compile Include="AbstractDAL\IAdminDal.cs" />
     <Compile Include="AbstractDAL\ICategoryDal.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="AbstractDAL\IProductTraceDal.cs" />
     <Compile Include="AbstractDAL\ISaleDal.cs" />
     <Compile Include="Context\TechDBContext.cs" />
+    <Compile Include="EFConcreteDAL\EFAboutDal.cs" />
     <Compile Include="EFConcreteDAL\EFActionDal.cs" />
     <Compile Include="EFConcreteDAL\EFAdminDal.cs" />
     <Compile Include="EFConcreteDAL\EFCategoryDal.cs" />
@@ -87,17 +89,9 @@
     <Compile Include="EFConcreteDAL\EFProductDal.cs" />
     <Compile Include="EFConcreteDAL\EFProductTraceDal.cs" />
     <Compile Include="EFConcreteDAL\EFSaleDal.cs" />
-    <Compile Include="Migrations\202501151737401_birinci.cs" />
-    <Compile Include="Migrations\202501151737401_birinci.designer.cs">
-      <DependentUpon>202501151737401_birinci.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202501151921207_ikinci.cs" />
-    <Compile Include="Migrations\202501151921207_ikinci.designer.cs">
-      <DependentUpon>202501151921207_ikinci.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202501151928313_ucuncu.cs" />
-    <Compile Include="Migrations\202501151928313_ucuncu.designer.cs">
-      <DependentUpon>202501151928313_ucuncu.cs</DependentUpon>
+    <Compile Include="Migrations\202502051008573_fourth-on-laptop.cs" />
+    <Compile Include="Migrations\202502051008573_fourth-on-laptop.designer.cs">
+      <DependentUpon>202502051008573_fourth-on-laptop.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,14 +112,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202501151737401_birinci.resx">
-      <DependentUpon>202501151737401_birinci.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202501151921207_ikinci.resx">
-      <DependentUpon>202501151921207_ikinci.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202501151928313_ucuncu.resx">
-      <DependentUpon>202501151928313_ucuncu.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202502051008573_fourth-on-laptop.resx">
+      <DependentUpon>202502051008573_fourth-on-laptop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

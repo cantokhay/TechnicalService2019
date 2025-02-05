@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractServices\IAboutService.cs" />
     <Compile Include="AbstractServices\IActionService.cs" />
     <Compile Include="AbstractServices\IAdminService.cs" />
     <Compile Include="AbstractServices\ICategoryService.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="AbstractServices\ISaleService.cs" />
     <Compile Include="AbstractServices\IProductService.cs" />
     <Compile Include="AbstractServices\IProductTraceService.cs" />
+    <Compile Include="ConcreteManagers\AboutManager.cs" />
     <Compile Include="ConcreteManagers\ActionManager.cs" />
     <Compile Include="ConcreteManagers\AdminManager.cs" />
     <Compile Include="ConcreteManagers\CategoryManager.cs" />

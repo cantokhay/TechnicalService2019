@@ -73,27 +73,29 @@ namespace Tech2019.Presentation
             this.btnSaleList = new DevExpress.XtraBars.BarButtonItem();
             this.btnProductTraceList = new DevExpress.XtraBars.BarButtonItem();
             this.btnInvoiceList = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.btnGauges = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMaps = new DevExpress.XtraBars.BarButtonItem();
+            this.rbnHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rbnProducts = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rbnCustomers = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rbnEmployees = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage8 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rbnTools = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rbnInvoices = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage10 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPage11 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rbnReports = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rbnStatistics = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage7 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rbnContacts = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -151,20 +153,22 @@ namespace Tech2019.Presentation
             this.btnNewSale,
             this.btnSaleList,
             this.btnProductTraceList,
-            this.btnInvoiceList});
+            this.btnInvoiceList,
+            this.btnGauges,
+            this.btnMaps});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 46;
+            this.ribbonControl1.MaxItemId = 48;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1,
-            this.ribbonPage2,
-            this.ribbonPage3,
-            this.ribbonPage4,
-            this.ribbonPage8,
-            this.ribbonPage5,
-            this.ribbonPage10,
-            this.ribbonPage11,
-            this.ribbonPage7});
+            this.rbnHome,
+            this.rbnProducts,
+            this.rbnCustomers,
+            this.rbnEmployees,
+            this.rbnTools,
+            this.rbnInvoices,
+            this.rbnReports,
+            this.rbnStatistics,
+            this.rbnContacts});
             this.ribbonControl1.Size = new System.Drawing.Size(1370, 150);
             // 
             // btnCategoryListForm
@@ -508,20 +512,38 @@ namespace Tech2019.Presentation
             this.btnInvoiceList.Name = "btnInvoiceList";
             this.btnInvoiceList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInvoiceList_ItemClick);
             // 
-            // ribbonPage1
+            // btnGauges
             // 
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Home Page";
+            this.btnGauges.Caption = "Gauges";
+            this.btnGauges.Id = 46;
+            this.btnGauges.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGauges.ImageOptions.Image")));
+            this.btnGauges.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGauges.ImageOptions.LargeImage")));
+            this.btnGauges.Name = "btnGauges";
+            this.btnGauges.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGauges_ItemClick);
             // 
-            // ribbonPage2
+            // btnMaps
             // 
-            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.btnMaps.Caption = "Maps";
+            this.btnMaps.Id = 47;
+            this.btnMaps.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMaps.ImageOptions.Image")));
+            this.btnMaps.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMaps.ImageOptions.LargeImage")));
+            this.btnMaps.Name = "btnMaps";
+            this.btnMaps.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMaps_ItemClick);
+            // 
+            // rbnHome
+            // 
+            this.rbnHome.Name = "rbnHome";
+            this.rbnHome.Text = "Home Page";
+            // 
+            // rbnProducts
+            // 
+            this.rbnProducts.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2,
             this.ribbonPageGroup10,
             this.ribbonPageGroup11,
             this.ribbonPageGroup12});
-            this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "Products";
+            this.rbnProducts.Name = "rbnProducts";
+            this.rbnProducts.Text = "Products";
             // 
             // ribbonPageGroup2
             // 
@@ -553,13 +575,13 @@ namespace Tech2019.Presentation
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
             this.ribbonPageGroup12.Text = "Faultry";
             // 
-            // ribbonPage3
+            // rbnCustomers
             // 
-            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rbnCustomers.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3,
             this.ribbonPageGroup16});
-            this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "Customers";
+            this.rbnCustomers.Name = "rbnCustomers";
+            this.rbnCustomers.Text = "Customers";
             // 
             // ribbonPageGroup3
             // 
@@ -576,13 +598,13 @@ namespace Tech2019.Presentation
             this.ribbonPageGroup16.Name = "ribbonPageGroup16";
             this.ribbonPageGroup16.Text = "Sale";
             // 
-            // ribbonPage4
+            // rbnEmployees
             // 
-            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rbnEmployees.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup15,
             this.ribbonPageGroup4});
-            this.ribbonPage4.Name = "ribbonPage4";
-            this.ribbonPage4.Text = "Employees";
+            this.rbnEmployees.Name = "rbnEmployees";
+            this.rbnEmployees.Text = "Employees";
             // 
             // ribbonPageGroup15
             // 
@@ -598,34 +620,36 @@ namespace Tech2019.Presentation
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Employee";
             // 
-            // ribbonPage8
+            // rbnTools
             // 
-            this.ribbonPage8.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rbnTools.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup7});
-            this.ribbonPage8.Name = "ribbonPage8";
-            this.ribbonPage8.Text = "Tools";
+            this.rbnTools.Name = "rbnTools";
+            this.rbnTools.Text = "Tools";
             // 
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btnNoteList);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnNewNote);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnCalculator);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnMaps);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnCurrency);
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem30);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnWord);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnExcel);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnHelp);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnYoutube);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnGauges);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnHelp);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Helper Tool";
             // 
-            // ribbonPage5
+            // rbnInvoices
             // 
-            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rbnInvoices.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup5,
             this.ribbonPageGroup14});
-            this.ribbonPage5.Name = "ribbonPage5";
-            this.ribbonPage5.Text = "Invoices";
+            this.rbnInvoices.Name = "rbnInvoices";
+            this.rbnInvoices.Text = "Invoices";
             // 
             // ribbonPageGroup5
             // 
@@ -645,17 +669,17 @@ namespace Tech2019.Presentation
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
             this.ribbonPageGroup14.Text = "Invoice";
             // 
-            // ribbonPage10
+            // rbnReports
             // 
-            this.ribbonPage10.Name = "ribbonPage10";
-            this.ribbonPage10.Text = "Reports";
+            this.rbnReports.Name = "rbnReports";
+            this.rbnReports.Text = "Reports";
             // 
-            // ribbonPage11
+            // rbnStatistics
             // 
-            this.ribbonPage11.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rbnStatistics.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup9});
-            this.ribbonPage11.Name = "ribbonPage11";
-            this.ribbonPage11.Text = "Statistics";
+            this.rbnStatistics.Name = "rbnStatistics";
+            this.rbnStatistics.Text = "Statistics";
             // 
             // ribbonPageGroup9
             // 
@@ -663,12 +687,12 @@ namespace Tech2019.Presentation
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "ribbonPageGroup9";
             // 
-            // ribbonPage7
+            // rbnContacts
             // 
-            this.ribbonPage7.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rbnContacts.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup6});
-            this.ribbonPage7.Name = "ribbonPage7";
-            this.ribbonPage7.Text = "Contacts";
+            this.rbnContacts.Name = "rbnContacts";
+            this.rbnContacts.Text = "Contacts";
             // 
             // ribbonPageGroup6
             // 
@@ -720,25 +744,25 @@ namespace Tech2019.Presentation
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rbnHome;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rbnProducts;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rbnCustomers;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rbnEmployees;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rbnInvoices;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.BarButtonItem btnCategoryListForm;
         private DevExpress.XtraBars.BarButtonItem btnNewCategory;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage7;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rbnContacts;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage8;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rbnTools;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage10;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage11;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rbnReports;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rbnStatistics;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage9;
         private DevExpress.XtraBars.BarButtonItem btnProductListForm;
@@ -787,6 +811,8 @@ namespace Tech2019.Presentation
         private DevExpress.XtraBars.BarButtonItem btnProductTraceList;
         private DevExpress.XtraBars.Ribbon.GalleryDropDown galleryDropDown1;
         private DevExpress.XtraBars.BarButtonItem btnInvoiceList;
+        private DevExpress.XtraBars.BarButtonItem btnGauges;
+        private DevExpress.XtraBars.BarButtonItem btnMaps;
     }
 }
 

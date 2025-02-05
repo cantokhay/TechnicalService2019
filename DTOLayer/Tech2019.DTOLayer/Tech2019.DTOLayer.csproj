@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutDTOs\ResultAboutDTO.cs" />
     <Compile Include="ActionDTOs\ResultActionDTO.cs" />
     <Compile Include="ActionDTOs\ResultActionToChartDTO.cs" />
     <Compile Include="CategoryDTOs\ResultCategoryDTO.cs" />

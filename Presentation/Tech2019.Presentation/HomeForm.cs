@@ -16,8 +16,9 @@ namespace Tech2019.Presentation
         private readonly IProductTraceService _productTraceService;
         private readonly IInvoiceService _invoiceService;
         private readonly IInvoiceDetailService _invoiceDetailService;
+        private readonly IAboutService _aboutService;
 
-        public HomeForm(IProductService productService, ICategoryService categoryService, IDepartmentService departmentService, IEmployeeService employeeService, ICustomerService customerService, INoteService noteService, ISaleService saleService, IActionService actionService, IProductTraceService productTraceService, IInvoiceService invoiceService, IInvoiceDetailService invoiceDetailService)
+        public HomeForm(IProductService productService, ICategoryService categoryService, IDepartmentService departmentService, IEmployeeService employeeService, ICustomerService customerService, INoteService noteService, ISaleService saleService, IActionService actionService, IProductTraceService productTraceService, IInvoiceService invoiceService, IInvoiceDetailService invoiceDetailService, IAboutService aboutService)
         {
             InitializeComponent();
             _productService = productService;
@@ -31,6 +32,7 @@ namespace Tech2019.Presentation
             _productTraceService = productTraceService;
             _invoiceService = invoiceService;
             _invoiceDetailService = invoiceDetailService;
+            _aboutService = aboutService;
         }
 
         private void btnProductListForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -220,6 +222,20 @@ namespace Tech2019.Presentation
             Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceDetailedSearch frmInvoiceDetailedSearch = new Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceDetailedSearch(_invoiceDetailService);
             frmInvoiceDetailedSearch.MdiParent = this;
             frmInvoiceDetailedSearch.Show();
+        }
+
+        private void btnGauges_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.Tools.FrmGauges frmGauges = new Forms.Tools.FrmGauges();
+            frmGauges.MdiParent = this;
+            frmGauges.Show();
+        }
+
+        private void btnMaps_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.Tools.FrmMaps frmMaps = new Forms.Tools.FrmMaps();
+            frmMaps.MdiParent = this;
+            frmMaps.Show();
         }
     }
 }

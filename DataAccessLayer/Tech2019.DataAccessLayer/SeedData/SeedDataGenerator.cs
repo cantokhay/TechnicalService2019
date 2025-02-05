@@ -18,6 +18,8 @@ namespace Tech2019.DataAccessLayer.SeedData
             {
                 db.Database.Initialize(false);
 
+                var faker = new Faker();
+
                 #region Helper Data
                 var departmentNames = new[]
 {
@@ -79,6 +81,7 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                 byte maxCustomerCount = 40;
                 byte maxDepartmentCount = 6;
+                byte maxAboutCount = 1;
                 byte maxCategoryCount = 20;
                 byte maxNoteCount = 75;
                 ushort maxSaleCount = 150;
@@ -89,10 +92,11 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                 #endregion
 
-                if (db.Customers.Count() <= maxCustomerCount || db.Departments.Count() <= maxDepartmentCount || db.Categories.Count() <= maxCategoryCount || db.Notes.Count() <= maxNoteCount || db.Actions.Count() <= maxActionCount || db.Sales.Count() <= maxSaleCount || db.ProductTraces.Count() <= maxActionCount || db.Invoices.Count() <= maxInvoiceCount || db.Messages.Count() < maxMessageCount)
+                if (db.Customers.Count() <= maxCustomerCount || db.Departments.Count() <= maxDepartmentCount || db.Categories.Count() <= maxCategoryCount || db.Notes.Count() <= maxNoteCount || db.Actions.Count() <= maxActionCount || db.Sales.Count() <= maxSaleCount || db.ProductTraces.Count() <= maxActionCount || db.Invoices.Count() <= maxInvoiceCount || db.Messages.Count() < maxMessageCount || db.Abouts.Count() < maxAboutCount)
                 {
 
                     byte customerCountToGenerate = (byte)(maxCustomerCount - db.Customers.Count());
+                    byte aboutCountToGenerate = (byte)(maxAboutCount - db.Abouts.Count());
                     byte departmentCountToGenerate = (byte)(maxDepartmentCount - db.Departments.Count());
                     byte categoryCountToGenerate = (byte)(maxCategoryCount - db.Categories.Count());
                     byte noteCountToGenerate = (byte)(maxNoteCount - db.Notes.Count());
@@ -114,6 +118,7 @@ namespace Tech2019.DataAccessLayer.SeedData
                     GenerateInvoices(invoiceCountToGenerate);
                     GenerateInvoiceDetails();
                     GenerateMessages(messageToGenerate);
+                    GenerateAbouts(aboutCountToGenerate);
 
                     await db.SaveChangesAsync();
                 }
@@ -128,7 +133,6 @@ namespace Tech2019.DataAccessLayer.SeedData
                         return;
                     }
 
-                    var faker = new Faker();
                     var existingInvoices = db.Invoices.Select(i => i.InvoiceId).ToList();
                     var existingProducts = db.Products.Select(p => p.ProductId).ToList();
 
@@ -156,14 +160,11 @@ namespace Tech2019.DataAccessLayer.SeedData
                             db.InvoiceDetails.Add(invoiceDetail);
                         }
                     }
-
                     db.SaveChanges();
                 }
 
                 void GenerateProductTraces(byte productTraceToGenerate, List<EntityLayer.Concrete.Action> actions)
                 {
-                    var faker = new Faker();
-
                     foreach (var action in actions.Take(productTraceToGenerate))
                     {
                         if (!db.ProductTraces.Any(pt => pt.ProductSerialNumber == action.ProductSerialNumber))
@@ -184,7 +185,6 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                 void GenerateActions(ushort actionCountToGenerate, List<Sale> sales)
                 {
-                    var faker = new Faker();
                     var existingEmployees = db.Employees.Select(e => e.EmployeeId).ToList();
 
                     var selectedSales = sales.OrderBy(x => faker.Random.Number()).Take(actionCountToGenerate).ToList();
@@ -212,16 +212,11 @@ namespace Tech2019.DataAccessLayer.SeedData
                             db.Actions.Add(action);
                         }
                     }
-
                     db.SaveChanges();
                 }
 
                 void GenerateDepartmentsAndEmployees(byte departmentCountToGenerate)
                 {
-                    var faker = new Faker();
-
-
-
                     var existingDepartments = db.Departments.Select(d => d.DepartmentName).ToList();
                     var remainingDepartments = departmentNames.Except(existingDepartments).ToList();
 
@@ -256,14 +251,11 @@ namespace Tech2019.DataAccessLayer.SeedData
                             db.Employees.Add(employee);
                         }
                     }
-
                     db.SaveChanges();
                 }
 
                 void GenerateCustomers(byte customerCountToGenerate)
                 {
-                    var faker = new Faker();
-
                     var customerStatus = new[] { CustomerStatus.ActiveBuyer, CustomerStatus.PassiveAccount, CustomerStatus.DeletedAccount };
 
                     for (byte i = 0; i < customerCountToGenerate; i++)
@@ -290,15 +282,11 @@ namespace Tech2019.DataAccessLayer.SeedData
                         AssignEntityDatesAndDataStatus(customer);
                         db.Customers.Add(customer);
                     }
-
                     db.SaveChanges();
                 }
 
-
                 void GenerateCategoriesAndProducts(byte categoryCountToGenerate)
                 {
-                    var faker = new Faker();
-
                     var existingCategories = db.Categories.Select(c => c.CategoryName).ToList();
                     var remainingCategories = categoryProducts.Keys.Except(existingCategories).ToList();
                     var productStatus = new[] { ProductStatus.ActivelySold, ProductStatus.NotAvailableToPurchase, ProductStatus.NotInStock };
@@ -338,13 +326,11 @@ namespace Tech2019.DataAccessLayer.SeedData
                             }
                         }
                     }
-
                     db.SaveChanges();
                 }
 
                 void GenerateNotes(byte noteCountToGenerate)
                 {
-                    var faker = new Faker();
                     var existingNotes = db.Notes.Select(n => n.NoteTitle).ToList();
                     var noteStatus = new[] { NoteStatus.Read, NoteStatus.Unread };
                     for (byte i = 0; i < noteCountToGenerate; i++)
@@ -363,7 +349,6 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                 void GenerateSales(ushort saleCountToGenerate)
                 {
-                    var faker = new Faker();
                     var existingProducts = db.Products.Select(p => p.ProductId).ToList();
                     var existingCustomers = db.Customers.Select(c => c.CustomerId).ToList();
                     var existingEmployees = db.Employees.Select(e => e.EmployeeId).ToList();
@@ -393,8 +378,6 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                 void GenerateInvoices(ushort invoiceCountToGenerate)
                 {
-                    var faker = new Faker();
-
                     var existingCustomers = db.Customers.Select(x => x.CustomerId).ToList();
                     var existingEmployees = db.Employees.Select(x => x.EmployeeId).ToList();
                     var serialSequencePairs = GenerateSerialSequenceDictionary(invoiceCountToGenerate);
@@ -418,14 +401,11 @@ namespace Tech2019.DataAccessLayer.SeedData
                         AssignEntityDatesAndDataStatus(invoice);
                         db.Invoices.Add(invoice);
                     }
-
                     db.SaveChanges();
                 }
 
                 void GenerateMessages(int messageCountToGenerate)
                 {
-                    var faker = new Faker();
-
                     for (int i = 0; i < messageCountToGenerate; i++)
                     {
                         var message = new Message
@@ -443,9 +423,25 @@ namespace Tech2019.DataAccessLayer.SeedData
                         AssignEntityDatesAndDataStatus(message);
                         db.Messages.Add(message);
                     }
-
                     db.SaveChanges();
                 }
+
+                void GenerateAbouts(byte aboutCountToGenerate)
+                {
+                    for (int i = 0; i < aboutCountToGenerate; i++)
+                    {
+                        var about = new About
+                        {
+                            AboutDescription = EnsureMaxLength(faker.Lorem.Sentences(5), 500)
+                        };
+
+                        AssignEntityDatesAndDataStatus(about);
+                        db.Abouts.Add(about);
+                    }
+                    db.SaveChanges();
+                }
+
+                #endregion
 
                 #region Helper Methods
 
@@ -457,7 +453,6 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                 string GeneratePhoneNumber()
                 {
-                    var faker = new Faker();
                     var areaCode = (short)faker.Random.Number(100, 999);
                     var centralOfficeCode = (short)faker.Random.Number(100, 999);
                     var lineNumberPart1 = (short)faker.Random.Number(10, 99);
@@ -468,7 +463,6 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                 string GenerateAvatarUrl()
                 {
-                    var faker = new Faker();
                     var avatarUrls = new[]
                     {
                     "https://robohash.org/" + faker.Random.Number(1, 200) + ".png",
@@ -479,8 +473,6 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                 List<KeyValuePair<string, string>> GenerateSerialSequenceDictionary(ushort count)
                 {
-                    var faker = new Faker();
-
                     var serialSequencePairs = Enumerable.Range(0, count * 10)
                         .Select(_ =>
                         {
@@ -497,7 +489,6 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                 void AssignEntityDatesAndDataStatus<T>(T entity) where T : class, IGenericEntity
                 {
-                    var faker = new Faker();
                     var currentDate = DateTime.Now;
 
                     var dataStatus = new[] { DataStatus.Deleted, DataStatus.Active, DataStatus.Modified };
@@ -527,7 +518,6 @@ namespace Tech2019.DataAccessLayer.SeedData
 
                 #endregion
 
-                #endregion
             }
         }
     }

@@ -22,6 +22,7 @@ namespace Tech2019.DataAccessLayer.Context
         public DbSet<FaultDetail> FaultDetails { get; set; }
         public DbSet<Note> Notes { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<About> Abouts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -36,6 +37,7 @@ namespace Tech2019.DataAccessLayer.Context
             ConfigureAction(modelBuilder);
             ConfigureProductTrace(modelBuilder);
             ConfigureMessage(modelBuilder);
+            ConfigureAbout(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
         }
@@ -53,6 +55,17 @@ namespace Tech2019.DataAccessLayer.Context
             modelBuilder.Entity<Category>()
                 .Property(c => c.CategoryName)
                 .HasMaxLength(50)
+                .IsRequired();
+        }
+
+        private void ConfigureAbout(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<About>()
+                .HasKey(a => a.AboutId);
+
+            modelBuilder.Entity<About>()
+                .Property(a => a.AboutDescription)
+                .HasMaxLength(500)
                 .IsRequired();
         }
 
