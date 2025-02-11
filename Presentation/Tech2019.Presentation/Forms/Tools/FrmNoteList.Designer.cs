@@ -50,6 +50,8 @@ namespace Tech2019.Presentation.Forms.Tools
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numericChartRangeControlClient1 = new DevExpress.XtraEditors.NumericChartRangeControlClient();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtDueDate = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkNoteStatus.Properties)).BeginInit();
@@ -60,6 +62,7 @@ namespace Tech2019.Presentation.Forms.Tools
             ((System.ComponentModel.ISupportInitialize)(this.grcReadNotesList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwReadNotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChartRangeControlClient1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDueDate.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -74,7 +77,9 @@ namespace Tech2019.Presentation.Forms.Tools
             this.groupControl1.Controls.Add(this.txtNoteDescription);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.labelControl2);
+            this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl16);
+            this.groupControl1.Controls.Add(this.txtDueDate);
             this.groupControl1.Controls.Add(this.txtNoteTitle);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.txtNoteId);
@@ -166,7 +171,7 @@ namespace Tech2019.Presentation.Forms.Tools
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(84, 153);
+            this.labelControl16.Location = new System.Drawing.Point(84, 123);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(37, 13);
             this.labelControl16.TabIndex = 18;
@@ -174,7 +179,7 @@ namespace Tech2019.Presentation.Forms.Tools
             // 
             // txtNoteTitle
             // 
-            this.txtNoteTitle.Location = new System.Drawing.Point(123, 150);
+            this.txtNoteTitle.Location = new System.Drawing.Point(123, 120);
             this.txtNoteTitle.Name = "txtNoteTitle";
             this.txtNoteTitle.Size = new System.Drawing.Size(190, 20);
             this.txtNoteTitle.TabIndex = 2;
@@ -182,7 +187,7 @@ namespace Tech2019.Presentation.Forms.Tools
             // labelControl7
             // 
             this.labelControl7.Enabled = false;
-            this.labelControl7.Location = new System.Drawing.Point(70, 123);
+            this.labelControl7.Location = new System.Drawing.Point(70, 93);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(51, 13);
             this.labelControl7.TabIndex = 8;
@@ -191,7 +196,7 @@ namespace Tech2019.Presentation.Forms.Tools
             // txtNoteId
             // 
             this.txtNoteId.Enabled = false;
-            this.txtNoteId.Location = new System.Drawing.Point(123, 120);
+            this.txtNoteId.Location = new System.Drawing.Point(123, 90);
             this.txtNoteId.Name = "txtNoteId";
             this.txtNoteId.Size = new System.Drawing.Size(190, 20);
             this.txtNoteId.TabIndex = 1;
@@ -261,6 +266,23 @@ namespace Tech2019.Presentation.Forms.Tools
             this.label2.TabIndex = 30;
             this.label2.Text = "Read Notes";
             // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(62, 153);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(59, 13);
+            this.labelControl3.TabIndex = 18;
+            this.labelControl3.Text = "DUE DATE : ";
+            // 
+            // txtDueDate
+            // 
+            this.txtDueDate.Location = new System.Drawing.Point(123, 150);
+            this.txtDueDate.Name = "txtDueDate";
+            this.txtDueDate.Properties.Mask.EditMask = "d";
+            this.txtDueDate.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
+            this.txtDueDate.Size = new System.Drawing.Size(190, 20);
+            this.txtDueDate.TabIndex = 2;
+            // 
             // FrmNoteList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,6 +308,7 @@ namespace Tech2019.Presentation.Forms.Tools
             ((System.ComponentModel.ISupportInitialize)(this.grcReadNotesList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwReadNotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericChartRangeControlClient1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDueDate.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,6 +336,7 @@ namespace Tech2019.Presentation.Forms.Tools
         private DevExpress.XtraEditors.SimpleButton btnSave;
 
         #endregion
-
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit txtDueDate;
     }
 }

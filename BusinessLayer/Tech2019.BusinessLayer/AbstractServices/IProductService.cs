@@ -9,7 +9,8 @@ namespace Tech2019.BusinessLayer.AbstractServices
         List<ProductWithCategoryDTO> GetProductsWithCategories();
         int GetTotalProductCount();
         int GetTotalProductInStock();
-        int GetProductsOnCriticalStockLevel();
+        int GetProductsCountOnCriticalStockLevel();
+        List<ProductsOnCriticalStockLevelDTO> GetProductsOnCriticalStockLevel();
         string GetMaxStockedProduct();
         string GetMinStockedProduct();
         string GetMostExpensiveProduct();
@@ -21,5 +22,6 @@ namespace Tech2019.BusinessLayer.AbstractServices
         int GetProductCountWithCategoryNameGaming(); 
         List<ProductToSaleDTO> GetProductsToSale();
         List<ProductBrandDTO> GetProductBrandStats();
+        List<ProductCountByCategoryNameDTO> GetProductCountByCategoryName();
     }
 }

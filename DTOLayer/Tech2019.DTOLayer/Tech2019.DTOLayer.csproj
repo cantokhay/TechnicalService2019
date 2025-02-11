@@ -46,6 +46,7 @@
     <Compile Include="ActionDTOs\ResultActionToChartDTO.cs" />
     <Compile Include="CategoryDTOs\ResultCategoryDTO.cs" />
     <Compile Include="CustomerDTO\CustomerCityDTO.cs" />
+    <Compile Include="CustomerDTO\CustomerToHomePageDTO.cs" />
     <Compile Include="CustomerDTO\CustomerToInvoiceDTO.cs" />
     <Compile Include="CustomerDTO\CustomerToSaleDTO.cs" />
     <Compile Include="CustomerDTO\ResultCustomerDTO.cs" />
@@ -60,6 +61,8 @@
     <Compile Include="NoteDTOs\ResultReadNoteDTO.cs" />
     <Compile Include="NoteDTOs\ResultUnreadNoteDTO.cs" />
     <Compile Include="ProductDTOs\ProductBrandDTO.cs" />
+    <Compile Include="ProductDTOs\ProductCountByCategoryNameDTO.cs" />
+    <Compile Include="ProductDTOs\ProductsOnCriticalStockLevelDTO.cs" />
     <Compile Include="ProductDTOs\ProductToSaleDTO.cs" />
     <Compile Include="ProductDTOs\ProductWithCategoryDTO.cs" />
     <Compile Include="ProductTraceDTOs\ResultProductTraceDTO.cs" />

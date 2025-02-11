@@ -10,6 +10,7 @@ namespace Tech2019.EntityLayer.Concrete
         public string NoteTitle { get; set; }
         public string NoteDescription { get; set; }
         public NoteStatus NoteStatus { get; set; }
+        public DateTime DueDate { get; set; }
 
         public DateTime? CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }

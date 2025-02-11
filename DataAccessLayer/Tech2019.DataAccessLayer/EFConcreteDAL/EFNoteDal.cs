@@ -22,7 +22,8 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                 NoteId = x.NoteId,
                 NoteTitle = x.NoteTitle,
                 NoteDescription = x.NoteDescription,
-                NoteStatus = x.NoteStatus.ToString()
+                NoteStatus = x.NoteStatus.ToString(),
+                DueDate = x.DueDate
             }).ToList();
         }
 
@@ -33,7 +34,8 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                 NoteId = x.NoteId,
                 NoteTitle = x.NoteTitle,
                 NoteDescription = x.NoteDescription,
-                NoteStatus = x.NoteStatus.ToString()
+                NoteStatus = x.NoteStatus.ToString(),
+                DueDate = x.DueDate
             }).ToList();
         }
     }

@@ -164,6 +164,12 @@
     <Compile Include="Forms\Employees\EmployeeForms\FrmNewEmployee.Designer.cs">
       <DependentUpon>FrmNewEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HomePage\FrmHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HomePage\FrmHomePage.Designer.cs">
+      <DependentUpon>FrmHomePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Invoices\InvoiceInvoiceForms\FrmInvoiceDetailedSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Employees\EmployeeForms\FrmNewEmployee.resx">
       <DependentUpon>FrmNewEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HomePage\FrmHomePage.resx">
+      <DependentUpon>FrmHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Invoices\InvoiceInvoiceForms\FrmInvoiceDetailedSearch.resx">
       <DependentUpon>FrmInvoiceDetailedSearch.cs</DependentUpon>

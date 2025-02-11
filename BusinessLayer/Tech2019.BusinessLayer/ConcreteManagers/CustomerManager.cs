@@ -56,6 +56,11 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
             return _customerDal.TGetCustomers();
         }
 
+        public List<CustomerToHomePageDTO> GetCustomersToHomePage()
+        {
+            return _customerDal.TGetCustomersToHomePage();
+        }
+
         public List<CustomerToInvoiceDTO> GetCustomersToInvoice()
         {
             return _customerDal.TGetCustomersToInvoice();

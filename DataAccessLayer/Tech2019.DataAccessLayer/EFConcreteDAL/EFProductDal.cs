@@ -52,6 +52,31 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                 }).ToList();
         }
 
+        public List<ProductCountByCategoryNameDTO> TGetProductCountByCategoryName()
+        {
+            return _context.Products
+                .Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
+                .GroupBy(p => p.Category) 
+                .Select(g => new
+                {
+                    CategoryId = g.Key,
+                    ProductCount = g.Count()
+                })
+                .ToList()
+                .Join(_context.Categories
+                    .Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
+                    .ToList(),
+                    productGroup => productGroup.CategoryId,
+                    category => category.CategoryId,
+                    (productGroup, category) => new ProductCountByCategoryNameDTO
+                    {
+                        CategoryName = category.CategoryName,
+                        ProductCount = (byte)productGroup.ProductCount
+                    })
+                .OrderByDescending(x => x.ProductCount)
+                .ToList();
+        }
+
         public int TGetProductCountWithCategoryNameAppliance()
         {
             return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Where(x => x.CategoryNavigation.CategoryName == "Appliance").Sum(x => x.Stock);
@@ -67,9 +92,18 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
             return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Where(x => x.CategoryNavigation.CategoryName == "Gaming").Sum(x => x.Stock);
         }
 
-        public int TGetProductsOnCriticalStockLevel()
+        public int TGetProductsCountOnCriticalStockLevel()
         {
             return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Count(x => x.Stock <= 20);
+        }
+
+        public List<ProductsOnCriticalStockLevelDTO> TGetProductsOnCriticalStockLevel()
+        {
+            return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted && p.Stock <= 20).Select(x => new ProductsOnCriticalStockLevelDTO
+            {
+                ProductName = x.ProductName,
+                Stock = x.Stock
+            }).ToList();
         }
 
         public List<ProductToSaleDTO> TGetProductsToSale()

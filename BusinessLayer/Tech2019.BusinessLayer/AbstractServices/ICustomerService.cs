@@ -17,5 +17,6 @@ namespace Tech2019.BusinessLayer.AbstractServices
         List<CustomerToSaleDTO> GetCustomersToSale();
         List<CustomerToInvoiceDTO> GetCustomersToInvoice();
         List<CustomerCityDTO> FillChartWithCityDatas();
+        List<CustomerToHomePageDTO> GetCustomersToHomePage();
     }
 }

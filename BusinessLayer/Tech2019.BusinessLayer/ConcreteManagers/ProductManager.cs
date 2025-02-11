@@ -71,6 +71,11 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
             return _productDal.TGetProductBrandStats();
         }
 
+        public List<ProductCountByCategoryNameDTO> GetProductCountByCategoryName()
+        {
+            return _productDal.TGetProductCountByCategoryName();
+        }
+
         public int GetProductCountWithCategoryNameAppliance()
         {
             return _productDal.TGetProductCountWithCategoryNameAppliance();
@@ -86,7 +91,12 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
             return _productDal.TGetProductCountWithCategoryNameGaming();
         }
 
-        public int GetProductsOnCriticalStockLevel()
+        public int GetProductsCountOnCriticalStockLevel()
+        {
+            return _productDal.TGetProductsCountOnCriticalStockLevel();
+        }
+
+        public List<ProductsOnCriticalStockLevelDTO> GetProductsOnCriticalStockLevel()
         {
             return _productDal.TGetProductsOnCriticalStockLevel();
         }

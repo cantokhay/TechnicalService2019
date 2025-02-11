@@ -21,7 +21,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             lblTotalProductStat.Text = _productService.GetTotalProductCount().ToString();
             lblTotalCategoriesStat.Text = _categoryService.GetTotalCategoryCount().ToString();
             lblTotalStockStat.Text = _productService.GetTotalProductInStock().ToString();
-            lblCritLevelStat.Text = _productService.GetProductsOnCriticalStockLevel().ToString();
+            lblCritLevelStat.Text = _productService.GetProductsCountOnCriticalStockLevel().ToString();
             //lblTodaySoldProductsStat
             lblMaxStockProductStat.Text = _productService.GetMaxStockedProduct();
             lblMinStockProductStat.Text = _productService.GetMinStockedProduct();

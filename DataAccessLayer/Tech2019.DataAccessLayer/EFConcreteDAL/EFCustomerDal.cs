@@ -115,5 +115,16 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                 CustomerLastName = x.CustomerLastName
             }).ToList();
         }
+
+        public List<CustomerToHomePageDTO> TGetCustomersToHomePage()
+        {
+            return _context.Customers.Where(c => c.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => new CustomerToHomePageDTO
+            {
+                CustomerEmail = x.CustomerEmail,
+                CustomerFirstName = x.CustomerFirstName,
+                CustomerLastName = x.CustomerLastName,
+                CustomerPhoneNumber = x.CustomerPhoneNumber
+            }).ToList();
+        }
     }
 }

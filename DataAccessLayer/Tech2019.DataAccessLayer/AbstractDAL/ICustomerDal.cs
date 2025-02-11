@@ -17,5 +17,6 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
         List<CustomerCityDTO> TFillChartWithCityDatas();
         List<CustomerToSaleDTO> TGetCustomersToSale();
         List<CustomerToInvoiceDTO> TGetCustomersToInvoice();
+        List<CustomerToHomePageDTO> TGetCustomersToHomePage();
     }
 }

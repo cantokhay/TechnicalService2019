@@ -81,6 +81,7 @@ namespace Tech2019.Presentation.Forms.Tools
             txtNoteId.Text = gvwReadNotes.GetFocusedRowCellValue("NoteId")?.ToString();
             txtNoteTitle.Text = gvwReadNotes.GetFocusedRowCellValue("NoteTitle")?.ToString();
             txtNoteDescription.Text = gvwReadNotes.GetFocusedRowCellValue("NoteDescription")?.ToString();
+            txtDueDate.Text = gvwReadNotes.GetFocusedRowCellValue("DueDate")?.ToString();
             chkNoteStatus.CheckState = gvwReadNotes.GetFocusedRowCellValue("NoteStatus")?.ToString() == "Read"
                 ? CheckState.Checked
                 : CheckState.Unchecked;
@@ -91,6 +92,7 @@ namespace Tech2019.Presentation.Forms.Tools
             txtNoteId.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteId")?.ToString();
             txtNoteTitle.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteTitle")?.ToString();
             txtNoteDescription.Text = gvwUnreadNotes.GetFocusedRowCellValue("NoteDescription")?.ToString();
+            txtDueDate.Text = gvwReadNotes.GetFocusedRowCellValue("DueDate")?.ToString();
             chkNoteStatus.CheckState = gvwUnreadNotes.GetFocusedRowCellValue("NoteStatus")?.ToString() == "Read"
                 ? CheckState.Checked
                 : CheckState.Unchecked;
@@ -109,6 +111,7 @@ namespace Tech2019.Presentation.Forms.Tools
             note.NoteTitle = txtNoteTitle.Text;
             note.NoteDescription = txtNoteDescription.Text;
             note.NoteStatus = chkNoteStatus.CheckState == CheckState.Checked ? NoteStatus.Read : NoteStatus.Unread;
+            note.DueDate = DateTime.Parse(txtDueDate.Text);
         }
 
         private void ClearNoteInfo()
@@ -116,6 +119,7 @@ namespace Tech2019.Presentation.Forms.Tools
             txtNoteId.Text = string.Empty;
             txtNoteTitle.Text = string.Empty;
             txtNoteDescription.Text = string.Empty;
+            txtDueDate.Text = string.Empty;
             chkNoteStatus.CheckState = CheckState.Unchecked;
         }
 
@@ -124,6 +128,11 @@ namespace Tech2019.Presentation.Forms.Tools
             if (string.IsNullOrWhiteSpace(txtNoteTitle.Text))
             {
                 MessageBox.Show("Note title cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtDueDate.Text) || !DateTime.TryParse(txtDueDate.Text, out _))
+            {
+                MessageBox.Show("Please provide a valid date in dd-MM-yyyy format.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (string.IsNullOrWhiteSpace(txtNoteDescription.Text))

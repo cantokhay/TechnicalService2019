@@ -9,7 +9,7 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
         List<ProductWithCategoryDTO> TGetProductsWithCategories();
         int TGetTotalProductCount();
         int TGetTotalProductInStock();
-        int TGetProductsOnCriticalStockLevel();
+        int TGetProductsCountOnCriticalStockLevel();
         string TGetMaxStockedProduct();
         string TGetMinStockedProduct();
         string TGetMostExpensiveProduct();
@@ -21,5 +21,7 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
         int TGetProductCountWithCategoryNameGaming();
         List<ProductBrandDTO> TGetProductBrandStats();
         List<ProductToSaleDTO> TGetProductsToSale();
+        List<ProductsOnCriticalStockLevelDTO> TGetProductsOnCriticalStockLevel();
+        List<ProductCountByCategoryNameDTO> TGetProductCountByCategoryName();
     }
 }

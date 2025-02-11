@@ -339,7 +339,8 @@ namespace Tech2019.DataAccessLayer.SeedData
                         {
                             NoteTitle = EnsureMaxLength(faker.Lorem.Word(), 50),
                             NoteDescription = EnsureMaxLength(faker.Lorem.Sentences(2, "\n"), 500),
-                            NoteStatus = faker.PickRandom(noteStatus)
+                            NoteStatus = faker.PickRandom(noteStatus),
+                            DueDate = faker.Date.Between(DateTime.Now, DateTime.Now.AddDays(5))
                         };
                         AssignEntityDatesAndDataStatus(note);
                         db.Notes.Add(note);

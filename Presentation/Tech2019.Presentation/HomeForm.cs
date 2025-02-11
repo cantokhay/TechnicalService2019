@@ -244,5 +244,19 @@ namespace Tech2019.Presentation
             //frmReports.MdiParent = this;
             frmReports.Show();
         }
+
+        private void btnHomePage_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.HomePage.FrmHomePage frmHomePage = new Forms.HomePage.FrmHomePage(_productService, _customerService);
+            frmHomePage.MdiParent = this;
+            frmHomePage.Show();
+        }
+
+        private void HomeForm_Load(object sender, System.EventArgs e)
+        {
+            Forms.HomePage.FrmHomePage frmHomePage = new Forms.HomePage.FrmHomePage(_productService, _customerService);
+            frmHomePage.MdiParent = this;
+            frmHomePage.Show();
+        }
     }
 }

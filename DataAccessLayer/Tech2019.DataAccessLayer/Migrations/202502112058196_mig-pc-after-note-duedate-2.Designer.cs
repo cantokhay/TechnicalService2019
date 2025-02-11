@@ -7,13 +7,13 @@ namespace Tech2019.DataAccessLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class fourthonlaptop : IMigrationMetadata
+    public sealed partial class migpcafternoteduedate2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fourthonlaptop));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(migpcafternoteduedate2));
         
         string IMigrationMetadata.Id
         {
-            get { return "202502051008573_fourth-on-laptop"; }
+            get { return "202502112058196_mig-pc-after-note-duedate-2"; }
         }
         
         string IMigrationMetadata.Source

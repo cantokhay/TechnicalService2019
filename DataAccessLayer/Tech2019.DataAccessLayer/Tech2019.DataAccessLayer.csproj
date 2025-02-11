@@ -89,9 +89,9 @@
     <Compile Include="EFConcreteDAL\EFProductDal.cs" />
     <Compile Include="EFConcreteDAL\EFProductTraceDal.cs" />
     <Compile Include="EFConcreteDAL\EFSaleDal.cs" />
-    <Compile Include="Migrations\202502051008573_fourth-on-laptop.cs" />
-    <Compile Include="Migrations\202502051008573_fourth-on-laptop.designer.cs">
-      <DependentUpon>202502051008573_fourth-on-laptop.cs</DependentUpon>
+    <Compile Include="Migrations\202502112058196_mig-pc-after-note-duedate-2.cs" />
+    <Compile Include="Migrations\202502112058196_mig-pc-after-note-duedate-2.designer.cs">
+      <DependentUpon>202502112058196_mig-pc-after-note-duedate-2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,8 +112,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202502051008573_fourth-on-laptop.resx">
-      <DependentUpon>202502051008573_fourth-on-laptop.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202502112058196_mig-pc-after-note-duedate-2.resx">
+      <DependentUpon>202502112058196_mig-pc-after-note-duedate-2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
