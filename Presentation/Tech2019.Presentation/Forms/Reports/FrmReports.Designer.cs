@@ -30,14 +30,24 @@ namespace Tech2019.Presentation.Forms.Reports
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener1 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
-            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener2 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
-            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener3 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
-            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener4 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
-            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener5 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
-            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener6 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
-            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener7 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
-            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener8 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
             DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
@@ -53,18 +63,6 @@ namespace Tech2019.Presentation.Forms.Reports
             DevExpress.Utils.SuperToolTip superToolTip11 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem11 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem11 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
             DevExpress.Utils.SuperToolTip superToolTip12 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem12 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem12 = new DevExpress.Utils.ToolTipItem();
@@ -488,12 +486,6 @@ namespace Tech2019.Presentation.Forms.Reports
             DevExpress.Utils.SuperToolTip superToolTip152 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem152 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem152 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
             DevExpress.Utils.SuperToolTip superToolTip153 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem153 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem153 = new DevExpress.Utils.ToolTipItem();
@@ -645,19 +637,28 @@ namespace Tech2019.Presentation.Forms.Reports
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem202 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem202 = new DevExpress.Utils.ToolTipItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReports));
-            this.reportDesigner1 = new DevExpress.XtraReports.UserDesigner.XRDesignMdiController(this.components);
+            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener1 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
+            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener2 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
+            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener3 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
+            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener4 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
+            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener5 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
+            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener6 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
+            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener7 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
+            DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener8 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
             this.xrDesignRibbonController1 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonController(this.components);
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.commandBarItem6 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
+            this.commandBarItem9 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
+            this.commandBarItem7 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
+            this.commandBarItem8 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
+            this.commandBarItem127 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
+            this.commandBarItem128 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem1 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem2 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem3 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem4 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem5 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
-            this.commandBarItem6 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
-            this.commandBarItem7 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
-            this.commandBarItem8 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
-            this.commandBarItem9 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem10 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem11 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem12 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
@@ -665,10 +666,10 @@ namespace Tech2019.Presentation.Forms.Reports
             this.commandBarItem14 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem15 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem16 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
-            this.recentlyUsedItemsComboBox1 = new DevExpress.XtraReports.UserDesigner.RecentlyUsedItemsComboBox();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
-            this.designRepositoryItemComboBox1 = new DevExpress.XtraReports.UserDesigner.DesignRepositoryItemComboBox();
+            this.recentlyUsedItemsComboBox1 = new DevExpress.XtraReports.UserDesigner.RecentlyUsedItemsComboBox();
             this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
+            this.designRepositoryItemComboBox1 = new DevExpress.XtraReports.UserDesigner.DesignRepositoryItemComboBox();
             this.barDockPanelsListItem1 = new DevExpress.XtraReports.UserDesigner.BarDockPanelsListItem();
             this.commandBarItem17 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem18 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
@@ -732,8 +733,8 @@ namespace Tech2019.Presentation.Forms.Reports
             this.commandBarItem70 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem71 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem72 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
-            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.commandBarEditItem1 = new DevExpress.XtraReports.UserDesigner.CommandBarEditItem();
+            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.commandBarCheckItem3 = new DevExpress.XtraReports.UserDesigner.CommandBarCheckItem();
             this.commandBarItem73 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem74 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
@@ -745,20 +746,20 @@ namespace Tech2019.Presentation.Forms.Reports
             this.commandGalleryBarItem4 = new DevExpress.XtraReports.UserDesigner.CommandGalleryBarItem();
             this.commandGalleryBarItem5 = new DevExpress.XtraReports.UserDesigner.CommandGalleryBarItem();
             this.commandGalleryBarItem6 = new DevExpress.XtraReports.UserDesigner.CommandGalleryBarItem();
-            this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.commandBarEditItem2 = new DevExpress.XtraReports.UserDesigner.CommandBarEditItem();
-            this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.commandBarEditItem3 = new DevExpress.XtraReports.UserDesigner.CommandBarEditItem();
-            this.repositoryItemSpinEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.commandBarEditItem4 = new DevExpress.XtraReports.UserDesigner.CommandBarEditItem();
-            this.repositoryItemSpinEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.repositoryItemSpinEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.commandBarEditItem5 = new DevExpress.XtraReports.UserDesigner.CommandBarEditItem();
-            this.repositoryItemImageComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
+            this.repositoryItemSpinEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.commandBarEditItem6 = new DevExpress.XtraReports.UserDesigner.CommandBarEditItem();
-            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.repositoryItemImageComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.commandBarEditItem7 = new DevExpress.XtraReports.UserDesigner.CommandBarEditItem();
-            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.commandBarEditItem8 = new DevExpress.XtraReports.UserDesigner.CommandBarEditItem();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.commandBarItem77 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem78 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem79 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
@@ -815,89 +816,20 @@ namespace Tech2019.Presentation.Forms.Reports
             this.commandBarItem124 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem125 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
             this.commandBarItem126 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
-            this.commandBarItem127 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
-            this.commandBarItem128 = new DevExpress.XtraReports.UserDesigner.CommandBarItem();
-            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
-            this.ribbonPage1 = new DevExpress.XtraReports.UserDesigner.XRHomeRibbonPage();
-            this.xrDesignRibbonPageGroup1 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup2 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup3 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup4 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
             this.xrDesignBarButtonGroup1 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
             this.xrDesignBarButtonGroup2 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
             this.xrDesignBarButtonGroup3 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
-            this.xrDesignRibbonPageGroup5 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
             this.xrDesignBarButtonGroup4 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
             this.xrDesignBarButtonGroup5 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
-            this.xrDesignRibbonPageGroup6 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
             this.xrDesignBarButtonGroup6 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
             this.xrDesignBarButtonGroup7 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
             this.xrDesignBarButtonGroup8 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
-            this.xrDesignRibbonPageGroup7 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.ribbonPage2 = new DevExpress.XtraReports.UserDesigner.XRLayoutRibbonPage();
-            this.xrDesignRibbonPageGroup8 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
             this.xrDesignBarButtonGroup9 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
             this.xrDesignBarButtonGroup10 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
-            this.xrDesignRibbonPageGroup9 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
             this.xrDesignBarButtonGroup11 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
             this.xrDesignBarButtonGroup12 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
             this.xrDesignBarButtonGroup13 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
             this.xrDesignBarButtonGroup14 = new DevExpress.XtraReports.UserDesigner.XRDesignBarButtonGroup();
-            this.xrDesignRibbonPageGroup10 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup11 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.ribbonPage3 = new DevExpress.XtraReports.UserDesigner.XRPageRibbonPage();
-            this.xrDesignRibbonPageGroup12 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup13 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.ribbonPage4 = new DevExpress.XtraReports.UserDesigner.XRViewRibbonPage();
-            this.xrDesignRibbonPageGroup14 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup15 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup16 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup17 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup18 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.ribbonPage5 = new DevExpress.XtraReports.UserDesigner.XRScriptsRibbonPage();
-            this.xrDesignRibbonPageGroup19 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.ribbonPage6 = new DevExpress.XtraReports.UserDesigner.XRCharacterCombDesignContextRibbonPage();
-            this.ribbonPageCategory1 = new DevExpress.XtraReports.UserDesigner.XRCharacterCombRibbonPageCategory();
-            this.xrDesignRibbonPageGroup20 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.ribbonPageCategory2 = new DevExpress.XtraReports.UserDesigner.XRTableRibbonPageCategory();
-            this.ribbonPage7 = new DevExpress.XtraReports.UserDesigner.XRTableDesignContextRibbonPage();
-            this.xrDesignRibbonPageGroup21 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup22 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup23 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup24 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup25 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.ribbonPageCategory3 = new DevExpress.XtraReports.UserDesigner.XRChartRibbonPageCategory();
-            this.ribbonPage8 = new DevExpress.XtraReports.UserDesigner.XRChartDesignContextRibbonPage();
-            this.xrDesignRibbonPageGroup26 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup27 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup28 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup29 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup30 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.ribbonPageCategory4 = new DevExpress.XtraReports.UserDesigner.XRPivotGridRibbonPageCategory();
-            this.ribbonPage9 = new DevExpress.XtraReports.UserDesigner.XRPivotGridDesignContextRibbonPage();
-            this.xrDesignRibbonPageGroup31 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup32 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup33 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup34 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.ribbonPageCategory5 = new DevExpress.XtraReports.UserDesigner.XRBarCodeRibbonPageCategory();
-            this.ribbonPage10 = new DevExpress.XtraReports.UserDesigner.XRBarcodeDesignContextRibbonPage();
-            this.xrDesignRibbonPageGroup35 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup36 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.ribbonPage11 = new DevExpress.XtraReports.UserDesigner.XRGaugeDesignContextRibbonPage();
-            this.ribbonPageCategory6 = new DevExpress.XtraReports.UserDesigner.XRGaugeRibbonPageCategory();
-            this.xrDesignRibbonPageGroup37 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup38 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.ribbonPage12 = new DevExpress.XtraReports.UserDesigner.XRSparklineDesignContextRibbonPage();
-            this.ribbonPageCategory7 = new DevExpress.XtraReports.UserDesigner.XRSparklineRibbonPageCategory();
-            this.xrDesignRibbonPageGroup39 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup40 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.ribbonPage13 = new DevExpress.XtraReports.UserDesigner.XRShapeDesignContextRibbonPage();
-            this.ribbonPageCategory8 = new DevExpress.XtraReports.UserDesigner.XRShapeRibbonPageCategory();
-            this.xrDesignRibbonPageGroup41 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.ribbonPage14 = new DevExpress.XtraReports.UserDesigner.XRLabelTextContextRibbonPage();
-            this.ribbonPageCategory9 = new DevExpress.XtraReports.UserDesigner.XRLabelRibbonPageCategory();
-            this.xrDesignRibbonPageGroup42 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
-            this.xrDesignRibbonPageGroup43 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
             this.printPreviewBarItem1 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem3 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
@@ -948,12 +880,78 @@ namespace Tech2019.Presentation.Forms.Reports
             this.printPreviewBarItem50 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewBarItem51 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewStaticItem1 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
-            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
             this.progressBarEditItem1 = new DevExpress.XtraPrinting.Preview.ProgressBarEditItem();
+            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
             this.printPreviewBarItem52 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
             this.printPreviewStaticItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
-            this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
             this.zoomTrackBarEditItem1 = new DevExpress.XtraPrinting.Preview.ZoomTrackBarEditItem();
+            this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
+            this.ribbonPageCategory1 = new DevExpress.XtraReports.UserDesigner.XRCharacterCombRibbonPageCategory();
+            this.ribbonPage6 = new DevExpress.XtraReports.UserDesigner.XRCharacterCombDesignContextRibbonPage();
+            this.xrDesignRibbonPageGroup20 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.ribbonPageCategory2 = new DevExpress.XtraReports.UserDesigner.XRTableRibbonPageCategory();
+            this.ribbonPage7 = new DevExpress.XtraReports.UserDesigner.XRTableDesignContextRibbonPage();
+            this.xrDesignRibbonPageGroup21 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup22 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup23 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup24 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup25 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.ribbonPageCategory3 = new DevExpress.XtraReports.UserDesigner.XRChartRibbonPageCategory();
+            this.ribbonPage8 = new DevExpress.XtraReports.UserDesigner.XRChartDesignContextRibbonPage();
+            this.xrDesignRibbonPageGroup26 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup27 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup28 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup29 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup30 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.ribbonPageCategory4 = new DevExpress.XtraReports.UserDesigner.XRPivotGridRibbonPageCategory();
+            this.ribbonPage9 = new DevExpress.XtraReports.UserDesigner.XRPivotGridDesignContextRibbonPage();
+            this.xrDesignRibbonPageGroup31 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup32 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup33 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup34 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.ribbonPageCategory5 = new DevExpress.XtraReports.UserDesigner.XRBarCodeRibbonPageCategory();
+            this.ribbonPage10 = new DevExpress.XtraReports.UserDesigner.XRBarcodeDesignContextRibbonPage();
+            this.xrDesignRibbonPageGroup35 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup36 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.ribbonPageCategory6 = new DevExpress.XtraReports.UserDesigner.XRGaugeRibbonPageCategory();
+            this.ribbonPage11 = new DevExpress.XtraReports.UserDesigner.XRGaugeDesignContextRibbonPage();
+            this.xrDesignRibbonPageGroup37 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup38 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.ribbonPageCategory7 = new DevExpress.XtraReports.UserDesigner.XRSparklineRibbonPageCategory();
+            this.ribbonPage12 = new DevExpress.XtraReports.UserDesigner.XRSparklineDesignContextRibbonPage();
+            this.xrDesignRibbonPageGroup39 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup40 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.ribbonPageCategory8 = new DevExpress.XtraReports.UserDesigner.XRShapeRibbonPageCategory();
+            this.ribbonPage13 = new DevExpress.XtraReports.UserDesigner.XRShapeDesignContextRibbonPage();
+            this.xrDesignRibbonPageGroup41 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.ribbonPageCategory9 = new DevExpress.XtraReports.UserDesigner.XRLabelRibbonPageCategory();
+            this.ribbonPage14 = new DevExpress.XtraReports.UserDesigner.XRLabelTextContextRibbonPage();
+            this.xrDesignRibbonPageGroup42 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup43 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.ribbonPage1 = new DevExpress.XtraReports.UserDesigner.XRHomeRibbonPage();
+            this.xrDesignRibbonPageGroup1 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup2 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup3 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup4 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup5 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup6 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup7 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.ribbonPage2 = new DevExpress.XtraReports.UserDesigner.XRLayoutRibbonPage();
+            this.xrDesignRibbonPageGroup8 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup9 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup10 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup11 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.ribbonPage3 = new DevExpress.XtraReports.UserDesigner.XRPageRibbonPage();
+            this.xrDesignRibbonPageGroup12 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup13 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.ribbonPage4 = new DevExpress.XtraReports.UserDesigner.XRViewRibbonPage();
+            this.xrDesignRibbonPageGroup14 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup15 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup16 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup17 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.xrDesignRibbonPageGroup18 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
+            this.ribbonPage5 = new DevExpress.XtraReports.UserDesigner.XRScriptsRibbonPage();
+            this.xrDesignRibbonPageGroup19 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroup();
             this.ribbonPage15 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPage();
             this.printPreviewRibbonPageGroup1 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup2 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
@@ -963,26 +961,28 @@ namespace Tech2019.Presentation.Forms.Reports
             this.printPreviewRibbonPageGroup6 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup7 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup8 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xrDesignDockManager1 = new DevExpress.XtraReports.UserDesigner.XRDesignDockManager(this.components);
-            this.fieldListDockPanel1 = new DevExpress.XtraReports.UserDesigner.FieldListDockPanel();
-            this.fieldListDockPanel1_Container = new DevExpress.XtraReports.UserDesigner.DesignControlContainer();
-            this.propertyGridDockPanel1 = new DevExpress.XtraReports.UserDesigner.PropertyGridDockPanel();
-            this.propertyGridDockPanel1_Container = new DevExpress.XtraReports.UserDesigner.DesignControlContainer();
+            this.panelContainer1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.panelContainer2 = new DevExpress.XtraBars.Docking.DockPanel();
             this.reportExplorerDockPanel1 = new DevExpress.XtraReports.UserDesigner.ReportExplorerDockPanel();
             this.reportExplorerDockPanel1_Container = new DevExpress.XtraReports.UserDesigner.DesignControlContainer();
+            this.fieldListDockPanel1 = new DevExpress.XtraReports.UserDesigner.FieldListDockPanel();
+            this.fieldListDockPanel1_Container = new DevExpress.XtraReports.UserDesigner.DesignControlContainer();
+            this.panelContainer3 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.propertyGridDockPanel1 = new DevExpress.XtraReports.UserDesigner.PropertyGridDockPanel();
+            this.propertyGridDockPanel1_Container = new DevExpress.XtraReports.UserDesigner.DesignControlContainer();
             this.reportGalleryDockPanel1 = new DevExpress.XtraReports.UserDesigner.ReportGalleryDockPanel();
             this.reportGalleryDockPanel1_Container = new DevExpress.XtraReports.UserDesigner.DesignControlContainer();
+            this.panelContainer4 = new DevExpress.XtraBars.Docking.DockPanel();
             this.groupAndSortDockPanel1 = new DevExpress.XtraReports.UserDesigner.GroupAndSortDockPanel();
             this.groupAndSortDockPanel1_Container = new DevExpress.XtraReports.UserDesigner.DesignControlContainer();
             this.errorListDockPanel1 = new DevExpress.XtraReports.UserDesigner.ErrorListDockPanel();
             this.errorListDockPanel1_Container = new DevExpress.XtraReports.UserDesigner.DesignControlContainer();
-            this.panelContainer1 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.panelContainer2 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.panelContainer3 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.panelContainer4 = new DevExpress.XtraBars.Docking.DockPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.reportDesigner1)).BeginInit();
+            this.reportDesigner1 = new DevExpress.XtraReports.UserDesigner.XRDesignMdiController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignRibbonController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentlyUsedItemsComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
@@ -993,43 +993,21 @@ namespace Tech2019.Presentation.Forms.Reports
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignDockManager1)).BeginInit();
-            this.fieldListDockPanel1.SuspendLayout();
-            this.propertyGridDockPanel1.SuspendLayout();
-            this.reportExplorerDockPanel1.SuspendLayout();
-            this.reportGalleryDockPanel1.SuspendLayout();
-            this.groupAndSortDockPanel1.SuspendLayout();
-            this.errorListDockPanel1.SuspendLayout();
             this.panelContainer1.SuspendLayout();
             this.panelContainer2.SuspendLayout();
+            this.reportExplorerDockPanel1.SuspendLayout();
+            this.fieldListDockPanel1.SuspendLayout();
             this.panelContainer3.SuspendLayout();
+            this.propertyGridDockPanel1.SuspendLayout();
+            this.reportGalleryDockPanel1.SuspendLayout();
             this.panelContainer4.SuspendLayout();
+            this.groupAndSortDockPanel1.SuspendLayout();
+            this.errorListDockPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reportDesigner1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportDesigner1
-            // 
-            this.reportDesigner1.ContainerControl = null;
-            xrDesignPanelListener1.DesignControl = this.xrDesignRibbonController1;
-            xrDesignPanelListener2.DesignControl = this.xrDesignDockManager1;
-            xrDesignPanelListener3.DesignControl = this.fieldListDockPanel1;
-            xrDesignPanelListener4.DesignControl = this.propertyGridDockPanel1;
-            xrDesignPanelListener5.DesignControl = this.reportExplorerDockPanel1;
-            xrDesignPanelListener6.DesignControl = this.reportGalleryDockPanel1;
-            xrDesignPanelListener7.DesignControl = this.groupAndSortDockPanel1;
-            xrDesignPanelListener8.DesignControl = this.errorListDockPanel1;
-            this.reportDesigner1.DesignPanelListeners.AddRange(new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener[] {
-            xrDesignPanelListener1,
-            xrDesignPanelListener2,
-            xrDesignPanelListener3,
-            xrDesignPanelListener4,
-            xrDesignPanelListener5,
-            xrDesignPanelListener6,
-            xrDesignPanelListener7,
-            xrDesignPanelListener8});
-            this.reportDesigner1.Form = this;
             // 
             // xrDesignRibbonController1
             // 
@@ -1315,17 +1293,118 @@ namespace Tech2019.Presentation.Forms.Reports
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
             // 
-            // ribbonStatusBar1
+            // applicationMenu1
             // 
-            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem1);
-            this.ribbonStatusBar1.ItemLinks.Add(this.progressBarEditItem1);
-            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewBarItem52);
-            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem2);
-            this.ribbonStatusBar1.ItemLinks.Add(this.zoomTrackBarEditItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 514);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1370, 27);
+            this.applicationMenu1.ItemLinks.Add(this.commandBarItem6);
+            this.applicationMenu1.ItemLinks.Add(this.commandBarItem9);
+            this.applicationMenu1.ItemLinks.Add(this.commandBarItem7);
+            this.applicationMenu1.ItemLinks.Add(this.commandBarItem8);
+            this.applicationMenu1.ItemLinks.Add(this.commandBarItem127, true);
+            this.applicationMenu1.ItemLinks.Add(this.commandBarItem128, true);
+            this.applicationMenu1.MenuDrawMode = DevExpress.XtraBars.MenuDrawMode.LargeImagesText;
+            this.applicationMenu1.Name = "applicationMenu1";
+            this.applicationMenu1.Ribbon = this.ribbonControl1;
+            // 
+            // commandBarItem6
+            // 
+            this.commandBarItem6.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.commandBarItem6.Caption = "New Report";
+            this.commandBarItem6.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.NewReport;
+            this.commandBarItem6.Enabled = false;
+            this.commandBarItem6.Id = 6;
+            this.commandBarItem6.Name = "commandBarItem6";
+            superToolTip1.FixedTooltipWidth = true;
+            toolTipTitleItem1.Text = "New Blank Report";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Create a new blank report.";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            superToolTip1.MaxWidth = 210;
+            this.commandBarItem6.SuperTip = superToolTip1;
+            // 
+            // commandBarItem9
+            // 
+            this.commandBarItem9.Caption = "Open...";
+            this.commandBarItem9.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.OpenFile;
+            this.commandBarItem9.Enabled = false;
+            this.commandBarItem9.Id = 9;
+            this.commandBarItem9.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O));
+            this.commandBarItem9.Name = "commandBarItem9";
+            superToolTip2.FixedTooltipWidth = true;
+            toolTipTitleItem2.Text = "Open Report (Ctrl+O)";
+            toolTipItem2.LeftIndent = 6;
+            toolTipItem2.Text = "Open a report.";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            superToolTip2.Items.Add(toolTipItem2);
+            superToolTip2.MaxWidth = 210;
+            this.commandBarItem9.SuperTip = superToolTip2;
+            // 
+            // commandBarItem7
+            // 
+            this.commandBarItem7.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.commandBarItem7.Caption = "Save";
+            this.commandBarItem7.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.SaveFile;
+            this.commandBarItem7.Enabled = false;
+            this.commandBarItem7.Id = 7;
+            this.commandBarItem7.Name = "commandBarItem7";
+            superToolTip3.FixedTooltipWidth = true;
+            toolTipTitleItem3.Text = "Save Report";
+            toolTipItem3.LeftIndent = 6;
+            toolTipItem3.Text = "Save the current report.";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            superToolTip3.Items.Add(toolTipItem3);
+            superToolTip3.MaxWidth = 210;
+            this.commandBarItem7.SuperTip = superToolTip3;
+            // 
+            // commandBarItem8
+            // 
+            this.commandBarItem8.Caption = "Save All";
+            this.commandBarItem8.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.SaveAll;
+            this.commandBarItem8.Enabled = false;
+            this.commandBarItem8.Id = 8;
+            this.commandBarItem8.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L));
+            this.commandBarItem8.Name = "commandBarItem8";
+            superToolTip4.FixedTooltipWidth = true;
+            toolTipTitleItem4.Text = "Save All Reports (Ctrl+L)";
+            toolTipItem4.LeftIndent = 6;
+            toolTipItem4.Text = "Save all modified reports.";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            superToolTip4.Items.Add(toolTipItem4);
+            superToolTip4.MaxWidth = 210;
+            this.commandBarItem8.SuperTip = superToolTip4;
+            // 
+            // commandBarItem127
+            // 
+            this.commandBarItem127.Caption = "Close";
+            this.commandBarItem127.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.Close;
+            this.commandBarItem127.Enabled = false;
+            this.commandBarItem127.Id = 157;
+            this.commandBarItem127.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4));
+            this.commandBarItem127.Name = "commandBarItem127";
+            superToolTip5.FixedTooltipWidth = true;
+            toolTipTitleItem5.Text = "Close (Ctrl+F4)";
+            toolTipItem5.LeftIndent = 6;
+            toolTipItem5.Text = "Close the current report.";
+            superToolTip5.Items.Add(toolTipTitleItem5);
+            superToolTip5.Items.Add(toolTipItem5);
+            superToolTip5.MaxWidth = 210;
+            this.commandBarItem127.SuperTip = superToolTip5;
+            // 
+            // commandBarItem128
+            // 
+            this.commandBarItem128.Caption = "Exit";
+            this.commandBarItem128.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.Exit;
+            this.commandBarItem128.Enabled = false;
+            this.commandBarItem128.Id = 158;
+            this.commandBarItem128.Name = "commandBarItem128";
+            superToolTip6.FixedTooltipWidth = true;
+            toolTipTitleItem6.Text = "Exit";
+            toolTipItem6.LeftIndent = 6;
+            toolTipItem6.Text = "Close the report designer.";
+            superToolTip6.Items.Add(toolTipTitleItem6);
+            superToolTip6.Items.Add(toolTipItem6);
+            superToolTip6.MaxWidth = 210;
+            this.commandBarItem128.SuperTip = superToolTip6;
             // 
             // commandBarItem1
             // 
@@ -1414,77 +1493,12 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip11.MaxWidth = 210;
             this.commandBarItem5.SuperTip = superToolTip11;
             // 
-            // commandBarItem6
-            // 
-            this.commandBarItem6.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.commandBarItem6.Caption = "New Report";
-            this.commandBarItem6.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.NewReport;
-            this.commandBarItem6.Id = 6;
-            this.commandBarItem6.Name = "commandBarItem6";
-            superToolTip1.FixedTooltipWidth = true;
-            toolTipTitleItem1.Text = "New Blank Report";
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "Create a new blank report.";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            superToolTip1.MaxWidth = 210;
-            this.commandBarItem6.SuperTip = superToolTip1;
-            // 
-            // commandBarItem7
-            // 
-            this.commandBarItem7.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.commandBarItem7.Caption = "Save";
-            this.commandBarItem7.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.SaveFile;
-            this.commandBarItem7.Enabled = false;
-            this.commandBarItem7.Id = 7;
-            this.commandBarItem7.Name = "commandBarItem7";
-            superToolTip3.FixedTooltipWidth = true;
-            toolTipTitleItem3.Text = "Save Report";
-            toolTipItem3.LeftIndent = 6;
-            toolTipItem3.Text = "Save the current report.";
-            superToolTip3.Items.Add(toolTipTitleItem3);
-            superToolTip3.Items.Add(toolTipItem3);
-            superToolTip3.MaxWidth = 210;
-            this.commandBarItem7.SuperTip = superToolTip3;
-            // 
-            // commandBarItem8
-            // 
-            this.commandBarItem8.Caption = "Save All";
-            this.commandBarItem8.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.SaveAll;
-            this.commandBarItem8.Enabled = false;
-            this.commandBarItem8.Id = 8;
-            this.commandBarItem8.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L));
-            this.commandBarItem8.Name = "commandBarItem8";
-            superToolTip4.FixedTooltipWidth = true;
-            toolTipTitleItem4.Text = "Save All Reports (Ctrl+L)";
-            toolTipItem4.LeftIndent = 6;
-            toolTipItem4.Text = "Save all modified reports.";
-            superToolTip4.Items.Add(toolTipTitleItem4);
-            superToolTip4.Items.Add(toolTipItem4);
-            superToolTip4.MaxWidth = 210;
-            this.commandBarItem8.SuperTip = superToolTip4;
-            // 
-            // commandBarItem9
-            // 
-            this.commandBarItem9.Caption = "Open...";
-            this.commandBarItem9.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.OpenFile;
-            this.commandBarItem9.Id = 9;
-            this.commandBarItem9.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O));
-            this.commandBarItem9.Name = "commandBarItem9";
-            superToolTip2.FixedTooltipWidth = true;
-            toolTipTitleItem2.Text = "Open Report (Ctrl+O)";
-            toolTipItem2.LeftIndent = 6;
-            toolTipItem2.Text = "Open a report.";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            superToolTip2.Items.Add(toolTipItem2);
-            superToolTip2.MaxWidth = 210;
-            this.commandBarItem9.SuperTip = superToolTip2;
-            // 
             // commandBarItem10
             // 
             this.commandBarItem10.Caption = "New Report";
             this.commandBarItem10.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.NewReport;
             this.commandBarItem10.Description = "Create a new blank report.";
+            this.commandBarItem10.Enabled = false;
             this.commandBarItem10.Id = 10;
             this.commandBarItem10.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N));
             this.commandBarItem10.Name = "commandBarItem10";
@@ -1502,6 +1516,7 @@ namespace Tech2019.Presentation.Forms.Reports
             this.commandBarItem11.Caption = "New Report via Wizard...";
             this.commandBarItem11.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.NewReportWizard;
             this.commandBarItem11.Description = "Launch the report wizard to create a new report.";
+            this.commandBarItem11.Enabled = false;
             this.commandBarItem11.Id = 11;
             this.commandBarItem11.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W));
             this.commandBarItem11.Name = "commandBarItem11";
@@ -1602,15 +1617,6 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip18.MaxWidth = 210;
             this.commandBarItem16.SuperTip = superToolTip18;
             // 
-            // recentlyUsedItemsComboBox1
-            // 
-            this.recentlyUsedItemsComboBox1.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.recentlyUsedItemsComboBox1.AppearanceDropDown.Options.UseFont = true;
-            this.recentlyUsedItemsComboBox1.AutoHeight = false;
-            this.recentlyUsedItemsComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.recentlyUsedItemsComboBox1.Name = "recentlyUsedItemsComboBox1";
-            // 
             // barEditItem1
             // 
             this.barEditItem1.Edit = this.recentlyUsedItemsComboBox1;
@@ -1626,12 +1632,14 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip19.MaxWidth = 210;
             this.barEditItem1.SuperTip = superToolTip19;
             // 
-            // designRepositoryItemComboBox1
+            // recentlyUsedItemsComboBox1
             // 
-            this.designRepositoryItemComboBox1.AutoHeight = false;
-            this.designRepositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.recentlyUsedItemsComboBox1.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.recentlyUsedItemsComboBox1.AppearanceDropDown.Options.UseFont = true;
+            this.recentlyUsedItemsComboBox1.AutoHeight = false;
+            this.recentlyUsedItemsComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.designRepositoryItemComboBox1.Name = "designRepositoryItemComboBox1";
+            this.recentlyUsedItemsComboBox1.Name = "recentlyUsedItemsComboBox1";
             // 
             // barEditItem2
             // 
@@ -1648,10 +1656,17 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip20.MaxWidth = 210;
             this.barEditItem2.SuperTip = superToolTip20;
             // 
+            // designRepositoryItemComboBox1
+            // 
+            this.designRepositoryItemComboBox1.AutoHeight = false;
+            this.designRepositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.designRepositoryItemComboBox1.Name = "designRepositoryItemComboBox1";
+            // 
             // barDockPanelsListItem1
             // 
             this.barDockPanelsListItem1.Caption = "Windows";
-            this.barDockPanelsListItem1.DockManager = null;
+            this.barDockPanelsListItem1.DockManager = this.xrDesignDockManager1;
             this.barDockPanelsListItem1.Id = 19;
             this.barDockPanelsListItem1.Name = "barDockPanelsListItem1";
             this.barDockPanelsListItem1.ShowCustomizationItem = false;
@@ -2692,13 +2707,6 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip83.MaxWidth = 210;
             this.commandBarItem72.SuperTip = superToolTip83;
             // 
-            // repositoryItemLookUpEdit1
-            // 
-            this.repositoryItemLookUpEdit1.AutoHeight = false;
-            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
-            // 
             // commandBarEditItem1
             // 
             this.commandBarEditItem1.Caption = "Language";
@@ -2717,6 +2725,13 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip84.Items.Add(toolTipItem84);
             superToolTip84.MaxWidth = 210;
             this.commandBarEditItem1.SuperTip = superToolTip84;
+            // 
+            // repositoryItemLookUpEdit1
+            // 
+            this.repositoryItemLookUpEdit1.AutoHeight = false;
+            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
             // 
             // commandBarCheckItem3
             // 
@@ -2894,18 +2909,6 @@ namespace Tech2019.Presentation.Forms.Reports
             this.commandGalleryBarItem6.Id = 93;
             this.commandGalleryBarItem6.Name = "commandGalleryBarItem6";
             // 
-            // repositoryItemSpinEdit1
-            // 
-            this.repositoryItemSpinEdit1.AutoHeight = false;
-            this.repositoryItemSpinEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemSpinEdit1.MaxValue = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
-            0});
-            this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
-            // 
             // commandBarEditItem2
             // 
             this.commandBarEditItem2.Caption = "Width: ";
@@ -2924,17 +2927,17 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip90.MaxWidth = 210;
             this.commandBarEditItem2.SuperTip = superToolTip90;
             // 
-            // repositoryItemSpinEdit2
+            // repositoryItemSpinEdit1
             // 
-            this.repositoryItemSpinEdit2.AutoHeight = false;
-            this.repositoryItemSpinEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemSpinEdit1.AutoHeight = false;
+            this.repositoryItemSpinEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemSpinEdit2.MaxValue = new decimal(new int[] {
+            this.repositoryItemSpinEdit1.MaxValue = new decimal(new int[] {
             -1,
             -1,
             -1,
             0});
-            this.repositoryItemSpinEdit2.Name = "repositoryItemSpinEdit2";
+            this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
             // 
             // commandBarEditItem3
             // 
@@ -2954,17 +2957,17 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip91.MaxWidth = 210;
             this.commandBarEditItem3.SuperTip = superToolTip91;
             // 
-            // repositoryItemSpinEdit3
+            // repositoryItemSpinEdit2
             // 
-            this.repositoryItemSpinEdit3.AutoHeight = false;
-            this.repositoryItemSpinEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemSpinEdit2.AutoHeight = false;
+            this.repositoryItemSpinEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemSpinEdit3.MaxValue = new decimal(new int[] {
+            this.repositoryItemSpinEdit2.MaxValue = new decimal(new int[] {
             -1,
             -1,
             -1,
             0});
-            this.repositoryItemSpinEdit3.Name = "repositoryItemSpinEdit3";
+            this.repositoryItemSpinEdit2.Name = "repositoryItemSpinEdit2";
             // 
             // commandBarEditItem4
             // 
@@ -2984,17 +2987,17 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip92.MaxWidth = 210;
             this.commandBarEditItem4.SuperTip = superToolTip92;
             // 
-            // repositoryItemSpinEdit4
+            // repositoryItemSpinEdit3
             // 
-            this.repositoryItemSpinEdit4.AutoHeight = false;
-            this.repositoryItemSpinEdit4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemSpinEdit3.AutoHeight = false;
+            this.repositoryItemSpinEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemSpinEdit4.MaxValue = new decimal(new int[] {
+            this.repositoryItemSpinEdit3.MaxValue = new decimal(new int[] {
             -1,
             -1,
             -1,
             0});
-            this.repositoryItemSpinEdit4.Name = "repositoryItemSpinEdit4";
+            this.repositoryItemSpinEdit3.Name = "repositoryItemSpinEdit3";
             // 
             // commandBarEditItem5
             // 
@@ -3014,12 +3017,17 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip93.MaxWidth = 210;
             this.commandBarEditItem5.SuperTip = superToolTip93;
             // 
-            // repositoryItemImageComboBox1
+            // repositoryItemSpinEdit4
             // 
-            this.repositoryItemImageComboBox1.AutoHeight = false;
-            this.repositoryItemImageComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemSpinEdit4.AutoHeight = false;
+            this.repositoryItemSpinEdit4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemImageComboBox1.Name = "repositoryItemImageComboBox1";
+            this.repositoryItemSpinEdit4.MaxValue = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
+            this.repositoryItemSpinEdit4.Name = "repositoryItemSpinEdit4";
             // 
             // commandBarEditItem6
             // 
@@ -3039,12 +3047,12 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip94.MaxWidth = 210;
             this.commandBarEditItem6.SuperTip = superToolTip94;
             // 
-            // repositoryItemLookUpEdit2
+            // repositoryItemImageComboBox1
             // 
-            this.repositoryItemLookUpEdit2.AutoHeight = false;
-            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemImageComboBox1.AutoHeight = false;
+            this.repositoryItemImageComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
+            this.repositoryItemImageComboBox1.Name = "repositoryItemImageComboBox1";
             // 
             // commandBarEditItem7
             // 
@@ -3064,12 +3072,12 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip95.MaxWidth = 210;
             this.commandBarEditItem7.SuperTip = superToolTip95;
             // 
-            // repositoryItemComboBox1
+            // repositoryItemLookUpEdit2
             // 
-            this.repositoryItemComboBox1.AutoHeight = false;
-            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repositoryItemLookUpEdit2.AutoHeight = false;
+            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
             // 
             // commandBarEditItem8
             // 
@@ -3088,6 +3096,13 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip96.Items.Add(toolTipItem96);
             superToolTip96.MaxWidth = 210;
             this.commandBarEditItem8.SuperTip = superToolTip96;
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
             // 
             // commandBarItem77
             // 
@@ -4016,108 +4031,6 @@ namespace Tech2019.Presentation.Forms.Reports
             superToolTip152.MaxWidth = 210;
             this.commandBarItem126.SuperTip = superToolTip152;
             // 
-            // commandBarItem127
-            // 
-            this.commandBarItem127.Caption = "Close";
-            this.commandBarItem127.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.Close;
-            this.commandBarItem127.Enabled = false;
-            this.commandBarItem127.Id = 157;
-            this.commandBarItem127.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4));
-            this.commandBarItem127.Name = "commandBarItem127";
-            superToolTip5.FixedTooltipWidth = true;
-            toolTipTitleItem5.Text = "Close (Ctrl+F4)";
-            toolTipItem5.LeftIndent = 6;
-            toolTipItem5.Text = "Close the current report.";
-            superToolTip5.Items.Add(toolTipTitleItem5);
-            superToolTip5.Items.Add(toolTipItem5);
-            superToolTip5.MaxWidth = 210;
-            this.commandBarItem127.SuperTip = superToolTip5;
-            // 
-            // commandBarItem128
-            // 
-            this.commandBarItem128.Caption = "Exit";
-            this.commandBarItem128.Command = DevExpress.XtraReports.UserDesigner.ReportCommand.Exit;
-            this.commandBarItem128.Id = 158;
-            this.commandBarItem128.Name = "commandBarItem128";
-            superToolTip6.FixedTooltipWidth = true;
-            toolTipTitleItem6.Text = "Exit";
-            toolTipItem6.LeftIndent = 6;
-            toolTipItem6.Text = "Close the report designer.";
-            superToolTip6.Items.Add(toolTipTitleItem6);
-            superToolTip6.Items.Add(toolTipItem6);
-            superToolTip6.MaxWidth = 210;
-            this.commandBarItem128.SuperTip = superToolTip6;
-            // 
-            // applicationMenu1
-            // 
-            this.applicationMenu1.ItemLinks.Add(this.commandBarItem6);
-            this.applicationMenu1.ItemLinks.Add(this.commandBarItem9);
-            this.applicationMenu1.ItemLinks.Add(this.commandBarItem7);
-            this.applicationMenu1.ItemLinks.Add(this.commandBarItem8);
-            this.applicationMenu1.ItemLinks.Add(this.commandBarItem127, true);
-            this.applicationMenu1.ItemLinks.Add(this.commandBarItem128, true);
-            this.applicationMenu1.MenuDrawMode = DevExpress.XtraBars.MenuDrawMode.LargeImagesText;
-            this.applicationMenu1.Name = "applicationMenu1";
-            this.applicationMenu1.Ribbon = this.ribbonControl1;
-            // 
-            // ribbonPage1
-            // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup1,
-            this.xrDesignRibbonPageGroup2,
-            this.xrDesignRibbonPageGroup3,
-            this.xrDesignRibbonPageGroup4,
-            this.xrDesignRibbonPageGroup5,
-            this.xrDesignRibbonPageGroup6,
-            this.xrDesignRibbonPageGroup7});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Home";
-            // 
-            // xrDesignRibbonPageGroup1
-            // 
-            this.xrDesignRibbonPageGroup1.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup1.ItemLinks.Add(this.commandBarItem6);
-            this.xrDesignRibbonPageGroup1.ItemLinks.Add(this.commandBarItem9);
-            this.xrDesignRibbonPageGroup1.ItemLinks.Add(this.commandBarItem7);
-            this.xrDesignRibbonPageGroup1.ItemLinks.Add(this.commandBarItem8);
-            this.xrDesignRibbonPageGroup1.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Report;
-            this.xrDesignRibbonPageGroup1.Name = "xrDesignRibbonPageGroup1";
-            this.xrDesignRibbonPageGroup1.Text = "Report";
-            // 
-            // xrDesignRibbonPageGroup2
-            // 
-            this.xrDesignRibbonPageGroup2.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup2.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup2.ItemLinks.Add(this.commandBarItem30);
-            this.xrDesignRibbonPageGroup2.ItemLinks.Add(this.commandBarItem28);
-            this.xrDesignRibbonPageGroup2.ItemLinks.Add(this.commandBarItem29);
-            this.xrDesignRibbonPageGroup2.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Data;
-            this.xrDesignRibbonPageGroup2.Name = "xrDesignRibbonPageGroup2";
-            this.xrDesignRibbonPageGroup2.Text = "Data";
-            // 
-            // xrDesignRibbonPageGroup3
-            // 
-            this.xrDesignRibbonPageGroup3.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup3.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup3.ItemLinks.Add(this.commandBarItem14);
-            this.xrDesignRibbonPageGroup3.ItemLinks.Add(this.commandBarItem15);
-            this.xrDesignRibbonPageGroup3.ItemLinks.Add(this.commandBarItem16);
-            this.xrDesignRibbonPageGroup3.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Clipboard;
-            this.xrDesignRibbonPageGroup3.Name = "xrDesignRibbonPageGroup3";
-            this.xrDesignRibbonPageGroup3.Text = "Clipboard";
-            // 
-            // xrDesignRibbonPageGroup4
-            // 
-            this.xrDesignRibbonPageGroup4.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup4.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup4.ItemLinks.Add(this.xrDesignBarButtonGroup1);
-            this.xrDesignRibbonPageGroup4.ItemLinks.Add(this.xrDesignBarButtonGroup2);
-            this.xrDesignRibbonPageGroup4.ItemLinks.Add(this.xrDesignBarButtonGroup3);
-            this.xrDesignRibbonPageGroup4.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Font;
-            this.xrDesignRibbonPageGroup4.Name = "xrDesignRibbonPageGroup4";
-            this.xrDesignRibbonPageGroup4.Text = "Font";
-            // 
             // xrDesignBarButtonGroup1
             // 
             this.xrDesignBarButtonGroup1.Id = 159;
@@ -4141,16 +4054,6 @@ namespace Tech2019.Presentation.Forms.Reports
             this.xrDesignBarButtonGroup3.ItemLinks.Add(this.commandColorBarItem1);
             this.xrDesignBarButtonGroup3.Name = "xrDesignBarButtonGroup3";
             // 
-            // xrDesignRibbonPageGroup5
-            // 
-            this.xrDesignRibbonPageGroup5.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup5.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup5.ItemLinks.Add(this.xrDesignBarButtonGroup4);
-            this.xrDesignRibbonPageGroup5.ItemLinks.Add(this.xrDesignBarButtonGroup5);
-            this.xrDesignRibbonPageGroup5.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.TextAlignment;
-            this.xrDesignRibbonPageGroup5.Name = "xrDesignRibbonPageGroup5";
-            this.xrDesignRibbonPageGroup5.Text = "Alignment";
-            // 
             // xrDesignBarButtonGroup4
             // 
             this.xrDesignBarButtonGroup4.Id = 162;
@@ -4167,17 +4070,6 @@ namespace Tech2019.Presentation.Forms.Reports
             this.xrDesignBarButtonGroup5.ItemLinks.Add(this.commandBarItem22);
             this.xrDesignBarButtonGroup5.ItemLinks.Add(this.commandBarItem23);
             this.xrDesignBarButtonGroup5.Name = "xrDesignBarButtonGroup5";
-            // 
-            // xrDesignRibbonPageGroup6
-            // 
-            this.xrDesignRibbonPageGroup6.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup6.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup6.ItemLinks.Add(this.xrDesignBarButtonGroup6);
-            this.xrDesignRibbonPageGroup6.ItemLinks.Add(this.xrDesignBarButtonGroup7);
-            this.xrDesignRibbonPageGroup6.ItemLinks.Add(this.xrDesignBarButtonGroup8);
-            this.xrDesignRibbonPageGroup6.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Borders;
-            this.xrDesignRibbonPageGroup6.Name = "xrDesignRibbonPageGroup6";
-            this.xrDesignRibbonPageGroup6.Text = "Borders";
             // 
             // xrDesignBarButtonGroup6
             // 
@@ -4203,36 +4095,6 @@ namespace Tech2019.Presentation.Forms.Reports
             this.xrDesignBarButtonGroup8.ItemLinks.Add(this.commandBarEditItem6);
             this.xrDesignBarButtonGroup8.Name = "xrDesignBarButtonGroup8";
             // 
-            // xrDesignRibbonPageGroup7
-            // 
-            this.xrDesignRibbonPageGroup7.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup7.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
-            this.xrDesignRibbonPageGroup7.ItemLinks.Add(this.commandBarItem31);
-            this.xrDesignRibbonPageGroup7.ItemLinks.Add(this.commandGalleryBarItem1);
-            this.xrDesignRibbonPageGroup7.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Styles;
-            this.xrDesignRibbonPageGroup7.Name = "xrDesignRibbonPageGroup7";
-            this.xrDesignRibbonPageGroup7.Text = "Styles";
-            // 
-            // ribbonPage2
-            // 
-            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup8,
-            this.xrDesignRibbonPageGroup9,
-            this.xrDesignRibbonPageGroup10,
-            this.xrDesignRibbonPageGroup11});
-            this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "Layout";
-            // 
-            // xrDesignRibbonPageGroup8
-            // 
-            this.xrDesignRibbonPageGroup8.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup8.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup8.ItemLinks.Add(this.xrDesignBarButtonGroup9);
-            this.xrDesignRibbonPageGroup8.ItemLinks.Add(this.xrDesignBarButtonGroup10);
-            this.xrDesignRibbonPageGroup8.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Alignment;
-            this.xrDesignRibbonPageGroup8.Name = "xrDesignRibbonPageGroup8";
-            this.xrDesignRibbonPageGroup8.Text = "Alignment";
-            // 
             // xrDesignBarButtonGroup9
             // 
             this.xrDesignBarButtonGroup9.Id = 167;
@@ -4248,21 +4110,6 @@ namespace Tech2019.Presentation.Forms.Reports
             this.xrDesignBarButtonGroup10.ItemLinks.Add(this.commandBarItem44);
             this.xrDesignBarButtonGroup10.ItemLinks.Add(this.commandBarItem45);
             this.xrDesignBarButtonGroup10.Name = "xrDesignBarButtonGroup10";
-            // 
-            // xrDesignRibbonPageGroup9
-            // 
-            this.xrDesignRibbonPageGroup9.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup9.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.commandBarItem39);
-            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.commandBarItem47);
-            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.commandBarItem62);
-            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.xrDesignBarButtonGroup11);
-            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.xrDesignBarButtonGroup12);
-            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.xrDesignBarButtonGroup13);
-            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.xrDesignBarButtonGroup14);
-            this.xrDesignRibbonPageGroup9.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.SizeAndLayout;
-            this.xrDesignRibbonPageGroup9.Name = "xrDesignRibbonPageGroup9";
-            this.xrDesignRibbonPageGroup9.Text = "Layout";
             // 
             // xrDesignBarButtonGroup11
             // 
@@ -4296,580 +4143,6 @@ namespace Tech2019.Presentation.Forms.Reports
             this.xrDesignBarButtonGroup14.ItemLinks.Add(this.commandBarItem58);
             this.xrDesignBarButtonGroup14.ItemLinks.Add(this.commandBarItem59);
             this.xrDesignBarButtonGroup14.Name = "xrDesignBarButtonGroup14";
-            // 
-            // xrDesignRibbonPageGroup10
-            // 
-            this.xrDesignRibbonPageGroup10.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup10.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup10.ItemLinks.Add(this.commandBarItem60);
-            this.xrDesignRibbonPageGroup10.ItemLinks.Add(this.commandBarItem61);
-            this.xrDesignRibbonPageGroup10.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Arranging;
-            this.xrDesignRibbonPageGroup10.Name = "xrDesignRibbonPageGroup10";
-            this.xrDesignRibbonPageGroup10.Text = "Arranging";
-            // 
-            // xrDesignRibbonPageGroup11
-            // 
-            this.xrDesignRibbonPageGroup11.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup11.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup11.ItemLinks.Add(this.commandBarCheckItem1);
-            this.xrDesignRibbonPageGroup11.ItemLinks.Add(this.commandBarCheckItem2);
-            this.xrDesignRibbonPageGroup11.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Snapping;
-            this.xrDesignRibbonPageGroup11.Name = "xrDesignRibbonPageGroup11";
-            this.xrDesignRibbonPageGroup11.Text = "Snapping";
-            // 
-            // ribbonPage3
-            // 
-            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup12,
-            this.xrDesignRibbonPageGroup13});
-            this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "Page";
-            // 
-            // xrDesignRibbonPageGroup12
-            // 
-            this.xrDesignRibbonPageGroup12.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup12.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
-            this.xrDesignRibbonPageGroup12.ItemLinks.Add(this.commandBarItem65);
-            this.xrDesignRibbonPageGroup12.ItemLinks.Add(this.commandBarItem64);
-            this.xrDesignRibbonPageGroup12.ItemLinks.Add(this.commandBarItem63);
-            this.xrDesignRibbonPageGroup12.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.PageSetup;
-            this.xrDesignRibbonPageGroup12.Name = "xrDesignRibbonPageGroup12";
-            this.xrDesignRibbonPageGroup12.Text = "Page Setup";
-            // 
-            // xrDesignRibbonPageGroup13
-            // 
-            this.xrDesignRibbonPageGroup13.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup13.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup13.ItemLinks.Add(this.commandColorBarItem4);
-            this.xrDesignRibbonPageGroup13.ItemLinks.Add(this.commandBarItem66);
-            this.xrDesignRibbonPageGroup13.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Appearance;
-            this.xrDesignRibbonPageGroup13.Name = "xrDesignRibbonPageGroup13";
-            this.xrDesignRibbonPageGroup13.Text = "Appearance";
-            // 
-            // ribbonPage4
-            // 
-            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup14,
-            this.xrDesignRibbonPageGroup15,
-            this.xrDesignRibbonPageGroup16,
-            this.xrDesignRibbonPageGroup17,
-            this.xrDesignRibbonPageGroup18});
-            this.ribbonPage4.Name = "ribbonPage4";
-            this.ribbonPage4.Text = "View";
-            // 
-            // xrDesignRibbonPageGroup14
-            // 
-            this.xrDesignRibbonPageGroup14.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup14.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup14.ItemLinks.Add(this.commandBarItem67);
-            this.xrDesignRibbonPageGroup14.ItemLinks.Add(this.commandBarItem68);
-            this.xrDesignRibbonPageGroup14.ItemLinks.Add(this.commandBarItem69, true);
-            this.xrDesignRibbonPageGroup14.ItemLinks.Add(this.commandBarItem70);
-            this.xrDesignRibbonPageGroup14.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Show;
-            this.xrDesignRibbonPageGroup14.Name = "xrDesignRibbonPageGroup14";
-            this.xrDesignRibbonPageGroup14.Text = "Show";
-            // 
-            // xrDesignRibbonPageGroup15
-            // 
-            this.xrDesignRibbonPageGroup15.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup15.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup15.ItemLinks.Add(this.commandBarItem71);
-            this.xrDesignRibbonPageGroup15.ItemLinks.Add(this.commandBarItem72);
-            this.xrDesignRibbonPageGroup15.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Bands;
-            this.xrDesignRibbonPageGroup15.Name = "xrDesignRibbonPageGroup15";
-            this.xrDesignRibbonPageGroup15.Text = "Bands";
-            // 
-            // xrDesignRibbonPageGroup16
-            // 
-            this.xrDesignRibbonPageGroup16.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup16.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
-            this.xrDesignRibbonPageGroup16.ItemLinks.Add(this.commandBarEditItem1);
-            this.xrDesignRibbonPageGroup16.ItemLinks.Add(this.commandBarCheckItem3);
-            this.xrDesignRibbonPageGroup16.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Localization;
-            this.xrDesignRibbonPageGroup16.Name = "xrDesignRibbonPageGroup16";
-            this.xrDesignRibbonPageGroup16.Text = "Localization";
-            // 
-            // xrDesignRibbonPageGroup17
-            // 
-            this.xrDesignRibbonPageGroup17.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup17.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup17.ItemLinks.Add(this.commandBarItem75);
-            this.xrDesignRibbonPageGroup17.ItemLinks.Add(this.commandBarItem73);
-            this.xrDesignRibbonPageGroup17.ItemLinks.Add(this.commandBarItem74);
-            this.xrDesignRibbonPageGroup17.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Zoom;
-            this.xrDesignRibbonPageGroup17.Name = "xrDesignRibbonPageGroup17";
-            this.xrDesignRibbonPageGroup17.Text = "Zoom";
-            // 
-            // xrDesignRibbonPageGroup18
-            // 
-            this.xrDesignRibbonPageGroup18.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup18.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup18.ItemLinks.Add(this.barDockPanelsListItem1);
-            this.xrDesignRibbonPageGroup18.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.View;
-            this.xrDesignRibbonPageGroup18.Name = "xrDesignRibbonPageGroup18";
-            this.xrDesignRibbonPageGroup18.Text = "View";
-            // 
-            // ribbonPage5
-            // 
-            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup19});
-            this.ribbonPage5.Name = "ribbonPage5";
-            this.ribbonPage5.Text = "Scripts";
-            this.ribbonPage5.Visible = false;
-            // 
-            // xrDesignRibbonPageGroup19
-            // 
-            this.xrDesignRibbonPageGroup19.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup19.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup19.ItemLinks.Add(this.commandBarEditItem7);
-            this.xrDesignRibbonPageGroup19.ItemLinks.Add(this.commandBarEditItem8);
-            this.xrDesignRibbonPageGroup19.ItemLinks.Add(this.commandBarItem76);
-            this.xrDesignRibbonPageGroup19.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Edit;
-            this.xrDesignRibbonPageGroup19.Name = "xrDesignRibbonPageGroup19";
-            this.xrDesignRibbonPageGroup19.Text = "Edit";
-            // 
-            // ribbonPage6
-            // 
-            this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup20});
-            this.ribbonPage6.Name = "ribbonPage6";
-            this.ribbonPage6.Text = "Design";
-            this.ribbonPage6.Visible = false;
-            // 
-            // ribbonPageCategory1
-            // 
-            this.ribbonPageCategory1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(94)))), ((int)(((byte)(211)))));
-            this.ribbonPageCategory1.Appearance.Options.UseBackColor = true;
-            this.ribbonPageCategory1.AutoStretchPageHeaders = true;
-            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
-            this.ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage6});
-            this.ribbonPageCategory1.Text = "Character Comb Tools";
-            this.ribbonPageCategory1.Visible = false;
-            // 
-            // xrDesignRibbonPageGroup20
-            // 
-            this.xrDesignRibbonPageGroup20.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup20.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup20.ItemLinks.Add(this.commandBarCheckItem8);
-            this.xrDesignRibbonPageGroup20.ItemLinks.Add(this.commandBarCheckItem9);
-            this.xrDesignRibbonPageGroup20.ItemLinks.Add(this.commandBarEditItem2, true);
-            this.xrDesignRibbonPageGroup20.ItemLinks.Add(this.commandBarEditItem3);
-            this.xrDesignRibbonPageGroup20.ItemLinks.Add(this.commandBarEditItem4, true);
-            this.xrDesignRibbonPageGroup20.ItemLinks.Add(this.commandBarEditItem5);
-            this.xrDesignRibbonPageGroup20.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.CellSize;
-            this.xrDesignRibbonPageGroup20.Name = "xrDesignRibbonPageGroup20";
-            this.xrDesignRibbonPageGroup20.Text = "Cell Size";
-            // 
-            // ribbonPageCategory2
-            // 
-            this.ribbonPageCategory2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(203)))), ((int)(((byte)(29)))));
-            this.ribbonPageCategory2.Appearance.Options.UseBackColor = true;
-            this.ribbonPageCategory2.AutoStretchPageHeaders = true;
-            this.ribbonPageCategory2.Name = "ribbonPageCategory2";
-            this.ribbonPageCategory2.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage7});
-            this.ribbonPageCategory2.Text = "Table Tools";
-            this.ribbonPageCategory2.Visible = false;
-            // 
-            // ribbonPage7
-            // 
-            this.ribbonPage7.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup21,
-            this.xrDesignRibbonPageGroup22,
-            this.xrDesignRibbonPageGroup23,
-            this.xrDesignRibbonPageGroup24,
-            this.xrDesignRibbonPageGroup25});
-            this.ribbonPage7.Name = "ribbonPage7";
-            this.ribbonPage7.Text = "Design";
-            this.ribbonPage7.Visible = false;
-            // 
-            // xrDesignRibbonPageGroup21
-            // 
-            this.xrDesignRibbonPageGroup21.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup21.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup21.ItemLinks.Add(this.commandBarItem78);
-            this.xrDesignRibbonPageGroup21.ItemLinks.Add(this.commandBarItem79);
-            this.xrDesignRibbonPageGroup21.ItemLinks.Add(this.commandBarItem77);
-            this.xrDesignRibbonPageGroup21.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Select;
-            this.xrDesignRibbonPageGroup21.Name = "xrDesignRibbonPageGroup21";
-            this.xrDesignRibbonPageGroup21.Text = "Select";
-            // 
-            // xrDesignRibbonPageGroup22
-            // 
-            this.xrDesignRibbonPageGroup22.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup22.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup22.ItemLinks.Add(this.commandBarItem84);
-            this.xrDesignRibbonPageGroup22.ItemLinks.Add(this.commandBarItem85);
-            this.xrDesignRibbonPageGroup22.ItemLinks.Add(this.commandBarItem86);
-            this.xrDesignRibbonPageGroup22.ItemLinks.Add(this.commandBarItem87);
-            this.xrDesignRibbonPageGroup22.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Insert;
-            this.xrDesignRibbonPageGroup22.Name = "xrDesignRibbonPageGroup22";
-            this.xrDesignRibbonPageGroup22.Text = "Insert";
-            // 
-            // xrDesignRibbonPageGroup23
-            // 
-            this.xrDesignRibbonPageGroup23.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup23.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup23.ItemLinks.Add(this.commandBarItem80);
-            this.xrDesignRibbonPageGroup23.ItemLinks.Add(this.commandBarItem81);
-            this.xrDesignRibbonPageGroup23.ItemLinks.Add(this.commandBarItem82);
-            this.xrDesignRibbonPageGroup23.ItemLinks.Add(this.commandBarItem83);
-            this.xrDesignRibbonPageGroup23.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Delete;
-            this.xrDesignRibbonPageGroup23.Name = "xrDesignRibbonPageGroup23";
-            this.xrDesignRibbonPageGroup23.Text = "Delete";
-            // 
-            // xrDesignRibbonPageGroup24
-            // 
-            this.xrDesignRibbonPageGroup24.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup24.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup24.ItemLinks.Add(this.commandBarItem90);
-            this.xrDesignRibbonPageGroup24.ItemLinks.Add(this.commandBarItem91);
-            this.xrDesignRibbonPageGroup24.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Merge;
-            this.xrDesignRibbonPageGroup24.Name = "xrDesignRibbonPageGroup24";
-            this.xrDesignRibbonPageGroup24.Text = "Merge";
-            // 
-            // xrDesignRibbonPageGroup25
-            // 
-            this.xrDesignRibbonPageGroup25.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup25.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup25.ItemLinks.Add(this.commandBarItem88);
-            this.xrDesignRibbonPageGroup25.ItemLinks.Add(this.commandBarItem89);
-            this.xrDesignRibbonPageGroup25.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Distribute;
-            this.xrDesignRibbonPageGroup25.Name = "xrDesignRibbonPageGroup25";
-            this.xrDesignRibbonPageGroup25.Text = "Distribute";
-            // 
-            // ribbonPageCategory3
-            // 
-            this.ribbonPageCategory3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(163)))), ((int)(((byte)(73)))));
-            this.ribbonPageCategory3.Appearance.Options.UseBackColor = true;
-            this.ribbonPageCategory3.AutoStretchPageHeaders = true;
-            this.ribbonPageCategory3.Name = "ribbonPageCategory3";
-            this.ribbonPageCategory3.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage8});
-            this.ribbonPageCategory3.Text = "Chart Tools";
-            this.ribbonPageCategory3.Visible = false;
-            // 
-            // ribbonPage8
-            // 
-            this.ribbonPage8.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup26,
-            this.xrDesignRibbonPageGroup27,
-            this.xrDesignRibbonPageGroup28,
-            this.xrDesignRibbonPageGroup29,
-            this.xrDesignRibbonPageGroup30});
-            this.ribbonPage8.Name = "ribbonPage8";
-            this.ribbonPage8.Text = "Design";
-            this.ribbonPage8.Visible = false;
-            // 
-            // xrDesignRibbonPageGroup26
-            // 
-            this.xrDesignRibbonPageGroup26.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup26.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup26.ItemLinks.Add(this.commandBarItem105);
-            this.xrDesignRibbonPageGroup26.ItemLinks.Add(this.commandBarItem104);
-            this.xrDesignRibbonPageGroup26.ItemLinks.Add(this.commandBarItem103);
-            this.xrDesignRibbonPageGroup26.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Layout;
-            this.xrDesignRibbonPageGroup26.Name = "xrDesignRibbonPageGroup26";
-            this.xrDesignRibbonPageGroup26.Text = "Layout";
-            // 
-            // xrDesignRibbonPageGroup27
-            // 
-            this.xrDesignRibbonPageGroup27.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup27.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup27.ItemLinks.Add(this.commandBarItem106);
-            this.xrDesignRibbonPageGroup27.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Data;
-            this.xrDesignRibbonPageGroup27.Name = "xrDesignRibbonPageGroup27";
-            this.xrDesignRibbonPageGroup27.Text = "Data";
-            // 
-            // xrDesignRibbonPageGroup28
-            // 
-            this.xrDesignRibbonPageGroup28.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup28.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
-            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem108);
-            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem109);
-            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem110);
-            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem111);
-            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem112);
-            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem113);
-            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem114);
-            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem115);
-            this.xrDesignRibbonPageGroup28.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Series;
-            this.xrDesignRibbonPageGroup28.Name = "xrDesignRibbonPageGroup28";
-            this.xrDesignRibbonPageGroup28.Text = "Series";
-            // 
-            // xrDesignRibbonPageGroup29
-            // 
-            this.xrDesignRibbonPageGroup29.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup29.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
-            this.xrDesignRibbonPageGroup29.ItemLinks.Add(this.commandBarItem116);
-            this.xrDesignRibbonPageGroup29.ItemLinks.Add(this.commandBarItem117);
-            this.xrDesignRibbonPageGroup29.ItemLinks.Add(this.commandBarItem118);
-            this.xrDesignRibbonPageGroup29.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Annotations;
-            this.xrDesignRibbonPageGroup29.Name = "xrDesignRibbonPageGroup29";
-            this.xrDesignRibbonPageGroup29.Text = "Annotations";
-            // 
-            // xrDesignRibbonPageGroup30
-            // 
-            this.xrDesignRibbonPageGroup30.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup30.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
-            this.xrDesignRibbonPageGroup30.ItemLinks.Add(this.commandBarItem107);
-            this.xrDesignRibbonPageGroup30.ItemLinks.Add(this.commandGalleryBarItem3);
-            this.xrDesignRibbonPageGroup30.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Appearance;
-            this.xrDesignRibbonPageGroup30.Name = "xrDesignRibbonPageGroup30";
-            this.xrDesignRibbonPageGroup30.Text = "Appearance";
-            // 
-            // ribbonPageCategory4
-            // 
-            this.ribbonPageCategory4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(89)))), ((int)(((byte)(156)))));
-            this.ribbonPageCategory4.Appearance.Options.UseBackColor = true;
-            this.ribbonPageCategory4.AutoStretchPageHeaders = true;
-            this.ribbonPageCategory4.Name = "ribbonPageCategory4";
-            this.ribbonPageCategory4.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage9});
-            this.ribbonPageCategory4.Text = "Pivot Grid Tools";
-            this.ribbonPageCategory4.Visible = false;
-            // 
-            // ribbonPage9
-            // 
-            this.ribbonPage9.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup31,
-            this.xrDesignRibbonPageGroup32,
-            this.xrDesignRibbonPageGroup33,
-            this.xrDesignRibbonPageGroup34});
-            this.ribbonPage9.Name = "ribbonPage9";
-            this.ribbonPage9.Text = "Design";
-            this.ribbonPage9.Visible = false;
-            // 
-            // xrDesignRibbonPageGroup31
-            // 
-            this.xrDesignRibbonPageGroup31.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup31.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup31.ItemLinks.Add(this.commandBarItem92);
-            this.xrDesignRibbonPageGroup31.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Layout;
-            this.xrDesignRibbonPageGroup31.Name = "xrDesignRibbonPageGroup31";
-            this.xrDesignRibbonPageGroup31.Text = "Layout";
-            // 
-            // xrDesignRibbonPageGroup32
-            // 
-            this.xrDesignRibbonPageGroup32.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup32.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup32.ItemLinks.Add(this.commandBarItem93);
-            this.xrDesignRibbonPageGroup32.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Data;
-            this.xrDesignRibbonPageGroup32.Name = "xrDesignRibbonPageGroup32";
-            this.xrDesignRibbonPageGroup32.Text = "Data";
-            // 
-            // xrDesignRibbonPageGroup33
-            // 
-            this.xrDesignRibbonPageGroup33.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup33.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup33.ItemLinks.Add(this.commandBarItem95);
-            this.xrDesignRibbonPageGroup33.ItemLinks.Add(this.commandBarItem94);
-            this.xrDesignRibbonPageGroup33.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.PivotFields;
-            this.xrDesignRibbonPageGroup33.Name = "xrDesignRibbonPageGroup33";
-            this.xrDesignRibbonPageGroup33.Text = "Fields";
-            // 
-            // xrDesignRibbonPageGroup34
-            // 
-            this.xrDesignRibbonPageGroup34.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup34.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem96);
-            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem97);
-            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem100, true);
-            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem99);
-            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem98);
-            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem101, true);
-            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem102);
-            this.xrDesignRibbonPageGroup34.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.PivotPrintOptions;
-            this.xrDesignRibbonPageGroup34.Name = "xrDesignRibbonPageGroup34";
-            this.xrDesignRibbonPageGroup34.Text = "Print Options";
-            // 
-            // ribbonPageCategory5
-            // 
-            this.ribbonPageCategory5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(94)))), ((int)(((byte)(211)))));
-            this.ribbonPageCategory5.Appearance.Options.UseBackColor = true;
-            this.ribbonPageCategory5.AutoStretchPageHeaders = true;
-            this.ribbonPageCategory5.Name = "ribbonPageCategory5";
-            this.ribbonPageCategory5.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage10});
-            this.ribbonPageCategory5.Text = "Bar Code Tools";
-            this.ribbonPageCategory5.Visible = false;
-            // 
-            // ribbonPage10
-            // 
-            this.ribbonPage10.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup35,
-            this.xrDesignRibbonPageGroup36});
-            this.ribbonPage10.Name = "ribbonPage10";
-            this.ribbonPage10.Text = "Design";
-            this.ribbonPage10.Visible = false;
-            // 
-            // xrDesignRibbonPageGroup35
-            // 
-            this.xrDesignRibbonPageGroup35.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup35.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup35.ItemLinks.Add(this.commandBarItem119);
-            this.xrDesignRibbonPageGroup35.ItemLinks.Add(this.commandBarItem120);
-            this.xrDesignRibbonPageGroup35.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.View;
-            this.xrDesignRibbonPageGroup35.Name = "xrDesignRibbonPageGroup35";
-            this.xrDesignRibbonPageGroup35.Text = "View";
-            // 
-            // xrDesignRibbonPageGroup36
-            // 
-            this.xrDesignRibbonPageGroup36.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup36.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup36.ItemLinks.Add(this.commandGalleryBarItem2);
-            this.xrDesignRibbonPageGroup36.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Symbology;
-            this.xrDesignRibbonPageGroup36.Name = "xrDesignRibbonPageGroup36";
-            this.xrDesignRibbonPageGroup36.Text = "Symbology";
-            // 
-            // ribbonPage11
-            // 
-            this.ribbonPage11.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup37,
-            this.xrDesignRibbonPageGroup38});
-            this.ribbonPage11.Name = "ribbonPage11";
-            this.ribbonPage11.Text = "Design";
-            this.ribbonPage11.Visible = false;
-            // 
-            // ribbonPageCategory6
-            // 
-            this.ribbonPageCategory6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(157)))), ((int)(((byte)(0)))));
-            this.ribbonPageCategory6.Appearance.Options.UseBackColor = true;
-            this.ribbonPageCategory6.AutoStretchPageHeaders = true;
-            this.ribbonPageCategory6.Name = "ribbonPageCategory6";
-            this.ribbonPageCategory6.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage11});
-            this.ribbonPageCategory6.Text = "Gauge Tools";
-            this.ribbonPageCategory6.Visible = false;
-            // 
-            // xrDesignRibbonPageGroup37
-            // 
-            this.xrDesignRibbonPageGroup37.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup37.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup37.ItemLinks.Add(this.commandGalleryBarItem5);
-            this.xrDesignRibbonPageGroup37.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.View;
-            this.xrDesignRibbonPageGroup37.Name = "xrDesignRibbonPageGroup37";
-            this.xrDesignRibbonPageGroup37.Text = "View";
-            // 
-            // xrDesignRibbonPageGroup38
-            // 
-            this.xrDesignRibbonPageGroup38.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup38.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup38.ItemLinks.Add(this.commandBarItem124);
-            this.xrDesignRibbonPageGroup38.ItemLinks.Add(this.commandBarItem125);
-            this.xrDesignRibbonPageGroup38.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Theme;
-            this.xrDesignRibbonPageGroup38.Name = "xrDesignRibbonPageGroup38";
-            this.xrDesignRibbonPageGroup38.Text = "Theme";
-            // 
-            // ribbonPage12
-            // 
-            this.ribbonPage12.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup39,
-            this.xrDesignRibbonPageGroup40});
-            this.ribbonPage12.Name = "ribbonPage12";
-            this.ribbonPage12.Text = "Design";
-            this.ribbonPage12.Visible = false;
-            // 
-            // ribbonPageCategory7
-            // 
-            this.ribbonPageCategory7.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(163)))), ((int)(((byte)(73)))));
-            this.ribbonPageCategory7.Appearance.Options.UseBackColor = true;
-            this.ribbonPageCategory7.AutoStretchPageHeaders = true;
-            this.ribbonPageCategory7.Name = "ribbonPageCategory7";
-            this.ribbonPageCategory7.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage12});
-            this.ribbonPageCategory7.Text = "Sparkline Tools";
-            this.ribbonPageCategory7.Visible = false;
-            // 
-            // xrDesignRibbonPageGroup39
-            // 
-            this.xrDesignRibbonPageGroup39.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup39.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup39.ItemLinks.Add(this.commandBarItem123);
-            this.xrDesignRibbonPageGroup39.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Data;
-            this.xrDesignRibbonPageGroup39.Name = "xrDesignRibbonPageGroup39";
-            this.xrDesignRibbonPageGroup39.Text = "Data";
-            // 
-            // xrDesignRibbonPageGroup40
-            // 
-            this.xrDesignRibbonPageGroup40.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup40.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup40.ItemLinks.Add(this.commandGalleryBarItem4);
-            this.xrDesignRibbonPageGroup40.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.View;
-            this.xrDesignRibbonPageGroup40.Name = "xrDesignRibbonPageGroup40";
-            this.xrDesignRibbonPageGroup40.Text = "View";
-            // 
-            // ribbonPage13
-            // 
-            this.ribbonPage13.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup41});
-            this.ribbonPage13.Name = "ribbonPage13";
-            this.ribbonPage13.Text = "Design";
-            this.ribbonPage13.Visible = false;
-            // 
-            // ribbonPageCategory8
-            // 
-            this.ribbonPageCategory8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(157)))), ((int)(((byte)(0)))));
-            this.ribbonPageCategory8.Appearance.Options.UseBackColor = true;
-            this.ribbonPageCategory8.AutoStretchPageHeaders = true;
-            this.ribbonPageCategory8.Name = "ribbonPageCategory8";
-            this.ribbonPageCategory8.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage13});
-            this.ribbonPageCategory8.Text = "Shape Tools";
-            this.ribbonPageCategory8.Visible = false;
-            // 
-            // xrDesignRibbonPageGroup41
-            // 
-            this.xrDesignRibbonPageGroup41.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup41.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup41.ItemLinks.Add(this.commandBarItem126);
-            this.xrDesignRibbonPageGroup41.ItemLinks.Add(this.commandGalleryBarItem6);
-            this.xrDesignRibbonPageGroup41.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.View;
-            this.xrDesignRibbonPageGroup41.Name = "xrDesignRibbonPageGroup41";
-            this.xrDesignRibbonPageGroup41.Text = "View";
-            // 
-            // ribbonPage14
-            // 
-            this.ribbonPage14.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.xrDesignRibbonPageGroup42,
-            this.xrDesignRibbonPageGroup43});
-            this.ribbonPage14.Name = "ribbonPage14";
-            this.ribbonPage14.Text = "Text";
-            this.ribbonPage14.Visible = false;
-            // 
-            // ribbonPageCategory9
-            // 
-            this.ribbonPageCategory9.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(197)))), ((int)(((byte)(126)))));
-            this.ribbonPageCategory9.Appearance.Options.UseBackColor = true;
-            this.ribbonPageCategory9.AutoStretchPageHeaders = true;
-            this.ribbonPageCategory9.Name = "ribbonPageCategory9";
-            this.ribbonPageCategory9.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage14});
-            this.ribbonPageCategory9.Text = "Text Tools";
-            this.ribbonPageCategory9.Visible = false;
-            // 
-            // xrDesignRibbonPageGroup42
-            // 
-            this.xrDesignRibbonPageGroup42.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup42.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup42.ItemLinks.Add(this.commandBarItem121);
-            this.xrDesignRibbonPageGroup42.ItemLinks.Add(this.commandBarItem122);
-            this.xrDesignRibbonPageGroup42.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Design;
-            this.xrDesignRibbonPageGroup42.Name = "xrDesignRibbonPageGroup42";
-            this.xrDesignRibbonPageGroup42.Text = "Design";
-            // 
-            // xrDesignRibbonPageGroup43
-            // 
-            this.xrDesignRibbonPageGroup43.AllowTextClipping = false;
-            this.xrDesignRibbonPageGroup43.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.xrDesignRibbonPageGroup43.ItemLinks.Add(this.commandBarCheckItem4);
-            this.xrDesignRibbonPageGroup43.ItemLinks.Add(this.commandBarCheckItem5);
-            this.xrDesignRibbonPageGroup43.ItemLinks.Add(this.commandBarCheckItem6, true);
-            this.xrDesignRibbonPageGroup43.ItemLinks.Add(this.commandBarCheckItem7);
-            this.xrDesignRibbonPageGroup43.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Behavior;
-            this.xrDesignRibbonPageGroup43.Name = "xrDesignRibbonPageGroup43";
-            this.xrDesignRibbonPageGroup43.Text = "Behavior";
             // 
             // printPreviewBarItem1
             // 
@@ -5745,10 +5018,6 @@ namespace Tech2019.Presentation.Forms.Reports
             this.printPreviewStaticItem1.RightIndent = 1;
             this.printPreviewStaticItem1.Type = "PageOfPages";
             // 
-            // repositoryItemProgressBar1
-            // 
-            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
-            // 
             // progressBarEditItem1
             // 
             this.progressBarEditItem1.ContextSpecifier = this.xrDesignRibbonController1;
@@ -5758,6 +5027,10 @@ namespace Tech2019.Presentation.Forms.Reports
             this.progressBarEditItem1.Id = 225;
             this.progressBarEditItem1.Name = "progressBarEditItem1";
             this.progressBarEditItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // repositoryItemProgressBar1
+            // 
+            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
             // 
             // printPreviewBarItem52
             // 
@@ -5779,14 +5052,6 @@ namespace Tech2019.Presentation.Forms.Reports
             this.printPreviewStaticItem2.Name = "printPreviewStaticItem2";
             this.printPreviewStaticItem2.Type = "ZoomFactorText";
             // 
-            // repositoryItemZoomTrackBar1
-            // 
-            this.repositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center;
-            this.repositoryItemZoomTrackBar1.AllowFocused = false;
-            this.repositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.repositoryItemZoomTrackBar1.Maximum = 180;
-            this.repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
-            // 
             // zoomTrackBarEditItem1
             // 
             this.zoomTrackBarEditItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
@@ -5799,6 +5064,712 @@ namespace Tech2019.Presentation.Forms.Reports
             this.zoomTrackBarEditItem1.Range = new int[] {
         10,
         500};
+            // 
+            // repositoryItemZoomTrackBar1
+            // 
+            this.repositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemZoomTrackBar1.AllowFocused = false;
+            this.repositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.repositoryItemZoomTrackBar1.Maximum = 180;
+            this.repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
+            // 
+            // ribbonPageCategory1
+            // 
+            this.ribbonPageCategory1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(94)))), ((int)(((byte)(211)))));
+            this.ribbonPageCategory1.Appearance.Options.UseBackColor = true;
+            this.ribbonPageCategory1.AutoStretchPageHeaders = true;
+            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
+            this.ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage6});
+            this.ribbonPageCategory1.Text = "Character Comb Tools";
+            this.ribbonPageCategory1.Visible = false;
+            // 
+            // ribbonPage6
+            // 
+            this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup20});
+            this.ribbonPage6.Name = "ribbonPage6";
+            this.ribbonPage6.Text = "Design";
+            this.ribbonPage6.Visible = false;
+            // 
+            // xrDesignRibbonPageGroup20
+            // 
+            this.xrDesignRibbonPageGroup20.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup20.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup20.ItemLinks.Add(this.commandBarCheckItem8);
+            this.xrDesignRibbonPageGroup20.ItemLinks.Add(this.commandBarCheckItem9);
+            this.xrDesignRibbonPageGroup20.ItemLinks.Add(this.commandBarEditItem2, true);
+            this.xrDesignRibbonPageGroup20.ItemLinks.Add(this.commandBarEditItem3);
+            this.xrDesignRibbonPageGroup20.ItemLinks.Add(this.commandBarEditItem4, true);
+            this.xrDesignRibbonPageGroup20.ItemLinks.Add(this.commandBarEditItem5);
+            this.xrDesignRibbonPageGroup20.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.CellSize;
+            this.xrDesignRibbonPageGroup20.Name = "xrDesignRibbonPageGroup20";
+            this.xrDesignRibbonPageGroup20.Text = "Cell Size";
+            // 
+            // ribbonPageCategory2
+            // 
+            this.ribbonPageCategory2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(203)))), ((int)(((byte)(29)))));
+            this.ribbonPageCategory2.Appearance.Options.UseBackColor = true;
+            this.ribbonPageCategory2.AutoStretchPageHeaders = true;
+            this.ribbonPageCategory2.Name = "ribbonPageCategory2";
+            this.ribbonPageCategory2.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage7});
+            this.ribbonPageCategory2.Text = "Table Tools";
+            this.ribbonPageCategory2.Visible = false;
+            // 
+            // ribbonPage7
+            // 
+            this.ribbonPage7.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup21,
+            this.xrDesignRibbonPageGroup22,
+            this.xrDesignRibbonPageGroup23,
+            this.xrDesignRibbonPageGroup24,
+            this.xrDesignRibbonPageGroup25});
+            this.ribbonPage7.Name = "ribbonPage7";
+            this.ribbonPage7.Text = "Design";
+            this.ribbonPage7.Visible = false;
+            // 
+            // xrDesignRibbonPageGroup21
+            // 
+            this.xrDesignRibbonPageGroup21.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup21.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup21.ItemLinks.Add(this.commandBarItem78);
+            this.xrDesignRibbonPageGroup21.ItemLinks.Add(this.commandBarItem79);
+            this.xrDesignRibbonPageGroup21.ItemLinks.Add(this.commandBarItem77);
+            this.xrDesignRibbonPageGroup21.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Select;
+            this.xrDesignRibbonPageGroup21.Name = "xrDesignRibbonPageGroup21";
+            this.xrDesignRibbonPageGroup21.Text = "Select";
+            // 
+            // xrDesignRibbonPageGroup22
+            // 
+            this.xrDesignRibbonPageGroup22.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup22.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup22.ItemLinks.Add(this.commandBarItem84);
+            this.xrDesignRibbonPageGroup22.ItemLinks.Add(this.commandBarItem85);
+            this.xrDesignRibbonPageGroup22.ItemLinks.Add(this.commandBarItem86);
+            this.xrDesignRibbonPageGroup22.ItemLinks.Add(this.commandBarItem87);
+            this.xrDesignRibbonPageGroup22.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Insert;
+            this.xrDesignRibbonPageGroup22.Name = "xrDesignRibbonPageGroup22";
+            this.xrDesignRibbonPageGroup22.Text = "Insert";
+            // 
+            // xrDesignRibbonPageGroup23
+            // 
+            this.xrDesignRibbonPageGroup23.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup23.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup23.ItemLinks.Add(this.commandBarItem80);
+            this.xrDesignRibbonPageGroup23.ItemLinks.Add(this.commandBarItem81);
+            this.xrDesignRibbonPageGroup23.ItemLinks.Add(this.commandBarItem82);
+            this.xrDesignRibbonPageGroup23.ItemLinks.Add(this.commandBarItem83);
+            this.xrDesignRibbonPageGroup23.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Delete;
+            this.xrDesignRibbonPageGroup23.Name = "xrDesignRibbonPageGroup23";
+            this.xrDesignRibbonPageGroup23.Text = "Delete";
+            // 
+            // xrDesignRibbonPageGroup24
+            // 
+            this.xrDesignRibbonPageGroup24.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup24.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup24.ItemLinks.Add(this.commandBarItem90);
+            this.xrDesignRibbonPageGroup24.ItemLinks.Add(this.commandBarItem91);
+            this.xrDesignRibbonPageGroup24.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Merge;
+            this.xrDesignRibbonPageGroup24.Name = "xrDesignRibbonPageGroup24";
+            this.xrDesignRibbonPageGroup24.Text = "Merge";
+            // 
+            // xrDesignRibbonPageGroup25
+            // 
+            this.xrDesignRibbonPageGroup25.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup25.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup25.ItemLinks.Add(this.commandBarItem88);
+            this.xrDesignRibbonPageGroup25.ItemLinks.Add(this.commandBarItem89);
+            this.xrDesignRibbonPageGroup25.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Distribute;
+            this.xrDesignRibbonPageGroup25.Name = "xrDesignRibbonPageGroup25";
+            this.xrDesignRibbonPageGroup25.Text = "Distribute";
+            // 
+            // ribbonPageCategory3
+            // 
+            this.ribbonPageCategory3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(163)))), ((int)(((byte)(73)))));
+            this.ribbonPageCategory3.Appearance.Options.UseBackColor = true;
+            this.ribbonPageCategory3.AutoStretchPageHeaders = true;
+            this.ribbonPageCategory3.Name = "ribbonPageCategory3";
+            this.ribbonPageCategory3.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage8});
+            this.ribbonPageCategory3.Text = "Chart Tools";
+            this.ribbonPageCategory3.Visible = false;
+            // 
+            // ribbonPage8
+            // 
+            this.ribbonPage8.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup26,
+            this.xrDesignRibbonPageGroup27,
+            this.xrDesignRibbonPageGroup28,
+            this.xrDesignRibbonPageGroup29,
+            this.xrDesignRibbonPageGroup30});
+            this.ribbonPage8.Name = "ribbonPage8";
+            this.ribbonPage8.Text = "Design";
+            this.ribbonPage8.Visible = false;
+            // 
+            // xrDesignRibbonPageGroup26
+            // 
+            this.xrDesignRibbonPageGroup26.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup26.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup26.ItemLinks.Add(this.commandBarItem105);
+            this.xrDesignRibbonPageGroup26.ItemLinks.Add(this.commandBarItem104);
+            this.xrDesignRibbonPageGroup26.ItemLinks.Add(this.commandBarItem103);
+            this.xrDesignRibbonPageGroup26.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Layout;
+            this.xrDesignRibbonPageGroup26.Name = "xrDesignRibbonPageGroup26";
+            this.xrDesignRibbonPageGroup26.Text = "Layout";
+            // 
+            // xrDesignRibbonPageGroup27
+            // 
+            this.xrDesignRibbonPageGroup27.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup27.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup27.ItemLinks.Add(this.commandBarItem106);
+            this.xrDesignRibbonPageGroup27.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Data;
+            this.xrDesignRibbonPageGroup27.Name = "xrDesignRibbonPageGroup27";
+            this.xrDesignRibbonPageGroup27.Text = "Data";
+            // 
+            // xrDesignRibbonPageGroup28
+            // 
+            this.xrDesignRibbonPageGroup28.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup28.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
+            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem108);
+            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem109);
+            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem110);
+            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem111);
+            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem112);
+            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem113);
+            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem114);
+            this.xrDesignRibbonPageGroup28.ItemLinks.Add(this.commandBarItem115);
+            this.xrDesignRibbonPageGroup28.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Series;
+            this.xrDesignRibbonPageGroup28.Name = "xrDesignRibbonPageGroup28";
+            this.xrDesignRibbonPageGroup28.Text = "Series";
+            // 
+            // xrDesignRibbonPageGroup29
+            // 
+            this.xrDesignRibbonPageGroup29.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup29.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
+            this.xrDesignRibbonPageGroup29.ItemLinks.Add(this.commandBarItem116);
+            this.xrDesignRibbonPageGroup29.ItemLinks.Add(this.commandBarItem117);
+            this.xrDesignRibbonPageGroup29.ItemLinks.Add(this.commandBarItem118);
+            this.xrDesignRibbonPageGroup29.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Annotations;
+            this.xrDesignRibbonPageGroup29.Name = "xrDesignRibbonPageGroup29";
+            this.xrDesignRibbonPageGroup29.Text = "Annotations";
+            // 
+            // xrDesignRibbonPageGroup30
+            // 
+            this.xrDesignRibbonPageGroup30.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup30.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
+            this.xrDesignRibbonPageGroup30.ItemLinks.Add(this.commandBarItem107);
+            this.xrDesignRibbonPageGroup30.ItemLinks.Add(this.commandGalleryBarItem3);
+            this.xrDesignRibbonPageGroup30.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Appearance;
+            this.xrDesignRibbonPageGroup30.Name = "xrDesignRibbonPageGroup30";
+            this.xrDesignRibbonPageGroup30.Text = "Appearance";
+            // 
+            // ribbonPageCategory4
+            // 
+            this.ribbonPageCategory4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(89)))), ((int)(((byte)(156)))));
+            this.ribbonPageCategory4.Appearance.Options.UseBackColor = true;
+            this.ribbonPageCategory4.AutoStretchPageHeaders = true;
+            this.ribbonPageCategory4.Name = "ribbonPageCategory4";
+            this.ribbonPageCategory4.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage9});
+            this.ribbonPageCategory4.Text = "Pivot Grid Tools";
+            this.ribbonPageCategory4.Visible = false;
+            // 
+            // ribbonPage9
+            // 
+            this.ribbonPage9.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup31,
+            this.xrDesignRibbonPageGroup32,
+            this.xrDesignRibbonPageGroup33,
+            this.xrDesignRibbonPageGroup34});
+            this.ribbonPage9.Name = "ribbonPage9";
+            this.ribbonPage9.Text = "Design";
+            this.ribbonPage9.Visible = false;
+            // 
+            // xrDesignRibbonPageGroup31
+            // 
+            this.xrDesignRibbonPageGroup31.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup31.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup31.ItemLinks.Add(this.commandBarItem92);
+            this.xrDesignRibbonPageGroup31.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Layout;
+            this.xrDesignRibbonPageGroup31.Name = "xrDesignRibbonPageGroup31";
+            this.xrDesignRibbonPageGroup31.Text = "Layout";
+            // 
+            // xrDesignRibbonPageGroup32
+            // 
+            this.xrDesignRibbonPageGroup32.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup32.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup32.ItemLinks.Add(this.commandBarItem93);
+            this.xrDesignRibbonPageGroup32.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Data;
+            this.xrDesignRibbonPageGroup32.Name = "xrDesignRibbonPageGroup32";
+            this.xrDesignRibbonPageGroup32.Text = "Data";
+            // 
+            // xrDesignRibbonPageGroup33
+            // 
+            this.xrDesignRibbonPageGroup33.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup33.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup33.ItemLinks.Add(this.commandBarItem95);
+            this.xrDesignRibbonPageGroup33.ItemLinks.Add(this.commandBarItem94);
+            this.xrDesignRibbonPageGroup33.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.PivotFields;
+            this.xrDesignRibbonPageGroup33.Name = "xrDesignRibbonPageGroup33";
+            this.xrDesignRibbonPageGroup33.Text = "Fields";
+            // 
+            // xrDesignRibbonPageGroup34
+            // 
+            this.xrDesignRibbonPageGroup34.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup34.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem96);
+            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem97);
+            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem100, true);
+            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem99);
+            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem98);
+            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem101, true);
+            this.xrDesignRibbonPageGroup34.ItemLinks.Add(this.commandBarItem102);
+            this.xrDesignRibbonPageGroup34.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.PivotPrintOptions;
+            this.xrDesignRibbonPageGroup34.Name = "xrDesignRibbonPageGroup34";
+            this.xrDesignRibbonPageGroup34.Text = "Print Options";
+            // 
+            // ribbonPageCategory5
+            // 
+            this.ribbonPageCategory5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(94)))), ((int)(((byte)(211)))));
+            this.ribbonPageCategory5.Appearance.Options.UseBackColor = true;
+            this.ribbonPageCategory5.AutoStretchPageHeaders = true;
+            this.ribbonPageCategory5.Name = "ribbonPageCategory5";
+            this.ribbonPageCategory5.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage10});
+            this.ribbonPageCategory5.Text = "Bar Code Tools";
+            this.ribbonPageCategory5.Visible = false;
+            // 
+            // ribbonPage10
+            // 
+            this.ribbonPage10.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup35,
+            this.xrDesignRibbonPageGroup36});
+            this.ribbonPage10.Name = "ribbonPage10";
+            this.ribbonPage10.Text = "Design";
+            this.ribbonPage10.Visible = false;
+            // 
+            // xrDesignRibbonPageGroup35
+            // 
+            this.xrDesignRibbonPageGroup35.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup35.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup35.ItemLinks.Add(this.commandBarItem119);
+            this.xrDesignRibbonPageGroup35.ItemLinks.Add(this.commandBarItem120);
+            this.xrDesignRibbonPageGroup35.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.View;
+            this.xrDesignRibbonPageGroup35.Name = "xrDesignRibbonPageGroup35";
+            this.xrDesignRibbonPageGroup35.Text = "View";
+            // 
+            // xrDesignRibbonPageGroup36
+            // 
+            this.xrDesignRibbonPageGroup36.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup36.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup36.ItemLinks.Add(this.commandGalleryBarItem2);
+            this.xrDesignRibbonPageGroup36.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Symbology;
+            this.xrDesignRibbonPageGroup36.Name = "xrDesignRibbonPageGroup36";
+            this.xrDesignRibbonPageGroup36.Text = "Symbology";
+            // 
+            // ribbonPageCategory6
+            // 
+            this.ribbonPageCategory6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(157)))), ((int)(((byte)(0)))));
+            this.ribbonPageCategory6.Appearance.Options.UseBackColor = true;
+            this.ribbonPageCategory6.AutoStretchPageHeaders = true;
+            this.ribbonPageCategory6.Name = "ribbonPageCategory6";
+            this.ribbonPageCategory6.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage11});
+            this.ribbonPageCategory6.Text = "Gauge Tools";
+            this.ribbonPageCategory6.Visible = false;
+            // 
+            // ribbonPage11
+            // 
+            this.ribbonPage11.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup37,
+            this.xrDesignRibbonPageGroup38});
+            this.ribbonPage11.Name = "ribbonPage11";
+            this.ribbonPage11.Text = "Design";
+            this.ribbonPage11.Visible = false;
+            // 
+            // xrDesignRibbonPageGroup37
+            // 
+            this.xrDesignRibbonPageGroup37.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup37.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup37.ItemLinks.Add(this.commandGalleryBarItem5);
+            this.xrDesignRibbonPageGroup37.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.View;
+            this.xrDesignRibbonPageGroup37.Name = "xrDesignRibbonPageGroup37";
+            this.xrDesignRibbonPageGroup37.Text = "View";
+            // 
+            // xrDesignRibbonPageGroup38
+            // 
+            this.xrDesignRibbonPageGroup38.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup38.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup38.ItemLinks.Add(this.commandBarItem124);
+            this.xrDesignRibbonPageGroup38.ItemLinks.Add(this.commandBarItem125);
+            this.xrDesignRibbonPageGroup38.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Theme;
+            this.xrDesignRibbonPageGroup38.Name = "xrDesignRibbonPageGroup38";
+            this.xrDesignRibbonPageGroup38.Text = "Theme";
+            // 
+            // ribbonPageCategory7
+            // 
+            this.ribbonPageCategory7.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(163)))), ((int)(((byte)(73)))));
+            this.ribbonPageCategory7.Appearance.Options.UseBackColor = true;
+            this.ribbonPageCategory7.AutoStretchPageHeaders = true;
+            this.ribbonPageCategory7.Name = "ribbonPageCategory7";
+            this.ribbonPageCategory7.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage12});
+            this.ribbonPageCategory7.Text = "Sparkline Tools";
+            this.ribbonPageCategory7.Visible = false;
+            // 
+            // ribbonPage12
+            // 
+            this.ribbonPage12.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup39,
+            this.xrDesignRibbonPageGroup40});
+            this.ribbonPage12.Name = "ribbonPage12";
+            this.ribbonPage12.Text = "Design";
+            this.ribbonPage12.Visible = false;
+            // 
+            // xrDesignRibbonPageGroup39
+            // 
+            this.xrDesignRibbonPageGroup39.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup39.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup39.ItemLinks.Add(this.commandBarItem123);
+            this.xrDesignRibbonPageGroup39.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Data;
+            this.xrDesignRibbonPageGroup39.Name = "xrDesignRibbonPageGroup39";
+            this.xrDesignRibbonPageGroup39.Text = "Data";
+            // 
+            // xrDesignRibbonPageGroup40
+            // 
+            this.xrDesignRibbonPageGroup40.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup40.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup40.ItemLinks.Add(this.commandGalleryBarItem4);
+            this.xrDesignRibbonPageGroup40.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.View;
+            this.xrDesignRibbonPageGroup40.Name = "xrDesignRibbonPageGroup40";
+            this.xrDesignRibbonPageGroup40.Text = "View";
+            // 
+            // ribbonPageCategory8
+            // 
+            this.ribbonPageCategory8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(157)))), ((int)(((byte)(0)))));
+            this.ribbonPageCategory8.Appearance.Options.UseBackColor = true;
+            this.ribbonPageCategory8.AutoStretchPageHeaders = true;
+            this.ribbonPageCategory8.Name = "ribbonPageCategory8";
+            this.ribbonPageCategory8.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage13});
+            this.ribbonPageCategory8.Text = "Shape Tools";
+            this.ribbonPageCategory8.Visible = false;
+            // 
+            // ribbonPage13
+            // 
+            this.ribbonPage13.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup41});
+            this.ribbonPage13.Name = "ribbonPage13";
+            this.ribbonPage13.Text = "Design";
+            this.ribbonPage13.Visible = false;
+            // 
+            // xrDesignRibbonPageGroup41
+            // 
+            this.xrDesignRibbonPageGroup41.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup41.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup41.ItemLinks.Add(this.commandBarItem126);
+            this.xrDesignRibbonPageGroup41.ItemLinks.Add(this.commandGalleryBarItem6);
+            this.xrDesignRibbonPageGroup41.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.View;
+            this.xrDesignRibbonPageGroup41.Name = "xrDesignRibbonPageGroup41";
+            this.xrDesignRibbonPageGroup41.Text = "View";
+            // 
+            // ribbonPageCategory9
+            // 
+            this.ribbonPageCategory9.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(197)))), ((int)(((byte)(126)))));
+            this.ribbonPageCategory9.Appearance.Options.UseBackColor = true;
+            this.ribbonPageCategory9.AutoStretchPageHeaders = true;
+            this.ribbonPageCategory9.Name = "ribbonPageCategory9";
+            this.ribbonPageCategory9.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage14});
+            this.ribbonPageCategory9.Text = "Text Tools";
+            this.ribbonPageCategory9.Visible = false;
+            // 
+            // ribbonPage14
+            // 
+            this.ribbonPage14.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup42,
+            this.xrDesignRibbonPageGroup43});
+            this.ribbonPage14.Name = "ribbonPage14";
+            this.ribbonPage14.Text = "Text";
+            this.ribbonPage14.Visible = false;
+            // 
+            // xrDesignRibbonPageGroup42
+            // 
+            this.xrDesignRibbonPageGroup42.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup42.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup42.ItemLinks.Add(this.commandBarItem121);
+            this.xrDesignRibbonPageGroup42.ItemLinks.Add(this.commandBarItem122);
+            this.xrDesignRibbonPageGroup42.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Design;
+            this.xrDesignRibbonPageGroup42.Name = "xrDesignRibbonPageGroup42";
+            this.xrDesignRibbonPageGroup42.Text = "Design";
+            // 
+            // xrDesignRibbonPageGroup43
+            // 
+            this.xrDesignRibbonPageGroup43.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup43.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup43.ItemLinks.Add(this.commandBarCheckItem4);
+            this.xrDesignRibbonPageGroup43.ItemLinks.Add(this.commandBarCheckItem5);
+            this.xrDesignRibbonPageGroup43.ItemLinks.Add(this.commandBarCheckItem6, true);
+            this.xrDesignRibbonPageGroup43.ItemLinks.Add(this.commandBarCheckItem7);
+            this.xrDesignRibbonPageGroup43.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Behavior;
+            this.xrDesignRibbonPageGroup43.Name = "xrDesignRibbonPageGroup43";
+            this.xrDesignRibbonPageGroup43.Text = "Behavior";
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup1,
+            this.xrDesignRibbonPageGroup2,
+            this.xrDesignRibbonPageGroup3,
+            this.xrDesignRibbonPageGroup4,
+            this.xrDesignRibbonPageGroup5,
+            this.xrDesignRibbonPageGroup6,
+            this.xrDesignRibbonPageGroup7});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Home";
+            // 
+            // xrDesignRibbonPageGroup1
+            // 
+            this.xrDesignRibbonPageGroup1.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup1.ItemLinks.Add(this.commandBarItem6);
+            this.xrDesignRibbonPageGroup1.ItemLinks.Add(this.commandBarItem9);
+            this.xrDesignRibbonPageGroup1.ItemLinks.Add(this.commandBarItem7);
+            this.xrDesignRibbonPageGroup1.ItemLinks.Add(this.commandBarItem8);
+            this.xrDesignRibbonPageGroup1.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Report;
+            this.xrDesignRibbonPageGroup1.Name = "xrDesignRibbonPageGroup1";
+            this.xrDesignRibbonPageGroup1.Text = "Report";
+            // 
+            // xrDesignRibbonPageGroup2
+            // 
+            this.xrDesignRibbonPageGroup2.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup2.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup2.ItemLinks.Add(this.commandBarItem30);
+            this.xrDesignRibbonPageGroup2.ItemLinks.Add(this.commandBarItem28);
+            this.xrDesignRibbonPageGroup2.ItemLinks.Add(this.commandBarItem29);
+            this.xrDesignRibbonPageGroup2.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Data;
+            this.xrDesignRibbonPageGroup2.Name = "xrDesignRibbonPageGroup2";
+            this.xrDesignRibbonPageGroup2.Text = "Data";
+            // 
+            // xrDesignRibbonPageGroup3
+            // 
+            this.xrDesignRibbonPageGroup3.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup3.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup3.ItemLinks.Add(this.commandBarItem14);
+            this.xrDesignRibbonPageGroup3.ItemLinks.Add(this.commandBarItem15);
+            this.xrDesignRibbonPageGroup3.ItemLinks.Add(this.commandBarItem16);
+            this.xrDesignRibbonPageGroup3.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Clipboard;
+            this.xrDesignRibbonPageGroup3.Name = "xrDesignRibbonPageGroup3";
+            this.xrDesignRibbonPageGroup3.Text = "Clipboard";
+            // 
+            // xrDesignRibbonPageGroup4
+            // 
+            this.xrDesignRibbonPageGroup4.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup4.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup4.ItemLinks.Add(this.xrDesignBarButtonGroup1);
+            this.xrDesignRibbonPageGroup4.ItemLinks.Add(this.xrDesignBarButtonGroup2);
+            this.xrDesignRibbonPageGroup4.ItemLinks.Add(this.xrDesignBarButtonGroup3);
+            this.xrDesignRibbonPageGroup4.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Font;
+            this.xrDesignRibbonPageGroup4.Name = "xrDesignRibbonPageGroup4";
+            this.xrDesignRibbonPageGroup4.Text = "Font";
+            // 
+            // xrDesignRibbonPageGroup5
+            // 
+            this.xrDesignRibbonPageGroup5.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup5.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup5.ItemLinks.Add(this.xrDesignBarButtonGroup4);
+            this.xrDesignRibbonPageGroup5.ItemLinks.Add(this.xrDesignBarButtonGroup5);
+            this.xrDesignRibbonPageGroup5.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.TextAlignment;
+            this.xrDesignRibbonPageGroup5.Name = "xrDesignRibbonPageGroup5";
+            this.xrDesignRibbonPageGroup5.Text = "Alignment";
+            // 
+            // xrDesignRibbonPageGroup6
+            // 
+            this.xrDesignRibbonPageGroup6.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup6.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup6.ItemLinks.Add(this.xrDesignBarButtonGroup6);
+            this.xrDesignRibbonPageGroup6.ItemLinks.Add(this.xrDesignBarButtonGroup7);
+            this.xrDesignRibbonPageGroup6.ItemLinks.Add(this.xrDesignBarButtonGroup8);
+            this.xrDesignRibbonPageGroup6.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Borders;
+            this.xrDesignRibbonPageGroup6.Name = "xrDesignRibbonPageGroup6";
+            this.xrDesignRibbonPageGroup6.Text = "Borders";
+            // 
+            // xrDesignRibbonPageGroup7
+            // 
+            this.xrDesignRibbonPageGroup7.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup7.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
+            this.xrDesignRibbonPageGroup7.ItemLinks.Add(this.commandBarItem31);
+            this.xrDesignRibbonPageGroup7.ItemLinks.Add(this.commandGalleryBarItem1);
+            this.xrDesignRibbonPageGroup7.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Styles;
+            this.xrDesignRibbonPageGroup7.Name = "xrDesignRibbonPageGroup7";
+            this.xrDesignRibbonPageGroup7.Text = "Styles";
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup8,
+            this.xrDesignRibbonPageGroup9,
+            this.xrDesignRibbonPageGroup10,
+            this.xrDesignRibbonPageGroup11});
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "Layout";
+            // 
+            // xrDesignRibbonPageGroup8
+            // 
+            this.xrDesignRibbonPageGroup8.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup8.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup8.ItemLinks.Add(this.xrDesignBarButtonGroup9);
+            this.xrDesignRibbonPageGroup8.ItemLinks.Add(this.xrDesignBarButtonGroup10);
+            this.xrDesignRibbonPageGroup8.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Alignment;
+            this.xrDesignRibbonPageGroup8.Name = "xrDesignRibbonPageGroup8";
+            this.xrDesignRibbonPageGroup8.Text = "Alignment";
+            // 
+            // xrDesignRibbonPageGroup9
+            // 
+            this.xrDesignRibbonPageGroup9.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup9.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.commandBarItem39);
+            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.commandBarItem47);
+            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.commandBarItem62);
+            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.xrDesignBarButtonGroup11);
+            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.xrDesignBarButtonGroup12);
+            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.xrDesignBarButtonGroup13);
+            this.xrDesignRibbonPageGroup9.ItemLinks.Add(this.xrDesignBarButtonGroup14);
+            this.xrDesignRibbonPageGroup9.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.SizeAndLayout;
+            this.xrDesignRibbonPageGroup9.Name = "xrDesignRibbonPageGroup9";
+            this.xrDesignRibbonPageGroup9.Text = "Layout";
+            // 
+            // xrDesignRibbonPageGroup10
+            // 
+            this.xrDesignRibbonPageGroup10.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup10.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup10.ItemLinks.Add(this.commandBarItem60);
+            this.xrDesignRibbonPageGroup10.ItemLinks.Add(this.commandBarItem61);
+            this.xrDesignRibbonPageGroup10.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Arranging;
+            this.xrDesignRibbonPageGroup10.Name = "xrDesignRibbonPageGroup10";
+            this.xrDesignRibbonPageGroup10.Text = "Arranging";
+            // 
+            // xrDesignRibbonPageGroup11
+            // 
+            this.xrDesignRibbonPageGroup11.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup11.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup11.ItemLinks.Add(this.commandBarCheckItem1);
+            this.xrDesignRibbonPageGroup11.ItemLinks.Add(this.commandBarCheckItem2);
+            this.xrDesignRibbonPageGroup11.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Snapping;
+            this.xrDesignRibbonPageGroup11.Name = "xrDesignRibbonPageGroup11";
+            this.xrDesignRibbonPageGroup11.Text = "Snapping";
+            // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup12,
+            this.xrDesignRibbonPageGroup13});
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "Page";
+            // 
+            // xrDesignRibbonPageGroup12
+            // 
+            this.xrDesignRibbonPageGroup12.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup12.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
+            this.xrDesignRibbonPageGroup12.ItemLinks.Add(this.commandBarItem65);
+            this.xrDesignRibbonPageGroup12.ItemLinks.Add(this.commandBarItem64);
+            this.xrDesignRibbonPageGroup12.ItemLinks.Add(this.commandBarItem63);
+            this.xrDesignRibbonPageGroup12.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.PageSetup;
+            this.xrDesignRibbonPageGroup12.Name = "xrDesignRibbonPageGroup12";
+            this.xrDesignRibbonPageGroup12.Text = "Page Setup";
+            // 
+            // xrDesignRibbonPageGroup13
+            // 
+            this.xrDesignRibbonPageGroup13.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup13.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup13.ItemLinks.Add(this.commandColorBarItem4);
+            this.xrDesignRibbonPageGroup13.ItemLinks.Add(this.commandBarItem66);
+            this.xrDesignRibbonPageGroup13.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Appearance;
+            this.xrDesignRibbonPageGroup13.Name = "xrDesignRibbonPageGroup13";
+            this.xrDesignRibbonPageGroup13.Text = "Appearance";
+            // 
+            // ribbonPage4
+            // 
+            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup14,
+            this.xrDesignRibbonPageGroup15,
+            this.xrDesignRibbonPageGroup16,
+            this.xrDesignRibbonPageGroup17,
+            this.xrDesignRibbonPageGroup18});
+            this.ribbonPage4.Name = "ribbonPage4";
+            this.ribbonPage4.Text = "View";
+            // 
+            // xrDesignRibbonPageGroup14
+            // 
+            this.xrDesignRibbonPageGroup14.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup14.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup14.ItemLinks.Add(this.commandBarItem67);
+            this.xrDesignRibbonPageGroup14.ItemLinks.Add(this.commandBarItem68);
+            this.xrDesignRibbonPageGroup14.ItemLinks.Add(this.commandBarItem69, true);
+            this.xrDesignRibbonPageGroup14.ItemLinks.Add(this.commandBarItem70);
+            this.xrDesignRibbonPageGroup14.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Show;
+            this.xrDesignRibbonPageGroup14.Name = "xrDesignRibbonPageGroup14";
+            this.xrDesignRibbonPageGroup14.Text = "Show";
+            // 
+            // xrDesignRibbonPageGroup15
+            // 
+            this.xrDesignRibbonPageGroup15.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup15.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup15.ItemLinks.Add(this.commandBarItem71);
+            this.xrDesignRibbonPageGroup15.ItemLinks.Add(this.commandBarItem72);
+            this.xrDesignRibbonPageGroup15.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Bands;
+            this.xrDesignRibbonPageGroup15.Name = "xrDesignRibbonPageGroup15";
+            this.xrDesignRibbonPageGroup15.Text = "Bands";
+            // 
+            // xrDesignRibbonPageGroup16
+            // 
+            this.xrDesignRibbonPageGroup16.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup16.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
+            this.xrDesignRibbonPageGroup16.ItemLinks.Add(this.commandBarEditItem1);
+            this.xrDesignRibbonPageGroup16.ItemLinks.Add(this.commandBarCheckItem3);
+            this.xrDesignRibbonPageGroup16.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Localization;
+            this.xrDesignRibbonPageGroup16.Name = "xrDesignRibbonPageGroup16";
+            this.xrDesignRibbonPageGroup16.Text = "Localization";
+            // 
+            // xrDesignRibbonPageGroup17
+            // 
+            this.xrDesignRibbonPageGroup17.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup17.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup17.ItemLinks.Add(this.commandBarItem75);
+            this.xrDesignRibbonPageGroup17.ItemLinks.Add(this.commandBarItem73);
+            this.xrDesignRibbonPageGroup17.ItemLinks.Add(this.commandBarItem74);
+            this.xrDesignRibbonPageGroup17.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Zoom;
+            this.xrDesignRibbonPageGroup17.Name = "xrDesignRibbonPageGroup17";
+            this.xrDesignRibbonPageGroup17.Text = "Zoom";
+            // 
+            // xrDesignRibbonPageGroup18
+            // 
+            this.xrDesignRibbonPageGroup18.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup18.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup18.ItemLinks.Add(this.barDockPanelsListItem1);
+            this.xrDesignRibbonPageGroup18.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.View;
+            this.xrDesignRibbonPageGroup18.Name = "xrDesignRibbonPageGroup18";
+            this.xrDesignRibbonPageGroup18.Text = "View";
+            // 
+            // ribbonPage5
+            // 
+            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.xrDesignRibbonPageGroup19});
+            this.ribbonPage5.Name = "ribbonPage5";
+            this.ribbonPage5.Text = "Scripts";
+            this.ribbonPage5.Visible = false;
+            // 
+            // xrDesignRibbonPageGroup19
+            // 
+            this.xrDesignRibbonPageGroup19.AllowTextClipping = false;
+            this.xrDesignRibbonPageGroup19.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.xrDesignRibbonPageGroup19.ItemLinks.Add(this.commandBarEditItem7);
+            this.xrDesignRibbonPageGroup19.ItemLinks.Add(this.commandBarEditItem8);
+            this.xrDesignRibbonPageGroup19.ItemLinks.Add(this.commandBarItem76);
+            this.xrDesignRibbonPageGroup19.Kind = DevExpress.XtraReports.UserDesigner.XRDesignRibbonPageGroupKind.Edit;
+            this.xrDesignRibbonPageGroup19.Name = "xrDesignRibbonPageGroup19";
+            this.xrDesignRibbonPageGroup19.Text = "Edit";
             // 
             // ribbonPage15
             // 
@@ -5925,6 +5896,18 @@ namespace Tech2019.Presentation.Forms.Reports
             this.printPreviewRibbonPageGroup8.Name = "printPreviewRibbonPageGroup8";
             this.printPreviewRibbonPageGroup8.Text = "Close";
             // 
+            // ribbonStatusBar1
+            // 
+            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem1);
+            this.ribbonStatusBar1.ItemLinks.Add(this.progressBarEditItem1);
+            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewBarItem52);
+            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem2);
+            this.ribbonStatusBar1.ItemLinks.Add(this.zoomTrackBarEditItem1);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 514);
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1370, 27);
+            // 
             // xrDesignDockManager1
             // 
             this.xrDesignDockManager1.Form = this;
@@ -5946,41 +5929,31 @@ namespace Tech2019.Presentation.Forms.Reports
             "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
             "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
             // 
-            // fieldListDockPanel1
+            // panelContainer1
             // 
-            this.fieldListDockPanel1.Controls.Add(this.fieldListDockPanel1_Container);
-            this.fieldListDockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.fieldListDockPanel1.ID = new System.Guid("faf69838-a93f-4114-83e8-d0d09cc5ce95");
-            this.fieldListDockPanel1.Location = new System.Drawing.Point(1, 23);
-            this.fieldListDockPanel1.Name = "fieldListDockPanel1";
-            this.fieldListDockPanel1.OriginalSize = new System.Drawing.Size(200, 200);
-            this.fieldListDockPanel1.Size = new System.Drawing.Size(374, 132);
-            this.fieldListDockPanel1.Text = "Field List";
+            this.panelContainer1.Controls.Add(this.panelContainer2);
+            this.panelContainer1.Controls.Add(this.panelContainer3);
+            this.panelContainer1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.panelContainer1.ID = new System.Guid("a2879943-7adc-4f96-85ee-63c3fbe98cbe");
+            this.panelContainer1.Location = new System.Drawing.Point(995, 150);
+            this.panelContainer1.Name = "panelContainer1";
+            this.panelContainer1.OriginalSize = new System.Drawing.Size(375, 200);
+            this.panelContainer1.Size = new System.Drawing.Size(375, 364);
+            this.panelContainer1.Text = "panelContainer1";
             // 
-            // fieldListDockPanel1_Container
+            // panelContainer2
             // 
-            this.fieldListDockPanel1_Container.Location = new System.Drawing.Point(0, 0);
-            this.fieldListDockPanel1_Container.Name = "fieldListDockPanel1_Container";
-            this.fieldListDockPanel1_Container.Size = new System.Drawing.Size(374, 132);
-            this.fieldListDockPanel1_Container.TabIndex = 0;
-            // 
-            // propertyGridDockPanel1
-            // 
-            this.propertyGridDockPanel1.Controls.Add(this.propertyGridDockPanel1_Container);
-            this.propertyGridDockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.propertyGridDockPanel1.ID = new System.Guid("b38d12c3-cd06-4dec-b93d-63a0088e495a");
-            this.propertyGridDockPanel1.Location = new System.Drawing.Point(1, 24);
-            this.propertyGridDockPanel1.Name = "propertyGridDockPanel1";
-            this.propertyGridDockPanel1.OriginalSize = new System.Drawing.Size(200, 200);
-            this.propertyGridDockPanel1.Size = new System.Drawing.Size(374, 131);
-            this.propertyGridDockPanel1.Text = "Properties";
-            // 
-            // propertyGridDockPanel1_Container
-            // 
-            this.propertyGridDockPanel1_Container.Location = new System.Drawing.Point(0, 0);
-            this.propertyGridDockPanel1_Container.Name = "propertyGridDockPanel1_Container";
-            this.propertyGridDockPanel1_Container.Size = new System.Drawing.Size(374, 131);
-            this.propertyGridDockPanel1_Container.TabIndex = 0;
+            this.panelContainer2.ActiveChild = this.reportExplorerDockPanel1;
+            this.panelContainer2.Controls.Add(this.reportExplorerDockPanel1);
+            this.panelContainer2.Controls.Add(this.fieldListDockPanel1);
+            this.panelContainer2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.panelContainer2.ID = new System.Guid("48df8fcd-85f5-41b5-abb0-a624c543a156");
+            this.panelContainer2.Location = new System.Drawing.Point(0, 0);
+            this.panelContainer2.Name = "panelContainer2";
+            this.panelContainer2.OriginalSize = new System.Drawing.Size(200, 200);
+            this.panelContainer2.Size = new System.Drawing.Size(375, 182);
+            this.panelContainer2.Tabbed = true;
+            this.panelContainer2.Text = "panelContainer2";
             // 
             // reportExplorerDockPanel1
             // 
@@ -6000,6 +5973,56 @@ namespace Tech2019.Presentation.Forms.Reports
             this.reportExplorerDockPanel1_Container.Size = new System.Drawing.Size(374, 132);
             this.reportExplorerDockPanel1_Container.TabIndex = 0;
             // 
+            // fieldListDockPanel1
+            // 
+            this.fieldListDockPanel1.Controls.Add(this.fieldListDockPanel1_Container);
+            this.fieldListDockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.fieldListDockPanel1.ID = new System.Guid("faf69838-a93f-4114-83e8-d0d09cc5ce95");
+            this.fieldListDockPanel1.Location = new System.Drawing.Point(1, 23);
+            this.fieldListDockPanel1.Name = "fieldListDockPanel1";
+            this.fieldListDockPanel1.OriginalSize = new System.Drawing.Size(200, 200);
+            this.fieldListDockPanel1.Size = new System.Drawing.Size(374, 132);
+            this.fieldListDockPanel1.Text = "Field List";
+            // 
+            // fieldListDockPanel1_Container
+            // 
+            this.fieldListDockPanel1_Container.Location = new System.Drawing.Point(0, 0);
+            this.fieldListDockPanel1_Container.Name = "fieldListDockPanel1_Container";
+            this.fieldListDockPanel1_Container.Size = new System.Drawing.Size(374, 132);
+            this.fieldListDockPanel1_Container.TabIndex = 0;
+            // 
+            // panelContainer3
+            // 
+            this.panelContainer3.ActiveChild = this.propertyGridDockPanel1;
+            this.panelContainer3.Controls.Add(this.propertyGridDockPanel1);
+            this.panelContainer3.Controls.Add(this.reportGalleryDockPanel1);
+            this.panelContainer3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.panelContainer3.ID = new System.Guid("142c0bef-241f-48c1-a739-ad5e56c8ebd3");
+            this.panelContainer3.Location = new System.Drawing.Point(0, 182);
+            this.panelContainer3.Name = "panelContainer3";
+            this.panelContainer3.OriginalSize = new System.Drawing.Size(200, 200);
+            this.panelContainer3.Size = new System.Drawing.Size(375, 182);
+            this.panelContainer3.Tabbed = true;
+            this.panelContainer3.Text = "panelContainer3";
+            // 
+            // propertyGridDockPanel1
+            // 
+            this.propertyGridDockPanel1.Controls.Add(this.propertyGridDockPanel1_Container);
+            this.propertyGridDockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.propertyGridDockPanel1.ID = new System.Guid("b38d12c3-cd06-4dec-b93d-63a0088e495a");
+            this.propertyGridDockPanel1.Location = new System.Drawing.Point(1, 24);
+            this.propertyGridDockPanel1.Name = "propertyGridDockPanel1";
+            this.propertyGridDockPanel1.OriginalSize = new System.Drawing.Size(200, 200);
+            this.propertyGridDockPanel1.Size = new System.Drawing.Size(374, 131);
+            this.propertyGridDockPanel1.Text = "Properties";
+            // 
+            // propertyGridDockPanel1_Container
+            // 
+            this.propertyGridDockPanel1_Container.Location = new System.Drawing.Point(0, 0);
+            this.propertyGridDockPanel1_Container.Name = "propertyGridDockPanel1_Container";
+            this.propertyGridDockPanel1_Container.Size = new System.Drawing.Size(374, 131);
+            this.propertyGridDockPanel1_Container.TabIndex = 0;
+            // 
             // reportGalleryDockPanel1
             // 
             this.reportGalleryDockPanel1.Controls.Add(this.reportGalleryDockPanel1_Container);
@@ -6017,6 +6040,20 @@ namespace Tech2019.Presentation.Forms.Reports
             this.reportGalleryDockPanel1_Container.Name = "reportGalleryDockPanel1_Container";
             this.reportGalleryDockPanel1_Container.Size = new System.Drawing.Size(374, 131);
             this.reportGalleryDockPanel1_Container.TabIndex = 0;
+            // 
+            // panelContainer4
+            // 
+            this.panelContainer4.ActiveChild = this.groupAndSortDockPanel1;
+            this.panelContainer4.Controls.Add(this.groupAndSortDockPanel1);
+            this.panelContainer4.Controls.Add(this.errorListDockPanel1);
+            this.panelContainer4.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.panelContainer4.ID = new System.Guid("31b12548-0b0c-4f9b-8367-324cc8c5a4c0");
+            this.panelContainer4.Location = new System.Drawing.Point(0, 314);
+            this.panelContainer4.Name = "panelContainer4";
+            this.panelContainer4.OriginalSize = new System.Drawing.Size(200, 200);
+            this.panelContainer4.Size = new System.Drawing.Size(995, 200);
+            this.panelContainer4.Tabbed = true;
+            this.panelContainer4.Text = "panelContainer4";
             // 
             // groupAndSortDockPanel1
             // 
@@ -6054,59 +6091,27 @@ namespace Tech2019.Presentation.Forms.Reports
             this.errorListDockPanel1_Container.Size = new System.Drawing.Size(995, 149);
             this.errorListDockPanel1_Container.TabIndex = 0;
             // 
-            // panelContainer1
+            // reportDesigner1
             // 
-            this.panelContainer1.Controls.Add(this.panelContainer2);
-            this.panelContainer1.Controls.Add(this.panelContainer3);
-            this.panelContainer1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
-            this.panelContainer1.ID = new System.Guid("a2879943-7adc-4f96-85ee-63c3fbe98cbe");
-            this.panelContainer1.Location = new System.Drawing.Point(995, 150);
-            this.panelContainer1.Name = "panelContainer1";
-            this.panelContainer1.OriginalSize = new System.Drawing.Size(375, 200);
-            this.panelContainer1.Size = new System.Drawing.Size(375, 364);
-            this.panelContainer1.Text = "panelContainer1";
-            // 
-            // panelContainer2
-            // 
-            this.panelContainer2.ActiveChild = this.reportExplorerDockPanel1;
-            this.panelContainer2.Controls.Add(this.reportExplorerDockPanel1);
-            this.panelContainer2.Controls.Add(this.fieldListDockPanel1);
-            this.panelContainer2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.panelContainer2.ID = new System.Guid("48df8fcd-85f5-41b5-abb0-a624c543a156");
-            this.panelContainer2.Location = new System.Drawing.Point(0, 0);
-            this.panelContainer2.Name = "panelContainer2";
-            this.panelContainer2.OriginalSize = new System.Drawing.Size(200, 200);
-            this.panelContainer2.Size = new System.Drawing.Size(375, 182);
-            this.panelContainer2.Tabbed = true;
-            this.panelContainer2.Text = "panelContainer2";
-            // 
-            // panelContainer3
-            // 
-            this.panelContainer3.ActiveChild = this.propertyGridDockPanel1;
-            this.panelContainer3.Controls.Add(this.propertyGridDockPanel1);
-            this.panelContainer3.Controls.Add(this.reportGalleryDockPanel1);
-            this.panelContainer3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.panelContainer3.ID = new System.Guid("142c0bef-241f-48c1-a739-ad5e56c8ebd3");
-            this.panelContainer3.Location = new System.Drawing.Point(0, 182);
-            this.panelContainer3.Name = "panelContainer3";
-            this.panelContainer3.OriginalSize = new System.Drawing.Size(200, 200);
-            this.panelContainer3.Size = new System.Drawing.Size(375, 182);
-            this.panelContainer3.Tabbed = true;
-            this.panelContainer3.Text = "panelContainer3";
-            // 
-            // panelContainer4
-            // 
-            this.panelContainer4.ActiveChild = this.groupAndSortDockPanel1;
-            this.panelContainer4.Controls.Add(this.groupAndSortDockPanel1);
-            this.panelContainer4.Controls.Add(this.errorListDockPanel1);
-            this.panelContainer4.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
-            this.panelContainer4.ID = new System.Guid("31b12548-0b0c-4f9b-8367-324cc8c5a4c0");
-            this.panelContainer4.Location = new System.Drawing.Point(0, 314);
-            this.panelContainer4.Name = "panelContainer4";
-            this.panelContainer4.OriginalSize = new System.Drawing.Size(200, 200);
-            this.panelContainer4.Size = new System.Drawing.Size(995, 200);
-            this.panelContainer4.Tabbed = true;
-            this.panelContainer4.Text = "panelContainer4";
+            this.reportDesigner1.ContainerControl = null;
+            xrDesignPanelListener1.DesignControl = this.xrDesignRibbonController1;
+            xrDesignPanelListener2.DesignControl = this.xrDesignDockManager1;
+            xrDesignPanelListener3.DesignControl = this.fieldListDockPanel1;
+            xrDesignPanelListener4.DesignControl = this.propertyGridDockPanel1;
+            xrDesignPanelListener5.DesignControl = this.reportExplorerDockPanel1;
+            xrDesignPanelListener6.DesignControl = this.reportGalleryDockPanel1;
+            xrDesignPanelListener7.DesignControl = this.groupAndSortDockPanel1;
+            xrDesignPanelListener8.DesignControl = this.errorListDockPanel1;
+            this.reportDesigner1.DesignPanelListeners.AddRange(new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener[] {
+            xrDesignPanelListener1,
+            xrDesignPanelListener2,
+            xrDesignPanelListener3,
+            xrDesignPanelListener4,
+            xrDesignPanelListener5,
+            xrDesignPanelListener6,
+            xrDesignPanelListener7,
+            xrDesignPanelListener8});
+            this.reportDesigner1.Form = this;
             // 
             // FrmReports
             // 
@@ -6118,10 +6123,11 @@ namespace Tech2019.Presentation.Forms.Reports
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "FrmReports";
-            this.Text = "FrmReports";
-            ((System.ComponentModel.ISupportInitialize)(this.reportDesigner1)).EndInit();
+            this.Text = "Report Wizard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignRibbonController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentlyUsedItemsComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
@@ -6132,20 +6138,20 @@ namespace Tech2019.Presentation.Forms.Reports
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignDockManager1)).EndInit();
-            this.fieldListDockPanel1.ResumeLayout(false);
-            this.propertyGridDockPanel1.ResumeLayout(false);
-            this.reportExplorerDockPanel1.ResumeLayout(false);
-            this.reportGalleryDockPanel1.ResumeLayout(false);
-            this.groupAndSortDockPanel1.ResumeLayout(false);
-            this.errorListDockPanel1.ResumeLayout(false);
             this.panelContainer1.ResumeLayout(false);
             this.panelContainer2.ResumeLayout(false);
+            this.reportExplorerDockPanel1.ResumeLayout(false);
+            this.fieldListDockPanel1.ResumeLayout(false);
             this.panelContainer3.ResumeLayout(false);
+            this.propertyGridDockPanel1.ResumeLayout(false);
+            this.reportGalleryDockPanel1.ResumeLayout(false);
             this.panelContainer4.ResumeLayout(false);
+            this.groupAndSortDockPanel1.ResumeLayout(false);
+            this.errorListDockPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.reportDesigner1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

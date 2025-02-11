@@ -241,7 +241,7 @@ namespace Tech2019.Presentation
         private void btnReports_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Forms.Reports.FrmReports frmReports = new Forms.Reports.FrmReports();
-            frmReports.MdiParent = this;
+            //frmReports.MdiParent = this;
             frmReports.Show();
         }
     }
