@@ -101,6 +101,8 @@ namespace Tech2019.Presentation
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPage9 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnReports = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -155,9 +157,10 @@ namespace Tech2019.Presentation
             this.btnProductTraceList,
             this.btnInvoiceList,
             this.btnGauges,
-            this.btnMaps});
+            this.btnMaps,
+            this.btnReports});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 48;
+            this.ribbonControl1.MaxItemId = 49;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbnHome,
@@ -671,6 +674,8 @@ namespace Tech2019.Presentation
             // 
             // rbnReports
             // 
+            this.rbnReports.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
             this.rbnReports.Name = "rbnReports";
             this.rbnReports.Text = "Reports";
             // 
@@ -721,6 +726,21 @@ namespace Tech2019.Presentation
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnReports);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Report";
+            // 
+            // btnReports
+            // 
+            this.btnReports.Caption = "Report Wizard";
+            this.btnReports.Id = 48;
+            this.btnReports.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnReports.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnReports.Name = "btnReports";
+            this.btnReports.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReports_ItemClick);
             // 
             // HomeForm
             // 
@@ -813,6 +833,8 @@ namespace Tech2019.Presentation
         private DevExpress.XtraBars.BarButtonItem btnInvoiceList;
         private DevExpress.XtraBars.BarButtonItem btnGauges;
         private DevExpress.XtraBars.BarButtonItem btnMaps;
+        private DevExpress.XtraBars.BarButtonItem btnReports;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
     }
 }
 

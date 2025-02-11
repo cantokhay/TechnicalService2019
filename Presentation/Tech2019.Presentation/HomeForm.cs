@@ -237,5 +237,12 @@ namespace Tech2019.Presentation
             frmMaps.MdiParent = this;
             frmMaps.Show();
         }
+
+        private void btnReports_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.Reports.FrmReports frmReports = new Forms.Reports.FrmReports();
+            frmReports.MdiParent = this;
+            frmReports.Show();
+        }
     }
 }
