@@ -23,6 +23,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             FillLookUpEditCustomerStatusCitiesandDistricts();
             ClearCustomerInfo();
             ShowStatsByLinq();
+            gvwCustomers.OptionsBehavior.Editable = false;
         }
 
         private void gvwCustomers_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

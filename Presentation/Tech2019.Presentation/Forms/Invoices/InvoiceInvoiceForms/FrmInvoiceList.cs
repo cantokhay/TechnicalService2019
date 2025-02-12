@@ -25,6 +25,7 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             LoadInvoiceList();
             FillLookUpEditSerialCharsEmployeesAndCustomers();
             ClearInvoiceInfo();
+            gvwInvoices.OptionsBehavior.Editable = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

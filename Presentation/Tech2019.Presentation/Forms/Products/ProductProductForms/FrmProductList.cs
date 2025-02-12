@@ -25,6 +25,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductProductForms
             LoadProductList();
             FillLookUpEditCategoriesAndProductStatus();
             ClearProductInfo();
+            gvwProducts.OptionsBehavior.Editable = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

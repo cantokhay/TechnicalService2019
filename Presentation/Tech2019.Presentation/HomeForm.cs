@@ -1,262 +1,292 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Windows.Forms;
 using Tech2019.BusinessLayer.AbstractServices;
 
 namespace Tech2019.Presentation
 {
     public partial class HomeForm : Form
     {
-        private readonly IProductService _productService;
-        private readonly ICategoryService _categoryService; 
-        private readonly IDepartmentService _departmentService;
-        private readonly IEmployeeService _employeeService;
-        private readonly ICustomerService _customerService;
-        private readonly INoteService _noteService;
-        private readonly ISaleService _saleService;
-        private readonly IActionService _actionService;
-        private readonly IProductTraceService _productTraceService;
-        private readonly IInvoiceService _invoiceService;
-        private readonly IInvoiceDetailService _invoiceDetailService;
-        private readonly IAboutService _aboutService;
+        private readonly IServiceProvider _serviceProvider;
 
-        public HomeForm(IProductService productService, ICategoryService categoryService, IDepartmentService departmentService, IEmployeeService employeeService, ICustomerService customerService, INoteService noteService, ISaleService saleService, IActionService actionService, IProductTraceService productTraceService, IInvoiceService invoiceService, IInvoiceDetailService invoiceDetailService, IAboutService aboutService)
+        public HomeForm(IServiceProvider serviceProvider)
         {
             InitializeComponent();
-            _productService = productService;
-            _categoryService = categoryService;
-            _departmentService = departmentService;
-            _employeeService = employeeService;
-            _customerService = customerService;
-            _noteService = noteService;
-            _saleService = saleService;
-            _actionService = actionService;
-            _productTraceService = productTraceService;
-            _invoiceService = invoiceService;
-            _invoiceDetailService = invoiceDetailService;
-            _aboutService = aboutService;
+            _serviceProvider = serviceProvider;
         }
+
+        /// <summary>
+        /// MDI Formları açan metod, eğer form açıksa yeniden açmaz ve öne getirir.
+        /// </summary>
+        private void OpenMDIForms<T>(params object[] args) where T : Form
+        {
+            var existingForm = Application.OpenForms.OfType<T>().FirstOrDefault();
+
+            if (existingForm != null && !existingForm.IsDisposed)
+            {
+                existingForm.BringToFront();
+                return;
+            }
+
+            var form = (T)Activator.CreateInstance(typeof(T), args);
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        /// <summary>
+        /// MDI olmayan, yeni pencerede açılacak formları açan metod.
+        /// </summary>
+        private void OpenNonMDIForms<T>(params object[] args) where T : Form
+        {
+            var form = (T)Activator.CreateInstance(typeof(T), args);
+            form.Show();
+        }
+
+        #region MDI Forms
 
         private void btnProductListForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductProductForms.FrmProductList frmProductList = new Forms.Products.ProductProductForms.FrmProductList(_productService, _categoryService);
-            frmProductList.MdiParent = this;
-            frmProductList.Show();
+            OpenMDIForms<Forms.Products.ProductProductForms.FrmProductList>(
+                _serviceProvider.GetService(typeof(IProductService)),
+                _serviceProvider.GetService(typeof(ICategoryService))
+            );
         }
 
         private void btnCategoryListForm_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductCategoryForms.FrmCategoryList frmCategoryList = new Forms.Products.ProductCategoryForms.FrmCategoryList(_categoryService);
-            frmCategoryList.MdiParent = this;
-            frmCategoryList.Show();
-        }
-
-        private void btnNewProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Forms.Products.ProductProductForms.FrmNewProduct frmNewProduct = new Forms.Products.ProductProductForms.FrmNewProduct(_productService, _categoryService);
-            frmNewProduct.Show();
+            OpenMDIForms<Forms.Products.ProductCategoryForms.FrmCategoryList>(
+                _serviceProvider.GetService(typeof(ICategoryService))
+            );
         }
 
         private void btnProductStats_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductStatisticForms.FrmProductStats frmProductStats = new Forms.Products.ProductStatisticForms.FrmProductStats(_productService, _categoryService);
-            frmProductStats.MdiParent = this;
-            frmProductStats.Show();
+            OpenMDIForms<Forms.Products.ProductStatisticForms.FrmProductStats>(
+                _serviceProvider.GetService(typeof(IProductService)),
+                _serviceProvider.GetService(typeof(ICategoryService))
+            );
         }
 
         private void btnBrandStats_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductStatisticForms.FrmBrandStats frmBrandStats = new Forms.Products.ProductStatisticForms.FrmBrandStats(_productService);
-            frmBrandStats.MdiParent = this;
-            frmBrandStats.Show();
+            OpenMDIForms<Forms.Products.ProductStatisticForms.FrmBrandStats>(
+                _serviceProvider.GetService(typeof(IProductService))
+            );
         }
 
         private void btnCustomerList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Customers.CustomerCustomerForms.FrmCustomerList frmCustomerList = new Forms.Customers.CustomerCustomerForms.FrmCustomerList(_customerService);
-            frmCustomerList.MdiParent = this;
-            frmCustomerList.Show();
-        }
-
-        private void btnNewCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Forms.Customers.CustomerCustomerForms.FrmNewCustomer frmNewCustomer = new Forms.Customers.CustomerCustomerForms.FrmNewCustomer(_customerService);
-            frmNewCustomer.Show();
+            OpenMDIForms<Forms.Customers.CustomerCustomerForms.FrmCustomerList>(
+                _serviceProvider.GetService(typeof(ICustomerService))
+            );
         }
 
         private void btnCustomerCityStats_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Customers.CustomerCustomerForms.FrmCustomerCityStats frmCustomerCityStats = new Forms.Customers.CustomerCustomerForms.FrmCustomerCityStats(_customerService);
-            frmCustomerCityStats.MdiParent = this;
-            frmCustomerCityStats.Show();
+            OpenMDIForms<Forms.Customers.CustomerCustomerForms.FrmCustomerCityStats>(
+                _serviceProvider.GetService(typeof(ICustomerService))
+            );
         }
 
         private void btnDepartmentList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Employees.DepartmentForms.FrmDepartmentList frmDepartmentList = new Forms.Employees.DepartmentForms.FrmDepartmentList(_departmentService, _employeeService);
-            frmDepartmentList.MdiParent = this;
-            frmDepartmentList.Show();
-        }
-
-        private void btnNewDepartment_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Forms.Employees.DepartmentForms.FrmNewDepartment frmNewDepartment = new Forms.Employees.DepartmentForms.FrmNewDepartment(_departmentService);
-            frmNewDepartment.Show();
-        }
-
-        private void btnNewCategory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Forms.Products.ProductCategoryForms.FrmNewCategory frmNewCategory = new Forms.Products.ProductCategoryForms.FrmNewCategory(_categoryService);
-            frmNewCategory.Show();
+            OpenMDIForms<Forms.Employees.DepartmentForms.FrmDepartmentList>(
+                _serviceProvider.GetService(typeof(IDepartmentService)),
+                _serviceProvider.GetService(typeof(IEmployeeService))
+            );
         }
 
         private void btnEmployeeList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Employees.EmployeeForms.FrmEmployeeList frmEmployeeList = new Forms.Employees.EmployeeForms.FrmEmployeeList(_employeeService, _departmentService);
-            frmEmployeeList.MdiParent = this;
-            frmEmployeeList.Show();
-        }
-
-        private void btnNewEmployee_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Forms.Employees.EmployeeForms.FrmNewEmployee frmNewEmployee = new Forms.Employees.EmployeeForms.FrmNewEmployee(_employeeService, _departmentService);
-            frmNewEmployee.Show();
-        }
-
-        private void btnCalculator_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            System.Diagnostics.Process.Start("calc.exe");
+            OpenMDIForms<Forms.Employees.EmployeeForms.FrmEmployeeList>(
+                _serviceProvider.GetService(typeof(IEmployeeService)),
+                _serviceProvider.GetService(typeof(IDepartmentService))
+            );
         }
 
         private void btnCurrency_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Tools.FrmCurrency frmCurrency = new Forms.Tools.FrmCurrency();
-            frmCurrency.MdiParent = this;
-            frmCurrency.Show();
+            OpenMDIForms<Forms.Tools.FrmCurrency>();
+        }
+
+        private void btnCalculator_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Process.Start("calc.exe");
         }
 
         private void btnWord_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            System.Diagnostics.Process.Start("winword");
+            Process.Start("winword");
         }
 
         private void btnExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            System.Diagnostics.Process.Start("excel");
+            Process.Start("excel");
         }
 
         private void btnYoutube_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Tools.FrmYoutube frmYoutube = new Forms.Tools.FrmYoutube();
-            frmYoutube.MdiParent = this;
-            frmYoutube.Show();
+            OpenMDIForms<Forms.Tools.FrmYoutube>();
         }
 
         private void btnNoteList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Tools.FrmNoteList frmNoteList = new Forms.Tools.FrmNoteList(_noteService);
-            frmNoteList.MdiParent = this;
-            frmNoteList.Show();
+            OpenMDIForms<Forms.Tools.FrmNoteList>(
+                _serviceProvider.GetService(typeof(INoteService))
+            );
         }
 
         private void btnFaultyProductList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductFaultryForms.FrmActionsList frmActionsList = new Forms.Products.ProductFaultryForms.FrmActionsList(_actionService);
-            frmActionsList.MdiParent = this;
-            frmActionsList.Show();
-        }
-
-        private void btnNewSale_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Forms.Customers.CustomerSaleForms.FrmNewSale frmNewSale = new Forms.Customers.CustomerSaleForms.FrmNewSale(_saleService, _customerService, _employeeService, _productService);
-            frmNewSale.Show();
+            OpenMDIForms<Forms.Products.ProductFaultryForms.FrmActionsList>(
+                _serviceProvider.GetService(typeof(IActionService))
+            );
         }
 
         private void btnSaleList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Customers.CustomerSaleForms.FrmSaleList frmSaleList = new Forms.Customers.CustomerSaleForms.FrmSaleList(_saleService);
-            frmSaleList.MdiParent = this;
-            frmSaleList.Show();
+            OpenMDIForms<Forms.Customers.CustomerSaleForms.FrmSaleList>(
+                _serviceProvider.GetService(typeof(ISaleService))
+            );
         }
 
         private void btnCustomerMovements_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Customers.CustomerSaleForms.FrmSaleList frmSaleList = new Forms.Customers.CustomerSaleForms.FrmSaleList(_saleService);
-            frmSaleList.MdiParent = this;
-            frmSaleList.Show();
-        }
-
-        private void btnNewFaultyProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Forms.Products.ProductFaultryForms.FrmNewAction frmNewAction = new Forms.Products.ProductFaultryForms.FrmNewAction(_actionService, _customerService, _employeeService);
-            frmNewAction.Show();
-        }
-
-        private void btnNewProductTrace_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Forms.Products.ProductFaultryForms.FrmNewProductTrace frmNewProductTrace = new Forms.Products.ProductFaultryForms.FrmNewProductTrace(_productTraceService, _actionService);
-            frmNewProductTrace.Show();
+            OpenMDIForms<Forms.Customers.CustomerSaleForms.FrmSaleList>(
+                _serviceProvider.GetService(typeof(ISaleService))
+            );
         }
 
         private void btnProductTraceList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Products.ProductFaultryForms.FrmProductTraceList frmProductTraceList = new Forms.Products.ProductFaultryForms.FrmProductTraceList(_productTraceService);
-            frmProductTraceList.MdiParent = this;
-            frmProductTraceList.Show();
+            OpenMDIForms<Forms.Products.ProductFaultryForms.FrmProductTraceList>(
+                _serviceProvider.GetService(typeof(IProductTraceService))
+            );
         }
 
         private void btnInvoiceList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceList frmInvoiceList = new Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceList(_invoiceService, _employeeService, _customerService);
-            frmInvoiceList.MdiParent = this;
-            frmInvoiceList.Show();
+            OpenMDIForms<Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceList>(
+                _serviceProvider.GetService(typeof(IInvoiceService)),
+                _serviceProvider.GetService(typeof(IEmployeeService)),
+                _serviceProvider.GetService(typeof(ICustomerService))
+            );
         }
 
         private void btnAddProductToInvoice_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceProduct frmInvoiceProduct = new Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceProduct(_invoiceDetailService, _invoiceService);
-            frmInvoiceProduct.MdiParent = this;
-            frmInvoiceProduct.Show();
+            OpenMDIForms<Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceProduct>(
+                _serviceProvider.GetService(typeof(IInvoiceService)),
+                _serviceProvider.GetService(typeof(IInvoiceDetailService))
+            );
         }
 
         private void btnInvoiceDetailedSearch_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceDetailedSearch frmInvoiceDetailedSearch = new Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceDetailedSearch(_invoiceDetailService);
-            frmInvoiceDetailedSearch.MdiParent = this;
-            frmInvoiceDetailedSearch.Show();
+            OpenMDIForms<Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceDetailedSearch>(
+                _serviceProvider.GetService(typeof(IInvoiceDetailService))
+            );
         }
 
         private void btnGauges_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Tools.FrmGauges frmGauges = new Forms.Tools.FrmGauges();
-            frmGauges.MdiParent = this;
-            frmGauges.Show();
+            OpenMDIForms<Forms.Tools.FrmGauges>();
         }
 
         private void btnMaps_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.Tools.FrmMaps frmMaps = new Forms.Tools.FrmMaps();
-            frmMaps.MdiParent = this;
-            frmMaps.Show();
-        }
-
-        private void btnReports_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Forms.Reports.FrmReports frmReports = new Forms.Reports.FrmReports();
-            //frmReports.MdiParent = this;
-            frmReports.Show();
+            OpenMDIForms<Forms.Tools.FrmMaps>();
         }
 
         private void btnHomePage_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Forms.HomePage.FrmHomePage frmHomePage = new Forms.HomePage.FrmHomePage(_productService, _customerService);
-            frmHomePage.MdiParent = this;
-            frmHomePage.Show();
+            OpenMDIForms<Forms.HomePage.FrmHomePage>(
+                _serviceProvider.GetService(typeof(IProductService)),
+                _serviceProvider.GetService(typeof(ICustomerService)),
+                _serviceProvider.GetService(typeof(INoteService)),
+                _serviceProvider.GetService(typeof(IMessageService))
+            );
         }
 
-        private void HomeForm_Load(object sender, System.EventArgs e)
+        private void HomeForm_Load(object sender, EventArgs e)
         {
-            Forms.HomePage.FrmHomePage frmHomePage = new Forms.HomePage.FrmHomePage(_productService, _customerService);
-            frmHomePage.MdiParent = this;
-            frmHomePage.Show();
+            btnHomePage_ItemClick(sender, null);
         }
+
+        #endregion
+
+        #region Non MDI Forms 
+
+        private void btnReports_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenNonMDIForms<Forms.Reports.FrmReports>();
+        }
+
+        private void btnNewFaultyProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenNonMDIForms<Forms.Products.ProductFaultryForms.FrmNewAction>(
+                _serviceProvider.GetService(typeof(IActionService)),
+                _serviceProvider.GetService(typeof(ICustomerService)),
+                _serviceProvider.GetService(typeof(IEmployeeService))
+            );
+        }
+
+        private void btnNewSale_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenNonMDIForms<Forms.Customers.CustomerSaleForms.FrmNewSale>(
+                _serviceProvider.GetService(typeof(ISaleService)),
+                _serviceProvider.GetService(typeof(ICustomerService)),
+                _serviceProvider.GetService(typeof(IEmployeeService)),
+                _serviceProvider.GetService(typeof(IProductService))
+            );
+        }
+
+        private void btnNewEmployee_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenNonMDIForms<Forms.Employees.EmployeeForms.FrmNewEmployee>(
+                _serviceProvider.GetService(typeof(IEmployeeService)),
+                _serviceProvider.GetService(typeof(IDepartmentService))
+            );
+        }
+
+        private void btnNewDepartment_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenNonMDIForms<Forms.Employees.DepartmentForms.FrmNewDepartment>(
+                _serviceProvider.GetService(typeof(IDepartmentService))
+            );
+        }
+
+        private void btnNewCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenNonMDIForms<Forms.Customers.CustomerCustomerForms.FrmNewCustomer>(
+                _serviceProvider.GetService(typeof(ICustomerService))
+            );
+        }
+
+        private void btnNewProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenNonMDIForms<Forms.Products.ProductProductForms.FrmNewProduct>(
+                _serviceProvider.GetService(typeof(IProductService)),
+                _serviceProvider.GetService(typeof(ICategoryService))
+            );
+        }
+
+        private void btnNewCategory_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenNonMDIForms<Forms.Products.ProductCategoryForms.FrmNewCategory>(
+                _serviceProvider.GetService(typeof(ICategoryService))
+            );
+        }
+
+        private void btnNewProductTrace_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenNonMDIForms<Forms.Products.ProductFaultryForms.FrmNewProductTrace>(
+                _serviceProvider.GetService(typeof(IProductTraceService)),
+                _serviceProvider.GetService(typeof(IActionService))
+            );
+        }
+
+        #endregion
     }
 }

@@ -22,6 +22,7 @@ namespace Tech2019.Presentation.Forms.Employees.DepartmentForms
             LoadDepartmentList();
             ClearDepartmentInfo();
             ShowDepartmentListStatsByLinq();
+            gvwDepartments.OptionsBehavior.Editable = false;
         }
         private void gvwDepartments_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {

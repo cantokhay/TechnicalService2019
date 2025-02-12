@@ -18,22 +18,10 @@ namespace Tech2019.Presentation
         static void Main()
         {
             var serviceProvider = ConfigureServices();
-            var productService = serviceProvider.GetRequiredService<IProductService>();
-            var categoryService = serviceProvider.GetRequiredService<ICategoryService>();
-            var departmentService = serviceProvider.GetRequiredService<IDepartmentService>();
-            var employeeService = serviceProvider.GetRequiredService<IEmployeeService>();
-            var customerService = serviceProvider.GetRequiredService<ICustomerService>();
-            var noteService = serviceProvider.GetRequiredService<INoteService>();
-            var saleService = serviceProvider.GetRequiredService<ISaleService>();
-            var actionService = serviceProvider.GetRequiredService<IActionService>();
-            var productTraceService = serviceProvider.GetRequiredService<IProductTraceService>();
-            var invoiceService = serviceProvider.GetRequiredService<IInvoiceService>();
-            var invoiceDetailService = serviceProvider.GetRequiredService<IInvoiceDetailService>();
-            var aboutService = serviceProvider.GetRequiredService<IAboutService>();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeForm(productService, categoryService, departmentService, employeeService, customerService, noteService, saleService, actionService, productTraceService, invoiceService, invoiceDetailService, aboutService));
+            Application.Run(new HomeForm(serviceProvider));
         }
 
         private static Microsoft.Extensions.DependencyInjection.ServiceProvider ConfigureServices()
@@ -54,6 +42,10 @@ namespace Tech2019.Presentation
             services.AddScoped<IInvoiceDal, EFInvoiceDal>();
             services.AddScoped<IInvoiceDetailDal, EFInvoiceDetailDal>();
             services.AddScoped<IAboutDal, EFAboutDal>();
+            services.AddScoped<IMessageDal, EFMessageDal>();
+            services.AddScoped<IAdminDal, EFAdminDal>();
+            services.AddScoped<IExpenseDal, EFExpenseDal>();
+            services.AddScoped<IFaultDetailDal, EFFaultDetailDal>();
 
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
@@ -67,6 +59,10 @@ namespace Tech2019.Presentation
             services.AddScoped<IInvoiceService, InvoiceManager>();
             services.AddScoped<IInvoiceDetailService, InvoiceDetailManager>();
             services.AddScoped<IAboutService, AboutManager>();
+            services.AddScoped<IMessageService, MessageManager>();
+            services.AddScoped<IAdminService, AdminManager>();
+            services.AddScoped<IExpenseService, ExpenseManager>();
+            services.AddScoped<IFaultDetailService, FaultDetailManager>();
 
             return services.BuildServiceProvider();
         }

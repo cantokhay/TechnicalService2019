@@ -21,7 +21,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             lblTotalBrandsStat.Text = _productService.GetTotalBrandCount().ToString();
             lblMostStockedBrandStat.Text = _productService.GetMostStockedBrand();
             lblMostPricedProductBrandStat.Text = _productService.GetMostExpensiveProduct();
-
+            gvwBrands.OptionsBehavior.Editable = false;
             //TODO : populate the charts
         }
     }

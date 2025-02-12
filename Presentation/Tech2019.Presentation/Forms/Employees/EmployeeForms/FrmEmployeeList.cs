@@ -24,6 +24,7 @@ namespace Tech2019.Presentation.Forms.Employees.EmployeeForms
             FillLookUpEditDepartments();
             FillProfileCards();
             ClearEmployeeInfo();
+            gvwEmployee.OptionsBehavior.Editable = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

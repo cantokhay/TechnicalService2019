@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using Tech2019.DataAccessLayer.AbstractDAL;
 using Tech2019.DataAccessLayer.Context;
@@ -13,6 +15,16 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
         public EFNoteDal(TechDBContext context) : base(context)
         {
             _context = context;
+        }
+
+        public List<NotesTodayDueDateDTO> TGetNotesTodayDueDate()
+        {
+            DateTime today = DateTime.Today;
+            return _context.Notes.Where(n => n.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Where(n => DbFunctions.TruncateTime(n.DueDate) == today).Select(x => new NotesTodayDueDateDTO
+            {
+                NoteDescription = x.NoteDescription,
+                NoteTitle = x.NoteTitle
+            }).ToList();
         }
 
         public List<ResultReadNoteDTO> TGetReadNotes()

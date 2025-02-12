@@ -16,6 +16,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         private void FrmProductTraceList_Load(object sender, EventArgs e)
         {
             ProductTraceList();
+            gvwProductTrace.OptionsBehavior.Editable = false;
         }
 
         #region Extracted Methods

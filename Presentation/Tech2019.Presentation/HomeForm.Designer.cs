@@ -712,7 +712,6 @@ namespace Tech2019.Presentation
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btnReports);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Report";
             // 
             // rbnStatistics
             // 

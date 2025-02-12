@@ -16,7 +16,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
         private void FrmCustomerCityStats_Load(object sender, EventArgs e)
         {
             grcCustomerCityList.DataSource = _customerService.GetCustomerCityStat();
-
+            gvwCustomerCities.OptionsBehavior.Editable = false;
             FillChartWithCityDatas();
         }
 

@@ -41,6 +41,11 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
             return _noteDal.TGetById(id);
         }
 
+        public List<NotesTodayDueDateDTO> GetNotesTodayDueDate()
+        {
+            return _noteDal.TGetNotesTodayDueDate();
+        }
+
         public List<ResultReadNoteDTO> GetReadNotes()
         {
             return _noteDal.TGetReadNotes();

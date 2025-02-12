@@ -32,7 +32,30 @@ namespace Tech2019.Presentation.Forms.HomePage
             this.grcCriticalStockLevel = new DevExpress.XtraGrid.GridControl();
             this.gvwCriticalStockLevel = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.lblMessageNo12 = new DevExpress.XtraEditors.LabelControl();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.lblMessageNo10 = new DevExpress.XtraEditors.LabelControl();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.lblMessageNo8 = new DevExpress.XtraEditors.LabelControl();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lblMessageNo6 = new DevExpress.XtraEditors.LabelControl();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblMessageNo4 = new DevExpress.XtraEditors.LabelControl();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblMessageNo2 = new DevExpress.XtraEditors.LabelControl();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.lblMessageNo11 = new DevExpress.XtraEditors.LabelControl();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.lblMessageNo9 = new DevExpress.XtraEditors.LabelControl();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblMessageNo7 = new DevExpress.XtraEditors.LabelControl();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblMessageNo5 = new DevExpress.XtraEditors.LabelControl();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblMessageNo3 = new DevExpress.XtraEditors.LabelControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMessageNo1 = new DevExpress.XtraEditors.LabelControl();
             this.groupCriticalStockLevel = new DevExpress.XtraEditors.GroupControl();
             this.groupPhoneBook = new DevExpress.XtraEditors.GroupControl();
             this.grcPhoneBook = new DevExpress.XtraGrid.GridControl();
@@ -43,33 +66,22 @@ namespace Tech2019.Presentation.Forms.HomePage
             this.groupCategoryProduct = new DevExpress.XtraEditors.GroupControl();
             this.grcCategoryProduct = new DevExpress.XtraGrid.GridControl();
             this.gvwCategoryProduct = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grcCriticalStockLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwCriticalStockLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupCriticalStockLevel)).BeginInit();
             this.groupCriticalStockLevel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupPhoneBook)).BeginInit();
@@ -84,22 +96,11 @@ namespace Tech2019.Presentation.Forms.HomePage
             this.groupCategoryProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grcCategoryProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwCategoryProduct)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // grcCriticalStockLevel
             // 
+            this.grcCriticalStockLevel.AllowRestoreSelectionAndFocusedRow = DevExpress.Utils.DefaultBoolean.False;
             this.grcCriticalStockLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grcCriticalStockLevel.Location = new System.Drawing.Point(2, 23);
             this.grcCriticalStockLevel.MainView = this.gvwCriticalStockLevel;
@@ -139,17 +140,257 @@ namespace Tech2019.Presentation.Forms.HomePage
             this.groupControl1.TabIndex = 20;
             this.groupControl1.Text = "Last 12 Messages";
             // 
-            // labelControl1
+            // panel12
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(8, 12);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(82, 14);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "labelControl1";
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.panel12.Controls.Add(this.lblMessageNo12);
+            this.panel12.Location = new System.Drawing.Point(5, 490);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(265, 36);
+            this.panel12.TabIndex = 2;
+            // 
+            // lblMessageNo12
+            // 
+            this.lblMessageNo12.Appearance.Font = new System.Drawing.Font("Tahoma", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMessageNo12.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMessageNo12.Appearance.Options.UseFont = true;
+            this.lblMessageNo12.Appearance.Options.UseForeColor = true;
+            this.lblMessageNo12.Location = new System.Drawing.Point(8, 13);
+            this.lblMessageNo12.Name = "lblMessageNo12";
+            this.lblMessageNo12.Size = new System.Drawing.Size(52, 10);
+            this.lblMessageNo12.TabIndex = 0;
+            this.lblMessageNo12.Text = "labelControl1";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(227)))), ((int)(((byte)(116)))));
+            this.panel10.Controls.Add(this.lblMessageNo10);
+            this.panel10.Location = new System.Drawing.Point(5, 406);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(265, 36);
+            this.panel10.TabIndex = 2;
+            // 
+            // lblMessageNo10
+            // 
+            this.lblMessageNo10.Appearance.Font = new System.Drawing.Font("Tahoma", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMessageNo10.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMessageNo10.Appearance.Options.UseFont = true;
+            this.lblMessageNo10.Appearance.Options.UseForeColor = true;
+            this.lblMessageNo10.Location = new System.Drawing.Point(8, 13);
+            this.lblMessageNo10.Name = "lblMessageNo10";
+            this.lblMessageNo10.Size = new System.Drawing.Size(52, 10);
+            this.lblMessageNo10.TabIndex = 0;
+            this.lblMessageNo10.Text = "labelControl1";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.panel8.Controls.Add(this.lblMessageNo8);
+            this.panel8.Location = new System.Drawing.Point(5, 322);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(265, 36);
+            this.panel8.TabIndex = 2;
+            // 
+            // lblMessageNo8
+            // 
+            this.lblMessageNo8.Appearance.Font = new System.Drawing.Font("Tahoma", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMessageNo8.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMessageNo8.Appearance.Options.UseFont = true;
+            this.lblMessageNo8.Appearance.Options.UseForeColor = true;
+            this.lblMessageNo8.Location = new System.Drawing.Point(8, 13);
+            this.lblMessageNo8.Name = "lblMessageNo8";
+            this.lblMessageNo8.Size = new System.Drawing.Size(52, 10);
+            this.lblMessageNo8.TabIndex = 0;
+            this.lblMessageNo8.Text = "labelControl1";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(140)))), ((int)(((byte)(116)))));
+            this.panel6.Controls.Add(this.lblMessageNo6);
+            this.panel6.Location = new System.Drawing.Point(5, 238);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(265, 36);
+            this.panel6.TabIndex = 2;
+            // 
+            // lblMessageNo6
+            // 
+            this.lblMessageNo6.Appearance.Font = new System.Drawing.Font("Tahoma", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMessageNo6.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMessageNo6.Appearance.Options.UseFont = true;
+            this.lblMessageNo6.Appearance.Options.UseForeColor = true;
+            this.lblMessageNo6.Location = new System.Drawing.Point(8, 13);
+            this.lblMessageNo6.Name = "lblMessageNo6";
+            this.lblMessageNo6.Size = new System.Drawing.Size(52, 10);
+            this.lblMessageNo6.TabIndex = 0;
+            this.lblMessageNo6.Text = "labelControl1";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(227)))), ((int)(((byte)(116)))));
+            this.panel4.Controls.Add(this.lblMessageNo4);
+            this.panel4.Location = new System.Drawing.Point(5, 154);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(265, 36);
+            this.panel4.TabIndex = 2;
+            // 
+            // lblMessageNo4
+            // 
+            this.lblMessageNo4.Appearance.Font = new System.Drawing.Font("Tahoma", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMessageNo4.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMessageNo4.Appearance.Options.UseFont = true;
+            this.lblMessageNo4.Appearance.Options.UseForeColor = true;
+            this.lblMessageNo4.Location = new System.Drawing.Point(8, 13);
+            this.lblMessageNo4.Name = "lblMessageNo4";
+            this.lblMessageNo4.Size = new System.Drawing.Size(52, 10);
+            this.lblMessageNo4.TabIndex = 0;
+            this.lblMessageNo4.Text = "labelControl1";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.panel2.Controls.Add(this.lblMessageNo2);
+            this.panel2.Location = new System.Drawing.Point(5, 70);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(265, 36);
+            this.panel2.TabIndex = 2;
+            // 
+            // lblMessageNo2
+            // 
+            this.lblMessageNo2.Appearance.Font = new System.Drawing.Font("Tahoma", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMessageNo2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMessageNo2.Appearance.Options.UseFont = true;
+            this.lblMessageNo2.Appearance.Options.UseForeColor = true;
+            this.lblMessageNo2.Location = new System.Drawing.Point(8, 13);
+            this.lblMessageNo2.Name = "lblMessageNo2";
+            this.lblMessageNo2.Size = new System.Drawing.Size(52, 10);
+            this.lblMessageNo2.TabIndex = 0;
+            this.lblMessageNo2.Text = "labelControl1";
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(192)))), ((int)(((byte)(235)))));
+            this.panel11.Controls.Add(this.lblMessageNo11);
+            this.panel11.Location = new System.Drawing.Point(5, 448);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(265, 36);
+            this.panel11.TabIndex = 2;
+            // 
+            // lblMessageNo11
+            // 
+            this.lblMessageNo11.Appearance.Font = new System.Drawing.Font("Tahoma", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMessageNo11.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMessageNo11.Appearance.Options.UseFont = true;
+            this.lblMessageNo11.Appearance.Options.UseForeColor = true;
+            this.lblMessageNo11.Location = new System.Drawing.Point(8, 13);
+            this.lblMessageNo11.Name = "lblMessageNo11";
+            this.lblMessageNo11.Size = new System.Drawing.Size(52, 10);
+            this.lblMessageNo11.TabIndex = 0;
+            this.lblMessageNo11.Text = "labelControl1";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(108)))), ((int)(((byte)(240)))));
+            this.panel9.Controls.Add(this.lblMessageNo9);
+            this.panel9.Location = new System.Drawing.Point(5, 364);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(265, 36);
+            this.panel9.TabIndex = 2;
+            // 
+            // lblMessageNo9
+            // 
+            this.lblMessageNo9.Appearance.Font = new System.Drawing.Font("Tahoma", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMessageNo9.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMessageNo9.Appearance.Options.UseFont = true;
+            this.lblMessageNo9.Appearance.Options.UseForeColor = true;
+            this.lblMessageNo9.Location = new System.Drawing.Point(8, 13);
+            this.lblMessageNo9.Name = "lblMessageNo9";
+            this.lblMessageNo9.Size = new System.Drawing.Size(52, 10);
+            this.lblMessageNo9.TabIndex = 0;
+            this.lblMessageNo9.Text = "labelControl1";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.panel7.Controls.Add(this.lblMessageNo7);
+            this.panel7.Location = new System.Drawing.Point(5, 280);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(265, 36);
+            this.panel7.TabIndex = 2;
+            // 
+            // lblMessageNo7
+            // 
+            this.lblMessageNo7.Appearance.Font = new System.Drawing.Font("Tahoma", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMessageNo7.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMessageNo7.Appearance.Options.UseFont = true;
+            this.lblMessageNo7.Appearance.Options.UseForeColor = true;
+            this.lblMessageNo7.Location = new System.Drawing.Point(8, 13);
+            this.lblMessageNo7.Name = "lblMessageNo7";
+            this.lblMessageNo7.Size = new System.Drawing.Size(52, 10);
+            this.lblMessageNo7.TabIndex = 0;
+            this.lblMessageNo7.Text = "labelControl1";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
+            this.panel5.Controls.Add(this.lblMessageNo5);
+            this.panel5.Location = new System.Drawing.Point(5, 196);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(265, 36);
+            this.panel5.TabIndex = 2;
+            // 
+            // lblMessageNo5
+            // 
+            this.lblMessageNo5.Appearance.Font = new System.Drawing.Font("Tahoma", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMessageNo5.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMessageNo5.Appearance.Options.UseFont = true;
+            this.lblMessageNo5.Appearance.Options.UseForeColor = true;
+            this.lblMessageNo5.Location = new System.Drawing.Point(8, 13);
+            this.lblMessageNo5.Name = "lblMessageNo5";
+            this.lblMessageNo5.Size = new System.Drawing.Size(52, 10);
+            this.lblMessageNo5.TabIndex = 0;
+            this.lblMessageNo5.Text = "labelControl1";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(175)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.lblMessageNo3);
+            this.panel3.Location = new System.Drawing.Point(5, 112);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(265, 36);
+            this.panel3.TabIndex = 2;
+            // 
+            // lblMessageNo3
+            // 
+            this.lblMessageNo3.Appearance.Font = new System.Drawing.Font("Tahoma", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMessageNo3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMessageNo3.Appearance.Options.UseFont = true;
+            this.lblMessageNo3.Appearance.Options.UseForeColor = true;
+            this.lblMessageNo3.Location = new System.Drawing.Point(8, 13);
+            this.lblMessageNo3.Name = "lblMessageNo3";
+            this.lblMessageNo3.Size = new System.Drawing.Size(52, 10);
+            this.lblMessageNo3.TabIndex = 0;
+            this.lblMessageNo3.Text = "labelControl1";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(132)))), ((int)(((byte)(241)))));
+            this.panel1.Controls.Add(this.lblMessageNo1);
+            this.panel1.Location = new System.Drawing.Point(5, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(265, 36);
+            this.panel1.TabIndex = 2;
+            // 
+            // lblMessageNo1
+            // 
+            this.lblMessageNo1.Appearance.Font = new System.Drawing.Font("Tahoma", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMessageNo1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblMessageNo1.Appearance.Options.UseFont = true;
+            this.lblMessageNo1.Appearance.Options.UseForeColor = true;
+            this.lblMessageNo1.Location = new System.Drawing.Point(8, 13);
+            this.lblMessageNo1.Name = "lblMessageNo1";
+            this.lblMessageNo1.Size = new System.Drawing.Size(52, 10);
+            this.lblMessageNo1.TabIndex = 0;
+            this.lblMessageNo1.Text = "labelControl1";
             // 
             // groupCriticalStockLevel
             // 
@@ -171,6 +412,7 @@ namespace Tech2019.Presentation.Forms.HomePage
             // 
             // grcPhoneBook
             // 
+            this.grcPhoneBook.AllowRestoreSelectionAndFocusedRow = DevExpress.Utils.DefaultBoolean.False;
             this.grcPhoneBook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grcPhoneBook.Location = new System.Drawing.Point(2, 23);
             this.grcPhoneBook.MainView = this.gvwPhoneBook;
@@ -201,6 +443,7 @@ namespace Tech2019.Presentation.Forms.HomePage
             // 
             // grcTodaysToDoList
             // 
+            this.grcTodaysToDoList.AllowRestoreSelectionAndFocusedRow = DevExpress.Utils.DefaultBoolean.False;
             this.grcTodaysToDoList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grcTodaysToDoList.Location = new System.Drawing.Point(2, 23);
             this.grcTodaysToDoList.MainView = this.gvwTodaysToDoList;
@@ -231,6 +474,7 @@ namespace Tech2019.Presentation.Forms.HomePage
             // 
             // grcCategoryProduct
             // 
+            this.grcCategoryProduct.AllowRestoreSelectionAndFocusedRow = DevExpress.Utils.DefaultBoolean.False;
             this.grcCategoryProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grcCategoryProduct.Location = new System.Drawing.Point(2, 23);
             this.grcCategoryProduct.MainView = this.gvwCategoryProduct;
@@ -250,246 +494,6 @@ namespace Tech2019.Presentation.Forms.HomePage
             this.gvwCategoryProduct.Name = "gvwCategoryProduct";
             this.gvwCategoryProduct.OptionsView.ShowGroupPanel = false;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(132)))), ((int)(((byte)(241)))));
-            this.panel1.Controls.Add(this.labelControl1);
-            this.panel1.Location = new System.Drawing.Point(5, 28);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 36);
-            this.panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.panel2.Controls.Add(this.labelControl2);
-            this.panel2.Location = new System.Drawing.Point(5, 70);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(265, 36);
-            this.panel2.TabIndex = 2;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(8, 12);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(82, 14);
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "labelControl1";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(175)))), ((int)(((byte)(64)))));
-            this.panel3.Controls.Add(this.labelControl3);
-            this.panel3.Location = new System.Drawing.Point(5, 112);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(265, 36);
-            this.panel3.TabIndex = 2;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(8, 12);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(82, 14);
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "labelControl1";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(227)))), ((int)(((byte)(116)))));
-            this.panel4.Controls.Add(this.labelControl4);
-            this.panel4.Location = new System.Drawing.Point(5, 154);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(265, 36);
-            this.panel4.TabIndex = 2;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Appearance.Options.UseForeColor = true;
-            this.labelControl4.Location = new System.Drawing.Point(8, 12);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(82, 14);
-            this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "labelControl1";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(57)))), ((int)(((byte)(57)))));
-            this.panel5.Controls.Add(this.labelControl5);
-            this.panel5.Location = new System.Drawing.Point(5, 196);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(265, 36);
-            this.panel5.TabIndex = 2;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Appearance.Options.UseForeColor = true;
-            this.labelControl5.Location = new System.Drawing.Point(8, 12);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(82, 14);
-            this.labelControl5.TabIndex = 0;
-            this.labelControl5.Text = "labelControl1";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(140)))), ((int)(((byte)(116)))));
-            this.panel6.Controls.Add(this.labelControl6);
-            this.panel6.Location = new System.Drawing.Point(5, 238);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(265, 36);
-            this.panel6.TabIndex = 2;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(8, 12);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(82, 14);
-            this.labelControl6.TabIndex = 0;
-            this.labelControl6.Text = "labelControl1";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.panel7.Controls.Add(this.labelControl7);
-            this.panel7.Location = new System.Drawing.Point(5, 280);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(265, 36);
-            this.panel7.TabIndex = 2;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Appearance.Options.UseForeColor = true;
-            this.labelControl7.Location = new System.Drawing.Point(8, 12);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(82, 14);
-            this.labelControl7.TabIndex = 0;
-            this.labelControl7.Text = "labelControl1";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.panel8.Controls.Add(this.labelControl8);
-            this.panel8.Location = new System.Drawing.Point(5, 322);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(265, 36);
-            this.panel8.TabIndex = 2;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Location = new System.Drawing.Point(8, 12);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(82, 14);
-            this.labelControl8.TabIndex = 0;
-            this.labelControl8.Text = "labelControl1";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(108)))), ((int)(((byte)(240)))));
-            this.panel9.Controls.Add(this.labelControl9);
-            this.panel9.Location = new System.Drawing.Point(5, 364);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(265, 36);
-            this.panel9.TabIndex = 2;
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Appearance.Options.UseForeColor = true;
-            this.labelControl9.Location = new System.Drawing.Point(8, 12);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(82, 14);
-            this.labelControl9.TabIndex = 0;
-            this.labelControl9.Text = "labelControl1";
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(227)))), ((int)(((byte)(116)))));
-            this.panel10.Controls.Add(this.labelControl10);
-            this.panel10.Location = new System.Drawing.Point(5, 406);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(265, 36);
-            this.panel10.TabIndex = 2;
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Appearance.Options.UseForeColor = true;
-            this.labelControl10.Location = new System.Drawing.Point(8, 12);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(82, 14);
-            this.labelControl10.TabIndex = 0;
-            this.labelControl10.Text = "labelControl1";
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(192)))), ((int)(((byte)(235)))));
-            this.panel11.Controls.Add(this.labelControl11);
-            this.panel11.Location = new System.Drawing.Point(5, 448);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(265, 36);
-            this.panel11.TabIndex = 2;
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl11.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Appearance.Options.UseForeColor = true;
-            this.labelControl11.Location = new System.Drawing.Point(8, 12);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(82, 14);
-            this.labelControl11.TabIndex = 0;
-            this.labelControl11.Text = "labelControl1";
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.panel12.Controls.Add(this.labelControl12);
-            this.panel12.Location = new System.Drawing.Point(5, 490);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(265, 36);
-            this.panel12.TabIndex = 2;
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl12.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Appearance.Options.UseForeColor = true;
-            this.labelControl12.Location = new System.Drawing.Point(8, 12);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(82, 14);
-            this.labelControl12.TabIndex = 0;
-            this.labelControl12.Text = "labelControl1";
-            // 
             // FrmHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -508,6 +512,30 @@ namespace Tech2019.Presentation.Forms.HomePage
             ((System.ComponentModel.ISupportInitialize)(this.gvwCriticalStockLevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupCriticalStockLevel)).EndInit();
             this.groupCriticalStockLevel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupPhoneBook)).EndInit();
@@ -522,30 +550,6 @@ namespace Tech2019.Presentation.Forms.HomePage
             this.groupCategoryProduct.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grcCategoryProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwCategoryProduct)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -565,29 +569,29 @@ namespace Tech2019.Presentation.Forms.HomePage
         private DevExpress.XtraEditors.GroupControl groupCategoryProduct;
         private DevExpress.XtraGrid.GridControl grcCategoryProduct;
         private DevExpress.XtraGrid.Views.Grid.GridView gvwCategoryProduct;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl lblMessageNo1;
         private System.Windows.Forms.Panel panel12;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.LabelControl lblMessageNo12;
         private System.Windows.Forms.Panel panel10;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LabelControl lblMessageNo10;
         private System.Windows.Forms.Panel panel8;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.LabelControl lblMessageNo8;
         private System.Windows.Forms.Panel panel6;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl lblMessageNo6;
         private System.Windows.Forms.Panel panel4;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl lblMessageNo4;
         private System.Windows.Forms.Panel panel2;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl lblMessageNo2;
         private System.Windows.Forms.Panel panel11;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.LabelControl lblMessageNo11;
         private System.Windows.Forms.Panel panel9;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl lblMessageNo9;
         private System.Windows.Forms.Panel panel7;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl lblMessageNo7;
         private System.Windows.Forms.Panel panel5;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl lblMessageNo5;
         private System.Windows.Forms.Panel panel3;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl lblMessageNo3;
         private System.Windows.Forms.Panel panel1;
     }
 }

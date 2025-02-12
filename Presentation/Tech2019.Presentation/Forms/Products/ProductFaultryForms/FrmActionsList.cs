@@ -17,6 +17,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         {
             LoadActionsList();
             FillChartWithActionData();
+            gvwActions.OptionsBehavior.Editable = false;
         }
 
         #region Extracted Methods

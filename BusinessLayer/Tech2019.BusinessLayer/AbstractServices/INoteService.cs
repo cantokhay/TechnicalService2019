@@ -8,5 +8,6 @@ namespace Tech2019.BusinessLayer.AbstractServices
     {
         List<ResultReadNoteDTO> GetReadNotes();
         List<ResultUnreadNoteDTO> GetUnreadNotes();
+        List<NotesTodayDueDateDTO> GetNotesTodayDueDate();
     }
 }

@@ -58,6 +58,7 @@
     <Compile Include="InvoiceDetailDTOs\ResultInvoiceDetailDTO.cs" />
     <Compile Include="InvoiceDTOs\ResultInvoiceDTO.cs" />
     <Compile Include="InvoiceDTOs\ResultInvoiceToInvoiceDetailDTO.cs" />
+    <Compile Include="NoteDTOs\NotesTodayDueDateDTO.cs" />
     <Compile Include="NoteDTOs\ResultReadNoteDTO.cs" />
     <Compile Include="NoteDTOs\ResultUnreadNoteDTO.cs" />
     <Compile Include="ProductDTOs\ProductBrandDTO.cs" />

@@ -16,6 +16,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
         private void FrmSaleList_Load(object sender, EventArgs e)
         {
             LoadSaleList();
+            gvwSales.OptionsBehavior.Editable = false;
         }
 
         #region Extracted Methods

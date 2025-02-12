@@ -8,5 +8,6 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
     {
         List<ResultReadNoteDTO> TGetReadNotes();
         List<ResultUnreadNoteDTO> TGetUnreadNotes();
+        List<NotesTodayDueDateDTO> TGetNotesTodayDueDate();
     }
 }

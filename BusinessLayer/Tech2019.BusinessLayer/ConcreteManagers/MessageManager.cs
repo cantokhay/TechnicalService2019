@@ -40,6 +40,11 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
             return _messageDal.TGetById(id);
         }
 
+        public string GetMessageSenderNameAndTitleByOrder(int takeOrder)
+        {
+            return _messageDal.TGetMessageSenderNameAndTitleByOrder(takeOrder);
+        }
+
         public void Update(Message entity)
         {
             entity.ModifiedDate = DateTime.Now;

@@ -19,12 +19,8 @@ namespace Tech2019.Presentation.Forms.Tools
         {
             LoadNoteList();
             ClearNoteInfo();
-
-            gvwUnreadNotes.Columns["NoteStatus"].OptionsColumn.AllowEdit = false;
-            gvwUnreadNotes.Columns["NoteStatus"].OptionsColumn.AllowFocus = false;
-
-            gvwReadNotes.Columns["NoteStatus"].OptionsColumn.AllowEdit = false;
-            gvwReadNotes.Columns["NoteStatus"].OptionsColumn.AllowFocus = false;
+            gvwUnreadNotes.OptionsBehavior.Editable = false;
+            gvwReadNotes.OptionsBehavior.Editable = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

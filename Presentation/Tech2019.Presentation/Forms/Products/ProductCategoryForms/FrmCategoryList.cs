@@ -19,6 +19,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductCategoryForms
         {
             LoadCategoryList();
             ClearCategoryInfo();
+            gvwCategories.OptionsBehavior.Editable = false;
         }
 
         private void gvwCategories_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

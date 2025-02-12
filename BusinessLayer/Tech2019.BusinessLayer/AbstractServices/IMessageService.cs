@@ -4,5 +4,6 @@ namespace Tech2019.BusinessLayer.AbstractServices
 {
     public interface IMessageService : IGenericService<Message>
     {
+        string GetMessageSenderNameAndTitleByOrder(int takeOrder);
     }
 }

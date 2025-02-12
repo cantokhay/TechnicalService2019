@@ -19,6 +19,7 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
         private void FrmInvoiceDetailedSearch_Load(object sender, EventArgs e)
         {
             FillLookUpEditSerialChars();
+            gvwInvoiceDetails.OptionsBehavior.Editable = false;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
