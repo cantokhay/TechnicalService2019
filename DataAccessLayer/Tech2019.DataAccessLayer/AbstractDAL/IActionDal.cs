@@ -12,5 +12,6 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
         List<ResultActionToChartDTO> TGetActionDataToChart();
         ResultCustomerInfoBySerialDTO TGetCustomerInfoBySerial(string productSerialNumber);
         bool TIsAnyActionBySerial(string productSerialNumber);
+        int TGetActionCount();
     }
 }

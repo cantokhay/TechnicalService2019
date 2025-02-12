@@ -67,5 +67,10 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
         {
             return _actionDal.TIsAnyActionBySerial(productSerialNumber);
         }
+
+        public int GetActionCount()
+        {
+            return _actionDal.TGetActionCount();
+        }
     }
 }

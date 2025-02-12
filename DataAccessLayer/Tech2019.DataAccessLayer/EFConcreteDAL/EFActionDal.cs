@@ -15,6 +15,11 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
             _context = context;
         }
 
+        public int TGetActionCount()
+        {
+            return _context.Actions.Where(a => a.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Count();
+        }
+
         public List<ResultActionToChartDTO> TGetActionDataToChart()
         {
             return _context.Actions

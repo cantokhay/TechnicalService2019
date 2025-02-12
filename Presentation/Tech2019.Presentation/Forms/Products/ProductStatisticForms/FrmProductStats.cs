@@ -8,11 +8,13 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
     {
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
+        private readonly IActionService _actionService;
 
-        public FrmProductStats(IProductService productService, ICategoryService categoryService)
+        public FrmProductStats(IProductService productService, ICategoryService categoryService, IActionService actionService)
         {
             _productService = productService;
             _categoryService = categoryService;
+            _actionService = actionService;
             InitializeComponent();
         }
 
@@ -30,7 +32,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             lblMinPricedProductStat.Text = _productService.GetCheapestProduct();
             lblTotalBrandsStat.Text = _productService.GetTotalBrandCount().ToString();
             lblMostStockedBrandStat.Text = _productService.GetMostStockedBrand();
-            //lblFaultyProductsStat
+            lblFaultyProductsStat.Text = _actionService.GetActionCount().ToString();
             //lblProductsUnderRepairStat
             //lblTodayFaultyProductsStat
             lblTotalApplianceStat.Text = _productService.GetProductCountWithCategoryNameAppliance().ToString();

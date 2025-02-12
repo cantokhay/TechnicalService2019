@@ -10,5 +10,7 @@ namespace Tech2019.BusinessLayer.AbstractServices
         List<ResultActionToChartDTO> GetActionDataToChart();
         ResultCustomerInfoBySerialDTO GetCustomerInfoBySerial(string productSerialNumber);
         bool IsAnyActionBySerial(string productSerialNumber);
+        int GetActionCount();
+
     }
 }

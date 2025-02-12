@@ -39,6 +39,14 @@ namespace Tech2019.Presentation
         /// </summary>
         private void OpenNonMDIForms<T>(params object[] args) where T : Form
         {
+            var existingForm = Application.OpenForms.OfType<T>().FirstOrDefault();
+
+            if (existingForm != null && !existingForm.IsDisposed)
+            {
+                existingForm.BringToFront();
+                return;
+            }
+
             var form = (T)Activator.CreateInstance(typeof(T), args);
             form.Show();
         }
@@ -64,7 +72,8 @@ namespace Tech2019.Presentation
         {
             OpenMDIForms<Forms.Products.ProductStatisticForms.FrmProductStats>(
                 _serviceProvider.GetService(typeof(IProductService)),
-                _serviceProvider.GetService(typeof(ICategoryService))
+                _serviceProvider.GetService(typeof(ICategoryService)),
+                _serviceProvider.GetService(typeof(IActionService))
             );
         }
 

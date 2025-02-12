@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 using Tech2019.BusinessLayer.AbstractServices;
 
@@ -22,6 +23,8 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             lblMostStockedBrandStat.Text = _productService.GetMostStockedBrand();
             lblMostPricedProductBrandStat.Text = _productService.GetMostExpensiveProduct();
             gvwBrands.OptionsBehavior.Editable = false;
+
+            SqlConnection sqlConnection = new SqlConnection(@"Data Source=CAN-TOKHAY-MASA\CANTOKHAY;initial Catalog=Tech2019DB;integrated Security=True;");
             //TODO : populate the charts
         }
     }

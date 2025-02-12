@@ -102,6 +102,7 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
             return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted && p.Stock <= 20).Select(x => new ProductsOnCriticalStockLevelDTO
             {
                 ProductName = x.ProductName,
+                ProductBrand = x.ProductBrand,
                 Stock = x.Stock
             }).ToList();
         }
@@ -111,7 +112,8 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
             return _context.Products.Where(p => p.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Select(x => new ProductToSaleDTO
             {
                 ProductId = x.ProductId,
-                ProductName = x.ProductName
+                ProductName = x.ProductName,
+                ProductBrand = x.ProductBrand
             }).ToList();
         }
 
