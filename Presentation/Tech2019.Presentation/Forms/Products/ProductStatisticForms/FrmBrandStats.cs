@@ -25,6 +25,12 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             gvwBrands.OptionsBehavior.Editable = false;
 
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=CAN-TOKHAY-MASA\CANTOKHAY;initial Catalog=Tech2019DB;integrated Security=True;");
+            SqlCommand sqlCommand = new SqlCommand("query", sqlConnection);
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                chartControl1.Series["Series 1"].Points.AddPoint(sqlDataReader[0].ToString(), int.Parse(sqlDataReader[1].ToString()));
+            }
             //TODO : populate the charts
         }
     }
