@@ -17,7 +17,7 @@ namespace Tech2019.Presentation
         }
 
         /// <summary>
-        /// MDI Formları açan metod, eğer form açıksa yeniden açmaz ve öne getirir.
+        /// Generic method for opening MDI forms; if the form is already open, it does not reopen it but brings it to the front.
         /// </summary>
         private void OpenMDIForms<T>(params object[] args) where T : Form
         {
@@ -35,7 +35,7 @@ namespace Tech2019.Presentation
         }
 
         /// <summary>
-        /// MDI olmayan, yeni pencerede açılacak formları açan metod.
+        /// Generic method for opening Non-MDI forms in a new window.
         /// </summary>
         private void OpenNonMDIForms<T>(params object[] args) where T : Form
         {

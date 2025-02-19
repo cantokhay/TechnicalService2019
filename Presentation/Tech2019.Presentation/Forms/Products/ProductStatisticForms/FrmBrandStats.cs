@@ -24,13 +24,15 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             lblMostPricedProductBrandStat.Text = _productService.GetMostExpensiveProduct();
             gvwBrands.OptionsBehavior.Editable = false;
 
-            SqlConnection sqlConnection = new SqlConnection(@"Data Source=CAN-TOKHAY-MASA\CANTOKHAY;initial Catalog=Tech2019DB;integrated Security=True;");
-            SqlCommand sqlCommand = new SqlCommand("query", sqlConnection);
+            //SqlConnection sqlConnection = new SqlConnection(@"Data Source=CAN-TOKHAY-MASA\CANTOKHAY;initial Catalog=Tech2019DB;integrated Security=True;");
+            SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-OHO9G30\SQLEXPRESS;initial Catalog=Tech2019DB;integrated Security=True;");
+            SqlCommand sqlCommand = new SqlCommand("SELECT ProductBrand,Count(*) FROM Products GROUP BY ProductBrand", sqlConnection);
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
                 chartControl1.Series["Series 1"].Points.AddPoint(sqlDataReader[0].ToString(), int.Parse(sqlDataReader[1].ToString()));
             }
+            sqlConnection.Close();
             //TODO : populate the charts
         }
     }
