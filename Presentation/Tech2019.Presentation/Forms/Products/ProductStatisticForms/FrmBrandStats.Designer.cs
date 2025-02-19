@@ -352,18 +352,19 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             this.chartControl1.BackColor = System.Drawing.Color.Transparent;
             this.chartControl1.Legend.BackColor = System.Drawing.Color.Transparent;
             this.chartControl1.Legend.Name = "Default Legend";
-            this.chartControl1.Location = new System.Drawing.Point(3, 99);
+            this.chartControl1.Location = new System.Drawing.Point(3, 108);
             this.chartControl1.Name = "chartControl1";
             series1.LegendTextPattern = "{A}";
             series1.Name = "Series 1";
             series1.View = doughnutSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartControl1.Size = new System.Drawing.Size(438, 327);
+            this.chartControl1.Size = new System.Drawing.Size(438, 318);
             this.chartControl1.TabIndex = 4;
             // 
             // pictureEdit5
             // 
+            this.pictureEdit5.EditValue = ((object)(resources.GetObject("pictureEdit5.EditValue")));
             this.pictureEdit5.Location = new System.Drawing.Point(10, 6);
             this.pictureEdit5.Name = "pictureEdit5";
             this.pictureEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -418,7 +419,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             this.chartControl2.Location = new System.Drawing.Point(3, 99);
             this.chartControl2.Name = "chartControl2";
             series2.LegendTextPattern = "{A}";
-            series2.Name = "Series 1";
+            series2.Name = "Categories";
             series2.View = lineSeriesView1;
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series2};
@@ -427,14 +428,15 @@ namespace Tech2019.Presentation.Forms.Products.ProductStatisticForms
             // 
             // pictureEdit6
             // 
-            this.pictureEdit6.Location = new System.Drawing.Point(74, 16);
+            this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
+            this.pictureEdit6.Location = new System.Drawing.Point(43, 4);
             this.pictureEdit6.Name = "pictureEdit6";
             this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit6.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit6.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit6.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit6.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit6.Size = new System.Drawing.Size(75, 75);
+            this.pictureEdit6.Size = new System.Drawing.Size(96, 96);
             this.pictureEdit6.TabIndex = 3;
             // 
             // labelControl4
