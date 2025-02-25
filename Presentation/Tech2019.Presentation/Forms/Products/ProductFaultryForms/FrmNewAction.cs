@@ -132,6 +132,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             action.Customer = int.Parse(lueCustomers.EditValue.ToString());
             action.AcceptedDate = DateTime.Parse(txtAcceptedDate.Text);
             action.ProductSerialNumber = txtProductSerialNumber.Text;
+            action.ActionStatus = EntityLayer.Enum.ActionStatus.OnRepair;
         }
 
         private bool IsValidSerialNumber(string serialNumber)

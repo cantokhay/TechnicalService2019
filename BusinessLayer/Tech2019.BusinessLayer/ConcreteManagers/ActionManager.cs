@@ -72,5 +72,37 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
         {
             return _actionDal.TGetActionCount();
         }
+
+        public int GetOnRepairActionCount()
+        {
+            return _actionDal.TGetOnRepairActionCount();
+        }
+
+        public int GetRepairFinishedActionCount()
+        {
+            return _actionDal.TGetRepairFinishedActionCount();
+        }
+
+        public string GetMostFaultyProductBrand()
+        {
+            return _actionDal.TGetMostFaultyProductBrand();
+        }
+
+        public int GetActionCountByPendingSparePartActionStatusDetail()
+        {
+            return _actionDal.TGetActionCountByPendingSparePartActionStatusDetail();
+        }
+
+        public int GetActionCountByCancelledActionStatusDetail()
+        {
+            return _actionDal.TGetActionCountByCancelledActionStatusDetail();
+
+        }
+
+        public int GetActionCountByPendingCustomerApproveActionStatusDetail()
+        {
+            return _actionDal.TGetActionCountByPendingCustomerApproveActionStatusDetail();
+
+        }
     }
 }

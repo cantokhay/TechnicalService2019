@@ -195,6 +195,8 @@ namespace Tech2019.DataAccessLayer.SeedData
                         {
                             var acceptedDate = sale.SaleDate.AddDays(faker.Random.Number(1, 30));
                             var completedDate = sale.SaleDate.AddDays(faker.Random.Number(31, 60));
+                            var actionStatus = new[] { ActionStatus.PendingRepair , ActionStatus.OnRepair, ActionStatus.RepairFinished };
+                            var actionStatusDetail = new[] { ActionStatusDetail.PendingSparePart, ActionStatusDetail.PendingCustomerApprove, ActionStatusDetail.ActionCancelled, ActionStatusDetail.PendingPayment };
 
                             acceptedDate = acceptedDate < new DateTime(1753, 1, 1) ? new DateTime(1753, 1, 1) : acceptedDate;
                             completedDate = completedDate < new DateTime(1753, 1, 1) ? new DateTime(1753, 1, 1) : completedDate;
@@ -205,7 +207,9 @@ namespace Tech2019.DataAccessLayer.SeedData
                                 Employee = faker.PickRandom(existingEmployees),
                                 AcceptedDate = acceptedDate,
                                 CompletedDate = completedDate,
-                                ProductSerialNumber = sale.ProductSerialNumber
+                                ProductSerialNumber = sale.ProductSerialNumber,
+                                ActionStatus = faker.PickRandom(actionStatus),
+                                ActionStatusDetail = faker.PickRandom(actionStatusDetail)
                             };
 
                             AssignEntityDatesAndDataStatus(action);

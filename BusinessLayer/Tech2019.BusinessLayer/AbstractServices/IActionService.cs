@@ -11,6 +11,11 @@ namespace Tech2019.BusinessLayer.AbstractServices
         ResultCustomerInfoBySerialDTO GetCustomerInfoBySerial(string productSerialNumber);
         bool IsAnyActionBySerial(string productSerialNumber);
         int GetActionCount();
-
+        int GetOnRepairActionCount();
+        int GetRepairFinishedActionCount();
+        string GetMostFaultyProductBrand();
+        int GetActionCountByPendingSparePartActionStatusDetail();
+        int GetActionCountByCancelledActionStatusDetail();
+        int GetActionCountByPendingCustomerApproveActionStatusDetail();
     }
 }

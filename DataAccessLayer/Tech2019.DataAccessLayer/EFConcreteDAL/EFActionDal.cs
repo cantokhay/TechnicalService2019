@@ -20,6 +20,30 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
             return _context.Actions.Where(a => a.DataStatus != EntityLayer.Enum.DataStatus.Deleted).Count();
         }
 
+        public int TGetActionCountByCancelledActionStatusDetail()
+        {
+            return _context.Actions
+                .Where(a => a.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
+                .Where(a => a.ActionStatusDetail == EntityLayer.Enum.ActionStatusDetail.ActionCancelled)
+                .Count();
+        }
+
+        public int TGetActionCountByPendingCustomerApproveActionStatusDetail()
+        {
+            return _context.Actions
+                .Where(a => a.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
+                .Where(a => a.ActionStatusDetail == EntityLayer.Enum.ActionStatusDetail.PendingCustomerApprove)
+                .Count();
+        }
+
+        public int TGetActionCountByPendingSparePartActionStatusDetail()
+        {
+            return _context.Actions
+                .Where(a => a.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
+                .Where(a => a.ActionStatusDetail == EntityLayer.Enum.ActionStatusDetail.PendingSparePart)
+                .Count();
+        }
+
         public List<ResultActionToChartDTO> TGetActionDataToChart()
         {
             return _context.Actions
@@ -52,7 +76,8 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                     EmployeeName = x.EmployeeNavigation.EmployeeFirstName + " " + x.EmployeeNavigation.EmployeeLastName,
                     ProductSerialNumber = x.ProductSerialNumber,
                     AcceptedDate = x.AcceptedDate,
-                    CompletedDate = x.CompletedDate
+                    CompletedDate = x.CompletedDate,
+                    ActionStatus = x.ActionStatus
                 }).ToList();
         }
 
@@ -72,6 +97,40 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                           SaleDate = sale.SaleDate
                       })
                 .FirstOrDefault();
+        }
+
+        public string TGetMostFaultyProductBrand()
+        {
+            return _context.Actions
+                .Where(s => s.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
+                .Join(_context.ProductTraces,
+                      action => action.ProductSerialNumber,
+                      trace => trace.ProductSerialNumber,
+                      (action, trace) => trace.ProductSerialNumber) // Serial Number'ları al
+                .Join(_context.Sales,
+                      serialNumber => serialNumber,
+                      sale => sale.ProductSerialNumber,
+                      (serialNumber, sale) => sale.ProductNavigation.ProductBrand) // ProductNavigation ile Brand al
+                .GroupBy(brand => brand) // Markaya göre grupla
+                .OrderByDescending(group => group.Count()) // En çok geçen markayı sırala
+                .Select(group => group.Key) // Marka ismini al
+                .FirstOrDefault();
+        }
+
+        public int TGetOnRepairActionCount()
+        {
+            return _context.Actions
+                .Where(a => a.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
+                .Where(a => a.ActionStatus == EntityLayer.Enum.ActionStatus.OnRepair)
+                .Count();
+        }
+
+        public int TGetRepairFinishedActionCount()
+        {
+            return _context.Actions
+                .Where(a => a.DataStatus != EntityLayer.Enum.DataStatus.Deleted)
+                .Where(a => a.ActionStatus == EntityLayer.Enum.ActionStatus.RepairFinished)
+                .Count();
         }
 
         public bool TIsAnyActionBySerial(string productSerialNumber)

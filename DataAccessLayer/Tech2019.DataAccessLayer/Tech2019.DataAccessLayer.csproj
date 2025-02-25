@@ -93,6 +93,14 @@
     <Compile Include="Migrations\202502112058196_mig-pc-after-note-duedate-2.designer.cs">
       <DependentUpon>202502112058196_mig-pc-after-note-duedate-2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502251256369_mig-PC-action.cs" />
+    <Compile Include="Migrations\202502251256369_mig-PC-action.designer.cs">
+      <DependentUpon>202502251256369_mig-PC-action.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502251425394_mig-PC-action-detail.cs" />
+    <Compile Include="Migrations\202502251425394_mig-PC-action-detail.designer.cs">
+      <DependentUpon>202502251425394_mig-PC-action-detail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeedData\SeedDataGenerator.cs" />
@@ -114,6 +122,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202502112058196_mig-pc-after-note-duedate-2.resx">
       <DependentUpon>202502112058196_mig-pc-after-note-duedate-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502251256369_mig-PC-action.resx">
+      <DependentUpon>202502251256369_mig-PC-action.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502251425394_mig-PC-action-detail.resx">
+      <DependentUpon>202502251425394_mig-PC-action-detail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

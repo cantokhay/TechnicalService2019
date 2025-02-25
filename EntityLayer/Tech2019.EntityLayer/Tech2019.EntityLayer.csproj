@@ -58,6 +58,8 @@
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\ProductTrace.cs" />
     <Compile Include="Concrete\Sale.cs" />
+    <Compile Include="Enum\ActionStatus.cs" />
+    <Compile Include="Enum\ActionStatusDetail.cs" />
     <Compile Include="Enum\CustomerStatus.cs" />
     <Compile Include="Enum\DataStatus.cs" />
     <Compile Include="Enum\NoteStatus.cs" />

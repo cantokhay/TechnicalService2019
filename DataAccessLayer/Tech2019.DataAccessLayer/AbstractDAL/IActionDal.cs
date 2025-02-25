@@ -1,6 +1,4 @@
-﻿//using Tech2019.EntityLayer.Concrete;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Tech2019.DTOLayer.ActionDTOs;
 using Tech2019.DTOLayer.CustomerDTO;
 
@@ -13,5 +11,11 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
         ResultCustomerInfoBySerialDTO TGetCustomerInfoBySerial(string productSerialNumber);
         bool TIsAnyActionBySerial(string productSerialNumber);
         int TGetActionCount();
+        int TGetOnRepairActionCount();
+        int TGetRepairFinishedActionCount();
+        string TGetMostFaultyProductBrand();
+        int TGetActionCountByPendingSparePartActionStatusDetail();
+        int TGetActionCountByCancelledActionStatusDetail();
+        int TGetActionCountByPendingCustomerApproveActionStatusDetail();
     }
 }

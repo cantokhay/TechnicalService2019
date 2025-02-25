@@ -12,6 +12,8 @@ namespace Tech2019.EntityLayer.Concrete
         public DateTime AcceptedDate { get; set; }
         public DateTime? CompletedDate { get; set; }
         public string ProductSerialNumber { get; set; }
+        public ActionStatus ActionStatus { get; set; }
+        public ActionStatusDetail ActionStatusDetail { get; set; }
 
         public Customer CustomerNavigation { get; set; }
         public Employee EmployeeNavigation { get; set; }

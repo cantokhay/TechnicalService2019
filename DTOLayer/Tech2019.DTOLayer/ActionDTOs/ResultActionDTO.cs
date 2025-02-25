@@ -1,4 +1,5 @@
 ﻿using System;
+using Tech2019.EntityLayer.Enum;
 
 namespace Tech2019.DTOLayer.ActionDTOs
 {
@@ -10,5 +11,7 @@ namespace Tech2019.DTOLayer.ActionDTOs
         public DateTime AcceptedDate { get; set; }
         public DateTime? CompletedDate { get; set; }
         public string ProductSerialNumber { get; set; }
+        public ActionStatus ActionStatus { get; set; }
+        public ActionStatusDetail ActionStatusDetail { get; set; }
     }
 }

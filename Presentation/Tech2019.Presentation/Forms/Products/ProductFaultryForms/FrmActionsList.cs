@@ -25,6 +25,13 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         private void LoadActionsList()
         {
             grcActionsList.DataSource = _actionService.GetActions();
+            lblTotalFaultyProductStat.Text = _actionService.GetActionCount().ToString();
+            lblFinishedFaultyProductStat.Text = _actionService.GetRepairFinishedActionCount().ToString();
+            lblCustomerApprovePendingStat.Text = _actionService.GetActionCountByPendingCustomerApproveActionStatusDetail().ToString();
+            lblCancelledFaultryCountStat.Text = _actionService.GetActionCountByCancelledActionStatusDetail().ToString();
+            lblMostProductsFaultAsBrandStat.Text = _actionService.GetMostFaultyProductBrand();
+            lblSparePartPendingStat.Text = _actionService.GetActionCountByPendingSparePartActionStatusDetail().ToString();
+
         }
 
         private void FillChartWithActionData()
@@ -39,6 +46,5 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         }
 
         #endregion
-
     }
 }
