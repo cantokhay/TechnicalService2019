@@ -47,7 +47,8 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                         .Select(s => _context.Employees
                             .Where(e => e.EmployeeId == s.Employee)
                             .Select(e => e.EmployeeFirstName + " " + e.EmployeeLastName).FirstOrDefault())
-                        .FirstOrDefault()
+                        .FirstOrDefault(),
+                    ActionStatusDetail = pt.ActionStatusDetail
                 })
                 .ToList();
         }

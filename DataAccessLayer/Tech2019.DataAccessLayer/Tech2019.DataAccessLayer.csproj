@@ -101,6 +101,10 @@
     <Compile Include="Migrations\202502251425394_mig-PC-action-detail.designer.cs">
       <DependentUpon>202502251425394_mig-PC-action-detail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202502261034530_mig-pc-producttrace.cs" />
+    <Compile Include="Migrations\202502261034530_mig-pc-producttrace.designer.cs">
+      <DependentUpon>202502261034530_mig-pc-producttrace.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeedData\SeedDataGenerator.cs" />
@@ -128,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502251425394_mig-PC-action-detail.resx">
       <DependentUpon>202502251425394_mig-PC-action-detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502261034530_mig-pc-producttrace.resx">
+      <DependentUpon>202502261034530_mig-pc-producttrace.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -21,7 +21,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         private void FrmNewAction_Load(object sender, EventArgs e)
         {
             InitializePlaceholderEvents();
-            FillLookUpEditCustomerEmployee();
+            FillLookUpEditCustomerEmployeeAndActionStatusDetail();
         }
 
         private void btnNewSave_Click(object sender, EventArgs e)
@@ -91,6 +91,13 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
                 lueEmployees.Focus();
                 return false;
             }
+            
+            if (lueActionStatusDetail.EditValue == null)
+            {
+                MessageBox.Show("Please select an action status detail.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lueActionStatusDetail.Focus();
+                return false;
+            }
 
             if (string.IsNullOrWhiteSpace(txtAcceptedDate.Text) || !DateTime.TryParse(txtAcceptedDate.Text, out _) || txtAcceptedDate.Text == "Accepted Date")
             {
@@ -111,7 +118,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             return true;
         }
 
-        private void FillLookUpEditCustomerEmployee()
+        private void FillLookUpEditCustomerEmployeeAndActionStatusDetail()
         {
             var customersList = _customerService.GetCustomersToSale();
             lueCustomers.Properties.DataSource = customersList;
@@ -124,6 +131,16 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             lueEmployees.Properties.DisplayMember = "EmployeeFullName";
             lueEmployees.Properties.ValueMember = "EmployeeId";
             lueEmployees.Properties.NullText = "Please pick an employee";
+
+            var actionStatusDetail = Enum.GetValues(typeof(EntityLayer.Enum.ActionStatusDetail))
+                                             .Cast<EntityLayer.Enum.ActionStatusDetail>()
+                                             .Select(e => new { Value = (int)e, Name = e.ToString() })
+                                             .ToList();
+
+            lueActionStatusDetail.Properties.DataSource = actionStatusDetail;
+            lueActionStatusDetail.Properties.DisplayMember = "Name";
+            lueActionStatusDetail.Properties.ValueMember = "Value";
+            lueActionStatusDetail.Properties.NullText = "Please pick an action status detail";
         }
 
         private void AssignActionInfo(EntityLayer.Concrete.Action action)
@@ -133,6 +150,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             action.AcceptedDate = DateTime.Parse(txtAcceptedDate.Text);
             action.ProductSerialNumber = txtProductSerialNumber.Text;
             action.ActionStatus = EntityLayer.Enum.ActionStatus.OnRepair;
+            action.ActionStatusDetail = (EntityLayer.Enum.ActionStatusDetail)Convert.ToInt32(lueActionStatusDetail.EditValue);
         }
 
         private bool IsValidSerialNumber(string serialNumber)
@@ -166,6 +184,5 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         }
 
         #endregion
-
     }
 }

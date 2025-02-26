@@ -173,7 +173,8 @@ namespace Tech2019.DataAccessLayer.SeedData
                             {
                                 ProductSerialNumber = action.ProductSerialNumber,
                                 ProductTraceDate = action.CompletedDate ?? DateTime.Now,
-                                ProductTraceInformation = EnsureMaxLength(faker.Lorem.Sentence(), 250)
+                                ProductTraceInformation = EnsureMaxLength(faker.Lorem.Sentence(), 250),
+                                ActionStatusDetail = action.ActionStatusDetail
                             };
 
                             AssignEntityDatesAndDataStatus(productTrace);

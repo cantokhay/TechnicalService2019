@@ -1,4 +1,5 @@
 ﻿using System;
+using Tech2019.EntityLayer.Enum;
 
 namespace Tech2019.DTOLayer.ProductTraceDTOs
 {
@@ -11,5 +12,6 @@ namespace Tech2019.DTOLayer.ProductTraceDTOs
         public string ProductName { get; set; }
         public string CustomerName { get; set; }
         public string EmployeeName { get; set; }
+        public ActionStatusDetail ActionStatusDetail { get; set; }
     }
 }

@@ -10,6 +10,7 @@ namespace Tech2019.EntityLayer.Concrete
         public DateTime ProductTraceDate { get; set; }
         public string ProductSerialNumber { get; set; }
         public string ProductTraceInformation { get; set; }
+        public ActionStatusDetail ActionStatusDetail { get; set; }
 
         public DateTime? CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }

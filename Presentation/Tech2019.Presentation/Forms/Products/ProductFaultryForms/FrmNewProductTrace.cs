@@ -21,6 +21,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         private void FrmNewProductTrace_Load(object sender, EventArgs e)
         {
             InitializePlaceholderEvents();
+            FillLookUpEditActionStatusDetail();
         }
 
         private void btnNewSave_Click(object sender, EventArgs e)
@@ -70,9 +71,28 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
         }
 
         #region Extracted Methods
+        private void FillLookUpEditActionStatusDetail()
+        {
+            var actionStatusDetail = Enum.GetValues(typeof(EntityLayer.Enum.ActionStatusDetail))
+                                 .Cast<EntityLayer.Enum.ActionStatusDetail>()
+                                 .Select(e => new { Value = (int)e, Name = e.ToString() })
+                                 .ToList();
+
+            lueActionStatusDetail.Properties.DataSource = actionStatusDetail;
+            lueActionStatusDetail.Properties.DisplayMember = "Name";
+            lueActionStatusDetail.Properties.ValueMember = "Value";
+            lueActionStatusDetail.Properties.NullText = "Please pick an action status detail";
+        }
 
         private bool ValidateProductTraceInfo()
         {
+            if (lueActionStatusDetail.EditValue == null)
+            {
+                MessageBox.Show("Please select an action status detail.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lueActionStatusDetail.Focus();
+                return false;
+            }
+
             if (!IsValidSerialNumber(txtProductSerialNumber.Text))
             {
                 MessageBox.Show("Invalid product serial number. It must be exactly 5 characters long and include only letters and/or digits.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);

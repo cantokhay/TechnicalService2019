@@ -49,6 +49,9 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             this.txtAcceptedDate = new DevExpress.XtraEditors.TextEdit();
             this.btnNewQuit = new DevExpress.XtraEditors.SimpleButton();
             this.btnNewSave = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lueActionStatusDetail = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductSerialNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueEmployees.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCustomers.Properties)).BeginInit();
@@ -59,12 +62,14 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAcceptedDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueActionStatusDetail.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtProductSerialNumber
             // 
             this.txtProductSerialNumber.EditValue = "Product Serial No";
-            this.txtProductSerialNumber.Location = new System.Drawing.Point(50, 246);
+            this.txtProductSerialNumber.Location = new System.Drawing.Point(50, 294);
             this.txtProductSerialNumber.Name = "txtProductSerialNumber";
             this.txtProductSerialNumber.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.txtProductSerialNumber.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -106,7 +111,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Location = new System.Drawing.Point(49, 275);
+            this.panel6.Location = new System.Drawing.Point(49, 323);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(132, 3);
             this.panel6.TabIndex = 86;
@@ -114,7 +119,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // pictureEdit6
             // 
             this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
-            this.pictureEdit6.Location = new System.Drawing.Point(12, 246);
+            this.pictureEdit6.Location = new System.Drawing.Point(12, 294);
             this.pictureEdit6.Name = "pictureEdit6";
             this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit6.Properties.Appearance.Options.UseBackColor = true;
@@ -157,7 +162,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Location = new System.Drawing.Point(49, 227);
+            this.panel4.Location = new System.Drawing.Point(49, 275);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(220, 3);
             this.panel4.TabIndex = 81;
@@ -177,7 +182,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // pictureEdit4
             // 
             this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
-            this.pictureEdit4.Location = new System.Drawing.Point(12, 198);
+            this.pictureEdit4.Location = new System.Drawing.Point(12, 246);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit4.Properties.Appearance.Options.UseBackColor = true;
@@ -217,7 +222,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             this.btnGetCustomerInfo.Appearance.Options.UseBackColor = true;
             this.btnGetCustomerInfo.Appearance.Options.UseBorderColor = true;
             this.btnGetCustomerInfo.Appearance.Options.UseFont = true;
-            this.btnGetCustomerInfo.Location = new System.Drawing.Point(187, 246);
+            this.btnGetCustomerInfo.Location = new System.Drawing.Point(187, 294);
             this.btnGetCustomerInfo.Name = "btnGetCustomerInfo";
             this.btnGetCustomerInfo.Size = new System.Drawing.Size(83, 32);
             this.btnGetCustomerInfo.TabIndex = 5;
@@ -227,7 +232,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             // txtAcceptedDate
             // 
             this.txtAcceptedDate.EditValue = "Accepted Date";
-            this.txtAcceptedDate.Location = new System.Drawing.Point(50, 198);
+            this.txtAcceptedDate.Location = new System.Drawing.Point(50, 246);
             this.txtAcceptedDate.Name = "txtAcceptedDate";
             this.txtAcceptedDate.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.txtAcceptedDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -247,7 +252,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             this.btnNewQuit.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnNewQuit.Appearance.Options.UseFont = true;
             this.btnNewQuit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewQuit.ImageOptions.Image")));
-            this.btnNewQuit.Location = new System.Drawing.Point(155, 309);
+            this.btnNewQuit.Location = new System.Drawing.Point(155, 357);
             this.btnNewQuit.Name = "btnNewQuit";
             this.btnNewQuit.Size = new System.Drawing.Size(120, 33);
             this.btnNewQuit.TabIndex = 7;
@@ -261,34 +266,71 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             this.btnNewSave.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnNewSave.Appearance.Options.UseFont = true;
             this.btnNewSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNewSave.ImageOptions.Image")));
-            this.btnNewSave.Location = new System.Drawing.Point(12, 309);
+            this.btnNewSave.Location = new System.Drawing.Point(12, 357);
             this.btnNewSave.Name = "btnNewSave";
             this.btnNewSave.Size = new System.Drawing.Size(120, 33);
             this.btnNewSave.TabIndex = 6;
             this.btnNewSave.Text = "SAVE";
             this.btnNewSave.Click += new System.EventHandler(this.btnNewSave_Click);
             // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
+            this.pictureEdit1.Location = new System.Drawing.Point(12, 198);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Size = new System.Drawing.Size(32, 32);
+            this.pictureEdit1.TabIndex = 74;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(49, 227);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(220, 3);
+            this.panel1.TabIndex = 77;
+            // 
+            // lueActionStatusDetail
+            // 
+            this.lueActionStatusDetail.Location = new System.Drawing.Point(50, 198);
+            this.lueActionStatusDetail.Name = "lueActionStatusDetail";
+            this.lueActionStatusDetail.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lueActionStatusDetail.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lueActionStatusDetail.Properties.Appearance.Options.UseBackColor = true;
+            this.lueActionStatusDetail.Properties.Appearance.Options.UseForeColor = true;
+            this.lueActionStatusDetail.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueActionStatusDetail.Size = new System.Drawing.Size(219, 20);
+            this.lueActionStatusDetail.TabIndex = 2;
+            // 
             // FrmNewAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(287, 354);
+            this.ClientSize = new System.Drawing.Size(287, 402);
             this.Controls.Add(this.btnNewQuit);
             this.Controls.Add(this.btnNewSave);
             this.Controls.Add(this.txtAcceptedDate);
             this.Controls.Add(this.btnGetCustomerInfo);
             this.Controls.Add(this.txtProductSerialNumber);
+            this.Controls.Add(this.lueActionStatusDetail);
             this.Controls.Add(this.lueEmployees);
             this.Controls.Add(this.lueCustomers);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.pictureEdit6);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pictureEdit7);
             this.Controls.Add(this.pictureEdit4);
+            this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.pictureEdit3);
             this.Controls.Add(this.pictureEdit2);
             this.ForeColor = System.Drawing.Color.White;
@@ -307,6 +349,8 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAcceptedDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lueActionStatusDetail.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +377,8 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
 
         #endregion
 
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.LookUpEdit lueActionStatusDetail;
     }
 }

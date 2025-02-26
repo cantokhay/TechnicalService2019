@@ -42,6 +42,7 @@ namespace Tech2019.Presentation.Forms.Products.ProductFaultryForms
             foreach (var item in data)
             {
                 chartControl1.Series[0].Points.AddPoint(item.Brand, item.ActionCount);
+
             }
         }
 

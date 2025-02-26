@@ -77,7 +77,8 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                     ProductSerialNumber = x.ProductSerialNumber,
                     AcceptedDate = x.AcceptedDate,
                     CompletedDate = x.CompletedDate,
-                    ActionStatus = x.ActionStatus
+                    ActionStatus = x.ActionStatus,
+                    ActionStatusDetail = x.ActionStatusDetail
                 }).ToList();
         }
 
