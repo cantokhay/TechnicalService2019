@@ -552,7 +552,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             // 
             // imageSlider1
             // 
-            this.imageSlider1.AnimationTime = 250;
+            this.imageSlider1.AnimationTime = 30;
             this.imageSlider1.CurrentImageIndex = 0;
             this.imageSlider1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imageSlider1.Images.Add(((System.Drawing.Image)(resources.GetObject("imageSlider1.Images"))));

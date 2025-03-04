@@ -44,9 +44,9 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
         private void FillLookUpEditCustomerStatusCitiesandDistricts()
         {
             lueCustomerCity.Properties.DataSource = _customerService.GetDistinctCityList();
-            lueCustomerCity.Properties.NullText = "Please pick a value";
+            lueCustomerCity.Properties.NullText = "Please pick a city";
             lueCustomerDistrict.Properties.DataSource = _customerService.GetDistinctDistrictList();
-            lueCustomerDistrict.Properties.NullText = "Please pick a value";
+            lueCustomerDistrict.Properties.NullText = "Please pick a district";
 
             var customerStatusList = Enum.GetValues(typeof(CustomerStatus))
                 .Cast<CustomerStatus>()
@@ -60,7 +60,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerCustomerForms
             lueCustomerStatus.Properties.DataSource = customerStatusList;
             lueCustomerStatus.Properties.DisplayMember = "StatusDisplays";
             lueCustomerStatus.Properties.ValueMember = "StatusValues";
-            lueCustomerStatus.Properties.NullText = "Please pick a value";
+            lueCustomerStatus.Properties.NullText = "Please pick a customer status";
         }
 
         private void AssignCustomerInfo(Customer customer)
