@@ -41,6 +41,11 @@ namespace Tech2019.BusinessLayer.ConcreteManagers
             return _invoiceDal.TGetById(id);
         }
 
+        public List<ResultInvoiceDTO> GetInvoiceInfoToInvoiceDetailPoUpById(int id)
+        {
+            return _invoiceDal.TGetInvoiceInfoToInvoiceDetailPoUpById(id);
+        }
+
         public List<ResultInvoiceDTO> GetInvoiceList()
         {
             return _invoiceDal.TGetInvoiceList();

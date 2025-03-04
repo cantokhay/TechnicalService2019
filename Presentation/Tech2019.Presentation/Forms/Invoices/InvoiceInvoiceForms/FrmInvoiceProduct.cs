@@ -7,13 +7,13 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
 {
     public partial class FrmInvoiceProduct : Form
     {
-        private readonly IInvoiceDetailService _invoiceDetailService;
         private readonly IInvoiceService _invoiceService;
+        private readonly IInvoiceDetailService _invoiceDetailService;
 
-        public FrmInvoiceProduct(IInvoiceDetailService invoiceDetailService, IInvoiceService invoiceService)
+        public FrmInvoiceProduct(IInvoiceService invoiceService, IInvoiceDetailService invoiceDetailService)
         {
-            _invoiceDetailService = invoiceDetailService;
             _invoiceService = invoiceService;
+            _invoiceDetailService = invoiceDetailService;
             InitializeComponent();
         }
 

@@ -8,5 +8,6 @@ namespace Tech2019.DataAccessLayer.AbstractDAL
     {
         List<ResultInvoiceDTO> TGetInvoiceList();
         List<ResultInvoiceToInvoiceDetailDTO> TGetInvoiceListToInvoiceDetail();
+        List<ResultInvoiceDTO> TGetInvoiceInfoToInvoiceDetailPoUpById(int id);
     }
 }

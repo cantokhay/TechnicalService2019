@@ -277,7 +277,7 @@ namespace Tech2019.Presentation.Forms.Customers.CustomerSaleForms
             0,
             0});
             this.numSaleQuantity.Name = "numSaleQuantity";
-            this.numSaleQuantity.Size = new System.Drawing.Size(93, 25);
+            this.numSaleQuantity.Size = new System.Drawing.Size(81, 25);
             this.numSaleQuantity.TabIndex = 5;
             // 
             // pictureEdit6

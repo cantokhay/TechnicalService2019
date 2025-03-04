@@ -176,6 +176,12 @@
     <Compile Include="Forms\Invoices\InvoiceInvoiceForms\FrmInvoiceDetailedSearch.Designer.cs">
       <DependentUpon>FrmInvoiceDetailedSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Invoices\InvoiceInvoiceForms\FrmInvoiceDetailPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Invoices\InvoiceInvoiceForms\FrmInvoiceDetailPopUp.Designer.cs">
+      <DependentUpon>FrmInvoiceDetailPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Invoices\InvoiceInvoiceForms\FrmInvoiceList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Invoices\InvoiceInvoiceForms\FrmInvoiceDetailedSearch.resx">
       <DependentUpon>FrmInvoiceDetailedSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Invoices\InvoiceInvoiceForms\FrmInvoiceDetailPopUp.resx">
+      <DependentUpon>FrmInvoiceDetailPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Invoices\InvoiceInvoiceForms\FrmInvoiceList.resx">
       <DependentUpon>FrmInvoiceList.cs</DependentUpon>

@@ -8,6 +8,7 @@ namespace Tech2019.BusinessLayer.AbstractServices
     {
         List<ResultInvoiceDTO> GetInvoiceList();
         List<ResultInvoiceToInvoiceDetailDTO> GetInvoiceListToInvoiceDetail();
+        List<ResultInvoiceDTO> GetInvoiceInfoToInvoiceDetailPoUpById(int id);
 
     }
 }

@@ -178,6 +178,7 @@ namespace Tech2019.Presentation
         {
             OpenMDIForms<Forms.Invoices.InvoiceInvoiceForms.FrmInvoiceList>(
                 _serviceProvider.GetService(typeof(IInvoiceService)),
+                _serviceProvider.GetService(typeof(IInvoiceDetailService)),
                 _serviceProvider.GetService(typeof(IEmployeeService)),
                 _serviceProvider.GetService(typeof(ICustomerService))
             );

@@ -9,12 +9,14 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
     public partial class FrmInvoiceList : Form
     {
         private readonly IInvoiceService _invoiceService;
+        private readonly IInvoiceDetailService _invoiceDetailService;
         private readonly IEmployeeService _employeeService;
         private readonly ICustomerService _customerService;
 
-        public FrmInvoiceList(IInvoiceService invoiceService, IEmployeeService employeeService, ICustomerService customerService)
+        public FrmInvoiceList(IInvoiceService invoiceService, IInvoiceDetailService invoiceDetailService, IEmployeeService employeeService, ICustomerService customerService)
         {
             _invoiceService = invoiceService;
+            _invoiceDetailService = invoiceDetailService;
             _employeeService = employeeService;
             _customerService = customerService;
             InitializeComponent();
@@ -99,6 +101,13 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             txtInvoiceTaxOffice.Text = gvwInvoices.GetFocusedRowCellValue("InvoiceTaxOffice")?.ToString();
             lueInvoiceCustomer.EditValue = gvwInvoices.GetFocusedRowCellValue("CustomerId");
             lueInvoiceEmployee.EditValue = gvwInvoices.GetFocusedRowCellValue("EmployeeId");
+        }
+
+        private void gvwInvoices_DoubleClick(object sender, EventArgs e)
+        {
+            FrmInvoiceDetailPopUp frmInvoiceDetailPopUp = new FrmInvoiceDetailPopUp(_invoiceDetailService, _invoiceService);
+            frmInvoiceDetailPopUp.id = gvwInvoices.GetFocusedRowCellValue("InvoiceId").ToString();
+            frmInvoiceDetailPopUp.Show();
         }
 
         #region Extracted Methods
@@ -236,5 +245,6 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
         }
 
         #endregion
+
     }
 }

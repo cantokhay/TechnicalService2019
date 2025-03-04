@@ -185,7 +185,6 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             this.txtInvoiceHour.Properties.Mask.EditMask = "t";
             this.txtInvoiceHour.Size = new System.Drawing.Size(190, 20);
             this.txtInvoiceHour.TabIndex = 5;
-            //this.txtInvoiceHour.EnabledChanged += new System.EventHandler(this.txtInvoiceHour_LostFocus);
             // 
             // txtInvoiceDate
             // 
@@ -194,7 +193,6 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             this.txtInvoiceDate.Properties.Mask.EditMask = "d";
             this.txtInvoiceDate.Size = new System.Drawing.Size(190, 20);
             this.txtInvoiceDate.TabIndex = 4;
-            //this.txtInvoiceDate.EnabledChanged += new System.EventHandler(this.txtInvoiceDate_LostFocus);
             // 
             // lueInvoiceEmployee
             // 
@@ -300,6 +298,7 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             this.gvwInvoices.Name = "gvwInvoices";
             this.gvwInvoices.OptionsView.ShowGroupPanel = false;
             this.gvwInvoices.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvwInvoices_FocusedRowChanged);
+            this.gvwInvoices.DoubleClick += new System.EventHandler(this.gvwInvoices_DoubleClick);
             // 
             // FrmInvoiceList
             // 

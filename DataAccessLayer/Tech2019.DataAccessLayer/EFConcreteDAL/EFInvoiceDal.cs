@@ -60,5 +60,37 @@ namespace Tech2019.DataAccessLayer.EFConcreteDAL
                     InvoiceNumber = i.InvoiceSerialCharacter + i.InvoiceSequenceNumber,
                 }).ToList();
         }
+
+        public List<ResultInvoiceDTO> TGetInvoiceInfoToInvoiceDetailPoUpById(int id)
+        {
+            return _context.Invoices.Where(i => i.InvoiceId == id)
+                .Select(i => new
+                {
+                    i.InvoiceId,
+                    i.InvoiceSequenceNumber,
+                    i.InvoiceSerialCharacter,
+                    InvoiceDate = i.InvoiceDate,
+                    i.InvoiceTaxOffice,
+                    CustomerId = i.Customer,
+                    CustomerFullName = i.CustomerNavigation.CustomerFirstName + " " + i.CustomerNavigation.CustomerLastName,
+                    EmployeeId = i.Employee,
+                    EmployeeFullName = i.EmployeeNavigation.EmployeeFirstName + " " + i.EmployeeNavigation.EmployeeLastName
+                })
+                .ToList()
+                .Select(i => new ResultInvoiceDTO
+                {
+                    InvoiceId = i.InvoiceId,
+                    InvoiceSequenceNumber = i.InvoiceSequenceNumber,
+                    InvoiceSerialCharacter = i.InvoiceSerialCharacter,
+                    InvoiceDate = i.InvoiceDate.ToString("dd-MM-yyyy"),
+                    InvoiceHour = i.InvoiceDate.ToString("HH:mm"),
+                    InvoiceTaxOffice = i.InvoiceTaxOffice,
+                    CustomerId = i.CustomerId,
+                    CustomerFullName = i.CustomerFullName,
+                    EmployeeId = i.EmployeeId,
+                    EmployeeFullName = i.EmployeeFullName
+                })
+                .ToList();
+        }
     }
 }
