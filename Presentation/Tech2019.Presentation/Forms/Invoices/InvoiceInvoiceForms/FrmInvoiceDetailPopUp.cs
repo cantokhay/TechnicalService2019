@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Diagnostics;
+using System.Windows.Forms;
 using Tech2019.BusinessLayer.AbstractServices;
 
 namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
@@ -21,6 +22,17 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
         {
             grcInvoiceDetailList.DataSource = _invoiceDetailService.GetInvoiceDetailListByInvoiceId(int.Parse(id));
             grcInvoiceList.DataSource = _invoiceService.GetInvoiceInfoToInvoiceDetailPoUpById(int.Parse(id));
+        }
+
+        private void picPdfButton_Click(object sender, System.EventArgs e)
+        {
+            string path = "doc1.pdf";
+            grcInvoiceDetailList.ExportToPdf(path);
+        }
+
+        private void picClose_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
         }
     }
 }

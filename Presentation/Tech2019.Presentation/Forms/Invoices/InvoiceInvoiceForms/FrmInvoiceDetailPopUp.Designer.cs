@@ -35,14 +35,16 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             this.grcInvoiceList = new DevExpress.XtraGrid.GridControl();
             this.gvwInvoices = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
+            this.picPdfButton = new DevExpress.XtraEditors.PictureEdit();
+            this.picXlsButton = new DevExpress.XtraEditors.PictureEdit();
+            this.picClose = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grcInvoiceDetailList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwInvoiceDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcInvoiceList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwInvoices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPdfButton.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picXlsButton.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // grcInvoiceDetailList
@@ -97,31 +99,46 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             this.labelControl1.TabIndex = 20;
             this.labelControl1.Text = "Invoice Detail of the Invoice Above : ";
             // 
-            // pictureEdit1
+            // picPdfButton
             // 
-            this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(649, 77);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.pictureEdit1.Size = new System.Drawing.Size(96, 55);
-            this.pictureEdit1.TabIndex = 21;
+            this.picPdfButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picPdfButton.EditValue = ((object)(resources.GetObject("picPdfButton.EditValue")));
+            this.picPdfButton.Location = new System.Drawing.Point(548, 77);
+            this.picPdfButton.Name = "picPdfButton";
+            this.picPdfButton.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.picPdfButton.Properties.Appearance.Options.UseBackColor = true;
+            this.picPdfButton.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picPdfButton.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.picPdfButton.Size = new System.Drawing.Size(96, 55);
+            this.picPdfButton.TabIndex = 21;
+            this.picPdfButton.Click += new System.EventHandler(this.picPdfButton_Click);
             // 
-            // pictureEdit2
+            // picXlsButton
             // 
-            this.pictureEdit2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-            this.pictureEdit2.Location = new System.Drawing.Point(750, 77);
-            this.pictureEdit2.Name = "pictureEdit2";
-            this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.pictureEdit2.Size = new System.Drawing.Size(96, 55);
-            this.pictureEdit2.TabIndex = 21;
+            this.picXlsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picXlsButton.EditValue = ((object)(resources.GetObject("picXlsButton.EditValue")));
+            this.picXlsButton.Location = new System.Drawing.Point(649, 77);
+            this.picXlsButton.Name = "picXlsButton";
+            this.picXlsButton.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.picXlsButton.Properties.Appearance.Options.UseBackColor = true;
+            this.picXlsButton.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picXlsButton.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.picXlsButton.Size = new System.Drawing.Size(96, 55);
+            this.picXlsButton.TabIndex = 21;
+            // 
+            // picClose
+            // 
+            this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picClose.EditValue = ((object)(resources.GetObject("picClose.EditValue")));
+            this.picClose.Location = new System.Drawing.Point(750, 77);
+            this.picClose.Name = "picClose";
+            this.picClose.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.picClose.Properties.Appearance.Options.UseBackColor = true;
+            this.picClose.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picClose.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.picClose.Size = new System.Drawing.Size(96, 55);
+            this.picClose.TabIndex = 21;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // FrmInvoiceDetailPopUp
             // 
@@ -129,8 +146,9 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(855, 543);
-            this.Controls.Add(this.pictureEdit2);
-            this.Controls.Add(this.pictureEdit1);
+            this.Controls.Add(this.picClose);
+            this.Controls.Add(this.picXlsButton);
+            this.Controls.Add(this.picPdfButton);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.grcInvoiceList);
             this.Controls.Add(this.grcInvoiceDetailList);
@@ -143,8 +161,9 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             ((System.ComponentModel.ISupportInitialize)(this.gvwInvoiceDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcInvoiceList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwInvoices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPdfButton.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picXlsButton.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picClose.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,7 +176,8 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
         private DevExpress.XtraGrid.GridControl grcInvoiceList;
         private DevExpress.XtraGrid.Views.Grid.GridView gvwInvoices;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit2;
+        private DevExpress.XtraEditors.PictureEdit picPdfButton;
+        private DevExpress.XtraEditors.PictureEdit picXlsButton;
+        private DevExpress.XtraEditors.PictureEdit picClose;
     }
 }
