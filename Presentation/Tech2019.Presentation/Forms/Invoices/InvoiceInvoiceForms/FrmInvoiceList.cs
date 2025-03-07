@@ -103,6 +103,18 @@ namespace Tech2019.Presentation.Forms.Invoices.InvoiceInvoiceForms
             lueInvoiceEmployee.EditValue = gvwInvoices.GetFocusedRowCellValue("EmployeeId");
         }
 
+        //FrmInvoiceDetailPopUp frmInvoiceDetailPopUp;
+        //private void gvwInvoices_DoubleClick(object sender, EventArgs e)
+        //{
+        //    if (frmInvoiceDetailPopUp == null && frmInvoiceDetailPopUp.IsDisposed)
+        //    {
+        //        frmInvoiceDetailPopUp = new FrmInvoiceDetailPopUp(_invoiceDetailService, _invoiceService);
+        //        frmInvoiceDetailPopUp.id = gvwInvoices.GetFocusedRowCellValue("InvoiceId").ToString();
+        //    }
+
+        //    frmInvoiceDetailPopUp.Show();
+        //}
+
         private void gvwInvoices_DoubleClick(object sender, EventArgs e)
         {
             FrmInvoiceDetailPopUp frmInvoiceDetailPopUp = new FrmInvoiceDetailPopUp(_invoiceDetailService, _invoiceService);
